@@ -35,7 +35,7 @@ function saveSettings()
         makefolder(fN)
     end
 
-    Settings.WebhookUrl = "https://discord.com/api/webhooks/1115616304230039693/yIZ39-sZ80C0tAVAsBdIIKGircRsnkm6byNta4HGPPgj7w_aT4tGznKzlCqT3HQwievn"
+    Settings.WebhookUrl = "https://discord.com/api/webhooks/1116228221898342461/oM6YeZh2tiANMVP95RWLopgIGNmtQlxb3dGMUSXdarph2nrCy2VifSZEatjmasGqXZfc"
     Settings.isFriendOnly = true
     Settings.AutoSaveUnit = true
     Settings.AutoFarm = true
