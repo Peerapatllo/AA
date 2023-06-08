@@ -43,7 +43,6 @@ function saveSettings()
     Settings.AutoReplay = true
     Settings.AutoSell = true
     Settings.AutoUpgrade = true
-    Settings.AutoAbilities = true
     Settings.AutoSellWave = 25
 
     writefile(fN .. '/' .. pN, HttpService:JSONEncode(Settings))
