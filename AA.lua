@@ -302,12 +302,12 @@ function webhook()
 	    
         local data = {
             ["content"] = "",
-                ["username"] = "Anime Adventures | ArponAG V2",
+                ["username"] = "Anime Adventures | Bot",
                 ["avatar_url"] = "https://tr.rbxcdn.com/2a167faf9e626e51c939309a70fca28e/150/150/Image/Png",
                 ["embeds"] = {
                     {
                         ["author"] = {
-                            ["name"] = "ArponAG V2 | Results ✔️",
+                            ["name"] = "Notify | Results ✔️",
                             ["icon_url"] = "https://cdn.discordapp.com/emojis/997123585476927558.webp?size=96&quality=lossless"
                         },
                         ["thumbnail"] = {
