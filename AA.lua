@@ -1,5 +1,5 @@
   -- Game Version Variable
-local version = "v2.0.0b33"
+  local version = "v2.0.0b33"
 
   -- Start of Local Global Variables
 local HttpService = game:GetService("HttpService")
@@ -297,6 +297,8 @@ function webhook()
 	    if TextDropLabel == "" then
 		    TextDropLabel = "Not Have Items Drops"
 	    end
+
+        display = game:GetService("Players").LocalPlayer.DisplayName
 	    
         local data = {
             ["content"] = "",
@@ -311,13 +313,13 @@ function webhook()
                         ["thumbnail"] = {
                             ['url'] = thumbnails_avatar.data[1].imageUrl,
                         },
-                        ["description"] = " Player Name : 🐱 ||**"..game:GetService("Players").LocalPlayer.Name.."**|| 🐱\nExecutors  : 🎮 "..exec.." 🎮 ",
+                        ["description"] = " Player Name : 🐱 **"..game:GetService("Players").LocalPlayer.Name.." ("..display..")** 🐱",
                         ["color"] = 110335,
                         ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
                         ["fields"] = {
                             {
-                                ["name"] ="Current Level ✨ & Portals 🌀 & Gems 💎 & Gold 💰",
-                                ["value"] = "```ini\n"..tostring(game.Players.LocalPlayer.PlayerGui.spawn_units.Lives.Main.Desc.Level.Text)..  " ✨\nCurrent Portals : ".. tostring(Count_Portal_list) .." 🌀\nCurrent Gems : "..tostring(comma_value(game.Players.LocalPlayer._stats.gem_amount.Value)).. " 💎\nCurrent Gold : "  ..tostring(comma_value(game.Players.LocalPlayer._stats.gold_amount.Value))..  " 💰```",
+                                ["name"] ="Current Level ✨ & Gems 💎 & Gold 💰",
+                                ["value"] = "```ini\n"..tostring(game.Players.LocalPlayer.PlayerGui.spawn_units.Lives.Main.Desc.Level.Text)..  " ✨\nCurrent Gems : "..tostring(comma_value(game.Players.LocalPlayer._stats.gem_amount.Value)).. " 💎\nCurrent Gold : "  ..tostring(comma_value(game.Players.LocalPlayer._stats.gold_amount.Value))..  " 💰```",
                             },
                             {
                                 ["name"] ="Results :",
@@ -326,13 +328,8 @@ function webhook()
                             },
                             {
                                 ["name"] ="Rewards :",
-                                ["value"] = "```ini\n" ..comma_value(gold).." Gold 💰\n"..comma_value(gems).." Gems 💎\n"..comma_value(xp[1]).." XP 🧪\n"..trophy.." Trophy 🏆```",
+                                ["value"] = "```ini\n"..comma_value(gems).." Gems 💎\n"..comma_value(xp[1]).." XP 🧪\n" .. TextDropLabel .. "```",
                             },
-                            {
-                                ["name"] ="Items Drop :",
-                                ["value"] = "```ini\n" .. TextDropLabel .. "```",
-                                ["inline"] = false 
-                            }
                         }
                     }
                 }
