@@ -295,7 +295,7 @@ function webhook()
 	    end
 	    
 	    if TextDropLabel == "" then
-		    TextDropLabel = "Not Have Items Drops"
+		    TextDropLabel = "-"
 	    end
 
         display = game:GetService("Players").LocalPlayer.DisplayName
@@ -313,17 +313,17 @@ function webhook()
                         ["thumbnail"] = {
                             ['url'] = thumbnails_avatar.data[1].imageUrl,
                         },
-                        ["description"] = " Player Name : 🐱 **"..game:GetService("Players").LocalPlayer.Name.." ("..display..")** 🐱",
+                        ["description"] = " Name : **"..game:GetService("Players").LocalPlayer.Name.."** ("..display..") ",
                         ["color"] = 110335,
                         ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
                         ["fields"] = {
                             {
-                                ["name"] ="Level ✨ & Gems 💎 & Gold 💰",
+                                ["name"] ="Info :",
                                 ["value"] = "```ini\n"..tostring(game.Players.LocalPlayer.PlayerGui.spawn_units.Lives.Main.Desc.Level.Text)..  " ✨\nGems : "..tostring(comma_value(game.Players.LocalPlayer._stats.gem_amount.Value)).. " 💎\nGold : "  ..tostring(comma_value(game.Players.LocalPlayer._stats.gold_amount.Value))..  " 💰```",
                             },
                             {
                                 ["name"] ="Results :",
-                                ["value"] = " ```ini\nWorld : "..GLD().name.. " 🌏\nMap : "..GLD().map.. " 🗺️\nResults : "..result.. " ⚔️\nWave End : " ..tostring(waves[2]).." 🌊\nTime : " ..tostring(ttime[2]).." ⌛```",
+                                ["value"] = " ```ini\nWorld : "..GLD().name.. " 🌏\nMap : "..GLD().map.. " 🗺️\nResults : "..result.. " ⚔️\nWave : " ..tostring(waves[2]).." 🌊\nTime : " ..tostring(ttime[2]).." ⌛```",
                                 ["inline"] = true
                             },
                             {
