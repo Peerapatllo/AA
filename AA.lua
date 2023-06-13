@@ -651,9 +651,13 @@ end
 if game.CoreGui:FindFirstChild("FinityUI") then
     game.CoreGui["FinityUI"]:Destroy()
 end
+
+local namegame = game:GetService("Players").LocalPlayer.Name
+local display = game:GetService("Players").LocalPlayer.DisplayName
+
 local dir = "Anime_Adventures/"..game.Players.LocalPlayer.Name
 local Uilib = loadstring(game:HttpGet("https://raw.githubusercontent.com/ArponAG/Scripts/main/finitylib"))()
-local Window = Uilib.new(true, "[UPD 12] Anime Adventures "..version.." - "..exec)
+local Window = Uilib.new(true, "Anime Adventures | Name: "..namegame.." Display: "..display)
 Window.ChangeToggleKey(Enum.KeyCode.C)
 
     -- Start of Farm Sector
