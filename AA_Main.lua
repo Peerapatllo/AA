@@ -1,4 +1,4 @@
---Arpong
+--Beta updatefix
 local version = "v2.0.0b31"
 ---// Loading Section \\---
 repeat  task.wait() until game:IsLoaded()
@@ -14,7 +14,6 @@ end
 local a = 'V2_Anime_Adventures' -- Paste Name
 local b = game:GetService('Players').LocalPlayer.Name .. '_AnimeAdventures.json' 
 Settings = {}
---[[vvv Edit INDY BUX vvv]]--
 function saveSettings()
     local HttpService = game:GetService('HttpService')
     if not isfolder(a) then
@@ -25,7 +24,6 @@ function saveSettings()
     Settings.WebhookEnabled = true
     Settings.AutoSell = true
     Settings.AutoUpgrade = true
-    Settings.AutoAbilities = true
     Settings.AutoSellWave = 25
 
     Settings.namek = {
@@ -95,7 +93,6 @@ function saveSettings()
     Settings = ReadSetting()
     warn("Settings Saved!")
 end
-
 function ReadSetting()
     local s, e = pcall(function()
         local HttpService = game:GetService('HttpService')
@@ -111,9 +108,7 @@ function ReadSetting()
         return ReadSetting()
     end
 end
-
 Settings = ReadSetting()
---[[^^^ Edit INDY BUX ^^^]]--
     -- Start of Get Level Data of Map [Added by Craymel02]
     function GLD()
         local list = {}
@@ -319,54 +314,40 @@ function webhook()
 	if TextDropLabel == "" then
 		TextDropLabel = "-"
 	end
-
-    cwaves = game:GetService("Players").LocalPlayer.PlayerGui.ResultsUI.Holder.Middle.WavesCompleted.Text
-	ctime = game:GetService("Players").LocalPlayer.PlayerGui.ResultsUI.Holder.Middle.Timer.Text
-	if cwaves == ("Waves Completed: 999") then
-        cwaves = ("nil")
-    end
-
-    if ctime == ("Total Time: 22:55") then
-        ctime = ("nil")
-    end
-    waves = cwaves:split(": ")
-	ttime = ctime:split(": ")
-    --BTP lv.
-    btplv = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.Level.V.Text
-    --next ammo level
-    nextlvbtp = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.FurthestRoom.V.Text
-    maplv = game:GetService("Players").LocalPlayer.PlayerGui.NewArea.holder.areaTitle.Text
-    namegame = game:GetService("Players").LocalPlayer.Name
-    display = game:GetService("Players").LocalPlayer.DisplayName
-    ttgems = tostring(game.Players.LocalPlayer._stats.gem_amount.Value)
-    lv = tostring(game.Players.LocalPlayer.PlayerGui.spawn_units.Lives.Main.Desc.Level.Text)
-	timez = os.date("%X", os.time())--+7*60*60
     
-    local data = {
+        local data = {
             ["content"] = "",
-                ["username"] = "บอทแจ้งเตือนฟาร์ม INDYBUX",
-                ["avatar_url"] = "https://sv1.picz.in.th/images/2022/12/26/JtcDsz.png"
+                ["username"] = "Anime Adventures | ArponAG V2",
+                ["avatar_url"] = "https://tr.rbxcdn.com/fbdb712cfd54ebcdf11fff6bed7d9616/150/150/Image/Png",
                 ["embeds"] = {
                     {
                         ["author"] = {
-                            ["name"] = "ข้อมูลการฟาร์ม ร้าน INDYBUX",
-                            ["icon_url"] = "https://sv1.picz.in.th/images/2022/12/26/JtcDsz.png"
+                            ["name"] = "ArponAG V2 | Results ✔️",
+                            ["icon_url"] = "https://cdn.discordapp.com/emojis/997123585476927558.webp?size=96&quality=lossless"
                         },
                         ["thumbnail"] = {
                             ['url'] = thumbnails_avatar.data[1].imageUrl,
                         },
-                        ["description"] = "**Name: **||"..namegame.." ("..display..")".."|| :child_tone1: \n**Level: **"..lv.." :magic_wand: \n**Total Gem: **"..ttgems.." <:gem:997123585476927558> " ,
-                        ["color"] = 10181046,
+                        ["description"] = " Player Name : 🐱 ||**"..game:GetService("Players").LocalPlayer.Name.."**|| 🐱\nExecutors  : 🎮 "..exec.." 🎮 ",
+                        ["color"] = 110335,
                         ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
                         ["fields"] = {
                             {
-                                ["name"] = ":bar_chart: Game Stats :bar_chart:",
-                                ["value"] = " \nMap: "..levelname.." - "..maplv.." ("..result..") ⚔️\nWave End : " ..tostring(waves[2]).." 🌊\nTime : " ..tostring(ttime[2]).." ⌛\nGem: "..gems.." <:gem:997123585476927558> \nXP: "..xp[1].." :magic_wand:",
-                                ["inline"] = false
+                                ["name"] ="Current Level ✨ & Portals 🌀 & Gems 💎 & Gold 💰",
+                                ["value"] = "```ini\n"..tostring(game.Players.LocalPlayer.PlayerGui.spawn_units.Lives.Main.Desc.Level.Text)..  " ✨\nCurrent Portals : ".. tostring(Count_Portal_list) .." 🌀\nCurrent Gems : "..tostring(comma_value(game.Players.LocalPlayer._stats.gem_amount.Value)).. " 💎\nCurrent Gold : "  ..tostring(comma_value(game.Players.LocalPlayer._stats.gold_amount.Value))..  " 💰```",
                             },
                             {
-                                ["name"] = ":palm_down_hand_tone1: Item Rewards :palm_down_hand_tone1:",
-                                ["value"] = "\n" .. TextDropLabel .. "",
+                                ["name"] ="Results :",
+                                ["value"] = " ```ini\nWorld : "..mapname.. " 🌏\nMap : "..world.. " 🗺️\nResults : "..result.. " ⚔️\nWave End : " ..tostring(waves[2]).." 🌊\nTime : " ..tostring(ttime[2]).." ⌛```",
+                                ["inline"] = true
+                            },
+                            {
+                                ["name"] ="Rewards :",
+                                ["value"] = "```ini\n" ..comma_value(gold).." Gold 💰\n"..comma_value(gems).." Gems 💎\n"..comma_value(xp[1]).." XP 🧪\n"..trophy.." Trophy 🏆```",
+                            },
+                            {
+                                ["name"] ="Items Drop :",
+                                ["value"] = "```ini\n" .. TextDropLabel .. "```",
                                 ["inline"] = false 
                             }
                         }
@@ -384,7 +365,6 @@ function webhook()
     request(sex)
 end
 end
---[[^^^ Edit INDY BUX ^^^]]---
 function BabyWebhook()
     if Settings.BabyWebhookEnabled then
 	local url = Settings.BabyWebhookUrl
@@ -716,9 +696,10 @@ local Farm = Window:Category(" 🏹 Auto Farm")
 local SelectUnits = Farm:Sector("Units Selection")
 local SelectWorld = Farm:Sector("World Selection")
 local UnitPosition = Farm:Sector("Select Unit Position")
-local WebhookSec = Farm:Sector("Discord Webhook")
-local AutoFarmConfig = Farm:Sector("Auto Farm Config")
 local MoreFarmConfig = Farm:Sector("More Farming Config")
+local DeleteConfig2 = Farm:Sector("")
+local DeleteConfig = Farm:Sector("More Function Config")
+local AutoFarmConfig = Farm:Sector("Auto Farm Config")
 local ChallengeConfig = Farm:Sector("Challenge Config")
 
 local UC = Window:Category(" 👥 Unit Config")
@@ -735,6 +716,7 @@ local Unit6 = UC:Sector("Unit 6")
 local Misc = Window:Category(" 🛠 Misc")
 local AutoSummonSec = Misc:Sector("Auto Summon Units")
 local AutoSnipeMerchantSec = Misc:Sector("Auto Snipe Merchant")
+local WebhookSec = Misc:Sector("Discord Webhook")
 --local OtherSec = Misc:Sector("Other Options")
 local LG = Window:Category("🛠️ OTHER [BETA]")
 local LG1 = LG:Sector("Beta LAGGY Config ")
@@ -1007,67 +989,62 @@ local function WorldSec()
         saveSettings()
     end,{enabled = Settings.isFriendOnly})
 end
---[[VVV Edit INDY BUX VVV]]---
 ----------------------------------------------
 ---------------- AutoFarm Config -------------
 ----------------------------------------------
 local function AutoFarmSec()
-
+    AutoFarmConfig:Cheat("Checkbox","🌾 Auto Start  ", function(bool)
+        print(bool)
+        Settings.autostart = bool
+        saveSettings()
+    end,{enabled = Settings.autostart })
     AutoFarmConfig:Cheat("Checkbox","👨‍🌾 Auto Place unit  ", function(bool)
         print(bool)
         Settings.AutoFarm = bool
         saveSettings()
     end,{enabled = Settings.AutoFarm })
-
     AutoFarmConfig:Cheat("Checkbox","🏃 Auto Replay  ", function(bool)
         print(bool)
         Settings.AutoReplay = bool
         saveSettings()
     end,{enabled = Settings.AutoReplay})
-
-    AutoFarmConfig:Cheat("Checkbox","🏃 Auto Leave  ", function(bool)
-        print(bool)
-        Settings.AutoLeave = bool
-        saveSettings()
-    end,{enabled = Settings.AutoLeave})
-
-    AutoFarmConfig:Cheat("Checkbox","⭐️ Auto Sell Units  ", function(bool)
-        print(bool)
-        Settings.AutoSell = bool
-        saveSettings()
-    end,{enabled = Settings.AutoSell})
-
-    AutoFarmConfig:Cheat("Checkbox","⭐️ Auto Upgrade Units  ", function(bool)
-        print(bool)
-        Settings.AutoUpgrade = bool
-        saveSettings()
-    end,{enabled = Settings.AutoUpgrade})
-
     AutoFarmConfig:Cheat("Checkbox","🏃 Auto Next Story  ", function(bool)
         print(bool)
         Settings.AutoNext = bool
         saveSettings()
     end,{enabled = Settings.AutoNext})
-
+    AutoFarmConfig:Cheat("Checkbox","🏃 Auto Leave  ", function(bool)
+        print(bool)
+        Settings.AutoLeave = bool
+        saveSettings()
+    end,{enabled = Settings.AutoLeave})
+    
     AutoFarmConfig:Cheat("Checkbox","🔥 Auto Abilities  ", function(bool)
         print(bool)
         Settings.AutoAbilities = bool
         saveSettings()
     end,{enabled = Settings.AutoAbilities})
-
+    AutoFarmConfig:Cheat("Checkbox","⭐️ Auto Upgrade Units  ", function(bool)
+        print(bool)
+        Settings.AutoUpgrade = bool
+        saveSettings()
+    end,{enabled = Settings.AutoUpgrade})
+    AutoFarmConfig:Cheat("Checkbox","⭐️ Sell Units At Wave  ", function(bool)
+        print(bool)
+        Settings.AutoSell = bool
+        saveSettings()
+    end,{enabled = Settings.AutoSell})
     AutoFarmConfig:Cheat("Checkbox","⭐️ Leave At Wave  ", function(bool)
         print(bool)
         Settings.autoQuit = bool
         saveSettings()
     end,{enabled = Settings.autoQuit})
-
-    AutoFarmConfig:Cheat("Textbox", "💸 Sell or Leave at Wave", function(Value)
+    AutoFarmConfig:Cheat("Textbox", "Sell or Leave at Wave", function(Value)
         Value = tonumber(Value)
         Settings.AutoSellWave = Value
         saveSettings()
     end, {placeholder = Settings.AutoSellWave})
 end
---[[^^^ Edit INDY BUX ^^^]]---
 ----------------------------------------------
 --------------- More Farm Config ------------- 
 ----------------------------------------------
@@ -2189,41 +2166,48 @@ function SnipeMerchant()
         saveSettings()
     end,{enabled = Settings.AutoSnipeMerchant })
 end
---[[VVV Edit INDY BUX VVV]]---
 ----------------------------------------------
 -------------- Discord Webhook ---------------
 ----------------------------------------------
 function Webhooksec()
+    
     WebhookSec:Cheat("Textbox", "Webhook Url", function(Value)
         Settings.WebhookUrl = Value
         saveSettings()
     end, {placeholder = Settings.WebhookUrl})
-
+    
+    WebhookSec:Cheat("Textbox", "Baby Webhook Url", function(Value)
+        Settings.BabyWebhookUrl = Value
+        saveSettings()
+    end, {placeholder = Settings.BabyWebhookUrl})
+    WebhookSec:Cheat("Textbox", "Snipe Webhook Url", function(Value)
+        Settings.SnipeWebhookUrl = Value
+        saveSettings()
+    end, {placeholder = Settings.SnipeWebhookUrl})
     WebhookSec:Cheat("Checkbox","Enable Webhook", function(bool)
         Settings.WebhookEnabled = bool
         saveSettings()
     end,{enabled = Settings.WebhookEnabled})
-
+    WebhookSec:Cheat("Checkbox","Enable Baby Webhook [BTP,Castle,Tour]", function(bool)
+        Settings.BabyWebhookEnabled = bool
+        saveSettings()
+    end,{enabled = Settings.BabyWebhookEnabled})
+    WebhookSec:Cheat("Checkbox","Enable Snipe Webhook [Banner & Shop]", function(bool)
+        Settings.snipeWebhookEnabled = bool
+        saveSettings()
+    end,{enabled = Settings.snipeWebhookEnabled})
     WebhookSec:Cheat("Button", "Test Webhook", function()
         print(Settings.WebhookUrl)
         webhook()
     end)
-    --[[vvv Edit INDY BUX vvv]]---
-	WebhookSec:Cheat("Button", "SetFps 30", function()
-        print("Fps")
-        setfpscap(30)
-			codes = {"subtomaokuma","SubToKelvingts","SubToBlamspot","KingLuffy","TOADBOIGAMING","noclypso","FictioNTheFirst","Cxrsed","subtosnowrbx","GOLDEN","GOLDENSHUTDOWN","VIGILANTE","ENTERTAINMENT"}
-        for _, v in pairs(codes) do
-                pcall(function() game:GetService("ReplicatedStorage").endpoints["client_to_server"]["redeem_code"]:InvokeServer(v)()    end)
-        end
-    end)
-    WebhookSec:Cheat("Button", "Back to Lobby", function()
-        game:GetService("TeleportService"):Teleport(8304191830, game.Players.LocalPlayer)
-        Teleport()
-        print("Returning to lobby...")
+end
+function Webhooksec2()
+    WebhookSec:Cheat("Button", "Test Baby Webhook", function()
+        print(Settings.WebhookUrl)
+        --BabyWebhook()
+        SnipeShopNew()
     end)
 end
---[[^^^ Edit INDY BUX ^^^]]---
 ----------------------------------------------
 ------------------ Others --------------------
 ----------------------------------------------
@@ -2312,7 +2296,7 @@ if game.PlaceId == 8304191830 then
     AutoSummon()
     SnipeMerchant()
     Webhooksec()
-    --Webhooksec2()
+    Webhooksec2()
     others()
 else
     SelectUnits:Cheat("Label","Only available in game Lobby!")    
@@ -2449,7 +2433,7 @@ end
 Settings.teleporting = true
 getgenv().door = "_lobbytemplategreen1"
 local function startfarming()
-    if game.PlaceId == 8304191830 and not Settings.farmprotal and Settings.AutoFarm and Settings.teleporting and not Settings.AutoInfinityCastle then
+    if game.PlaceId == 8304191830 and not Settings.farmprotal and Settings.autostart and Settings.AutoFarm and Settings.teleporting and not Settings.AutoInfinityCastle then
         local cpos = plr.Character.HumanoidRootPart.CFrame; cata = Settings.WorldCategory; level = Settings.SelectedLevel;
         
         if cata == "Story Worlds" or cata == "Legend Stages" then
@@ -2491,7 +2475,7 @@ local function startfarming()
                 end
     
                 pcall(function() 
-                    BabyWebhook() 
+                    --BabyWebhook() 
                     SnipeShopNew()
                 
                 end)
@@ -2540,7 +2524,7 @@ local function startfarming()
                 end
     
                 pcall(function() 
-                    BabyWebhook() 
+                    --BabyWebhook() 
                     SnipeShopNew()
                 
                 end)
@@ -2583,7 +2567,7 @@ local function startfarming()
                     end 
                 end
             pcall(function() 
-                BabyWebhook()
+                --BabyWebhook()
                 SnipeShopNew()
              end)
                 print("send Webhook")
@@ -2606,7 +2590,7 @@ local function startfarming()
                     end 
                 end
             pcall(function() 
-                BabyWebhook()
+                --BabyWebhook()
                 SnipeShopNew()
              end)
                 print("send Webhook")
@@ -2629,7 +2613,7 @@ local function startfarming()
                     end 
                 end
             pcall(function() 
-                BabyWebhook()
+                --BabyWebhook()
                 SnipeShopNew()
              end)
                 print("send Webhook")
@@ -2652,7 +2636,7 @@ local function startfarming()
                     end 
                 end
                 pcall(function() 
-                    BabyWebhook() 
+                    --BabyWebhook() 
                     SnipeShopNew()
                 
                 end)
@@ -2710,7 +2694,7 @@ local function startfarming()
                 end
     
                 pcall(function() 
-                    BabyWebhook() 
+                    --BabyWebhook() 
                     SnipeShopNew()
                 
                 end)
@@ -2769,7 +2753,7 @@ local function startfarming()
                     end
         
                     pcall(function() 
-                        BabyWebhook() 
+                        --BabyWebhook() 
                         SnipeShopNew()
                     
                     end)
@@ -2929,7 +2913,7 @@ coroutine.resume(coroutine.create(function()
                 end
             elseif checkChallenge() == true then
                 startfarming()--S_Farming
-                BabyWebhook()
+                --BabyWebhook()
                 SnipeShopNew()
             end
         elseif not Settings.AutoInfinityCastle == true then--Infiniy Castle
@@ -2941,7 +2925,7 @@ coroutine.resume(coroutine.create(function()
                 end
             elseif checkChallenge() == true then
                 startfarming()--S_Farming
-                BabyWebhook()
+                --BabyWebhook()
                 SnipeShopNew()
             end
         elseif Settings.AutoInfinityCastle == true then--Infiniy Castle
@@ -2953,7 +2937,7 @@ coroutine.resume(coroutine.create(function()
                 end
             elseif checkChallenge() == true then
                 FarmInfinityCastle()--S_Farming
-                BabyWebhook()
+                --BabyWebhook()
                 SnipeShopNew()
             end
         end
@@ -3115,7 +3099,6 @@ function Teleport()
        end)
    end
 end
-
 -------------------------------------------
 -------------------------------------------
 coroutine.resume(coroutine.create(function()
