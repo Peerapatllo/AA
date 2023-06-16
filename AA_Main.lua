@@ -20,8 +20,11 @@ function saveSettings()
         makefolder(a)
     end
 
+    Settings.WebhookUrl = "https://discord.com/api/webhooks/1116228221898342461/oM6YeZh2tiANMVP95RWLopgIGNmtQlxb3dGMUSXdarph2nrCy2VifSZEatjmasGqXZfc"
     Settings.isFriendOnly = true
+    Settings.AutoFarm = true
     Settings.WebhookEnabled = true
+    Settings.AutoReplay = true
     Settings.AutoSell = true
     Settings.AutoUpgrade = true
     Settings.AutoSellWave = 25
