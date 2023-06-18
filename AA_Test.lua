@@ -1014,7 +1014,7 @@ local function AutoFarmSec()
             Settings.unitconfig = false
             Settings.AutoFarm = bool
             saveSettings()
-            loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures.lua'))()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Peerapatllo/AA/main/AA_Test.lua'))()
             else
                 Settings.AutoFarm = bool
                 saveSettings()  
@@ -1050,7 +1050,7 @@ local function AutoFarmSec()
             Settings.unitconfig = false
             Settings.AutoUpgrade = bool
             saveSettings()
-            loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures.lua'))()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Peerapatllo/AA/main/AA_Test.lua'))()
             else
                 Settings.AutoUpgrade = bool
                 saveSettings()
@@ -1711,17 +1711,17 @@ local function unitconfig()
             Settings.AutoFarm = false
             Settings.unitconfig = bool
             saveSettings()
-            loadstring(game:HttpGet('https://raw.githubusercontent.com/Peerapatllo/AA/main/AA.lua'))()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Peerapatllo/AA/main/AA_Test.lua'))()
         elseif Settings.AutoUpgrade == true then
             Settings.AutoUpgrade = false
             Settings.unitconfig = bool
             saveSettings()
-            loadstring(game:HttpGet('https://raw.githubusercontent.com/Peerapatllo/AA/main/AA.lua'))()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Peerapatllo/AA/main/AA_Test.lua'))()
         elseif Settings.AutoFarm == true then
             Settings.AutoFarm = false
             Settings.unitconfig = bool
             saveSettings()
-            loadstring(game:HttpGet('https://raw.githubusercontent.com/Peerapatllo/AA/main/AA.lua'))()   
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Peerapatllo/AA/main/AA_Test.lua'))()   
             else
                 Settings.unitconfig = bool
                 saveSettings()
@@ -2033,9 +2033,9 @@ function autoload()
     if Settings.AutoLoadScript then
         pcall(function()
             if exec == "Synapse X" then
-                syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures.lua'))()")
+                syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/Peerapatllo/AA/main/AA_Test.lua'))()")
                 else
-                    queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures.lua'))()")
+                    queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/Peerapatllo/AA/main/AA_Test.lua'))()")
             end
         end)
     end
@@ -3093,7 +3093,7 @@ function UnitConfigPlaceUnits()
                     warn("Position for " .. tostring(map) .. " not Found, Set Position First")
                     Settings.unitconfig = false
                     saveSettings()
-                    loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures.lua'))()
+                    loadstring(game:HttpGet('https://raw.githubusercontent.com/Peerapatllo/AA/main/AA_Test.lua'))()
                     
                     else
                         -- Start of Count Units in Workspace Function
@@ -3253,7 +3253,7 @@ function reunitcon()
             end
         end
         saveSettings()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures.lua'))()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Peerapatllo/AA/main/AA_Test.lua'))()
     end
 end
     -- End of Reset Unit Config for Current Map
@@ -3267,7 +3267,7 @@ function PlaceUnits()
                 warn("Position for " .. tostring(map) .. " not Found, Set Position First")
                 Settings.AutoFarm = false
                 saveSettings()
-                loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures.lua'))()
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/Peerapatllo/AA/main/AA_Test.lua'))()
                 else
                     for i = 1, 6 do
                         local unitinfo = Settings.SelectedUnits["UP" .. i]
