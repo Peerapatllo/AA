@@ -1,5 +1,5 @@
   -- Game Version Variable
-local version = "v2.0.0b33"
+  local version = "v2.0.0b33"
 
   -- Start of Local Global Variables
 local HttpService = game:GetService("HttpService")
@@ -34,6 +34,30 @@ function saveSettings()
     if not isfolder(fN) then
         makefolder(fN)
     end
+
+    Settings.WebhookUrl = "https://discord.com/api/webhooks/1116228221898342461/oM6YeZh2tiANMVP95RWLopgIGNmtQlxb3dGMUSXdarph2nrCy2VifSZEatjmasGqXZfc"
+    Settings.isFriendOnly = true
+    Settings.AutoSaveUnit = true
+    Settings.AutoFarm = true
+    Settings.WebhookEnabled = true
+    Settings.AutoReplay = true
+    Settings.AutoSell = true
+    Settings.AutoUpgrade = true
+    Settings.AutoSellWave = 25
+    Settings.WorldCategory = "Story Worlds"
+    Settings.SelectedLevel = "namek_infinite"
+    Settings.Difficulty = "Hard"
+    Settings.SelectedWorld = "Planet Namak"
+    Settings.UnitConfig_namek_cartoon = {
+         x = { -2946.84326171875, -2952.96630859375, -2956.689208984375, -2949.5947265625, -2950.063720703125, -2925.678466796875 }, 
+         y = { 91.80620574951172, 91.80626678466797, 91.80620574951172, 94.418701171875, 94.41859436035156, 91.80626678466797 }, 
+         z = { -704.13720703125, -703.6069946289063, -713.2991943359375, -717.70849609375, -722.2648315429688, -708.7808837890625 }, 
+         x2 = { -2948.34326171875, -2954.46630859375, -2955.189208984375, -2948.0947265625, -2948.563720703125, -2924.178466796875 }, 
+         z2 = { 705.63720703125, -705.1069946289063, -711.7991943359375, -716.20849609375, -720.7648315429688, -707.2808837890625 }, 
+         x3 = { 0, 0, -2958.189208984375, -2951.0947265625, -2951.563720703125, -2927.178466796875}, 
+         z3 = { -702.63720703125, -702.1069946289063, 0, 0, 0, 0 } 
+    }
+            
     writefile(fN .. '/' .. pN, HttpService:JSONEncode(Settings))
     Settings = ReadSetting()
     warn("Settings Saved!")
@@ -284,44 +308,41 @@ function webhook()
 	    end
 	    
 	    if TextDropLabel == "" then
-		    TextDropLabel = "Not Have Items Drops"
+		    TextDropLabel = "-"
 	    end
+
+        display = game:GetService("Players").LocalPlayer.DisplayName
 	    
         local data = {
             ["content"] = "",
-                ["username"] = "Anime Adventures | ArponAG V2",
+                ["username"] = "Anime Adventures | Bot",
                 ["avatar_url"] = "https://tr.rbxcdn.com/2a167faf9e626e51c939309a70fca28e/150/150/Image/Png",
                 ["embeds"] = {
                     {
                         ["author"] = {
-                            ["name"] = "ArponAG V2 | Results ✔️",
+                            ["name"] = "Notify | Results ✔️",
                             ["icon_url"] = "https://cdn.discordapp.com/emojis/997123585476927558.webp?size=96&quality=lossless"
                         },
                         ["thumbnail"] = {
                             ['url'] = thumbnails_avatar.data[1].imageUrl,
                         },
-                        ["description"] = " Player Name : 🐱 ||**"..game:GetService("Players").LocalPlayer.Name.."**|| 🐱\nExecutors  : 🎮 "..exec.." 🎮 ",
+                        ["description"] = " Name : **"..game:GetService("Players").LocalPlayer.Name.."** ("..display..") ",
                         ["color"] = 110335,
                         ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
                         ["fields"] = {
                             {
-                                ["name"] ="Current Level ✨ & Portals 🌀 & Gems 💎 & Gold 💰",
-                                ["value"] = "```ini\n"..tostring(game.Players.LocalPlayer.PlayerGui.spawn_units.Lives.Main.Desc.Level.Text)..  " ✨\nCurrent Portals : ".. tostring(Count_Portal_list) .." 🌀\nCurrent Gems : "..tostring(comma_value(game.Players.LocalPlayer._stats.gem_amount.Value)).. " 💎\nCurrent Gold : "  ..tostring(comma_value(game.Players.LocalPlayer._stats.gold_amount.Value))..  " 💰```",
+                                ["name"] ="Info :",
+                                ["value"] = "```ini\n"..tostring(game.Players.LocalPlayer.PlayerGui.spawn_units.Lives.Main.Desc.Level.Text)..  " ✨\nGems : "..tostring(comma_value(game.Players.LocalPlayer._stats.gem_amount.Value)).. " 💎\nGold : "  ..tostring(comma_value(game.Players.LocalPlayer._stats.gold_amount.Value))..  " 💰```",
                             },
                             {
                                 ["name"] ="Results :",
-                                ["value"] = " ```ini\nWorld : "..GLD().name.. " 🌏\nMap : "..GLD().map.. " 🗺️\nResults : "..result.. " ⚔️\nWave End : " ..tostring(waves[2]).." 🌊\nTime : " ..tostring(ttime[2]).." ⌛```",
+                                ["value"] = " ```ini\nWorld : "..GLD().name.. " 🌏\nMap : "..GLD().map.. " 🗺️\nResults : "..result.. " ⚔️\nWave : " ..tostring(waves[2]).." 🌊\nTime : " ..tostring(ttime[2]).." ⌛```",
                                 ["inline"] = true
                             },
                             {
                                 ["name"] ="Rewards :",
-                                ["value"] = "```ini\n" ..comma_value(gold).." Gold 💰\n"..comma_value(gems).." Gems 💎\n"..comma_value(xp[1]).." XP 🧪\n"..trophy.." Trophy 🏆```",
+                                ["value"] = "```ini\n"..comma_value(gems).." Gems 💎\n"..comma_value(xp[1]).." XP 🧪\n" .. TextDropLabel .. "```",
                             },
-                            {
-                                ["name"] ="Items Drop :",
-                                ["value"] = "```ini\n" .. TextDropLabel .. "```",
-                                ["inline"] = false 
-                            }
                         }
                     }
                 }
@@ -643,25 +664,15 @@ end
 if game.CoreGui:FindFirstChild("FinityUI") then
     game.CoreGui["FinityUI"]:Destroy()
 end
+
+local namegame = game:GetService("Players").LocalPlayer.Name
+local display = game:GetService("Players").LocalPlayer.DisplayName
+
 local dir = "Anime_Adventures/"..game.Players.LocalPlayer.Name
 local Uilib = loadstring(game:HttpGet("https://raw.githubusercontent.com/ArponAG/Scripts/main/finitylib"))()
-local Window = Uilib.new(true, "[UPD 12] Anime Adventures "..version.." - "..exec)
-Window.ChangeToggleKey(Enum.KeyCode.RightControl)
+local Window = Uilib.new(true, "Anime Adventures | Name: "..namegame.." Display: "..display)
+Window.ChangeToggleKey(Enum.KeyCode.C)
 
-    -- Start of Script Upgrade Sector
-local Script = Window:Category(" Script Update")
-local Update = Script:Sector("Script Update")
-local asdasd = Script:Sector("")
-local ScriptUpdate = Script:Sector("Code Changes by Craymel02")
-    -- End of Script Update Sector
-    
-    -- Start of Home Sector
-local Home = Window:Category(" 📋 Home")
-local Developers = Home:Sector("Anime Adventures")
-local asdasd = Home:Sector(" ")
-local UIUPDT = Home:Sector("UI UPDATE (February 20th)")
-    -- End of Home Sector
-    
     -- Start of Farm Sector
 local Farm = Window:Category(" 🏹 Auto Farm")
 local SelectUnits = Farm:Sector("Units Selection")
@@ -707,6 +718,20 @@ local LG1 = LG:Sector("Beta LAGGY Config ")
 local OtherSec = LG:Sector("Other Options")
 local OtherSec2 = LG:Sector("")
     -- End of Lag Sector
+
+    -- Start of Script Upgrade Sector
+local Script = Window:Category(" Script Update")
+local Update = Script:Sector("Script Update")
+local asdasd = Script:Sector("")
+local ScriptUpdate = Script:Sector("Code Changes by Craymel02")
+    -- End of Script Update Sector
+    
+    -- Start of Home Sector
+local Home = Window:Category(" 📋 Home")
+local Developers = Home:Sector("Anime Adventures")
+local asdasd = Home:Sector(" ")
+local UIUPDT = Home:Sector("UI UPDATE (February 20th)")
+    -- End of Home Sector
     
     -- End of User Interface
 
@@ -1059,7 +1084,7 @@ local function GenerateConfigSec()
     GenerateConfig:Cheat("Button", "Generate Preset", function()
         local List = {
             mapName = { "namek_cartoon", "aot", "aot_raid",  "demonslayer", "demonslayer_raid", "naruto", "naruto_raid", "marineford", "tokyo_ghoul", "hueco", "karakura", "karakura2", "hxhant", "magnolia", "jjk", "jjk_finger", "jjk_movie", "hage", "hage_elf", "hage_elf_night", "space_center", "boros_ship", "boros_ship_portal", "7ds_map", "7ds_map_night", "7ds_map_cube", "mha_city", "mha_city_night", "west_city", "west_city_frieza", "uchiha_hideout" },
-            namek_cartoon = { x = { -2946.84326171875, -2952.96630859375, -2956.689208984375, -2949.5947265625, -2950.063720703125, -2925.678466796875 }, y = { 91.80620574951172, 91.80626678466797, 91.80620574951172, 94.418701171875, 94.41859436035156, 91.80626678466797 }, z = { -704.13720703125, -703.6069946289063, -713.2991943359375, -717.70849609375, -722.2648315429688, -708.7808837890625 }, x2 = { -2948.34326171875, -2954.46630859375, -2955.189208984375, -2948.0947265625, -2948.563720703125, -2924.178466796875 }, z2 = { 705.63720703125, -705.1069946289063, -711.7991943359375, -716.20849609375, -720.7648315429688, -707.2808837890625 }, x3 = { 0, 0, -2958.189208984375, -2951.0947265625, -2951.563720703125, -2927.178466796875}, z3 = { -702.63720703125, -702.1069946289063, 0, 0, 0, 0 } },
+            --namek_cartoon = { x = { -2946.84326171875, -2952.96630859375, -2956.689208984375, -2949.5947265625, -2950.063720703125, -2925.678466796875 }, y = { 91.80620574951172, 91.80626678466797, 91.80620574951172, 94.418701171875, 94.41859436035156, 91.80626678466797 }, z = { -704.13720703125, -703.6069946289063, -713.2991943359375, -717.70849609375, -722.2648315429688, -708.7808837890625 }, x2 = { -2948.34326171875, -2954.46630859375, -2955.189208984375, -2948.0947265625, -2948.563720703125, -2924.178466796875 }, z2 = { 705.63720703125, -705.1069946289063, -711.7991943359375, -716.20849609375, -720.7648315429688, -707.2808837890625 }, x3 = { 0, 0, -2958.189208984375, -2951.0947265625, -2951.563720703125, -2927.178466796875}, z3 = { -702.63720703125, -702.1069946289063, 0, 0, 0, 0 } },
             aot = { x = { -3017.777587890625, -3031.092529296875, -3007.949462890625, -3015.591552734375, -3025.455810546875, -3002.1298828125 }, y = { 33.741798400878909, 33.741798400878909, 33.741798400878909, 38.415435791015628, 38.415523529052737, 33.741798400878909 }, z = { -685.0457153320313, -680.9754638671875, -689.5368041992188, -689.7804565429688, -677.5512084960938, -689.7681884765625 }, x2 = { -3016.277587890625, -3029.592529296875, -3009.449462890625, -3014.091552734375, -3023.955810546875, -3003.6298828125 }, z2 = { -683.5457153320313, -679.4754638671875, -691.0368041992188, -688.2804565429688, -676.0512084960938, -691.2681884765625 }, x3 = { -3019.277587890625, -3032.592529296875, 0, -3017.091552734375, -3026.955810546875, 0}, z3 = { 0, 0, -688.0368041992188, 0, 0, -688.2681884765625 } },
             aot_raid = { x = { -3017.777587890625, -3031.092529296875, -3007.949462890625, -3015.591552734375, -3025.455810546875, -3002.1298828125 }, y = { 33.741798400878909, 33.741798400878909, 33.741798400878909, 38.415435791015628, 38.415523529052737, 33.741798400878909 }, z = { -685.0457153320313, -680.9754638671875, -689.5368041992188, -689.7804565429688, -677.5512084960938, -689.7681884765625 }, x2 = { -3016.277587890625, -3029.592529296875, -3009.449462890625, -3014.091552734375, -3023.955810546875, -3003.6298828125 }, z2 = { -683.5457153320313, -679.4754638671875, -691.0368041992188, -688.2804565429688, -676.0512084960938, -691.2681884765625 }, x3 = { -3019.277587890625, -3032.592529296875, 0, -3017.091552734375, -3026.955810546875, 0}, z3 = { 0, 0, -688.0368041992188, 0, 0, -688.2681884765625 } },
             demonslayer = { x = { -2876.974365234375, -2866.85400390625, -2885.764404296875, -2878.218017578125, -2872.7646484375, -2863.0634765625 }, y = { 34.34697723388672, 34.34697723388672, 34.34697723388672, 40.14086151123047, 37.249019622802737, 34.34697723388672 }, z = { -141.95619201660157, -129.80557250976563, -136.89683532714845, -123.6778335571289, -150.0395050048828, -139.5249481201172 }, x2 = { -2875.474365234375, -2868.35400390625, -2884.264404296875, -2876.718017578125, -2871.2646484375, -2861.5634765625  }, z2 = { -140.45619201660157, -131.30557250976563, -135.39683532714845, -122.1778335571289, -148.5395050048828, -138.0249481201172  }, x3 = { -2878.474365234375, 0, -2887.264404296875, -2879.718017578125, -2874.2646484375, -2864.5634765625 }, z3 = { 0, 128.30557250976563, 0, 0, 0, 0 } },
@@ -1686,17 +1711,17 @@ local function unitconfig()
             Settings.AutoFarm = false
             Settings.unitconfig = bool
             saveSettings()
-            loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures.lua'))()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Peerapatllo/AA/main/AA.lua'))()
         elseif Settings.AutoUpgrade == true then
             Settings.AutoUpgrade = false
             Settings.unitconfig = bool
             saveSettings()
-            loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures.lua'))()
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Peerapatllo/AA/main/AA.lua'))()
         elseif Settings.AutoFarm == true then
             Settings.AutoFarm = false
             Settings.unitconfig = bool
             saveSettings()
-            loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures.lua'))()   
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/Peerapatllo/AA/main/AA.lua'))()   
             else
                 Settings.unitconfig = bool
                 saveSettings()
