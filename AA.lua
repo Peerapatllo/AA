@@ -44,6 +44,10 @@ function saveSettings()
     Settings.AutoSell = true
     Settings.AutoUpgrade = true
     Settings.AutoSellWave = 25
+    Settings.WorldCategory = "Story Worlds"
+    Settings.SelectedLevel = "namek_infinite"
+    Settings.Difficulty = "Hard"
+    Settings.SelectedWorld = "Planet Namak"
 
     writefile(fN .. '/' .. pN, HttpService:JSONEncode(Settings))
     Settings = ReadSetting()
