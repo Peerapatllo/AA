@@ -323,7 +323,7 @@ function webhook()
                         ["fields"] = {
                             {
                                 ["name"] ="Info :",
-                                ["value"] = "```ini\n"..tostring(game.Players.LocalPlayer.PlayerGui.spawn_units.Lives.Main.Desc.Level.Text)..  " ✨\nGems : "..tostring(comma_value(game.Players.LocalPlayer._stats.gem_amount.Value)).. " <:gems:1118956171995381850>\nGold : "  ..tostring(comma_value(game.Players.LocalPlayer._stats.gold_amount.Value))..  " 💰```",
+                                ["value"] = "```ini\n"..tostring(game.Players.LocalPlayer.PlayerGui.spawn_units.Lives.Main.Desc.Level.Text)..  " ✨\nGems : "..tostring(comma_value(game.Players.LocalPlayer._stats.gem_amount.Value)).. " 💎\nGold : "  ..tostring(comma_value(game.Players.LocalPlayer._stats.gold_amount.Value))..  " 💰```",
                             },
                             {
                                 ["name"] ="Results :",
