@@ -23,7 +23,6 @@ function saveSettings()
     Settings.WebhookUrl = "https://discordapp.com/api/webhooks/1005360084781637683/qvJxT1Oaddc-Jkp1K5WGE_JiHBXE7LOnlnU-qzypuKWVNx65dF4gv9quAx0bgkqWW3xM"
     Settings.GemsWebhookUrl = "https://discordapp.com/api/webhooks/1055442033357094963/xb3JQJRgauCLwzIdFtad7JEN05mxZ4p1CGQiKGvl9iwTrgIkeaclryUjMI13qze5mMLH"
     Settings.isFriendOnly = true
-    Settings.AutoSaveUnit = true
     Settings.AutoFarm = true
     Settings.WebhookEnabled = true
     Settings.GemsWebhookEnabled = true
@@ -31,72 +30,20 @@ function saveSettings()
     Settings.AutoSell = true
     Settings.AutoUpgrade = true
     Settings.AutoSellWave = 25
+    Settings.deletemap = true
+    Settings.placeany = true
     Settings.WorldCategory = "Story Worlds"
     Settings.SelectedLevel = "namek_infinite"
     Settings.Difficulty = "Hard"
     Settings.SelectedWorld = "Planet Namak"
 
     Settings.namek = {
-        UP1 = {
-            x = -2948.29931640625,
-            z = -700.3585205078125,
-            y = 91.80620574951172,
-            y2 = 91.80620574951172,
-            y3 = 91.80620574951172,
-            y4 = 91.80626678466797,
-            y5 = 91.80620574951172,
-            y6 = 91.80626678466797
-        },
-        UP2 = {
-            x = -2950.29931640625,
-            z = -702.3585205078125,
-            y = 91.80620574951172,
-            y2 = 91.80620574951172,
-            y3 = 91.80620574951172,
-            y4 = 91.80626678466797,
-            y5 = 91.80620574951172,
-            y6 = 91.80626678466797
-        },
-        UP3 = {
-            x = -2958.885498046875,
-            z = -696.0433349609375,
-            y = 94.53215789794922,
-            y2 = 94.53215789794922,
-            y3 = 94.53208923339844,
-            y4 = 94.53215789794922,
-            y5 = 94.53208923339844,
-            y6 = 94.5322265625
-        },
-        UP4 = {
-            x = -2957.885498046875,
-            z = -694.0433349609375,
-            y = 94.53215789794922,
-            y2 = 94.53215789794922,
-            y3 = 94.53208923339844,
-            y4 = 94.53215789794922,
-            y5 = 94.53208923339844,
-            y6 = 94.5322265625
-        },
-        UP5 = {
-            x = -2945.29931640625,
-            z = -701.3585205078125,
-            y = 91.80620574951172,
-            y2 = 91.80620574951172,
-            y3 = 91.80620574951172,
-            y4 = 91.80626678466797,
-            y5 = 91.80620574951172,
-            y6 = 91.80626678466797
-        },
-        UP6 = {
-            x = -2951.29931640625,
-            z = -698.3585205078125,
-            y = 91.80620574951172,
-            y2 = 91.80620574951172,
-            y3 = 91.80620574951172,
-            y4 = 91.80626678466797,
-            y5 = 91.80620574951172,
-            y6 = 91.80626678466797
-        }
+        UP1 = {x = -2946.871337890625,z = -700.5772094726563,y = 91.80614471435547,y2 = 91.80614471435547,y3 = 91.80614471435547,y4 = 91.80614471435547,y5 = 91.80614471435547,y6 = 91.80614471435547},
+        UP2 = {x = -2951.301025390625,z = -699.6460571289063,y = 91.80620574951172,y2 = 91.80620574951172,y3 = 91.80620574951172,y4 = 91.80620574951172,y5 = 91.80620574951172,y6 = 91.80620574951172},
+        UP3 = {x = -2959.631591796875,z = -696.0673828125,y = 94.5322265625,y2 = 94.5322265625,y3 = 94.5322265625,y4 = 94.5322265625,y5 = 94.5322265625,y6 = 94.5322265625},
+        UP4 = {x = -2960.55126953125,z = -699.10693359375,y = 94.5322265625,y2 = 94.5322265625,y3 = 94.5322265625,y4 = 94.5322265625,y5 = 94.5322265625,y6 = 94.5322265625,},
+        UP5 = {x = -2942.699951171875,z = -696.2283935546875,y = 91.80620574951172,y2 = 91.80620574951172,y3 = 91.80620574951172,y4 = 91.80620574951172,y5 = 91.80620574951172,y6 = 91.80620574951172},
+        UP6 = {x = -2950.934326171875,z = -697.9478149414063,y = 91.80626678466797,y2 = 91.80626678466797,y3 = 91.80626678466797,y4 = 91.80626678466797,y5 = 91.80626678466797,y6 = 91.80626678466797}
     }
 
     writefile(a .. '/' .. b, HttpService:JSONEncode(Settings))
@@ -222,17 +169,16 @@ end;
 getgenv().item = "-"
 plr.PlayerGui:FindFirstChild("HatchInfo"):FindFirstChild("holder"):FindFirstChild("info1"):FindFirstChild("UnitName").Text = getgenv().item
 function webhook()
-    if Settings.WebhookEnabled then
+
     local url = Settings.WebhookUrl
     print("webhook?")
     if url == "" then
-        warn("Webhook Url is empty!")
-        return
+    warn("Webhook Url is empty!")
+    return
     end 
-    
+
+    local thumbnails_avatar = HttpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. game:GetService("Players").LocalPlayer.UserId .. "&size=150x150&format=Png&isCircular=true", true))
     local Time = os.date('!*t', OSTime);
-	local thumbnails_avatar = HttpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. game:GetService("Players").LocalPlayer.UserId .. "&size=150x150&format=Png&isCircular=true", true))
-    local exec = tostring(identifyexecutor())
     userlevel = plr.PlayerGui:FindFirstChild("spawn_units"):FindFirstChild("Lives"):FindFirstChild("Main"):FindFirstChild("Desc"):FindFirstChild("Level").Text
     totalgems = plr.PlayerGui:FindFirstChild("spawn_units"):FindFirstChild("Lives"):FindFirstChild("Frame"):FindFirstChild("Resource"):FindFirstChild("Gem"):FindFirstChild("Level").Text
     
@@ -243,16 +189,6 @@ function webhook()
     if result == "VICTORY" then result = "VICTORY" end
     if result == "DEFEAT" then result = "DEFEAT" end
     
-    _map = game:GetService("Workspace")["_BASES"].player.base["fake_unit"]:WaitForChild("HumanoidRootPart")
-    GetLevelData = game.workspace._MAP_CONFIG:WaitForChild("GetLevelData"):InvokeServer()
-    world = GetLevelData.world or GetLevelData.name
-    mapname = game:GetService("Workspace")._MAP_CONFIG.GetLevelData:InvokeServer()["name"]
-    cwaves = game:GetService("Players").LocalPlayer.PlayerGui.ResultsUI.Holder.Middle.WavesCompleted.Text
-	ctime = game:GetService("Players").LocalPlayer.PlayerGui.ResultsUI.Holder.Middle.Timer.Text
-    waves = cwaves:split(": ")
-    if waves ~= nil and waves[2] == "999" then waves[2] = "Use [Auto Leave at Wave] or [Test Webhook]" end	
-	ttime = ctime:split(": ")
-    if waves ~= nil and ttime[2] == "22:55" then ttime[2] = "Use [Auto Leave at Wave] or [Test Webhook]" end	
     gold = ResultHolder:FindFirstChild("LevelRewards"):FindFirstChild("ScrollingFrame"):FindFirstChild("GoldReward"):FindFirstChild("Main"):FindFirstChild("Amount").Text
     if gold == "+99999" then gold = "+0" end	 
     gems = ResultHolder:FindFirstChild("LevelRewards"):FindFirstChild("ScrollingFrame"):FindFirstChild("GemReward"):FindFirstChild("Main"):FindFirstChild("Amount").Text
@@ -265,7 +201,7 @@ function webhook()
     
     totaltime =  ResultHolder:FindFirstChild("Middle"):FindFirstChild("Timer").Text
     totalwaves = ResultHolder:FindFirstChild("Middle"):FindFirstChild("WavesCompleted").Text
-      
+
     local TextDropLabel = ""
 
     for i,v in pairs(get_inventory_items()) do
@@ -288,7 +224,7 @@ function webhook()
 			if v['Count Shiny'] and v['Count'] then
 				if v['Count'] > 0 or v['Count Shiny'] > 0 then
 					if v['Count'] > 0 and (v['Count'] - Table_All_Items_Old_data[i]['Count']) > 0 then
-						TextDropLabel = TextDropLabel .. "- " .. tostring(v['Name']) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count'])
+						TextDropLabel = TextDropLabel .. "<a:Dot:923905792162275368> " .. tostring(v['Name']) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count'])
 						if v['Count Shiny'] > 0 and (v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) > 0 then
 							TextDropLabel = TextDropLabel .. " | " .. tostring(v['Name']) .. " (Shiny) x" .. tostring(v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) .. "\n"
 
@@ -300,7 +236,7 @@ function webhook()
 				end
 			end
 		elseif v['Count Shiny'] and v['Count Shiny'] > 0 and (v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) > 0 then
-			TextDropLabel = TextDropLabel .. "- " .. tostring(v['Name']) .. " (Shiny) x" .. tostring(v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) .. "\n"
+			TextDropLabel = TextDropLabel .. "<a:Dot:923905792162275368> " .. tostring(v['Name']) .. " (Shiny) x" .. tostring(v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) .. "\n"
 
 		end
 	end
@@ -310,21 +246,21 @@ function webhook()
 			elseif string.find(i,"portal") or string.find(i,"disc") then
 				Count_Portal_list = Count_Portal_list + 1
 			if string.gsub(i, "%D", "") == "" then
-					TextDropLabel = TextDropLabel .. "- " .. tostring(v['Name']) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
+					TextDropLabel = TextDropLabel .. "<a:Dot:923905792162275368> " .. tostring(v['Name']) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
 			else
-					TextDropLabel = TextDropLabel .. "- " .. tostring(v['Name']) .. " Tier " .. tostring(string.gsub(i, "%D", "")) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
+					TextDropLabel = TextDropLabel .. "<a:Dot:923905792162275368> " .. tostring(v['Name']) .. " Tier " .. tostring(string.gsub(i, "%D", "")) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
                 end
 
 			else
-				TextDropLabel = TextDropLabel .. "- " .. tostring(v['Name']) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
+				TextDropLabel = TextDropLabel .. "<a:Dot:923905792162275368> " .. tostring(v['Name']) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
 
 		    end
 		end
 	end
 	if TextDropLabel == "" then
-		TextDropLabel = "-"
+		TextDropLabel = "<a:Dot:923905792162275368>"
 	end
-
+    
     cwaves = game:GetService("Players").LocalPlayer.PlayerGui.ResultsUI.Holder.Middle.WavesCompleted.Text
 	ctime = game:GetService("Players").LocalPlayer.PlayerGui.ResultsUI.Holder.Middle.Timer.Text
 	if cwaves == ("Waves Completed: 999") then
@@ -349,29 +285,27 @@ function webhook()
     
     local data = {
         ["content"] ="",
-        ["username"] = "INDYBUX BOT",
-        ["avatar_url"] = "https://sv1.picz.in.th/images/2022/12/26/JtcDsz.png",
         ["embeds"] = {
          {
           ["thumbnail"] = {
             ['url'] = thumbnails_avatar.data[1].imageUrl,
             },
-          ["description"] = "**Name: **||"..namegame.." ("..display..")".."|| :child_tone1: \n- "..lv.." :magic_wand: \n- Gem "..ttgems.." / " ..Settings.GemsLimit.." <:Gems:1118956171995381850>" ,
+            ["description"] = "# <a:load:938430201984065577>__กำลังฟาร์มอยู่จร้า__<a:load:938430201984065577> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:923905792162275368> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:923905792162275368> Gem "..ttgems.." / " ..Settings.GemsLimit.." <:Gems:1118956171995381850>",
           ["author"] = {
-                ["name"] = "INDYBUX Service",
+                ["name"] = "ข้อมูลการฟาร์ม ร้าน INDYBUX",
                 ["icon_url"] = "https://sv1.picz.in.th/images/2022/12/26/JtcDsz.png"
             },
           ["color"] = 10181046,
           ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
           ["fields"] = {
              {
-				["name"] = ":bar_chart: Game Stats :bar_chart:",
+				["name"] = "<a:stockup:1123197731876393010> Game Stats <a:stockup:1123197731876393010>",
 				["value"] = 
-                "Map: "..levelname.." - "..maplv.." ("..result..") :world_map: \nTotal Wave: "..tostring(waves[2]).." :ocean: \nTime: "..tostring(ttime[2]).." :alarm_clock: \nGem: "..gems.." <:Gems:1118956171995381850> \nXP: "..xp[1].." :magic_wand:",
+                "<a:Dot:923905792162275368> Map: "..levelname.." - "..maplv.." ("..result..") <a:globe27:1123178565278629978> \n<a:Dot:923905792162275368> Total Wave: "..tostring(waves[2]).." <a:qfcwaves:1123178559360479242> \n<a:Dot:923905792162275368> Time: "..tostring(ttime[2]).." <a:alarmclock51:1123178554084048896> \n<a:Dot:923905792162275368> Gem: "..gems.." <:Gems:1118956171995381850> \n<a:Dot:923905792162275368> XP: "..xp[1].." <a:exp:1123178548966989845>",
 				["inline"] = false
              },
              {
-                ["name"] =":palm_down_hand_tone1: Item Rewards :palm_down_hand_tone1:",
+                ["name"] ="<a:RightHand:925229679286288415> Item Rewards <a:RightHand:925229679286288415>",
                 ["value"] = "\n" .. TextDropLabel .. "",
                 ["inline"] = false 
              }
@@ -383,7 +317,6 @@ function webhook()
       }
     }
     }
-        
     
     local xd = game:GetService("HttpService"):JSONEncode(data)
     
@@ -392,7 +325,7 @@ function webhook()
     local sex = {Url = url, Body = xd, Method = "POST", Headers = headers}
     warn("Sending webhook notification...")
     request(sex)
-end
+
 end
 function GemsWebhook()
     if Settings.GemsWebhookEnabled then
@@ -402,7 +335,7 @@ function GemsWebhook()
         warn("GemsWebhook Url is empty!")
         return
     end 
-		
+
         local Time = os.date('!*t', OSTime);
 	    local thumbnails_avatar = HttpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. game:GetService("Players").LocalPlayer.UserId .. "&size=150x150&format=Png&isCircular=true", true))
         local exec = tostring(identifyexecutor())
@@ -412,7 +345,8 @@ function GemsWebhook()
         ttgems = tostring(game.Players.LocalPlayer._stats.gem_amount.Value)
         lv = tostring(game.Players.LocalPlayer.PlayerGui.spawn_units.Lives.Main.Desc.Level.Text)
         
-		local data = {
+    
+        local data = {
             ["content"] = "",
                 ["username"] = "INDYBUX BOT",
                 ["avatar_url"] = "https://sv1.picz.in.th/images/2022/12/26/JtcDsz.png",
@@ -425,7 +359,7 @@ function GemsWebhook()
                         ["thumbnail"] = {
                             ['url'] = thumbnails_avatar.data[1].imageUrl,
                         },
-                        ["description"] = "# ฟาร์มเสร็จแล้วจร้า \n**Name: **||"..namegame.." ("..display..")".."|| :child_tone1: \n- "..lv.." :magic_wand: \n- Gem "..ttgems.." / " ..Settings.GemsLimit.." <:Gems:1118956171995381850> \n- ให้เครดิตร้าน <#1055871056843374632>" ,
+                        ["description"] = "# <a:giveaway2:925229766506840134>__ฟาร์มเสร็จแล้วจร้า__<a:giveaway2:925229766506840134> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:923905792162275368> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:923905792162275368> Gem "..ttgems.." / " ..Settings.GemsLimit.." <:Gems:1118956171995381850> \n<a:Dot:923905792162275368> ให้เครดิตร้าน <#1055871056843374632> <a:green2:909437186980606044>" ,
                         ["color"] = 10181046,
                         ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
                         ["image"] = {
