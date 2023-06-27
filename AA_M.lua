@@ -285,6 +285,8 @@ function webhook()
     
     local data = {
         ["content"] ="",
+        ["username"] = "INDYBUX BOT",
+        ["avatar_url"] = "https://sv1.picz.in.th/images/2022/12/26/JtcDsz.png",
         ["embeds"] = {
          {
           ["thumbnail"] = {
