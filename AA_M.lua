@@ -1,6 +1,7 @@
 --Beta updatefix
 local version = "v2.0.0b31"
 ---// Loading Section \\---
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/Lowcpu.lua"))()
 repeat  task.wait() until game:IsLoaded()
 if game.PlaceId == 8304191830 then
     repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
