@@ -31,7 +31,7 @@ def send_to_webhook(webhook_url, cpu_usage, ram_usage, gpu_temperature, gpu_usag
         #"title": "<a:stockup:1123197731876393010> System Info <a:stockup:1123197731876393010>",
         "color": 10181046,
         #"timestamp": timestamp,
-        "description": f"# System Info\nCPU Usage: {cpu_usage}%\nRAM Usage: {ram_usage}%\nGPU Temperature: {gpu_temperature}°C\nGPU Usage: {gpu_usage}%\nOnline Time: {online_time}",
+        #"description": f"# System Info\nCPU Usage: {cpu_usage}%\nRAM Usage: {ram_usage}%\nGPU Temperature: {gpu_temperature}°C\nGPU Usage: {gpu_usage}%\nOnline Time: {online_time}",
         "description": f"# <a:stockup:1123197731876393010> System Info <a:stockup:1123197731876393010>\n<a:Dot:923905792162275368> **CPU Usage :** {cpu_usage}% <:cpu:1064222851583979613>\n<a:Dot:923905792162275368> **RAM Usage :** {ram_usage}% <:memory:1064237280358826104>\n<a:Dot:923905792162275368> **GPU Usage :** {gpu_usage}% <:gpu:1124711907283181760>\n<a:Dot:923905792162275368> **GPU °C :** {gpu_temperature}°C <:tmt:1124711903390863381>\n<a:Dot:923905792162275368> **Time :** {online_time} <a:alarmclock51:1123178554084048896>",
         "image": {
             "url": "attachment://screenshot.png"
