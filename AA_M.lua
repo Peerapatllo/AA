@@ -1029,7 +1029,7 @@ local function WorldSec()
                 if game.Players.LocalPlayer._stats.gem_amount.Value >= Settings.GemsLimit then
                     GemsWebhook()
                     wait(3)
-                    plr:Kick("Farm Finish")
+                    plr:Kick("Farm Finishssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss")
                 end
             end
         end)
