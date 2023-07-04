@@ -1029,7 +1029,14 @@ local function WorldSec()
                 if game.Players.LocalPlayer._stats.gem_amount.Value >= Settings.GemsLimit then
                     GemsWebhook()
                     wait(3)
-                    plr:Kick("🟢====================🟢 🟢========INDY=======🟢 🟢========BUX=======🟢 🟢========FARM=======🟢 🟢=========LET========🟢 🟢=========EASY========🟢 🟢=====================🟢")
+                    Settings.autostart = false
+                    saveSettings()
+                    warn("Turn off Autostart")
+                    wait(2)
+                    game:GetService("TeleportService"):Teleport(8304191830, game.Players.LocalPlayer)
+                    Teleport()
+                    print("Returning to lobby...")
+                    --plr:Kick("🟢====================🟢 🟢========INDY=======🟢 🟢========BUX=======🟢 🟢========FARM=======🟢 🟢=========LET========🟢 🟢=========EASY========🟢 🟢=====================🟢")
                 end
             end
         end)
