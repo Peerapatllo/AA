@@ -1041,6 +1041,14 @@ local function WorldSec()
             end
         end)
     end)
+    SelectWorld:Cheat("Button", "Redeem All Code", function()
+        print(Settings.redeemc)
+        Reedemcode()
+    end)
+    SelectWorld:Cheat("Button", "Leave To Lobby", function()
+        warn("Return to Lobby")
+        Teleport()
+    end)
 end
 ----------------------------------------------
 ---------------- AutoFarm Config -------------
@@ -5641,8 +5649,8 @@ function placeunittwin()
     end
 --ReedemCode
 function Reedemcode()
-    codes = {"TWOMILLION","subtomaokuma","CHALLENGEFIX","GINYUFIX","RELEASE","SubToKelvingts","SubToBlamspot","KingLuffy","TOADBOIGAMING","noclypso","FictioNTheFirst","GOLDENSHUTDOWN","GOLDEN"
-    ,"SINS2","subtosnowrbx","Cxrsed","subtomaokuma","VIGILANTE","HAPPYEASTER","ENTERTAINMENT","DRESSROSA","BILLION","MADOKA","AINCRAD"}
+    codes = {"subtomaokuma","SubToKelvingts","SubToBlamspot","KingLuffy","TOADBOIGAMING","noclypso","FictioNTheFirst","subtosnowrbx","Cxrsed","subtomaokuma","BILLION","MADOKA"
+    ,"AINCRAD","TOURNAMENTUIFIX"}
         for _, v in pairs(codes) do
         pcall(function() game:GetService("ReplicatedStorage").endpoints["client_to_server"]["redeem_code"]:InvokeServer(v)()    end)
     end
