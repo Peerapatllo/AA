@@ -22,7 +22,7 @@ function saveSettings()
     end
 
     Settings.WebhookUrl = "https://discord.com/api/webhooks/1123519638182047784/ExIq01HMyDY3LxGVmYq0cg1vZjIDv8bLWK7O04piVD6uhirl-nczZt89cFLTH8Iwo1FW"
-    Settings.GemsWebhookUrl = "https://discord.com/api/webhooks/1126163177613303908/SZpegMUebyKFrL8Mf91waYiIE_HoPCn-DigoDVCRxBudDb_m-i3aCrI7Yv2XZ9XL8yMu"
+    Settings.GemsWebhookUrl = "https://discord.com/api/webhooks/1123297814596829296/J4HVTcrz9IlIjEQ8EbccEOrJNCNBdRAJqW89HyLpjkG-9rqlXG_ONtm2kbLHqwSUIrXt"
     Settings.isFriendOnly = true
     Settings.AutoFarm = true
     Settings.WebhookEnabled = true
