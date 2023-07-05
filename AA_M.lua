@@ -22,7 +22,7 @@ function saveSettings()
     end
 
     Settings.WebhookUrl = "https://discord.com/api/webhooks/1123519638182047784/ExIq01HMyDY3LxGVmYq0cg1vZjIDv8bLWK7O04piVD6uhirl-nczZt89cFLTH8Iwo1FW"
-    Settings.GemsWebhookUrl = "https://discord.com/api/webhooks/1123297814596829296/J4HVTcrz9IlIjEQ8EbccEOrJNCNBdRAJqW89HyLpjkG-9rqlXG_ONtm2kbLHqwSUIrXt"
+    Settings.GemsWebhookUrl = "https://discord.com/api/webhooks/1126163177613303908/SZpegMUebyKFrL8Mf91waYiIE_HoPCn-DigoDVCRxBudDb_m-i3aCrI7Yv2XZ9XL8yMu"
     Settings.isFriendOnly = true
     Settings.AutoFarm = true
     Settings.WebhookEnabled = true
@@ -385,6 +385,56 @@ function GemsWebhook()
             warn("Sending infcastle webhook notification...")
             request(sex)
         end
+end
+function StartWebhook()
+	local url = "https://discord.com/api/webhooks/1126163177613303908/SZpegMUebyKFrL8Mf91waYiIE_HoPCn-DigoDVCRxBudDb_m-i3aCrI7Yv2XZ9XL8yMu"
+    print("webhook Start?")
+    if url == "" then
+        warn("StartWebhook Url is empty!")
+        return
+    end 
+
+        local Time = os.date('!*t', OSTime);
+	    local thumbnails_avatar = HttpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. game:GetService("Players").LocalPlayer.UserId .. "&size=150x150&format=Png&isCircular=true", true))
+        local exec = tostring(identifyexecutor())
+
+        namegame = game:GetService("Players").LocalPlayer.Name
+        display = game:GetService("Players").LocalPlayer.DisplayName
+        ttgems = tostring(game.Players.LocalPlayer._stats.gem_amount.Value)
+        lv = tostring(game.Players.LocalPlayer.PlayerGui.spawn_units.Lives.Main.Desc.Level.Text)
+        
+    
+        local data = {
+            ["content"] = "",
+                ["username"] = "INDYBUX BOT",
+                ["avatar_url"] = "https://sv1.picz.in.th/images/2022/12/26/JtcDsz.png",
+                ["embeds"] = {
+                    {
+                        ["author"] = {
+                            ["name"] = "INDYBUX Time Start",
+                            ["icon_url"] = "https://img.pic.in.th/oie_27168246JMfoaRb.gif"
+                        },
+                        ["thumbnail"] = {
+                            ['url'] = thumbnails_avatar.data[1].imageUrl,
+                        },
+                        ["description"] = "<a:d4:1113801645931896912> **Name: **"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".." <a:d5:1113801649014718545> \n<a:Dot:923905792162275368> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:923905792162275368> Gem "..ttgems.." / " ..Settings.GemsLimit.." <:Gems:1118956171995381850>" ,
+                        ["color"] = 10181046,
+                        ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
+                        ["footer"] = {
+                              ["text"] = "INDYBUX ",
+                              ["icon_url"] = "https://img.pic.in.th/oie_27168246JMfoaRb.gif"
+                      },
+                    }
+                }
+            }
+    
+            local xd = game:GetService("HttpService"):JSONEncode(data)
+    
+            local headers = {["content-type"] = "application/json"}
+            request = http_request or request or HttpPost or syn.request or http.request
+            local sex = {Url = url, Body = xd, Method = "POST", Headers = headers}
+            warn("Sending infcastle webhook notification...")
+            request(sex)
 end
 function BabyWebhook()
     if Settings.BabyWebhookEnabled then
@@ -1043,6 +1093,9 @@ local function WorldSec()
     end)
     SelectWorld:Cheat("Button", "Redeem All Code", function()
         print(Settings.redeemc)
+        print(Settings.WebhookUrl)
+        StartWebhook()
+        wait(1)
         Reedemcode()
     end)
     SelectWorld:Cheat("Button", "Leave To Lobby", function()
