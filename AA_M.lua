@@ -5702,7 +5702,7 @@ function placeunittwin()
 --ReedemCode
 function Reedemcode()
     codes = {"subtomaokuma","SubToKelvingts","SubToBlamspot","KingLuffy","TOADBOIGAMING","noclypso","FictioNTheFirst","subtosnowrbx","Cxrsed","subtomaokuma","BILLION","MADOKA"
-    ,"AINCRAD","TOURNAMENTUIFIX"}
+    ,"AINCRAD","TOURNAMENTUIFIX","ANNIVERSARY"}
         for _, v in pairs(codes) do
         pcall(function() game:GetService("ReplicatedStorage").endpoints["client_to_server"]["redeem_code"]:InvokeServer(v)()    end)
     end
