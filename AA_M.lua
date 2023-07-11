@@ -5664,6 +5664,21 @@ if Settings.autoDailyquest then
     autoDailyquest()
 end
 
+-- Start of Check Connection
+function checkInterNet()
+    warn("Auto Reconnect Loaded")
+    while task.wait(5) do
+        game.CoreGui.RobloxPromptGui.promptOverlay.ChildAdded:Connect(function(a)
+            if a.Name == 'ErrorPrompt' then
+                task.wait(10)
+                warn("Trying to Reconnect")
+                TPReturner()
+            end
+        end)
+    end
+end
+-- End of Check Connection
+
 -- added by craymel02
 function escanorIR()
     if Settings.escanorIR == nil then
@@ -5737,3 +5752,11 @@ warn("Hider Name Loaded!!!")
 warn("AA v2 Loaded!!!")
 warn("All Loaded !!!")
 escanorIR() -- added by craymel02
+
+if game.PlaceId == 8304191830 then
+    repeat task.wait(0.5) until Workspace:WaitForChild(game.Players.LocalPlayer.Name)
+    checkInterNet()
+elseif game.PlaceId ~= 8304191830 then
+    repeat task.wait(0.5) until Workspace:WaitForChild("_terrain")
+    checkInterNet()
+end
