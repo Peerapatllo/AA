@@ -1,5 +1,6 @@
 --updatefix
 local version = "v2.0.0b31"
+
 ---// Loading Section \\---
 repeat  task.wait() until game:IsLoaded()
 if game.PlaceId == 8304191830 then
@@ -23,7 +24,6 @@ function saveSettings()
 
     Settings.WebhookUrl = "https://discord.com/api/webhooks/1123519638182047784/ExIq01HMyDY3LxGVmYq0cg1vZjIDv8bLWK7O04piVD6uhirl-nczZt89cFLTH8Iwo1FW"
     Settings.GemsWebhookUrl = "https://discord.com/api/webhooks/1123297814596829296/J4HVTcrz9IlIjEQ8EbccEOrJNCNBdRAJqW89HyLpjkG-9rqlXG_ONtm2kbLHqwSUIrXt"
-    Settings.lowCpuMode = true
     Settings.isFriendOnly = true
     Settings.AutoFarm = true
     Settings.AutoSaveUnit = true
@@ -2846,9 +2846,11 @@ local function LowCPUModeT()
     task.spawn(function()
         while task.wait() do
             if isrbxactive() ~= true and Settings.lowCpuMode then
-                setfpscap(5)
+                setfpscap(30)
+                game:GetService("RunService"):Set3dRenderingEnabled(false)
             else
-                setfpscap(5)
+                setfpscap(1000)
+                game:GetService("RunService"):Set3dRenderingEnabled(true)
             end
         end
     end)
