@@ -2834,14 +2834,14 @@ end
 ---------------------------------------------
 -------------- LOWW CPU Config --------------
 ---------------------------------------------
---[[ กาก
+
 local function LowCPUModeT()
     LowCPU2:Cheat("Checkbox","Enable Low CPU Mode ", function(bool)
         print(bool)
         Settings.lowCpuMode = bool
         saveSettings()
     end,{enabled = Settings.lowCpuMode})
-    
+--[[ กาก
     task.spawn(function()
         while task.wait() do
             if isrbxactive() ~= true and Settings.lowCpuMode then
@@ -2850,9 +2850,8 @@ local function LowCPUModeT()
                 setfpscap(5)
             end
         end
-    end)
-    end
-]]--
+    end)]]--
+end
 ---------------------------------------------
 -------------- LAGGY Config -----------------
 ---------------------------------------------
