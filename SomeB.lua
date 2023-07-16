@@ -316,7 +316,7 @@ function webhook()
 				["inline"] = false
              },
              {
-                ["name"] ="<a:RightHand:925229679286288415> Item Rewards <a:RightHand:925229679286288415>",
+                ["name"] ="<a:fight:1129761802100682862> Item Rewards <a:fight:1129761802100682862>",
                 ["value"] = "\n" .. TextDropLabel .. "",
                 ["inline"] = false 
              }
