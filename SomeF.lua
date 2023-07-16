@@ -4098,12 +4098,9 @@ coroutine.resume(coroutine.create(function()
 				saveSettings()
 			end
 
-			if GameFinished.Value == true then
-				repeat
-					task.wait()
+            if GameFinished.Value == true then
+				repeat task.wait()
 				until game:GetService("Players").LocalPlayer.PlayerGui.ResultsUI.Enabled == true
-				pcall(function() webhook() end)
-				print("Wait next or leave")
 
 				ResultHolder = plr.PlayerGui:FindFirstChild("ResultsUI"):FindFirstChild("Holder")
 				gems = ResultHolder:FindFirstChild("LevelRewards"):FindFirstChild("ScrollingFrame"):FindFirstChild("GemReward"):FindFirstChild("Main"):FindFirstChild("Amount").Text
@@ -4116,6 +4113,9 @@ coroutine.resume(coroutine.create(function()
 				saveSettings()
 				print("Changed", GameFinished.Value == true)
 				task.wait(1.1)
+
+				pcall(function() webhook() end)
+				print("Wait next or leave")
 
             cata = Settings.WorldCategory; level = Settings.SelectedLevel;
             if Settings.AutoPickPortal and cata == "Portals"  then
