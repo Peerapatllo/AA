@@ -1,6 +1,5 @@
 --updatefix
 local version = "v2.0.0b31"
-
 ---// Loading Section \\---
 repeat  task.wait() until game:IsLoaded()
 if game.PlaceId == 8304191830 then
@@ -11,7 +10,6 @@ else
     game:GetService("ReplicatedStorage").endpoints.client_to_server.vote_start:InvokeServer()
     repeat task.wait() until game:GetService("Workspace")["_waves_started"].Value == true
 end
-
 ------------------------------
 local a = 'V2_Anime_Adventures' -- 
 local b = game:GetService('Players').LocalPlayer.Name .. '_AnimeAdventures.json' 
@@ -2846,11 +2844,9 @@ local function LowCPUModeT()
     task.spawn(function()
         while task.wait() do
             if isrbxactive() ~= true and Settings.lowCpuMode then
-                setfpscap(30)
-                game:GetService("RunService"):Set3dRenderingEnabled(false)
+                setfpscap(5)
             else
-                setfpscap(1000)
-                game:GetService("RunService"):Set3dRenderingEnabled(true)
+                setfpscap(5)
             end
         end
     end)
