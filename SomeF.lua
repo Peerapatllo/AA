@@ -1,13 +1,10 @@
 --updatefix
 local version = "v2.0.0b31"
-
 ---// Loading Section \\---
 repeat  task.wait() until game:IsLoaded()
 if game.PlaceId == 8304191830 then
     repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
     repeat task.wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("collection"):FindFirstChild("grid"):FindFirstChild("List"):FindFirstChild("Outer"):FindFirstChild("UnitFrames")
-    repeat task.wait() until game.ReplicatedStorage.packages:FindFirstChild("assets")
-    repeat task.wait() until game.ReplicatedStorage.packages:FindFirstChild("StarterGui")
 else
     repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
     game:GetService("ReplicatedStorage").endpoints.client_to_server.vote_start:InvokeServer()
@@ -26,6 +23,7 @@ function saveSettings()
 
     Settings.WebhookUrl = "https://discord.com/api/webhooks/1123519638182047784/ExIq01HMyDY3LxGVmYq0cg1vZjIDv8bLWK7O04piVD6uhirl-nczZt89cFLTH8Iwo1FW"
     Settings.GemsWebhookUrl = "https://discord.com/api/webhooks/1123297814596829296/J4HVTcrz9IlIjEQ8EbccEOrJNCNBdRAJqW89HyLpjkG-9rqlXG_ONtm2kbLHqwSUIrXt"
+    Settings.lowCpuMode = true
     Settings.isFriendOnly = true
     Settings.AutoFarm = true
     Settings.AutoSaveUnit = true
@@ -2848,11 +2846,9 @@ local function LowCPUModeT()
     task.spawn(function()
         while task.wait() do
             if isrbxactive() ~= true and Settings.lowCpuMode then
-                setfpscap(30)
-                game:GetService("RunService"):Set3dRenderingEnabled(false)
+                setfpscap(5)
             else
-                setfpscap(1000)
-                game:GetService("RunService"):Set3dRenderingEnabled(true)
+                setfpscap(5)
             end
         end
     end)
