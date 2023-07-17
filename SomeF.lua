@@ -731,7 +731,7 @@ local function CheckGemAll()
 	if tonumber(Settings.GemFramed) >= tonumber(Settings.GemtoFarm) and tonumber(Settings.GemtoFarm) ~= 0 then
 		if not Settings.KiwwyKick then
             GemsWebhook()
-            wait(1.5)
+            wait(0.5)
 			Settings.autostart = false
 			Settings.AutoReplay = false
 			Settings.KiwwyKick = true
