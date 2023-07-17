@@ -731,12 +731,15 @@ local function CheckGemAll()
 	if tonumber(Settings.GemFramed) >= tonumber(Settings.GemtoFarm) and tonumber(Settings.GemtoFarm) ~= 0 then
 		if not Settings.KiwwyKick then
             GemsWebhook()
-            wait(0.5)
 			Settings.autostart = false
 			Settings.AutoReplay = false
 			Settings.KiwwyKick = true
 			saveSettings()
-			game.Players.LocalPlayer:Kick("Farm Success | INDY BUX")
+            delfile("V2_Anime_Adventures/" .. game.Players.LocalPlayer.Name .. "_AnimeAdventures.json")
+            print("Reset Setting")
+            game:GetService("TeleportService"):Teleport(8304191830, game.Players.LocalPlayer)
+            Teleport()
+            print("Returning to lobby...")
 		end
 		return " ✅"
 	elseif tonumber(Settings.GemtoFarm) == 0 then
