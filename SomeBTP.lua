@@ -766,7 +766,7 @@ local dir = "Anime_Adventures/"..game.Players.LocalPlayer.Name
 local Uilib = loadstring(game:HttpGet("https://raw.githubusercontent.com/ArponAG/Scripts/main/finitylib"))()
 local exec = tostring(identifyexecutor())
 --updatefix
-local Window = Uilib.new(true, "                         "..namegame.." ( "..display .." ) 👑 BTP 👑")
+local Window = Uilib.new(true, "                         "..namegame.." ( "..display .." ) 👑 BattlePass 👑")
 Window.ChangeToggleKey(Enum.KeyCode.C)
 
 local Farm = Window:Category(" 🏹 Auto Farm")
