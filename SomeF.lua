@@ -662,7 +662,7 @@ local dir = "Anime_Adventures/"..game.Players.LocalPlayer.Name
 local Uilib = loadstring(game:HttpGet("https://raw.githubusercontent.com/ArponAG/Scripts/main/finitylib"))()
 local exec = tostring(identifyexecutor())
 --updatefix
-local Window = Uilib.new(true, "                         "..namegame.." ( "..display .." ) ✅ GemFarm: " .. Settings.GemFramed .. " / " .. Settings.GemtoFarm .." ✅")
+local Window = Uilib.new(true, "                         "..namegame.." ( "..display .." ) 💎 GemFarm: " .. Settings.GemFramed .. " / " .. Settings.GemtoFarm .." 💎")
 Window.ChangeToggleKey(Enum.KeyCode.C)
 
 local Farm = Window:Category("🤖 Auto Farm")
@@ -731,15 +731,8 @@ local function CheckGemAll()
 	if tonumber(Settings.GemFramed) >= tonumber(Settings.GemtoFarm) and tonumber(Settings.GemtoFarm) ~= 0 then
 		if not Settings.KiwwyKick then
             GemsWebhook()
-			Settings.autostart = false
-			Settings.AutoReplay = false
-			Settings.KiwwyKick = true
-			saveSettings()
             delfile("V2_Anime_Adventures/" .. game.Players.LocalPlayer.Name .. "_AnimeAdventures.json")
-            print("Reset Setting")
             game:GetService("TeleportService"):Teleport(8304191830, game.Players.LocalPlayer)
-            Teleport()
-            print("Returning to lobby...")
 		end
 		return " ✅"
 	elseif tonumber(Settings.GemtoFarm) == 0 then
