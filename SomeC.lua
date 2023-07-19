@@ -8,7 +8,7 @@ if game.PlaceId == 8304191830 then
 else
     repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
     game:GetService("ReplicatedStorage").endpoints.client_to_server.vote_start:InvokeServer()
-    repeat task.wait() until game:GetService("Workspace")["_waves_started"].Value == true
+    --repeat task.wait() until game:GetService("Workspace")["_waves_started"].Value == true
 end
 ------------------------------
 local a = 'V2_Anime_Adventures' -- 
