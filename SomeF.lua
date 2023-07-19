@@ -662,7 +662,7 @@ local dir = "Anime_Adventures/"..game.Players.LocalPlayer.Name
 local Uilib = loadstring(game:HttpGet("https://raw.githubusercontent.com/ArponAG/Scripts/main/finitylib"))()
 local exec = tostring(identifyexecutor())
 --updatefix
-local Window = Uilib.new(true, "                         "..namegame.." ( "..display .." ) 💎 GemFarm: " .. Settings.GemFramed .. " / " .. Settings.GemtoFarm .." 💎")
+local Window = Uilib.new(true, "                         "..namegame.." ( "..display .." ) 💎 Gem: " .. Settings.GemFramed .. " / " .. Settings.GemtoFarm .." 💎")
 Window.ChangeToggleKey(Enum.KeyCode.C)
 
 local Farm = Window:Category("🤖 Auto Farm")
