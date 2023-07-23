@@ -162,7 +162,7 @@ function finity.new(isdark, gprojectName, thinProject)
 	end
 
 	local theme = finity.theme
-	local projectName = false
+	local projectName = true
 	local thinMenu = true
 
 	if isdark == true then theme = finity.dark_theme end
