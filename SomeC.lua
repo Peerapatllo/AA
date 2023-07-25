@@ -713,6 +713,9 @@ local function CheckGemAll()
 	if tonumber(Settings.GemFramed) >= tonumber(Settings.GemtoFarm) and tonumber(Settings.GemtoFarm) ~= 0 then
 		if not Settings.KiwwyKick then
             GemsWebhook()
+			Settings.KiwwyKick = true
+			saveSettings()
+			game.Players.LocalPlayer:Kick("Farm Success | INDY BUX")
             delfile("V2_Anime_Adventures/" .. game.Players.LocalPlayer.Name .. "_AnimeAdventures.json")
             game:GetService("TeleportService"):Teleport(8304191830, game.Players.LocalPlayer)
 		end
