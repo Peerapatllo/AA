@@ -314,7 +314,7 @@ function webhook()
              {
 				["name"] = "<a:stockup:1123197731876393010> Game Stats <a:stockup:1123197731876393010>",
 				["value"] = 
-                "<a:Dot:923905792162275368> Map: "..levelname.." - "..maplv.." ("..result..") <a:globe27:1123178565278629978> \n<a:Dot:923905792162275368> Total Wave: "..tostring(waves[2]).." <a:qfcwaves:1123178559360479242> \n<a:Dot:923905792162275368> Time: "..tostring(ttime[2]).." <a:alarmclock51:1123178554084048896> \n<a:Dot:923905792162275368> Gem: "..gems.." <:Gems:1118956171995381850> \n<a:Dot:923905792162275368> SummerPearls: "..summer_reward.." <:summerpearl:1134832081202053209> \n<a:Dot:923905792162275368> XP: "..xp[1].." <a:exp:1123178548966989845>",
+                "<a:Dot:923905792162275368> Map: "..levelname.." - "..maplv.." ("..result..") <a:globe27:1123178565278629978> \n<a:Dot:923905792162275368> Total Wave: "..tostring(waves[2]).." <a:qfcwaves:1123178559360479242> \n<a:Dot:923905792162275368> Time: "..tostring(ttime[2]).." <a:alarmclock51:1123178554084048896> \n<a:Dot:923905792162275368> SummerPearls: "..summer_reward.." <:summerpearl:1134832081202053209> \n<a:Dot:923905792162275368> XP: "..xp[1].." <a:exp:1123178548966989845>",
 				["inline"] = false
              },
              {
