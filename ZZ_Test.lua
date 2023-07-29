@@ -30,7 +30,7 @@ function saveSettings()
     Settings.GemsWebhookEnabled = true
     Settings.isFriendOnly = true
     Settings.AutoSaveUnit = true
-    Settings.AutoPickPortal = true
+    --Settings.AutoPickPortal = true
     Settings.WorldCategory = "Portals"
     Settings.SelectedLevel = "portal_summer"
     Settings.Difficulty = "Default"
