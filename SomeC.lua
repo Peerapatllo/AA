@@ -27,7 +27,7 @@ function saveSettings()
     --Settings.AutoSaveUnit = true
     Settings.WebhookEnabled = true
     Settings.GemsWebhookEnabled = true
-    --Settings.AutoContinue = true
+    Settings.AutoContinue = true
 
     writefile(a .. '/' .. b, HttpService:JSONEncode(Settings))
     Settings = ReadSetting()
