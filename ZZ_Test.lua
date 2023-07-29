@@ -31,6 +31,11 @@ function saveSettings()
     Settings.isFriendOnly = true
     Settings.AutoSaveUnit = true
     Settings.AutoPickPortal = true
+    Settings.WorldCategory = "Portals"
+    Settings.SelectedLevel = "portal_summer"
+    Settings.Difficulty = "Default"
+    Settings.SelectedWorld = "Summer Events"
+    Settings.SelectedTier = 1
 
     writefile(a .. '/' .. b, HttpService:JSONEncode(Settings))
     Settings = ReadSetting()
