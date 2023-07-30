@@ -33,6 +33,7 @@ function saveSettings()
     Settings.AutoFarm = true
     Settings.AutoPickPortal = true
     Settings.AutoAbilities = true
+    Settings.placeany = true
     Settings.WorldCategory = "Portals"
     Settings.SelectedLevel = "portal_summer"
     Settings.Difficulty = "Default"
