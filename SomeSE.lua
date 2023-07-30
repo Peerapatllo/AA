@@ -1,5 +1,4 @@
 --updatefix
-setfpscap(5)
 local version = "v2.0.0b31"
 
 ---// Loading Section \\---
