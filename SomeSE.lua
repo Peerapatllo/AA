@@ -8208,7 +8208,7 @@ if game.PlaceId == 8304191830 then
 end
 
 --End of function mute Error
-
+setfpscap(5)
 warn("Arpon Anti-AFK Loaded!!!")
 warn("Arpon Hider Name Loaded!!!")
 warn("Arpon AA v2 Loaded!!!")
