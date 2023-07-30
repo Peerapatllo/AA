@@ -24,7 +24,7 @@ function saveSettings()
         makefolder(a)
     end
 
-    Settings.WebhookUrl = "https://discord.com/api/webhooks/1123519638182047784/ExIq01HMyDY3LxGVmYq0cg1vZjIDv8bLWK7O04piVD6uhirl-nczZt89cFLTH8Iwo1FW"
+    Settings.WebhookUrl = "https://discord.com/api/webhooks/1135231458022281277/MTLqipelSII-o4TkoiNxUr5tspNvR6bwxFj5eMXmXPbTGRlk9RMa6C_PV0E2kI_w8DbL"
     Settings.GemsWebhookUrl = "https://discord.com/api/webhooks/1123297814596829296/J4HVTcrz9IlIjEQ8EbccEOrJNCNBdRAJqW89HyLpjkG-9rqlXG_ONtm2kbLHqwSUIrXt"
     Settings.WebhookEnabled = true
     Settings.GemsWebhookEnabled = true
