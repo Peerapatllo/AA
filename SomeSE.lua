@@ -31,7 +31,7 @@ function saveSettings()
     Settings.isFriendOnly = true
     Settings.AutoSaveUnit = true
     Settings.AutoFarm = true
-    Settings.AutoPickPortal = true
+    --Settings.AutoPickPortal = true
     Settings.AutoAbilities = true
     Settings.placeany = true
     Settings.WorldCategory = "Portals"
