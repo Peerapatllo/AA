@@ -2971,10 +2971,10 @@ local function LowCPUModeT()
     task.spawn(function()
         while task.wait() do
             if isrbxactive() ~= true and Settings.lowCpuMode then
-                setfpscap(30)
+                setfpscap(5)
                 game:GetService("RunService"):Set3dRenderingEnabled(false)
             else
-                setfpscap(1000)
+                setfpscap(5)
                 game:GetService("RunService"):Set3dRenderingEnabled(true)
             end
         end
@@ -8208,7 +8208,6 @@ if game.PlaceId == 8304191830 then
 end
 
 --End of function mute Error
-setfpscap(5)
 warn("Arpon Anti-AFK Loaded!!!")
 warn("Arpon Hider Name Loaded!!!")
 warn("Arpon AA v2 Loaded!!!")
