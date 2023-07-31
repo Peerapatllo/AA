@@ -291,7 +291,7 @@ function webhook()
           ["thumbnail"] = {
             ['url'] = thumbnails_avatar.data[1].imageUrl,
             },
-            ["description"] = "# <a:load:938430201984065577><:f1:1135275401271328939><:f2:1135275403062284420><:f3:1135275406547759296><:f4:1135275410175824047><a:load:938430201984065577> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:923905792162275368> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:923905792162275368> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:923905792162275368> สถานะฟาร์ม: **Infinite Castle** <a:castle:1130816340496760843>",
+            ["description"] = "# <a:load:938430201984065577> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:load:938430201984065577> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:923905792162275368> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:923905792162275368> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:923905792162275368> สถานะฟาร์ม: **Infinite Castle** <a:castle:1130816340496760843>",
           ["author"] = {
                 ["name"] = "INDYBUX Service",
                 ["icon_url"] = "https://img.pic.in.th/oie_27168246JMfoaRb.gif"
@@ -300,13 +300,13 @@ function webhook()
           ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
           ["fields"] = {
              {
-				["name"] = "<a:stockup:1123197731876393010> Game Stats <a:stockup:1123197731876393010>",
+				["name"] = "<a:stockup:1123197731876393010> <:g1:1135449004927369216><:g2:1135449008240857189><:g3:1135449010287673374><:g4:1135449013898977390> <a:stockup:1123197731876393010>",
 				["value"] = 
                 "<a:Dot:923905792162275368> Map: "..levelname.." - "..maplv.." ("..result..") <a:globe27:1123178565278629978> \n<a:Dot:923905792162275368> Total Wave: "..tostring(waves[2]).." <a:qfcwaves:1123178559360479242> \n<a:Dot:923905792162275368> Time: "..tostring(ttime[2]).." <a:alarmclock51:1123178554084048896> \n<a:Dot:923905792162275368> Gem: "..gems.." <:Gems:1118956171995381850> \n<a:Dot:923905792162275368> XP: "..xp[1].." <a:exp:1123178548966989845>",
 				["inline"] = false
              },
              {
-                ["name"] ="<a:fight:1129761802100682862> Item Rewards <a:fight:1129761802100682862>",
+                ["name"] ="<a:fight:1129761802100682862> <:i1:1135449015757045840><:i2:1135449019024408587><:i3:1135449022392442900><:i4:1135449024107909203> <a:fight:1129761802100682862>",
                 ["value"] = "\n" .. TextDropLabel .. "",
                 ["inline"] = false 
              }
@@ -359,7 +359,7 @@ function GemsWebhook()
                         ["thumbnail"] = {
                             ['url'] = thumbnails_avatar.data[1].imageUrl,
                         },
-                        ["description"] = "# <a:giveaway2:925229766506840134><:s1:1135275412151337130><:s2:1135275416064643143><:s3:1135275419705286686><:s4:1135275421508837406><a:giveaway2:925229766506840134> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:923905792162275368> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:923905792162275368> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:923905792162275368> สถานะฟาร์ม: **Infinite Castle** <a:castle:1130816340496760843> \n<a:Dot:923905792162275368> ให้เครดิตร้าน <#1055871056843374632> <a:plus1:1123223573050437744>" ,
+                        ["description"] = "# <a:giveaway2:925229766506840134> <:s1:1135449027501105152><:s2:1135449031221456956><:s3:1135449034761437266><:s4:1135449036887961683><:s5:1135449040931278888> <a:giveaway2:925229766506840134> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:923905792162275368> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:923905792162275368> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:923905792162275368> สถานะฟาร์ม: **Infinite Castle** <a:castle:1130816340496760843> \n<a:Dot:923905792162275368> ให้เครดิตร้าน <#1055871056843374632> <a:plus1:1123223573050437744>" ,
                         ["color"] = 10181046,
                         ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
                         ["image"] = {
