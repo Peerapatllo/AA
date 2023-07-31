@@ -309,7 +309,7 @@ function webhook()
           ["thumbnail"] = {
             ['url'] = thumbnails_avatar.data[1].imageUrl,
             },
-            ["description"] = "# <a:load:938430201984065577><:f1:1135275401271328939><:f2:1135275403062284420><:f3:1135275406547759296><:f4:1135275410175824047><a:load:938430201984065577> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:923905792162275368> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:923905792162275368> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:923905792162275368> สถานะฟาร์ม: **".. Settings.GemFramed .. " / " .. Settings.GemtoFarm .."** <:Gems:1118956171995381850>",
+            ["description"] = "# <a:load:938430201984065577><:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564><a:load:938430201984065577> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:923905792162275368> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:923905792162275368> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:923905792162275368> สถานะฟาร์ม: **".. Settings.GemFramed .. " / " .. Settings.GemtoFarm .."** <:Gems:1118956171995381850>",
           ["author"] = {
                 ["name"] = "INDYBUX Service",
                 ["icon_url"] = "https://img.pic.in.th/oie_27168246JMfoaRb.gif"
