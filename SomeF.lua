@@ -300,6 +300,10 @@ function webhook()
     lv = tostring(game.Players.LocalPlayer.PlayerGui.spawn_units.Lives.Main.Desc.Level.Text)
 	timez = os.date("%X", os.time())--+7*60*60
     
+    farm1 = "# <a:load:938430201984065577> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:load:938430201984065577> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:923905792162275368> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:923905792162275368> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:923905792162275368> สถานะฟาร์ม: **".. Settings.GemFramed .. " / " .. Settings.GemtoFarm .."** <:Gems:1118956171995381850>"
+    gamestats = "# <a:stockup:1123197731876393010> <:g1:1135449004927369216><:g2:1135449008240857189><:g3:1135449010287673374><:g4:1135449013898977390> <a:stockup:1123197731876393010> \n<a:Dot:923905792162275368> Map: "..levelname.." - "..maplv.." ("..result..") <a:globe27:1123178565278629978> \n<a:Dot:923905792162275368> Total Wave: "..tostring(waves[2]).." <a:qfcwaves:1123178559360479242> \n<a:Dot:923905792162275368> Time: "..tostring(ttime[2]).." <a:alarmclock51:1123178554084048896> \n<a:Dot:923905792162275368> Gem: "..gems.." <:Gems:1118956171995381850> \n<a:Dot:923905792162275368> XP: "..xp[1].." <a:exp:1123178548966989845>"
+    ireward = "# <a:fight:1129761802100682862> <:i1:1135449015757045840><:i2:1135449019024408587><:i3:1135449022392442900><:i4:1135449024107909203> <a:fight:1129761802100682862> \n".. TextDropLabel ..""
+
     local data = {
         ["content"] ="",
         ["username"] = "INDYBUX BOT",
@@ -309,26 +313,16 @@ function webhook()
           ["thumbnail"] = {
             ['url'] = thumbnails_avatar.data[1].imageUrl,
             },
-            ["description"] = "# <a:load:938430201984065577> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:load:938430201984065577> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:923905792162275368> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:923905792162275368> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:923905792162275368> สถานะฟาร์ม: **".. Settings.GemFramed .. " / " .. Settings.GemtoFarm .."** <:Gems:1118956171995381850>",
+            ["description"] = ""
+            ..farm1.. "\n"
+            ..gamestats.. "\n"
+            ..ireward.. "\n",
           ["author"] = {
                 ["name"] = "INDYBUX Service",
                 ["icon_url"] = "https://img.pic.in.th/oie_27168246JMfoaRb.gif"
             },
           ["color"] = 10181046,
           ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
-          ["fields"] = {
-             {
-				["name"] = "<a:stockup:1123197731876393010> <:g1:1135449004927369216><:g2:1135449008240857189><:g3:1135449010287673374><:g4:1135449013898977390> <a:stockup:1123197731876393010>",
-				["value"] = 
-                "<a:Dot:923905792162275368> Map: "..levelname.." - "..maplv.." ("..result..") <a:globe27:1123178565278629978> \n<a:Dot:923905792162275368> Total Wave: "..tostring(waves[2]).." <a:qfcwaves:1123178559360479242> \n<a:Dot:923905792162275368> Time: "..tostring(ttime[2]).." <a:alarmclock51:1123178554084048896> \n<a:Dot:923905792162275368> Gem: "..gems.." <:Gems:1118956171995381850> \n<a:Dot:923905792162275368> XP: "..xp[1].." <a:exp:1123178548966989845>",
-				["inline"] = false
-             },
-             {
-                ["name"] ="<a:fight:1129761802100682862> <:i1:1135449015757045840><:i2:1135449019024408587><:i3:1135449022392442900><:i4:1135449024107909203> <a:fight:1129761802100682862>",
-                ["value"] = "\n" .. TextDropLabel .. "",
-                ["inline"] = false 
-             }
-           },
           ["footer"] = {
                 ["text"] = "INDYBUX ",
                 ["icon_url"] = "https://img.pic.in.th/oie_27168246JMfoaRb.gif"
