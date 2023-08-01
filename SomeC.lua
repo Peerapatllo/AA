@@ -638,7 +638,7 @@ local namegame = game:GetService("Players").LocalPlayer.Name
 local display = game:GetService("Players").LocalPlayer.DisplayName
 
 local dir = "Anime_Adventures/"..game.Players.LocalPlayer.Name
-local Uilib = loadstring(game:HttpGet("https://raw.githubusercontent.com/ArponAG/Scripts/main/finitylib"))()
+local Uilib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/TI"))()
 local exec = tostring(identifyexecutor())
 --updatefix
 local Window = Uilib.new(true, "                         "..namegame.." ( "..display .." ) 🏯 Infinite Castle: " .. Settings.GemFramed .. " / " .. Settings.GemtoFarm .." 🏯")
