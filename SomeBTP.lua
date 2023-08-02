@@ -29,7 +29,7 @@ function saveSettings()
     Settings.AutoReplay = true
     Settings.AutoSell = true
     Settings.AutoUpgrade = true
-    Settings.AutoSellWave = 70
+    Settings.AutoSellWave = 50
     Settings.deletemap = true
     Settings.placeany = true
     Settings.WorldCategory = "Story Worlds"
