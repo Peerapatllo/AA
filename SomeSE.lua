@@ -2968,10 +2968,10 @@ local function LowCPUModeT()
     task.spawn(function()
         while task.wait() do
             if isrbxactive() ~= true and Settings.lowCpuMode then
-                setfpscap(5)
+                setfpscap(30)
                 game:GetService("RunService"):Set3dRenderingEnabled(false)
             else
-                setfpscap(5)
+                setfpscap(1111)
                 game:GetService("RunService"):Set3dRenderingEnabled(true)
             end
         end
