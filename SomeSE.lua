@@ -28,16 +28,16 @@ function saveSettings()
     Settings.GemsWebhookUrl = "https://discord.com/api/webhooks/1123297814596829296/J4HVTcrz9IlIjEQ8EbccEOrJNCNBdRAJqW89HyLpjkG-9rqlXG_ONtm2kbLHqwSUIrXt"
     Settings.WebhookEnabled = true
     Settings.GemsWebhookEnabled = true
-    Settings.isFriendOnly = true
-    Settings.AutoSaveUnit = true
+    --Settings.isFriendOnly = true
+    --Settings.AutoSaveUnit = true
     --Settings.AutoFarm = true
     --Settings.AutoPickPortal = true
-    Settings.AutoAbilities = true
-    Settings.placeany = true
-    Settings.WorldCategory = "Portals"
-    Settings.SelectedLevel = "portal_summer"
-    Settings.Difficulty = "Default"
-    Settings.SelectedWorld = "Summer Events"
+    --Settings.AutoAbilities = true
+    --Settings.placeany = true
+    --Settings.WorldCategory = "Portals"
+    --Settings.SelectedLevel = "portal_summer"
+    --Settings.Difficulty = "Default"
+    --Settings.SelectedWorld = "Summer Events"
     --Settings.SelectedTier = 1
 
     writefile(a .. '/' .. b, HttpService:JSONEncode(Settings))
