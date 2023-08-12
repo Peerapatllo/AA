@@ -280,6 +280,7 @@ function webhook()
     display = game:GetService("Players").LocalPlayer.DisplayName
     ttgems = tostring(game.Players.LocalPlayer._stats.gem_amount.Value)
     lv = tostring(game.Players.LocalPlayer.PlayerGui.spawn_units.Lives.Main.Desc.Level.Text)
+	lv = string.gsub(lv, "Level", "Level:")
 	timez = os.date("%X", os.time())--+7*60*60
     
     --fgem = "# <a:load:938430201984065577> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:load:938430201984065577> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:923905792162275368> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:923905792162275368> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:923905792162275368> สถานะฟาร์ม: **".. Settings.GemFramed .. " / " .. Settings.GemtoFarm .."** <:Gems:1118956171995381850>"
@@ -342,6 +343,7 @@ function GemsWebhook()
     display = game:GetService("Players").LocalPlayer.DisplayName
     ttgems = tostring(game.Players.LocalPlayer._stats.gem_amount.Value)
     lv = tostring(game.Players.LocalPlayer.PlayerGui.spawn_units.Lives.Main.Desc.Level.Text)
+	lv = string.gsub(lv, "Level", "Level:")
 
 		local data = {
             ["content"] = "",
