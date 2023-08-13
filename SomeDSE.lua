@@ -648,7 +648,7 @@ local dir = "Anime_Adventures/"..game.Players.LocalPlayer.Name
 local Uilib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/TI"))()
 local exec = tostring(identifyexecutor())
 --updatefix
-local Window = Uilib.new(true, "                         "..namegame.." ( "..display .." ) 🌀 Poseidon: " .. Settings.GemFramed .. " 🌀")
+local Window = Uilib.new(true, "                         "..namegame.." ( "..display .." ) 🌀 Summer Daily: " .. Settings.GemFramed .. " 🌀")
 Window.ChangeToggleKey(Enum.KeyCode.C)
 
 local Farm = Window:Category("🤖 Auto Farm")
