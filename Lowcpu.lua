@@ -1,5 +1,5 @@
 repeat wait() until game:IsLoaded()
-local RunService = game:GetService("RunService")
+--local RunService = game:GetService("RunService")
 --RunService:Set3dRenderingEnabled(false)
 local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
 local g = game
