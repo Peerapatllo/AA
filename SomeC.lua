@@ -24,11 +24,13 @@ function saveSettings()
     Settings.WebhookUrl = "https://discord.com/api/webhooks/1123519638182047784/ExIq01HMyDY3LxGVmYq0cg1vZjIDv8bLWK7O04piVD6uhirl-nczZt89cFLTH8Iwo1FW"
     Settings.GemsWebhookUrl = "https://discord.com/api/webhooks/1123297814596829296/J4HVTcrz9IlIjEQ8EbccEOrJNCNBdRAJqW89HyLpjkG-9rqlXG_ONtm2kbLHqwSUIrXt"
     --Settings.isFriendOnly = true
-    --Settings.AutoFarm = true
-    --Settings.AutoSaveUnit = true
+    Settings.AutoFarm = true
+    Settings.AutoSaveUnit = true
     Settings.WebhookEnabled = true
     Settings.GemsWebhookEnabled = true
     Settings.AutoContinue = true
+    Settings.deletemap = true
+    Settings.placeany = true
 
     writefile(a .. '/' .. b, HttpService:JSONEncode(Settings))
     Settings = ReadSetting()
