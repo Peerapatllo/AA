@@ -26,6 +26,7 @@ function saveSettings()
     --Settings.isFriendOnly = true
     --Settings.AutoFarm = true
     Settings.AutoSaveUnit = true
+    Settings.AutoUpgrade = true
     Settings.WebhookEnabled = true
     Settings.GemsWebhookEnabled = true
     Settings.AutoContinue = true
