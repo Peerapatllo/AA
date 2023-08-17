@@ -651,6 +651,11 @@ local exec = tostring(identifyexecutor())
 local Window = Uilib.new(true, "                         "..namegame.." ( "..display .." ) 🌀 Poseidon: " .. Settings.GemFramed .. " 🌀")
 Window.ChangeToggleKey(Enum.KeyCode.C)
 
+local Farmsetup = Window:Category("🧑🏻‍🌾 Custom Farm")
+local SetGem = Farmsetup:Sector("💎‍ SetGem")
+local blank3 = Farmsetup:Sector("")
+local hook = Farmsetup:Sector("🌐‍ Webhook")
+
 local Farm = Window:Category("🤖 Auto Farm")
 local SelectUnits = Farm:Sector("🧙‍ Select Units")
 local SelectWorld = Farm:Sector("🌏 Select World")
@@ -792,6 +797,35 @@ spawn(function()
 		if show_kicksetting then show_kicksetting.label.Text = "Kick Setting : " .. tostring(Settings.KiwwyKick) end
 	end
 end)
+
+SetGem:Cheat("Textbox", "ไข่มุกที่ต้องการฟาร์ม", function(Value)
+    if type(tonumber(Value)) == "number" then
+        Show_GemtoFarm.label.Text = "ไข่มุกที่ต้องการฟาร์ม : " .. Value
+        Settings.GemtoFarm = Value
+        saveSettings()
+        changetextgemall()
+    else
+        spawn(function()
+            ChangeErrorCode("กรุณาใส่ตัวเลขเท่านั้น (1)")
+            wait(1)
+            ChangeErrorCode("None")
+        end)
+    end
+end, { placeholder = Settings.GemtoFarm })
+SetGem:Cheat("Button", "Redeem All Code", function()
+    print(Settings.redeemc)
+Reedemcode()
+end)
+SetGem:Cheat("Button", "Leave To Lobby", function()
+    warn("Return to Lobby")
+    Teleport()
+end)
+
+hook:Cheat("Button", "Finish Webhook", function()
+    print(Settings.WebhookUrl)
+    GemsWebhook()
+end)
+
 --[[ THE BEST ]]--
 
 ----------------------------------------------
