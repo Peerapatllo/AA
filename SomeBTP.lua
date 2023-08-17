@@ -35,9 +35,9 @@ function saveSettings()
     Settings.deletemap = true
     Settings.placeany = true
     Settings.WorldCategory = "Story Worlds"
-    Settings.SelectedLevel = "namek_infinite"
+    Settings.SelectedLevel = "aot_infinite"
     Settings.Difficulty = "Hard"
-    Settings.SelectedWorld = "Planet Namak"
+    Settings.SelectedWorld = "Shiganshinu District"
 
     Settings.namek = {
         UP1 = {x = -2946.871337890625,z = -700.5772094726563,y = 91.80614471435547,y2 = 91.80614471435547,y3 = 91.80614471435547,y4 = 91.80614471435547,y5 = 91.80614471435547,y6 = 91.80614471435547},
@@ -673,6 +673,15 @@ local exec = tostring(identifyexecutor())
 local Window = Uilib.new(true, "                         "..namegame.." ( "..display .." ) 👑 BattlePass 👑")
 Window.ChangeToggleKey(Enum.KeyCode.C)
 
+local Farmsetup = Window:Category("🧑🏻‍🌾 Custom Farm")
+local Units = Farmsetup:Sector("🧙‍ Select Units")
+local blank1 = Farmsetup:Sector("")
+local StartFarm = Farmsetup:Sector("🧑🏻‍🌾‍ Farming")
+local blank2 = Farmsetup:Sector("")
+local SetGem = Farmsetup:Sector("💎‍ SetGem")
+local blank3 = Farmsetup:Sector("")
+local hook = Farmsetup:Sector("🌐‍ Webhook")
+
 local Farm = Window:Category("🤖 Auto Farm")
 local SelectUnits = Farm:Sector("🧙‍ Select Units")
 local SelectWorld = Farm:Sector("🌏 Select World")
@@ -812,6 +821,60 @@ spawn(function()
 		if show_kicksetting then show_kicksetting.label.Text = "Kick Setting : " .. tostring(Settings.KiwwyKick) end
 	end
 end)
+
+Units:Cheat("Checkbox","🦸 Auto Save Unit ", function(bool)
+    warn("Auto Save Unit set to " .. tostring(bool))
+    Settings.AutoSaveUnit = bool
+    saveSettings()
+end,{enabled = Settings.AutoSaveUnit })
+
+Units:Cheat("Button", "🧙 Select Units", function() --Selects Currently Equipped Units!
+    Settings.SelectedUnits = {
+        U1 = "nil",
+        U2 = "nil",
+        U3 = "nil",
+        U4 = "nil",
+        U5 = "nil",
+        U6 = "nil"
+    }
+    saveSettings()
+    GetUnits()
+end)
+
+StartFarm:Cheat("Checkbox","🌾 Auto Start  ", function(bool)
+    print(bool)
+    Settings.autostart = bool
+    saveSettings()
+end,{enabled = Settings.autostart })
+
+SetGem:Cheat("Textbox", "เพชรที่ต้องการฟาร์ม", function(Value)
+    if type(tonumber(Value)) == "number" then
+        Show_GemtoFarm.label.Text = "เพชรที่ต้องการฟาร์ม : " .. Value
+        Settings.GemtoFarm = Value
+        saveSettings()
+        changetextgemall()
+    else
+        spawn(function()
+            ChangeErrorCode("กรุณาใส่ตัวเลขเท่านั้น (1)")
+            wait(1)
+            ChangeErrorCode("None")
+        end)
+    end
+end, { placeholder = Settings.GemtoFarm })
+SetGem:Cheat("Button", "Redeem All Code", function()
+    print(Settings.redeemc)
+Reedemcode()
+end)
+SetGem:Cheat("Button", "Leave To Lobby", function()
+    warn("Return to Lobby")
+    Teleport()
+end)
+
+hook:Cheat("Button", "Finish Webhook", function()
+    print(Settings.WebhookUrl)
+    GemsWebhook()
+end)
+
 --[[ THE BEST ]]--
 
 ----------------------------------------------
