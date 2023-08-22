@@ -840,12 +840,11 @@ end)
 local namegame = game:GetService("Players").LocalPlayer.Name
 local display = game:GetService("Players").LocalPlayer.DisplayName
 
-userrbx = Units:Cheat("Label", "" .. tostring(namegame).. " ("..tostring(display)..") 💎 Gem: " ..Settings.GemFramed.. " / " ..Settings.GemtoFarm.. " 💎")
+userrbx = Units:Cheat("Label", "" .. tostring(namegame).. " ("..tostring(display)..") 👑 BattlePass 👑")
 watermark = Units:Cheat("Label", "⏲️Time : " ..math.floor(Workspace.DistributedGameTime).. " | 🌊Wave : " ..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.. " | 💴¥en : " ..game:GetService("Players").LocalPlayer.PlayerGui.spawn_units.Lives.Frame.Resource.Money.text.Text)
 
 spawn(function()
 	while wait(1) do
-        if userrbx then userrbx.label.Text = "" .. tostring(namegame).. " ("..tostring(display)..") 💎 Gem: " ..Settings.GemFramed .. " / " .. Settings.GemtoFarm.. " 💎" end
 		if watermark then watermark.label.Text = "⏲️Time : " ..math.floor(Workspace.DistributedGameTime).. " | 🌊Wave : " ..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.. " | 💴¥en : " ..game:GetService("Players").LocalPlayer.PlayerGui.spawn_units.Lives.Frame.Resource.Money.text.Text end
 	end
 end)
