@@ -289,6 +289,7 @@ function webhook()
     --BTP lv.
     btplv = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.Level.V.Text
     --next ammo level
+    summer_coin = tostring(game.Players.LocalPlayer._stats._resourceSummerPearls.Value)
     nextlvbtp = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.FurthestRoom.V.Text
     maplv = game:GetService("Players").LocalPlayer.PlayerGui.NewArea.holder.areaTitle.Text
     namegame = game:GetService("Players").LocalPlayer.Name
