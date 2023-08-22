@@ -823,12 +823,12 @@ end)
 local namegame = game:GetService("Players").LocalPlayer.Name
 local display = game:GetService("Players").LocalPlayer.DisplayName
 
-userrbx = Units:Cheat("Label", "" .. tostring(namegame).. " ("..tostring(display)..") 💎 Gem: " ..Settings.GemFramed.. " / " ..Settings.GemtoFarm.. " 💎")
+userrbx = Units:Cheat("Label", "" .. tostring(namegame).. " ("..tostring(display)..") 🦪 Pearls: " ..Settings.GemFramed.. " / " ..Settings.GemtoFarm.. " 🦪")
 watermark = Units:Cheat("Label", "⏲️Time : " ..math.floor(Workspace.DistributedGameTime).. " | 🌊Wave : " ..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.. " | 💴¥en : " ..game:GetService("Players").LocalPlayer.PlayerGui.spawn_units.Lives.Frame.Resource.Money.text.Text)
 
 spawn(function()
 	while wait(1) do
-        if userrbx then userrbx.label.Text = "" .. tostring(namegame).. " ("..tostring(display)..") 💎 Gem: " ..Settings.GemFramed .. " / " .. Settings.GemtoFarm.. " 💎" end
+        if userrbx then userrbx.label.Text = "" .. tostring(namegame).. " ("..tostring(display)..") 🦪 Pearls: " ..Settings.GemFramed .. " / " .. Settings.GemtoFarm.. " 🦪" end
 		if watermark then watermark.label.Text = "⏲️Time : " ..math.floor(Workspace.DistributedGameTime).. " | 🌊Wave : " ..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.. " | 💴¥en : " ..game:GetService("Players").LocalPlayer.PlayerGui.spawn_units.Lives.Frame.Resource.Money.text.Text end
 	end
 end)
@@ -852,9 +852,9 @@ Units:Cheat("Checkbox","🌾 Auto Start  ", function(bool)
     saveSettings()
 end,{enabled = Settings.autostart })
 
-Units:Cheat("Textbox", "💎 เพชรที่ต้องการฟาร์ม", function(Value)
+Units:Cheat("Textbox", "🦪 ไข่มุกที่ต้องการฟาร์ม", function(Value)
     if type(tonumber(Value)) == "number" then
-        Show_GemtoFarm.label.Text = "เพชรที่ต้องการฟาร์ม : " .. Value
+        Show_GemtoFarm.label.Text = "ไข่มุกที่ต้องการฟาร์ม : " .. Value
         Settings.GemtoFarm = Value
         saveSettings()
         changetextgemall()
