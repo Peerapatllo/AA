@@ -670,13 +670,7 @@ local Window = Uilib.new(true, "                         "..namegame.." ( "..dis
 Window.ChangeToggleKey(Enum.KeyCode.C)
 
 local Farmsetup = Window:Category("🧑🏻‍🌾 Custom Farm")
-local Units = Farmsetup:Sector("🧙‍ Select Units")
-local blank1 = Farmsetup:Sector("")
-local StartFarm = Farmsetup:Sector("🧑🏻‍🌾‍ Farming")
-local blank2 = Farmsetup:Sector("")
-local SetGem = Farmsetup:Sector("🦪 SetPearl")
-local blank3 = Farmsetup:Sector("")
-local hook = Farmsetup:Sector("🌐‍ Webhook")
+local Units = Farmsetup:Sector("📰‍ Info")
 
 local Farm = Window:Category("🤖 Auto Farm")
 local SelectUnits = Farm:Sector("🧙‍ Select Units")
@@ -826,11 +820,19 @@ spawn(function()
 end)
 --[[ THE BEST ]]--
 --[[ MARK ]]--
-Units:Cheat("Checkbox","🦸 Auto Save Unit ", function(bool)
-    warn("Auto Save Unit set to " .. tostring(bool))
-    Settings.AutoSaveUnit = bool
-    saveSettings()
-end,{enabled = Settings.AutoSaveUnit })
+local namegame = game:GetService("Players").LocalPlayer.Name
+local display = game:GetService("Players").LocalPlayer.DisplayName
+
+userrbx = Units:Cheat("Label", "" .. tostring(namegame).. " ("..tostring(display)..") 📅 Summer Daily: " ..Settings.GemFramed.. " / " ..Settings.GemtoFarm.. " 📅")
+watermark = Units:Cheat("Label", "⏲️Time : " ..math.floor(Workspace.DistributedGameTime).. " | 🌊Wave : " ..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.. " | 💴¥en : " ..game:GetService("Players").LocalPlayer.PlayerGui.spawn_units.Lives.Frame.Resource.Money.text.Text)
+
+spawn(function()
+	while wait(1) do
+        if userrbx then userrbx.label.Text = "" .. tostring(namegame).. " ("..tostring(display)..") 📅 Summer Daily: " ..Settings.GemFramed .. " / " .. Settings.GemtoFarm.. " 📅" end
+		if watermark then watermark.label.Text = "⏲️Time : " ..math.floor(Workspace.DistributedGameTime).. " | 🌊Wave : " ..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.. " | 💴¥en : " ..game:GetService("Players").LocalPlayer.PlayerGui.spawn_units.Lives.Frame.Resource.Money.text.Text end
+	end
+end)
+
 Units:Cheat("Button", "🧙 Select Units", function() --Selects Currently Equipped Units!
     Settings.SelectedUnits = {
         U1 = "nil",
@@ -843,17 +845,16 @@ Units:Cheat("Button", "🧙 Select Units", function() --Selects Currently Equipp
     saveSettings()
     GetUnits()
 end)
---[[ MARK ]]--
---[[ MARK ]]--
-StartFarm:Cheat("Checkbox","🌾 Auto Start  ", function(bool)
+
+Units:Cheat("Checkbox","🌾 Auto Start  ", function(bool)
     print(bool)
     Settings.autostart = bool
     saveSettings()
 end,{enabled = Settings.autostart })
 
-SetGem:Cheat("Textbox", "ไข่มุกที่ต้องการฟาร์ม", function(Value)
+Units:Cheat("Textbox", "💎 เพชรที่ต้องการฟาร์ม", function(Value)
     if type(tonumber(Value)) == "number" then
-        Show_GemtoFarm.label.Text = "ไข่มุกที่ต้องการฟาร์ม : " .. Value
+        Show_GemtoFarm.label.Text = "เพชรที่ต้องการฟาร์ม : " .. Value
         Settings.GemtoFarm = Value
         saveSettings()
         changetextgemall()
@@ -865,16 +866,12 @@ SetGem:Cheat("Textbox", "ไข่มุกที่ต้องการฟา�
         end)
     end
 end, { placeholder = Settings.GemtoFarm })
-SetGem:Cheat("Button", "Redeem All Code", function()
-    print(Settings.redeemc)
-Reedemcode()
-end)
-SetGem:Cheat("Button", "Leave To Lobby", function()
+Units:Cheat("Button", "🚪Leave To Lobby", function()
     warn("Return to Lobby")
     Teleport()
 end)
 
-hook:Cheat("Button", "Finish Webhook", function()
+Units:Cheat("Button", "🌐Finish Webhook", function()
     print(Settings.WebhookUrl)
     GemsWebhook()
 end)
