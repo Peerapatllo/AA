@@ -845,6 +845,7 @@ watermark = Units:Cheat("Label", "⏲️Time : " ..math.floor(Workspace.Distribu
 
 spawn(function()
 	while wait(1) do
+        if userrbx then userrbx.label.Text = "" .. tostring(namegame).. " ("..tostring(display)..") 👑 BattlePass 👑" end
 		if watermark then watermark.label.Text = "⏲️Time : " ..math.floor(Workspace.DistributedGameTime).. " | 🌊Wave : " ..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.. " | 💴¥en : " ..game:GetService("Players").LocalPlayer.PlayerGui.spawn_units.Lives.Frame.Resource.Money.text.Text end
 	end
 end)
