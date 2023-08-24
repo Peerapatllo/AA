@@ -663,9 +663,7 @@ local Window = Uilib.new(true, "                         "..namegame.." ( "..dis
 Window.ChangeToggleKey(Enum.KeyCode.C)
 
 local Farmsetup = Window:Category("🧑🏻‍🌾 Custom Farm")
-local SetGem = Farmsetup:Sector("💎‍ SetGem")
-local blank3 = Farmsetup:Sector("")
-local hook = Farmsetup:Sector("🌐‍ Webhook")
+local Units = Farmsetup:Sector("📰‍ Info")
 
 local Farm = Window:Category("🤖 Auto Farm")
 local SelectUnits = Farm:Sector("🧙‍ Select Units")
@@ -808,8 +806,46 @@ spawn(function()
 		if show_kicksetting then show_kicksetting.label.Text = "Kick Setting : " .. tostring(Settings.KiwwyKick) end
 	end
 end)
+--[[ THE BEST ]]--
+--[[ MARK ]]--
+local namegame = game:GetService("Players").LocalPlayer.Name
+local display = game:GetService("Players").LocalPlayer.DisplayName
 
-SetGem:Cheat("Textbox", "ไข่มุกที่ต้องการฟาร์ม", function(Value)
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/DistributionError/LinoriaLib/main/Library.lua"))()
+local FrameTimer = tick();
+local FrameCounter = 0;
+local FPS = 60;
+
+RunService.RenderStepped:Connect(function()
+    FrameCounter = FrameCounter + 1;
+    if tick() - FrameTimer >= 1 then
+        FPS = FrameCounter;
+        FrameTimer = tick();
+        FrameCounter = 0;
+    end;
+    Library:SetWatermark(("⏲️: "..math.floor(Workspace.DistributedGameTime).."|🌊: "..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.."|🦪: " ..Settings.GemFramed.. " / " ..Settings.GemtoFarm.. ""))
+end);
+
+Units:Cheat("Button", "🧙 Select Units", function() --Selects Currently Equipped Units!
+    Settings.SelectedUnits = {
+        U1 = "nil",
+        U2 = "nil",
+        U3 = "nil",
+        U4 = "nil",
+        U5 = "nil",
+        U6 = "nil"
+    }
+    saveSettings()
+    GetUnits()
+end)
+
+Units:Cheat("Checkbox","🌾 Auto Start  ", function(bool)
+    print(bool)
+    Settings.autostart = bool
+    saveSettings()
+end,{enabled = Settings.autostart })
+
+Units:Cheat("Textbox", "🦪 ไข่มุกที่ต้องการฟาร์ม", function(Value)
     if type(tonumber(Value)) == "number" then
         Show_GemtoFarm.label.Text = "ไข่มุกที่ต้องการฟาร์ม : " .. Value
         Settings.GemtoFarm = Value
@@ -823,21 +859,16 @@ SetGem:Cheat("Textbox", "ไข่มุกที่ต้องการฟา�
         end)
     end
 end, { placeholder = Settings.GemtoFarm })
-SetGem:Cheat("Button", "Redeem All Code", function()
-    print(Settings.redeemc)
-Reedemcode()
-end)
-SetGem:Cheat("Button", "Leave To Lobby", function()
+Units:Cheat("Button", "🚪Leave To Lobby", function()
     warn("Return to Lobby")
     Teleport()
 end)
 
-hook:Cheat("Button", "Finish Webhook", function()
+Units:Cheat("Button", "🌐Finish Webhook", function()
     print(Settings.WebhookUrl)
     GemsWebhook()
 end)
-
---[[ THE BEST ]]--
+--[[ MARK ]]--
 
 ----------------------------------------------
 ---------------- Units Selection -------------
