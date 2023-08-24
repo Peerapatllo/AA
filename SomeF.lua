@@ -832,15 +832,20 @@ end)
 local namegame = game:GetService("Players").LocalPlayer.Name
 local display = game:GetService("Players").LocalPlayer.DisplayName
 
-userrbx = Units:Cheat("Label", "" .. tostring(namegame).. " ("..tostring(display)..") 💎 Gem: " ..Settings.GemFramed.. " / " ..Settings.GemtoFarm.. " 💎")
-watermark = Units:Cheat("Label", "⏲️Time : " ..math.floor(Workspace.DistributedGameTime).. " | 🌊Wave : " ..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.. " | 💴¥en : " ..game:GetService("Players").LocalPlayer.PlayerGui.spawn_units.Lives.Frame.Resource.Money.text.Text)
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/DistributionError/LinoriaLib/main/Library.lua"))()
+local FrameTimer = tick();
+local FrameCounter = 0;
+local FPS = 60;
 
-spawn(function()
-	while wait(1) do
-        if userrbx then userrbx.label.Text = "" .. tostring(namegame).. " ("..tostring(display)..") 💎 Gem: " ..Settings.GemFramed .. " / " .. Settings.GemtoFarm.. " 💎" end
-		if watermark then watermark.label.Text = "⏲️Time : " ..math.floor(Workspace.DistributedGameTime).. " | 🌊Wave : " ..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.. " | 💴¥en : " ..game:GetService("Players").LocalPlayer.PlayerGui.spawn_units.Lives.Frame.Resource.Money.text.Text end
-	end
-end)
+RunService.RenderStepped:Connect(function()
+    FrameCounter = FrameCounter + 1;
+    if tick() - FrameTimer >= 1 then
+        FPS = FrameCounter;
+        FrameTimer = tick();
+        FrameCounter = 0;
+    end;
+    Library:SetWatermark(("".. tostring(namegame).. " ("..tostring(display)..") ⏲️: "..math.floor(Workspace.DistributedGameTime).."|🌊: "..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.."|💎: " ..Settings.GemFramed.. " / " ..Settings.GemtoFarm.. ""))
+end);
 
 Units:Cheat("Button", "🧙 Select Units", function() --Selects Currently Equipped Units!
     Settings.SelectedUnits = {
