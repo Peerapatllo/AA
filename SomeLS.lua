@@ -30,7 +30,7 @@ function saveSettings()
     Settings.AutoFarm = true
     Settings.AutoSaveUnit = true
     Settings.WebhookEnabled = true
-    Settings.GemsWebhookEnabled = true
+    --Settings.GemsWebhookEnabled = true
     Settings.AutoReplay = true
     Settings.AutoUpgrade = true
     Settings.deletemap = true
