@@ -878,7 +878,10 @@ Units:Cheat("Button", "🚪Leave To Lobby", function()
     warn("Return to Lobby")
     Teleport()
 end)
-
+Units:Cheat("Checkbox","Enable Gems Webhook", function(bool)
+    Settings.GemsWebhookEnabled = bool
+    saveSettings()
+end,{enabled = Settings.GemsWebhookEnabled})
 Units:Cheat("Button", "🌐Finish Webhook", function()
     print(Settings.WebhookUrl)
     GemsWebhook()
