@@ -789,22 +789,22 @@ local function CheckGemAll()
 	end
 end
 
-Show_GemtoFarm = ShowCustomFarm:Cheat("Label", "เพชรที่ต้องการฟาร์ม : " .. Settings.GemtoFarm)
-Show_GemFarmed = ShowCustomFarm:Cheat("Label", "เพชรที่ฟาร์มไปแล้ว : " .. Settings.btplv)
-Show_GemAll = ShowCustomFarm:Cheat("Label", "เพชรที่ต้องฟาร์มทั้งหมด : " .. Settings.btplv .. " / " .. Settings.GemtoFarm .. CheckGemAll())
+Show_GemtoFarm = ShowCustomFarm:Cheat("Label", "BTPที่ต้องการฟาร์ม : " .. Settings.GemtoFarm)
+Show_GemFarmed = ShowCustomFarm:Cheat("Label", "BTPที่ฟาร์มไปแล้ว : " .. Settings.btplv)
+Show_GemAll = ShowCustomFarm:Cheat("Label", "BTPที่ต้องฟาร์มทั้งหมด : " .. Settings.btplv .. " / " .. Settings.GemtoFarm .. CheckGemAll())
 ShowCustomFarm:Cheat("Label", "")
 Show_ErrorCode = ShowCustomFarm:Cheat("Label", "Error : None")
 local function ChangeErrorCode(text) Show_ErrorCode.label.Text = "Error : " .. text end
 
-local function changetextgemall() Show_GemAll.label.Text = "เพชรที่ต้องฟาร์มทั้งหมด : " .. Settings.btplv .. " / " .. Settings.GemtoFarm .. CheckGemAll() end
+local function changetextgemall() Show_GemAll.label.Text = "BTPที่ต้องฟาร์มทั้งหมด : " .. Settings.btplv .. " / " .. Settings.GemtoFarm .. CheckGemAll() end
 local EditCustomFarm = CustomFarm:Sector("😡 Custom Data")
 EditCustomFarm:Cheat("Textbox", "Webhook Url", function(Value)
 	Settings.WebhookUrl = Value
 	saveSettings()
 end, { placeholder = Settings.WebhookUrl })
-EditCustomFarm:Cheat("Textbox", "เพชรที่ต้องการฟาร์ม", function(Value)
+EditCustomFarm:Cheat("Textbox", "BTPที่ต้องการฟาร์ม", function(Value)
 	if type(tonumber(Value)) == "number" then
-		Show_GemtoFarm.label.Text = "เพชรที่ต้องการฟาร์ม : " .. Value
+		Show_GemtoFarm.label.Text = "BTPที่ต้องการฟาร์ม : " .. Value
 		Settings.GemtoFarm = Value
 		saveSettings()
 		changetextgemall()
@@ -826,9 +826,9 @@ end)
 
 spawn(function()
 	while wait(3) do
-		if Show_GemAll then Show_GemAll.label.Text = "เพชรที่ต้องฟาร์มทั้งหมด : " .. Settings.Settings.btplv .. " / " .. Settings.GemtoFarm .. CheckGemAll() end
-		if Show_GemtoFarm then Show_GemtoFarm.label.Text = "เพชรที่ต้องการฟาร์ม : " .. Settings.GemtoFarm end
-		if Show_GemFarmed then Show_GemFarmed.label.Text = "เพชรที่ฟาร์มไปแล้ว : " .. Settings.Settings.btplv end
+		if Show_GemAll then Show_GemAll.label.Text = "BTPที่ต้องฟาร์มทั้งหมด : " .. Settings.Settings.btplv .. " / " .. Settings.GemtoFarm .. CheckGemAll() end
+		if Show_GemtoFarm then Show_GemtoFarm.label.Text = "BTPที่ต้องการฟาร์ม : " .. Settings.GemtoFarm end
+		if Show_GemFarmed then Show_GemFarmed.label.Text = "BTPที่ฟาร์มไปแล้ว : " .. Settings.btplv end
 		if show_kicksetting then show_kicksetting.label.Text = "Kick Setting : " .. tostring(Settings.KiwwyKick) end
 	end
 end)
@@ -870,9 +870,9 @@ Units:Cheat("Checkbox","🌾 Auto Start  ", function(bool)
     saveSettings()
 end,{enabled = Settings.autostart })
 
-Units:Cheat("Textbox", "💎 เพชรที่ต้องการฟาร์ม", function(Value)
+Units:Cheat("Textbox", "💎 BTPที่ต้องการฟาร์ม", function(Value)
     if type(tonumber(Value)) == "number" then
-        Show_GemtoFarm.label.Text = "เพชรที่ต้องการฟาร์ม : " .. Value
+        Show_GemtoFarm.label.Text = "BTPที่ต้องการฟาร์ม : " .. Value
         Settings.GemtoFarm = Value
         saveSettings()
         changetextgemall()
