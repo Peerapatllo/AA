@@ -98,10 +98,7 @@ if not Settings.GemtoFarm then
 	Settings.GemtoFarm = 0
 	saveSettings()
 end
-if not Settings.GemFramed then
-	Settings.GemFramed = Settings.btplv
-	saveSettings()
-end
+
 if not Settings.KiwwyKick then
 	Settings.KiwwyKick = false
 	saveSettings()
@@ -775,7 +772,7 @@ local UIUPDT = Home:Sector("⚙️ Challenge Config ⚙️")
 --[[ THE BEST ]]--
 
 local function CheckGemAll()
-	if tonumber(Settings.GemFramed) >= tonumber(Settings.GemtoFarm) and tonumber(Settings.GemtoFarm) ~= 0 then
+	if tonumber(Settings.btplv) >= tonumber(Settings.GemtoFarm) and tonumber(Settings.GemtoFarm) ~= 0 then
 		if not Settings.KiwwyKick then
             GemWebhook()
             Settings.autostart = false
