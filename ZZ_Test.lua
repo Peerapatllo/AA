@@ -38,9 +38,9 @@ function saveSettings()
     Settings.deletemap = true
     Settings.placeany = true
     Settings.WorldCategory = "Story Worlds"
-    Settings.SelectedLevel = "namek_infinite"
+    Settings.SelectedLevel = "aot_infinite"
     Settings.Difficulty = "Hard"
-    Settings.SelectedWorld = "Planet Namak"
+    Settings.SelectedWorld = "Shiganshinu District"
 
     Settings.namek = {
         UP1 = {x = -2946.871337890625,z = -700.5772094726563,y = 91.80614471435547,y2 = 91.80614471435547,y3 = 91.80614471435547,y4 = 91.80614471435547,y5 = 91.80614471435547,y6 = 91.80614471435547},
