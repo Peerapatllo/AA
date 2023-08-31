@@ -3,15 +3,25 @@ local version = "16.0.0-1x"
 
 ---// Loading Section \\---
 repeat  task.wait() until game:IsLoaded()
+btplv = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.Level.V.Text
+nextlvbtp = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.FurthestRoom.V.Text
+
 if game.PlaceId == 8304191830 then
     repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
     repeat task.wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("collection"):FindFirstChild("grid"):FindFirstChild("List"):FindFirstChild("Outer"):FindFirstChild("UnitFrames")
     repeat task.wait() until game.ReplicatedStorage.packages:FindFirstChild("assets")
     repeat task.wait() until game.ReplicatedStorage.packages:FindFirstChild("StarterGui")
+    Settings.btplv = btplv
+    saveSettings()
+    warn("SAVE btplv")
+    Settings.btpxp = nextlvbtp
+	saveSettings()
+    warn("SAVE btpxp")
 else
     repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
     game:GetService("ReplicatedStorage").endpoints.client_to_server.vote_start:InvokeServer()
     repeat task.wait() until game:GetService("Workspace")["_waves_started"].Value == true
+    warn("Not save")
 end
 
 ------------------------------
@@ -80,19 +90,6 @@ function ReadSetting()
 end
 Settings = ReadSetting()
 --[[ Mark ]]--
-btplv = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.Level.V.Text
-nextlvbtp = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.FurthestRoom.V.Text
-
-if game.PlaceId == 8304191830 then
-	Settings.btplv = btplv
-    saveSettings()
-    warn("SAVE btplv")
-    Settings.btpxp = nextlvbtp
-	saveSettings()
-    warn("SAVE btpxp")
-else
-    warn("Not save")
-end
 
 if not Settings.GemtoFarm then
 	Settings.GemtoFarm = 0
