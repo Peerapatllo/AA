@@ -656,14 +656,12 @@ if game.CoreGui:FindFirstChild("FinityUI") then
 end
 local namegame = game:GetService("Players").LocalPlayer.Name
 local display = game:GetService("Players").LocalPlayer.DisplayName
-local room = game:GetService("Players").LocalPlayer.PlayerGui.InfiniteTowerUI.LevelSelect.InfoFrame.LevelTitle.Text
-room = string.gsub(room, "Infinity Castle: Room", "Room:")
 
 local dir = "Anime_Adventures/"..game.Players.LocalPlayer.Name
 local Uilib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/TI"))()
 local exec = tostring(identifyexecutor())
 --updatefix
-local Window = Uilib.new(true, "                         "..namegame.." ( "..display .." ) 🏯 Castle: " .. Settings.GemFramed .. " / " .. room .." 🏯")
+local Window = Uilib.new(true, "                         "..namegame.." ( "..display .." ) 🏯 Castle: " .. Settings.GemFramed .. " / " .. Settings.GemtoFarm .." 🏯")
 Window.ChangeToggleKey(Enum.KeyCode.C)
 
 local Farmsetup = Window:Category("🧑🏻‍🌾 Custom Farm")
@@ -832,7 +830,7 @@ RunService.RenderStepped:Connect(function()
         FrameTimer = tick();
         FrameCounter = 0;
     end;
-Library:SetWatermark(("🧑🏻 "..namegame.." ( "..display .." ) 🧑🏻\n⏲️: "..math.floor(Workspace.DistributedGameTime).."|🌊: "..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.."|🏯: " ..Settings.GemFramed.. " / " ..room.. ""))
+Library:SetWatermark(("🧑🏻 "..namegame.." ( "..display .." ) 🧑🏻\n⏲️: "..math.floor(Workspace.DistributedGameTime).."|🌊: "..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.."|🏯: " ..Settings.GemFramed.. " / " ..Settings.GemtoFarm.. ""))
 end);
 
 Units:Cheat("Button", "🧙 Select Units", function() --Selects Currently Equipped Units!
