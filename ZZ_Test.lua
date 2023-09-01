@@ -1,6 +1,7 @@
 --updatefix
 local version = "16.0.0-1x"
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/Lowcpu.lua"))()
+wait(5)
 ---// Loading Section \\---
 repeat  task.wait() until game:IsLoaded()
 if game.PlaceId == 8304191830 then
@@ -24,8 +25,8 @@ function saveSettings()
         makefolder(a)
     end
 --[[ Mark ]]--
-    Settings.WebhookUrl = "https://discord.com/api/webhooks/1139388689647157338/2lONO3_ZGzWPjjcsmp4kLEh7RsQGTr5G9NFJr9h5JKOjzJ1DB7HOtpcWqwpAgUnFGGRk"
-    Settings.GemsWebhookUrl = "https://discord.com/api/webhooks/1139388689647157338/2lONO3_ZGzWPjjcsmp4kLEh7RsQGTr5G9NFJr9h5JKOjzJ1DB7HOtpcWqwpAgUnFGGRk"
+    Settings.WebhookUrl = "https://discordapp.com/api/webhooks/1123519638182047784/ExIq01HMyDY3LxGVmYq0cg1vZjIDv8bLWK7O04piVD6uhirl-nczZt89cFLTH8Iwo1FW"
+    Settings.GemsWebhookUrl = "https://discordapp.com/api/webhooks/1123297814596829296/J4HVTcrz9IlIjEQ8EbccEOrJNCNBdRAJqW89HyLpjkG-9rqlXG_ONtm2kbLHqwSUIrXt"
     Settings.isFriendOnly = true
     Settings.AutoFarm = true
     Settings.AutoSaveUnit = true
@@ -81,7 +82,9 @@ end
 Settings = ReadSetting()
 --[[ Mark ]]--
 btplv = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.Level.V.Text
+if btplv == "99" then gold = "Bug" end
 nextlvbtp = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.FurthestRoom.V.Text
+if nextlvbtp == "100000/100000" then gold = "Bug" end
 
 if game.PlaceId == 8304191830 then
 	Settings.btplv = btplv
