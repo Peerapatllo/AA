@@ -846,11 +846,11 @@ Units:Cheat("Button", "🧙 Select Units", function() --Selects Currently Equipp
     GetUnits()
 end)
 
-Units:Cheat("Checkbox","🌾 Auto Start  ", function(bool)
+Units:Cheat("Checkbox","🏰️ Auto Castle  ", function(bool)
     print(bool)
-    Settings.autostart = bool
+    Settings.AutoInfinityCastle = bool
     saveSettings()
-end,{enabled = Settings.autostart })
+end,{enabled = Settings.AutoInfinityCastle })
 
 Units:Cheat("Textbox", "💎 เพชรที่ต้องการฟาร์ม", function(Value)
     if type(tonumber(Value)) == "number" then
