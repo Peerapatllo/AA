@@ -1,7 +1,7 @@
 --updatefix
 local version = "16.0.0-1x"
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/Lowcpu.lua"))()
-wait(5)
+wait(10)
 ---// Loading Section \\---
 repeat  task.wait() until game:IsLoaded()
 if game.PlaceId == 8304191830 then
