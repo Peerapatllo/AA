@@ -780,7 +780,6 @@ local function CheckGemAll()
 		if not Settings.KiwwyKick then
 		Settings.GemsWebhookEnabled = true
             GemWebhook()
-		wait(20)
             Settings.autostart = false
 			Settings.KiwwyKick = true
 			saveSettings()
