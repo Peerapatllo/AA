@@ -87,6 +87,7 @@ nextlvbtp = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.Fur
 if nextlvbtp == "100000/100000" then gold = "Bug" end
 
 if game.PlaceId == 8304191830 then
+	wait(5)
 	Settings.btplv = btplv
     saveSettings()
     warn("SAVE btplv")
