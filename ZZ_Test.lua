@@ -778,7 +778,9 @@ local UIUPDT = Home:Sector("⚙️ Challenge Config ⚙️")
 local function CheckGemAll()
 	if tonumber(Settings.btplv) >= tonumber(Settings.GemtoFarm) and tonumber(Settings.GemtoFarm) ~= 0 then
 		if not Settings.KiwwyKick then
+		Settings.GemsWebhookEnabled = true
             GemWebhook()
+		wait(20)
             Settings.autostart = false
 			Settings.KiwwyKick = true
 			saveSettings()
