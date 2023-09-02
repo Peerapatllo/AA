@@ -900,6 +900,10 @@ Units:Cheat("Button", "🌐Finish Webhook", function()
     print(Settings.WebhookUrl)
     GemWebhook()
 end)
+Units:Cheat("Checkbox","Enable Gem Webhook", function(bool)
+	Settings.GemsWebhookEnabled = bool
+	saveSettings()
+end,{enabled = Settings.GemsWebhookEnabled})
 ----------------------------------------------
 ---------------- Units Selection -------------
 ----------------------------------------------
