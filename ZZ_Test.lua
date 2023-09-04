@@ -33,7 +33,7 @@ function saveSettings()
     Settings.WebhookEnabled = true
     --Settings.GemsWebhookEnabled = true
     --Settings.autoQuit = true
-    Settings.AutoLeave = true
+    --Settings.AutoLeave = true
     Settings.AutoUpgrade = true
     Settings.AutoSellWave = 40
     Settings.deletemap = true
