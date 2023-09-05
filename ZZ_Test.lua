@@ -5037,7 +5037,7 @@ coroutine.resume(coroutine.create(function()
                 task.wait(2.1)
                 print("Returning to lobby...")
                 task.wait(2.1)
-                game:GetService("TeleportService"):Teleport(8304191830, game.Players.LocalPlayer)
+                --game:GetService("TeleportService"):Teleport(8304191830, game.Players.LocalPlayer)
                 Teleport()
             end
             if Settings.AutoSell and not Settings.autoQuit and tonumber(Settings.AutoSellWave) <= _wave.Value then
