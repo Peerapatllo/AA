@@ -24,10 +24,21 @@ function saveSettings()
         makefolder(a)
     end
 
-    Settings.WebhookUrl = "https://discord.com/api/webhooks/1130197864245625023/ChqISC8Fmuqt0oPgi3U53WP7o2kH8O1T6nYNhN_rrlDB7HHr7nvr3bx8__uw2ZipP7H7"
-    Settings.GemsWebhookUrl = "https://discord.com/api/webhooks/1130197864245625023/ChqISC8Fmuqt0oPgi3U53WP7o2kH8O1T6nYNhN_rrlDB7HHr7nvr3bx8__uw2ZipP7H7"
+	Settings.WebhookUrl = "https://discord.com/api/webhooks/1130197864245625023/ChqISC8Fmuqt0oPgi3U53WP7o2kH8O1T6nYNhN_rrlDB7HHr7nvr3bx8__uw2ZipP7H7"
+	Settings.GemsWebhookUrl = "https://discord.com/api/webhooks/1130197864245625023/ChqISC8Fmuqt0oPgi3U53WP7o2kH8O1T6nYNhN_rrlDB7HHr7nvr3bx8__uw2ZipP7H7"
     Settings.WebhookEnabled = true
     Settings.GemsWebhookEnabled = true
+    --Settings.isFriendOnly = true
+    --Settings.AutoSaveUnit = true
+    --Settings.AutoFarm = true
+    --Settings.AutoPickPortal = true
+    --Settings.AutoAbilities = true
+    --Settings.placeany = true
+    --Settings.WorldCategory = "Portals"
+    --Settings.SelectedLevel = "portal_summer"
+    --Settings.Difficulty = "Default"
+    --Settings.SelectedWorld = "Summer Events"
+    --Settings.SelectedTier = 1
 
     writefile(a .. '/' .. b, HttpService:JSONEncode(Settings))
     Settings = ReadSetting()
@@ -223,7 +234,7 @@ function webhookSummer()
 			if v['Count Shiny'] and v['Count'] then
 				if v['Count'] > 0 or v['Count Shiny'] > 0 then
 					if v['Count'] > 0 and (v['Count'] - Table_All_Items_Old_data[i]['Count']) > 0 then
-						TextDropLabel = TextDropLabel .. "<a:Dot:923905792162275368> " .. tostring(v['Name']) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count'])
+						TextDropLabel = TextDropLabel .. "<a:Dot:1147531692916088892> " .. tostring(v['Name']) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count'])
 						if v['Count Shiny'] > 0 and (v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) > 0 then
 							TextDropLabel = TextDropLabel .. " | " .. tostring(v['Name']) .. " (Shiny) x" .. tostring(v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) .. "\n"
 
@@ -235,7 +246,7 @@ function webhookSummer()
 				end
 			end
 		elseif v['Count Shiny'] and v['Count Shiny'] > 0 and (v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) > 0 then
-			TextDropLabel = TextDropLabel .. "<a:Dot:923905792162275368> " .. tostring(v['Name']) .. " (Shiny) x" .. tostring(v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) .. "\n"
+			TextDropLabel = TextDropLabel .. "<a:Dot:1147531692916088892> " .. tostring(v['Name']) .. " (Shiny) x" .. tostring(v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) .. "\n"
 
 		end
 	end
@@ -245,19 +256,19 @@ function webhookSummer()
 			elseif string.find(i,"portal") or string.find(i,"disc") then
 				Count_Portal_list = Count_Portal_list + 1
 			if string.gsub(i, "%D", "") == "" then
-					TextDropLabel = TextDropLabel .. "<a:Dot:923905792162275368> " .. tostring(v['Name']) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
+					TextDropLabel = TextDropLabel .. "<a:Dot:1147531692916088892> " .. tostring(v['Name']) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
 			else
-					TextDropLabel = TextDropLabel .. "<a:Dot:923905792162275368> " .. tostring(v['Name']) .. " Tier " .. tostring(string.gsub(i, "%D", "")) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
+					TextDropLabel = TextDropLabel .. "<a:Dot:1147531692916088892> " .. tostring(v['Name']) .. " Tier " .. tostring(string.gsub(i, "%D", "")) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
                 end
 
 			else
-				TextDropLabel = TextDropLabel .. "<a:Dot:923905792162275368> " .. tostring(v['Name']) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
+				TextDropLabel = TextDropLabel .. "<a:Dot:1147531692916088892> " .. tostring(v['Name']) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
 
 		    end
 		end
 	end
 	if TextDropLabel == "" then
-		TextDropLabel = "<a:Dot:923905792162275368>"
+		TextDropLabel = "<a:Dot:1147531692916088892>"
 	end
     
     cwaves = game:GetService("Players").LocalPlayer.PlayerGui.ResultsUI.Holder.Middle.WavesCompleted.Text
@@ -287,11 +298,11 @@ function webhookSummer()
 	lv = string.gsub(lv, "Level", "Level:")
 	timez = os.date("%X", os.time())--+7*60*60
     
-    --fgem = "# <a:load:938430201984065577> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:load:938430201984065577> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:923905792162275368> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:923905792162275368> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:923905792162275368> สถานะฟาร์ม: **".. Settings.GemFramed .. " / " .. Settings.GemtoFarm .."** <:Gems:1118956171995381850>"
-    --fcastle = "# <a:load:938430201984065577> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:load:938430201984065577> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:923905792162275368> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:923905792162275368> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:923905792162275368> สถานะฟาร์ม: **Infinite Castle** <a:castle:1130816340496760843>"
-    --fbtp = "# <a:load:938430201984065577> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:load:938430201984065577> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:923905792162275368> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:923905792162275368> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:923905792162275368> สถานะฟาร์ม: **BTP** <a:king:1130395244647690361>"
-    fse = "# <a:load:938430201984065577> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:load:938430201984065577> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:923905792162275368> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:923905792162275368> Gem: "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:923905792162275368> SummerPearls: "..summer_coin.." <:summerpearl:1134832081202053209> \n<a:Dot:923905792162275368> Portal: "..tostring(Count_Portal_list).." <:portal:1137441913553825852> \n<a:Dot:923905792162275368> สถานะฟาร์ม: **Farm** <:summerpearl:1134832081202053209>"
-    gamestats = "# <a:stockup:1123197731876393010> <:g1:1135449004927369216><:g2:1135449008240857189><:g3:1135449010287673374><:g4:1135449013898977390> <a:stockup:1123197731876393010> \n<a:Dot:923905792162275368> Map: "..maplv.." ("..result..") <a:globe27:1123178565278629978> \n<a:Dot:923905792162275368> Total Wave: "..tostring(waves[2]).." <a:qfcwaves:1123178559360479242> \n<a:Dot:923905792162275368> Time: "..tostring(ttime[2]).." <a:alarmclock51:1123178554084048896> \n<a:Dot:923905792162275368> SummerPearls: "..summer_reward.." <:summerpearl:1134832081202053209> \n<a:Dot:923905792162275368> XP: "..xp[1].." <a:exp:1123178548966989845>"
+    --fgem = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **".. Settings.GemFramed .. " / " .. Settings.GemtoFarm .."** <:Gems:1118956171995381850>"
+    --fcastle = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **Infinite Castle** <a:castle:1130816340496760843>"
+    --fbtp = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **BTP** <a:king:1130395244647690361>"
+    fse = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem: "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> SummerPearls: "..summer_coin.." <:summerpearl:1134832081202053209> \n<a:Dot:1147531692916088892> Portal: "..tostring(Count_Portal_list).." <:portal:1137441913553825852> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **".. Settings.GemFramed .. " / " .. Settings.GemtoFarm .."** <:summerpearl:1134832081202053209>"
+    gamestats = "# <a:stockup:1123197731876393010> <:g1:1135449004927369216><:g2:1135449008240857189><:g3:1135449010287673374><:g4:1135449013898977390> <a:stockup:1123197731876393010> \n<a:Dot:1147531692916088892> Map: "..maplv.." ("..result..") <a:globe27:1123178565278629978> \n<a:Dot:1147531692916088892> Total Wave: "..tostring(waves[2]).." <a:qfcwaves:1123178559360479242> \n<a:Dot:1147531692916088892> Time: "..tostring(ttime[2]).." <a:alarmclock51:1123178554084048896> \n<a:Dot:1147531692916088892> SummerPearls: "..summer_reward.." <:summerpearl:1134832081202053209> \n<a:Dot:1147531692916088892> XP: "..xp[1].." <a:exp:1123178548966989845>"
     ireward = "# <a:fight:1129761802100682862> <:i1:1135449015757045840><:i2:1135449019024408587><:i3:1135449022392442900><:i4:1135449024107909203> <a:fight:1129761802100682862> \n".. TextDropLabel ..""
 
     local data = {
@@ -363,7 +374,7 @@ function GemsWebhook()
                         ["thumbnail"] = {
                             ['url'] = thumbnails_avatar.data[1].imageUrl,
                         },
-                        ["description"] = "# <a:giveaway2:925229766506840134> <:s1:1135449027501105152><:s2:1135449031221456956><:s3:1135449034761437266><:s4:1135449036887961683><:s5:1135449040931278888> <a:giveaway2:925229766506840134> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:923905792162275368> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:923905792162275368> Gem: "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:923905792162275368> SummerPearls: "..summer_coin.." (+".. Settings.GemFramed ..") <:summerpearl:1134832081202053209> \n<a:Dot:923905792162275368> สถานะฟาร์ม: **Farm** <:summerpearl:1134832081202053209> \n<a:Dot:923905792162275368> ให้เครดิตร้าน <#1055871056843374632> <a:plus1:1123223573050437744>" ,
+                        ["description"] = "# <a:giveaway:1147545861463740477> <:s1:1135449027501105152><:s2:1135449031221456956><:s3:1135449034761437266><:s4:1135449036887961683><:s5:1135449040931278888> <a:giveaway:1147545861463740477> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem: "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> SummerPearls: "..summer_coin.." (+".. Settings.GemFramed ..") <:summerpearl:1134832081202053209> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **".. Settings.GemtoFarm .."** <:summerpearl:1134832081202053209> \n<a:Dot:1147531692916088892> ให้เครดิตร้าน <#1055871056843374632> <a:plus1:1123223573050437744>" ,
                         ["color"] = 10181046,
                         ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
                         ["image"] = {
@@ -648,7 +659,7 @@ local dir = "Anime_Adventures/"..game.Players.LocalPlayer.Name
 local Uilib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/TI"))()
 local exec = tostring(identifyexecutor())
 --updatefix
-local Window = Uilib.new(true, "                         "..namegame.." ( "..display .." ) 🦪 Farm: " .. Settings.GemFramed .. " 🦪")
+local Window = Uilib.new(true, "                         "..namegame.." ( "..display .." ) 🦪 Pearls: " .. Settings.GemFramed .. " / " .. Settings.GemtoFarm .." 🦪")
 Window.ChangeToggleKey(Enum.KeyCode.C)
 
 local Farmsetup = Window:Category("🧑🏻‍🌾 Custom Farm")
@@ -812,7 +823,7 @@ RunService.RenderStepped:Connect(function()
         FrameTimer = tick();
         FrameCounter = 0;
     end;
-Library:SetWatermark(("🧑🏻 "..namegame.." ( "..display .." ) 🧑🏻\n⏲️: "..math.floor(Workspace.DistributedGameTime).."|🌊: "..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.."|🌀: "..tostring(Count_Portal_list).."|🦪: " ..Settings.GemFramed..""))
+    Library:SetWatermark(("🧑🏻 "..namegame.." ( "..display .." ) 🧑🏻\n⏲️: "..math.floor(Workspace.DistributedGameTime).."|🌊: "..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.."|🦪: " ..Settings.GemFramed.. " / " ..Settings.GemtoFarm.. ""))
 end);
 
 Units:Cheat("Button", "🧙 Select Units", function() --Selects Currently Equipped Units!
