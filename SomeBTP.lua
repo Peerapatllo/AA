@@ -9,6 +9,8 @@ if game.PlaceId == 8304191830 then
     warn("Success 60s")
     repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
     repeat task.wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("collection"):FindFirstChild("grid"):FindFirstChild("List"):FindFirstChild("Outer"):FindFirstChild("UnitFrames")
+	repeat task.wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("BattlePass"):FindFirstChild("Main"):FindFirstChild("Level"):FindFirstChild("V")
+    repeat task.wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("BattlePass"):FindFirstChild("Main"):FindFirstChild("FurthestRoom"):FindFirstChild("V")
     repeat task.wait() until game.ReplicatedStorage.packages:FindFirstChild("assets")
     repeat task.wait() until game.ReplicatedStorage.packages:FindFirstChild("StarterGui")
 else
