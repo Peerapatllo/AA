@@ -34,8 +34,8 @@ function saveSettings()
     Settings.AutoSaveUnit = true
     Settings.WebhookEnabled = true
     --Settings.GemsWebhookEnabled = true
-    --Settings.autoQuit = true
-    --Settings.AutoLeave = true
+    Settings.autoQuit = true
+    Settings.AutoLeave = true
     Settings.AutoUpgrade = true
     Settings.AutoSellWave = 40
     Settings.deletemap = true
