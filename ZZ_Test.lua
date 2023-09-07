@@ -5,7 +5,7 @@ local version = "16.0.0-1x"
 repeat  task.wait() until game:IsLoaded()
 if game.PlaceId == 8304191830 then
 	warn("Wait 60s")
-    wait(60)
+    wait(400)
     warn("Success 60s")
     repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
     repeat task.wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("collection"):FindFirstChild("grid"):FindFirstChild("List"):FindFirstChild("Outer"):FindFirstChild("UnitFrames")
