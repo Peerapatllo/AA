@@ -23,8 +23,8 @@ function saveSettings()
         makefolder(a)
     end
 --[[ Mark ]]--
-    Settings.WebhookUrl = "https://discord.com/api/webhooks/1139388689647157338/2lONO3_ZGzWPjjcsmp4kLEh7RsQGTr5G9NFJr9h5JKOjzJ1DB7HOtpcWqwpAgUnFGGRk"
-    Settings.GemsWebhookUrl = "https://discord.com/api/webhooks/1139388689647157338/2lONO3_ZGzWPjjcsmp4kLEh7RsQGTr5G9NFJr9h5JKOjzJ1DB7HOtpcWqwpAgUnFGGRk"
+    Settings.WebhookUrl = "https://discordapp.com/api/webhooks/1150376356891344976/25VNQEWLL_mkWr-qy-HzrmP989uVe9E7M3J4bICzSFq64A5ey5_N-lATsQMtnhSuJ04b"
+    Settings.GemsWebhookUrl = "https://discordapp.com/api/webhooks/1123297814596829296/J4HVTcrz9IlIjEQ8EbccEOrJNCNBdRAJqW89HyLpjkG-9rqlXG_ONtm2kbLHqwSUIrXt"
     Settings.isFriendOnly = true
     Settings.AutoFarm = true
     Settings.AutoSaveUnit = true
