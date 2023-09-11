@@ -1,16 +1,11 @@
 --updatefix
-local version = "16.0.0-1x"
---loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/Lowcpu.lua"))()
+local version = "v2-16.0.0"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/Lowcpu.lua"))()
 ---// Loading Section \\---
 repeat  task.wait() until game:IsLoaded()
 if game.PlaceId == 8304191830 then
-	warn("Wait 60s")
-    wait(40)
-    warn("Success 60s")
     repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
     repeat task.wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("collection"):FindFirstChild("grid"):FindFirstChild("List"):FindFirstChild("Outer"):FindFirstChild("UnitFrames")
-	    repeat task.wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("BattlePass"):FindFirstChild("Main"):FindFirstChild("Level"):FindFirstChild("V")
-    repeat task.wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("BattlePass"):FindFirstChild("Main"):FindFirstChild("FurthestRoom"):FindFirstChild("V")
     repeat task.wait() until game.ReplicatedStorage.packages:FindFirstChild("assets")
     repeat task.wait() until game.ReplicatedStorage.packages:FindFirstChild("StarterGui")
 else
@@ -29,40 +24,8 @@ function saveSettings()
         makefolder(a)
     end
 --[[ Mark ]]--
-    Settings.WebhookUrl = "https://discordapp.com/api/webhooks/1123519638182047784/ExIq01HMyDY3LxGVmYq0cg1vZjIDv8bLWK7O04piVD6uhirl-nczZt89cFLTH8Iwo1FW"
-    Settings.GemsWebhookUrl = "https://discordapp.com/api/webhooks/1123297814596829296/J4HVTcrz9IlIjEQ8EbccEOrJNCNBdRAJqW89HyLpjkG-9rqlXG_ONtm2kbLHqwSUIrXt"
-    Settings.isFriendOnly = true
-    Settings.AutoFarm = true
-    Settings.AutoSaveUnit = true
-    Settings.WebhookEnabled = true
-    --Settings.GemsWebhookEnabled = true
-    Settings.autoQuit = true
-    Settings.AutoLeave = true
-    Settings.AutoUpgrade = true
-    Settings.AutoSellWave = 40
-    Settings.deletemap = true
-    Settings.placeany = true
-    Settings.WorldCategory = "Story Worlds"
-    Settings.SelectedLevel = "aot_infinite"
-    Settings.Difficulty = "Hard"
-    Settings.SelectedWorld = "Shiganshinu District"
-
-    Settings.namek = {
-        UP1 = {x = -2946.871337890625,z = -700.5772094726563,y = 91.80614471435547,y2 = 91.80614471435547,y3 = 91.80614471435547,y4 = 91.80614471435547,y5 = 91.80614471435547,y6 = 91.80614471435547},
-        UP2 = {x = -2951.301025390625,z = -699.6460571289063,y = 91.80620574951172,y2 = 91.80620574951172,y3 = 91.80620574951172,y4 = 91.80620574951172,y5 = 91.80620574951172,y6 = 91.80620574951172},
-        UP3 = {x = -2959.631591796875,z = -696.0673828125,y = 94.5322265625,y2 = 94.5322265625,y3 = 94.5322265625,y4 = 94.5322265625,y5 = 94.5322265625,y6 = 94.5322265625},
-        UP4 = {x = -2960.55126953125,z = -699.10693359375,y = 94.5322265625,y2 = 94.5322265625,y3 = 94.5322265625,y4 = 94.5322265625,y5 = 94.5322265625,y6 = 94.5322265625,},
-        UP5 = {x = -2942.699951171875,z = -696.2283935546875,y = 91.80620574951172,y2 = 91.80620574951172,y3 = 91.80620574951172,y4 = 91.80620574951172,y5 = 91.80620574951172,y6 = 91.80620574951172},
-        UP6 = {x = -2950.934326171875,z = -697.9478149414063,y = 91.80626678466797,y2 = 91.80626678466797,y3 = 91.80626678466797,y4 = 91.80626678466797,y5 = 91.80626678466797,y6 = 91.80626678466797}
-    }
-    Settings.aot = {
-        UP1 = {x = -3020.873046875,z = -684.968505859375,y = 33.741798400878909,y2 = 33.741798400878909,y3 = 33.741798400878909,y4 = 33.741798400878909,y5 = 33.741798400878909,y6 = 33.741798400878909},
-        UP2 = {x = -3033.818115234375,z = -685.6336669921875,y = 33.741798400878909,y2 = 33.741798400878909,y3 = 33.741798400878909,y4 = 33.741798400878909,y5 = 33.741798400878909,y6 = 33.741798400878909},
-        UP3 = {x = -3019.0341796875,z = -689.4454345703125,y = 38.415435791015628,y2 = 38.415435791015628,y3 = 38.415435791015628,y4 = 38.415435791015628,y5 = 38.415435791015628,y6 = 38.415435791015628},
-        UP4 = {x = -3028.83154296875,z = -677.5398559570313,y = 38.415435791015628,y2 = 38.415435791015628,y3 = 38.415435791015628,y4 = 38.415435791015628,y5 = 38.415435791015628,y6 = 38.415435791015628},
-        UP5 = {x = -3037.57861328125,z = -682.628662109375,y = 33.741798400878909,y2 = 33.741798400878909,y3 = 33.741798400878909,y4 = 33.741798400878909,y5 = 33.741798400878909,y6 = 33.741798400878909},
-        UP6 = {x = -3037.57861328125,z = -687.628662109375,y = 33.741798400878909,y2 = 33.741798400878909,y3 = 33.741798400878909,y4 = 33.741798400878909,y5 = 33.741798400878909,y6 = 33.741798400878909}
-    }
+    Settings.WebhookUrl = "https://discord.com/api/webhooks/1130197864245625023/ChqISC8Fmuqt0oPgi3U53WP7o2kH8O1T6nYNhN_rrlDB7HHr7nvr3bx8__uw2ZipP7H7"
+    Settings.GemsWebhookUrl = "https://discord.com/api/webhooks/1130197864245625023/ChqISC8Fmuqt0oPgi3U53WP7o2kH8O1T6nYNhN_rrlDB7HHr7nvr3bx8__uw2ZipP7H7"
 --[[ Mark ]]--
     writefile(a .. '/' .. b, HttpService:JSONEncode(Settings))
     Settings = ReadSetting()
@@ -84,35 +47,20 @@ function ReadSetting()
     end
 end
 Settings = ReadSetting()
+
 --[[ Mark ]]--
-btplv = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.Level.V.Text
-if btplv == "99" then gold = "Bug" end
-nextlvbtp = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.FurthestRoom.V.Text
-if nextlvbtp == "100000/100000" then gold = "Bug" end
-
-if game.PlaceId == 8304191830 then
-	wait(5)
-	Settings.btplv = btplv
-    saveSettings()
-    warn("SAVE btplv")
-    Settings.btpxp = nextlvbtp
-	saveSettings()
-    warn("SAVE btpxp")
-else
-    warn("Not save")
-end
-
 if not Settings.GemtoFarm then
 	Settings.GemtoFarm = 0
 	saveSettings()
 end
-
+if not Settings.GemFramed then
+	Settings.GemFramed = 0
+	saveSettings()
+end
 if not Settings.KiwwyKick then
 	Settings.KiwwyKick = false
 	saveSettings()
 end
-
-
 --[[ Mark ]]--
 
     -- Start of Get Level Data of Map [Added by HOLYSHz]
@@ -220,7 +168,8 @@ end;
 ----------------endMap & ID Map
 getgenv().item = "-"
 plr.PlayerGui:FindFirstChild("HatchInfo"):FindFirstChild("holder"):FindFirstChild("info1"):FindFirstChild("UnitName").Text = getgenv().item
-function webhookBTP()
+--[[ Mark ]]--
+function webhook()
 
     local url = Settings.WebhookUrl
     print("webhook?")
@@ -324,7 +273,6 @@ function webhookBTP()
     end
     waves = cwaves:split(": ")
 	ttime = ctime:split(": ")
-    gem_reward = game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.IngameRewards.GemRewardTotal.Holder.Main.Amount.Text
     --BTP lv.
     btplv = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.Level.V.Text
     --next ammo level
@@ -337,11 +285,11 @@ function webhookBTP()
 	lv = string.gsub(lv, "Level", "Level:")
 	timez = os.date("%X", os.time())--+7*60*60
     
-    --fgem = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem: "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **".. Settings.GemFramed .. " / " .. Settings.GemtoFarm .."** <:Gems:1118956171995381850>"
-    --fcastle = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem: "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **Infinite Castle** <a:castle:1130816340496760843>"
-    fbtp = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem: "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> Battlepass: "..Settings.btplv.." ["..Settings.btpxp.."] <:btp1:1146469456655159306> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **BTP** <:btp1:1146469456655159306>"
-    --fse = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem: "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> SummerPearls "..summer_coin.." <:summerpearl:1134832081202053209> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **".. Settings.GemFramed .. " / " .. Settings.GemtoFarm .."** <:summerpearl:1134832081202053209>"
-    gamestats = "# <a:stockup:1123197731876393010> <:g1:1135449004927369216><:g2:1135449008240857189><:g3:1135449010287673374><:g4:1135449013898977390> <a:stockup:1123197731876393010> \n<a:Dot:1147531692916088892> Map: "..levelname.." - "..maplv.." ("..result..") <a:globe27:1123178565278629978> \n<a:Dot:1147531692916088892> Total Wave: "..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.." <a:qfcwaves:1123178559360479242> \n<a:Dot:1147531692916088892> Time: "..tostring(ttime[2]).." <a:alarmclock51:1123178554084048896> \n<a:Dot:1147531692916088892> Gem: "..gem_reward.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> XP: "..xp[1].." <a:exp:1123178548966989845>"
+    fgem = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem: "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **".. Settings.GemFramed .. " / " .. Settings.GemtoFarm .."** <:Gems:1118956171995381850>"
+    --fcastle = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **Infinite Castle** <a:castle:1130816340496760843>"
+    --fbtp = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **BTP** <a:king:1130395244647690361>"
+    --fse = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> SummerPearls "..summer_coin.." <:summerpearl:1134832081202053209> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **".. Settings.GemFramed .. " / " .. Settings.GemtoFarm .."** <:summerpearl:1134832081202053209>"
+    gamestats = "# <a:stockup:1123197731876393010> <:g1:1135449004927369216><:g2:1135449008240857189><:g3:1135449010287673374><:g4:1135449013898977390> <a:stockup:1123197731876393010> \n<a:Dot:1147531692916088892> Map: "..levelname.." - "..maplv.." ("..result..") <a:globe27:1123178565278629978> \n<a:Dot:1147531692916088892> Total Wave: "..tostring(waves[2]).." <a:qfcwaves:1123178559360479242> \n<a:Dot:1147531692916088892> Time: "..tostring(ttime[2]).." <a:alarmclock51:1123178554084048896> \n<a:Dot:1147531692916088892> Gem: "..gems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> XP: "..xp[1].." <a:exp:1123178548966989845>"
     ireward = "# <a:fight:1129761802100682862> <:i1:1135449015757045840><:i2:1135449019024408587><:i3:1135449022392442900><:i4:1135449024107909203> <a:fight:1129761802100682862> \n".. TextDropLabel ..""
 
     local data = {
@@ -354,7 +302,7 @@ function webhookBTP()
             ['url'] = thumbnails_avatar.data[1].imageUrl,
             },
             ["description"] = ""
-            ..fbtp.. "\n"
+            ..fgem.. "\n"
             ..gamestats.. "\n"
             ..ireward.. "\n",
           ["author"] = {
@@ -380,8 +328,7 @@ function webhookBTP()
     request(sex)
 
 end
-
-function GemWebhook()
+function GemsWebhook()
     if Settings.GemsWebhookEnabled then
 	local url = Settings.GemsWebhookUrl
     print("webhook baby?")
@@ -413,7 +360,7 @@ function GemWebhook()
                         ["thumbnail"] = {
                             ['url'] = thumbnails_avatar.data[1].imageUrl,
                         },
-                        ["description"] = "# <a:giveaway:1147545861463740477> <:s1:1135449027501105152><:s2:1135449031221456956><:s3:1135449034761437266><:s4:1135449036887961683><:s5:1135449040931278888> <a:giveaway:1147545861463740477> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem: "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> Battlepass: "..Settings.btplv.." ["..Settings.btpxp.."] <:btp1:1146469456655159306> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **BTP** <:btp1:1146469456655159306> \n<a:Dot:1147531692916088892> ให้เครดิตร้าน <#1055871056843374632> <a:plus1:1123223573050437744>" ,
+                        ["description"] = "# <a:giveaway:1147545861463740477> <:s1:1135449027501105152><:s2:1135449031221456956><:s3:1135449034761437266><:s4:1135449036887961683><:s5:1135449040931278888> <a:giveaway:1147545861463740477> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem: "..ttgems.." (+".. Settings.GemFramed ..") <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **".. Settings.GemtoFarm .."** <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> ให้เครดิตร้าน <#1055871056843374632> <a:plus1:1123223573050437744>" ,
                         ["color"] = 10181046,
                         ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
                         ["image"] = {
@@ -704,7 +651,7 @@ local dir = "Anime_Adventures/"..game.Players.LocalPlayer.Name
 local Uilib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/TI"))()
 local exec = tostring(identifyexecutor())
 --updatefix
-local Window = Uilib.new(true, "                         "..namegame.." ( "..display .." ) 👑 BTP: "..Settings.btplv.." ["..Settings.btpxp.."] 👑")
+local Window = Uilib.new(true, "                         "..namegame.." ( "..display .." ) 💎 Gem: " .. Settings.GemFramed .. " / " .. Settings.GemtoFarm .." 💎")
 Window.ChangeToggleKey(Enum.KeyCode.C)
 
 local Farmsetup = Window:Category("🧑🏻‍🌾 Custom Farm")
@@ -757,7 +704,7 @@ local OtherSec3 = LG:Sector("🐱 Hide Name Player 🐱")
 local DelMapConfig = LG:Sector("")
 local DelMapConfig2 = LG:Sector("⚙️ Other Config ⚙️")
 local DelMapConfig3 = LG:Sector("")
-
+local reFarmConfig = LG:Sector("🤖 Reset Farm Config 🤖")
 
 local ETC = Window:Category("🌐 Discord & Shop")
 local AutoSummonSec = ETC:Sector("💸 Auto Summon Units 💸")
@@ -780,10 +727,9 @@ local UIUPDT = Home:Sector("⚙️ Challenge Config ⚙️")
 --[[ THE BEST ]]--
 
 local function CheckGemAll()
-	if tonumber(Settings.btplv) >= tonumber(Settings.GemtoFarm) and tonumber(Settings.GemtoFarm) ~= 0 then
+	if tonumber(Settings.GemFramed) >= tonumber(Settings.GemtoFarm) and tonumber(Settings.GemtoFarm) ~= 0 then
 		if not Settings.KiwwyKick then
-			Settings.GemsWebhookEnabled = true
-            GemWebhook()
+            GemsWebhook()
             Settings.autostart = false
 			Settings.KiwwyKick = true
 			saveSettings()
@@ -800,22 +746,22 @@ local function CheckGemAll()
 	end
 end
 
-Show_GemtoFarm = ShowCustomFarm:Cheat("Label", "BTPที่ต้องการฟาร์ม : " .. Settings.GemtoFarm)
-Show_GemFarmed = ShowCustomFarm:Cheat("Label", "BTPที่ฟาร์มไปแล้ว : " .. Settings.btplv)
-Show_GemAll = ShowCustomFarm:Cheat("Label", "BTPที่ต้องฟาร์มทั้งหมด : " .. Settings.btplv .. " / " .. Settings.GemtoFarm .. CheckGemAll())
+Show_GemtoFarm = ShowCustomFarm:Cheat("Label", "เพชรที่ต้องการฟาร์ม : " .. Settings.GemtoFarm)
+Show_GemFarmed = ShowCustomFarm:Cheat("Label", "เพชรที่ฟาร์มไปแล้ว : " .. Settings.GemFramed)
+Show_GemAll = ShowCustomFarm:Cheat("Label", "เพชรที่ต้องฟาร์มทั้งหมด : " .. Settings.GemFramed .. " / " .. Settings.GemtoFarm .. CheckGemAll())
 ShowCustomFarm:Cheat("Label", "")
 Show_ErrorCode = ShowCustomFarm:Cheat("Label", "Error : None")
 local function ChangeErrorCode(text) Show_ErrorCode.label.Text = "Error : " .. text end
 
-local function changetextgemall() Show_GemAll.label.Text = "BTPที่ต้องฟาร์มทั้งหมด : " .. Settings.btplv .. " / " .. Settings.GemtoFarm .. CheckGemAll() end
+local function changetextgemall() Show_GemAll.label.Text = "เพชรที่ต้องฟาร์มทั้งหมด : " .. Settings.GemFramed .. " / " .. Settings.GemtoFarm .. CheckGemAll() end
 local EditCustomFarm = CustomFarm:Sector("😡 Custom Data")
 EditCustomFarm:Cheat("Textbox", "Webhook Url", function(Value)
 	Settings.WebhookUrl = Value
 	saveSettings()
 end, { placeholder = Settings.WebhookUrl })
-EditCustomFarm:Cheat("Textbox", "BTPที่ต้องการฟาร์ม", function(Value)
+EditCustomFarm:Cheat("Textbox", "เพชรที่ต้องการฟาร์ม", function(Value)
 	if type(tonumber(Value)) == "number" then
-		Show_GemtoFarm.label.Text = "BTPที่ต้องการฟาร์ม : " .. Value
+		Show_GemtoFarm.label.Text = "เพชรที่ต้องการฟาร์ม : " .. Value
 		Settings.GemtoFarm = Value
 		saveSettings()
 		changetextgemall()
@@ -827,6 +773,21 @@ EditCustomFarm:Cheat("Textbox", "BTPที่ต้องการฟาร์�
 		end)
 	end
 end, { placeholder = Settings.GemtoFarm })
+EditCustomFarm:Cheat("Textbox", "ฟาร์มไปแล้ว", function(Value)
+	if type(tonumber(Value)) == "number" then
+		Show_GemFarmed.label.Text = "เพชรที่ฟาร์มไปแล้ว : " .. Value
+		Settings.GemFramed = Value
+		saveSettings()
+		changetextgemall()
+		Show_GemAll.label.Text = "เพชรที่ต้องฟาร์มทั้งหมด : " .. Settings.GemFramed .. " / " .. Settings.GemtoFarm .. CheckGemAll()
+	else
+		spawn(function()
+			ChangeErrorCode("กรุณาใส่ตัวเลขเท่านั้น (2)")
+			wait(1)
+			ChangeErrorCode("None")
+		end)
+	end
+end, { placeholder = Settings.GemFramed })
 
 ShowCustomFarm:Cheat("Label", "")
 show_kicksetting = EditCustomFarm:Cheat("Label", "Kick Setting : " .. tostring(Settings.KiwwyKick))
@@ -837,13 +798,14 @@ end)
 
 spawn(function()
 	while wait(3) do
-		if Show_GemAll then Show_GemAll.label.Text = "BTPที่ต้องฟาร์มทั้งหมด : " .. Settings.btplv .. " / " .. Settings.GemtoFarm .. CheckGemAll() end
-		if Show_GemtoFarm then Show_GemtoFarm.label.Text = "BTPที่ต้องการฟาร์ม : " .. Settings.GemtoFarm end
-		if Show_GemFarmed then Show_GemFarmed.label.Text = "BTPที่ฟาร์มไปแล้ว : " .. Settings.btplv end
+		if Show_GemAll then Show_GemAll.label.Text = "เพชรที่ต้องฟาร์มทั้งหมด : " .. Settings.GemFramed .. " / " .. Settings.GemtoFarm .. CheckGemAll() end
+		if Show_GemtoFarm then Show_GemtoFarm.label.Text = "เพชรที่ต้องการฟาร์ม : " .. Settings.GemtoFarm end
+		if Show_GemFarmed then Show_GemFarmed.label.Text = "เพชรที่ฟาร์มไปแล้ว : " .. Settings.GemFramed end
 		if show_kicksetting then show_kicksetting.label.Text = "Kick Setting : " .. tostring(Settings.KiwwyKick) end
 	end
 end)
 --[[ THE BEST ]]--
+--[[ MARK ]]--
 local namegame = game:GetService("Players").LocalPlayer.Name
 local display = game:GetService("Players").LocalPlayer.DisplayName
 
@@ -859,7 +821,7 @@ RunService.RenderStepped:Connect(function()
         FrameTimer = tick();
         FrameCounter = 0;
     end;
-Library:SetWatermark(("🧑🏻 "..namegame.." ( "..display .." ) 🧑🏻\n⏲️: "..math.floor(Workspace.DistributedGameTime).."|🌊: "..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.."|👑: " ..Settings.btplv.." ["..Settings.btpxp.."]"))
+Library:SetWatermark(("🧑🏻 "..namegame.." ( "..display .." ) 🧑🏻\n⏲️: "..math.floor(Workspace.DistributedGameTime).."|🌊: "..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.."|💎: " ..Settings.GemFramed.. " / " ..Settings.GemtoFarm.. ""))
 end);
 
 Units:Cheat("Button", "🧙 Select Units", function() --Selects Currently Equipped Units!
@@ -881,9 +843,9 @@ Units:Cheat("Checkbox","🌾 Auto Start  ", function(bool)
     saveSettings()
 end,{enabled = Settings.autostart })
 
-Units:Cheat("Textbox", "💎 BTPที่ต้องการฟาร์ม", function(Value)
+Units:Cheat("Textbox", "💎 เพชรที่ต้องการฟาร์ม", function(Value)
     if type(tonumber(Value)) == "number" then
-        Show_GemtoFarm.label.Text = "BTPที่ต้องการฟาร์ม : " .. Value
+        Show_GemtoFarm.label.Text = "เพชรที่ต้องการฟาร์ม : " .. Value
         Settings.GemtoFarm = Value
         saveSettings()
         changetextgemall()
@@ -898,17 +860,14 @@ end, { placeholder = Settings.GemtoFarm })
 Units:Cheat("Button", "🚪Leave To Lobby", function()
     warn("Return to Lobby")
     game:GetService("TeleportService"):Teleport(8304191830, game.Players.LocalPlayer)
-    Teleport()
+	Teleport()
 end)
 
 Units:Cheat("Button", "🌐Finish Webhook", function()
     print(Settings.WebhookUrl)
-    GemWebhook()
+    GemsWebhook()
 end)
-Units:Cheat("Checkbox","🌐Enable Finish Webhook", function(bool)
-	Settings.GemsWebhookEnabled = bool
-	saveSettings()
-end,{enabled = Settings.GemsWebhookEnabled})
+--[[ MARK ]]--
 ----------------------------------------------
 ---------------- Units Selection -------------
 ----------------------------------------------
@@ -1795,7 +1754,7 @@ local function DeleteMapSec()
 
     DelMapConfig2:Cheat("Button", "Leave To Lobby", function()
         warn("Return to Lobby")
-        game:GetService("TeleportService"):Teleport(8304191830, game.Players.LocalPlayer)
+        Teleport()
         --TPReturner()
     end)
 
@@ -2820,8 +2779,9 @@ local function unitconfig()
         saveSettings()
     end,{enabled = Settings.unitconfig })
 
-    NDY2:Cheat("Button", "Reload Script", function()
-        autoload2()
+    NDY2:Cheat("Button", "Reset unit config", function()
+        print(Settings.reunitc)
+        reunitcon()
     end)
 
     --//UNIT 1
@@ -3086,38 +3046,20 @@ local function unitconfig()
 end
 
 ---------------------------------------------
+--resetautofarmUI
+local function reFarmconfig()
+
+    reFarmConfig:Cheat("Button", "Reset Farm config", function()
+        print(Settings.refarmc)
+        refarmcon()
+    end)
+
+end
+
+---------------------------------------------
 -------------- LOWW CPU Config --------------
 ---------------------------------------------
 local function LowCPUModeT()
-
-    --New Fix isrbxactive
-    local IS_ROBLOX_ACTIVE = false
-    local UIS = game:GetService("UserInputService")
-    UIS.WindowFocused:Connect(function()
-        IS_ROBLOX_ACTIVE = true
-    end)
-    UIS.WindowFocusReleased:Connect(function()
-        IS_ROBLOX_ACTIVE = false
-    end)
-    function isrbxactive()
-        return IS_ROBLOX_ACTIVE
-    end
-    getgenv().isrbxactive = newcclosure(isrbxactive)
-    --End fix isrbxactive
-    
-    --Start_FPS_Cap
-    FPS_CAP = {}
-    for i = 1,60 do
-        table.insert(FPS_CAP,i)
-    end
-    Settings.FPSCAPNum = Settings.FPSCAPNum or 5
-    LowCPU2:Cheat("Dropdown", "🎚️ Select FPS Cap ",function(value)
-        warn("Change to : "..value)
-        Settings.FPSCAPNum = value
-        saveSettings()
-    end, {options = FPS_CAP, default = Settings.FPSCAPNum})
-    
-    
     LowCPU2:Cheat("Checkbox","Enable Low CPU Mode ", function(bool)
         print(bool)
         Settings.lowCpuMode = bool
@@ -3126,66 +3068,27 @@ local function LowCPUModeT()
     
     task.spawn(function()
         while task.wait() do
-            if IS_ROBLOX_ACTIVE ~= true and Settings.lowCpuMode then
-                setfpscap(tonumber(Settings.FPSCAPNum))
+            if isrbxactive() ~= true and Settings.lowCpuMode then
+                setfpscap(5)
                 game:GetService("RunService"):Set3dRenderingEnabled(false)
-                isrbxactive(true)
             else
                 setfpscap(5)
                 game:GetService("RunService"):Set3dRenderingEnabled(true)
-                isrbxactive(false)
             end
         end
     end)
     
-    
-    --New Fix isrbxactive
-    local IS_ROBLOX_ACTIVE2 = false
-    local UIS = game:GetService("UserInputService")
-    UIS.WindowFocused:Connect(function()
-        IS_ROBLOX_ACTIVE2 = true
-    end)
-    UIS.WindowFocusReleased:Connect(function()
-        IS_ROBLOX_ACTIVE2 = false
-    end)
-    function isrbxactive2()
-        return IS_ROBLOX_ACTIVE2
-    end
-    getgenv().isrbxactive2 = newcclosure(isrbxactive2)
-    --End fix isrbxactive
-    
-    LowCPU2:Cheat("Checkbox","Enable FPS Cap ", function(bool)
-        print(bool)
-        Settings.lowCpuMode2 = bool
-        saveSettings()
-    end,{enabled = Settings.lowCpuMode2})
-    
-    task.spawn(function()
-        while task.wait() do
-            if Settings.lowCpuMode2 then
-                setfpscap(tonumber(Settings.FPSCAPNum))
-                isrbxactive2(true)
-            --else
-               -- setfpscap(240)
-                --isrbxactive2(true)
-            end
-        end
-    end)
-    --End_FPS_Cap
-    
-    LowCPU2:Cheat("Checkbox","Enable Boost FPS Mode ", function(bool)
-        print(bool)
+    LowCPU2:Cheat("Checkbox"," Enable Boost FPS Mode", function(bool)
+        print(Settings.fpsboost)
         Settings.fpsboost = bool
         saveSettings()
         FPSBOOST()
-    end,{enabled = Settings.fpsboost })
+    end,{enabled = Settings.fpsboos})
     
     LowCPU2:Cheat("Button","Activate Boost FPS Mode ", function()
         FPSBOOST()
     end)
-    
-    
-    end
+end
 
 ---------------------------------------------
 -------------- LAGGY Config -----------------
@@ -3677,51 +3580,46 @@ end
 ----------------------------------------------
 -------------- Discord Webhook ---------------
 ----------------------------------------------
+--[[ Mark ]]--
 function Webhooksec()
+    
     WebhookSec:Cheat("Textbox", "Webhook Url", function(Value)
         Settings.WebhookUrl = Value
         saveSettings()
     end, {placeholder = Settings.WebhookUrl})
     
-    WebhookSec:Cheat("Textbox", "Baby Webhook Url", function(Value)
+    WebhookSec:Cheat("Textbox", "Gems Webhook Url", function(Value)
         Settings.GemsWebhookUrl = Value
         saveSettings()
     end, {placeholder = Settings.GemsWebhookUrl})
-
     WebhookSec:Cheat("Textbox", "Snipe Webhook Url", function(Value)
         Settings.SnipeWebhookUrl = Value
         saveSettings()
     end, {placeholder = Settings.SnipeWebhookUrl})
-
     WebhookSec:Cheat("Checkbox","Enable Webhook", function(bool)
         Settings.WebhookEnabled = bool
         saveSettings()
     end,{enabled = Settings.WebhookEnabled})
-
-    WebhookSec:Cheat("Checkbox","Enable Baby Webhook [BTP,Castle,Tour]", function(bool)
+    WebhookSec:Cheat("Checkbox","Enable Gems Webhook", function(bool)
         Settings.GemsWebhookEnabled = bool
         saveSettings()
     end,{enabled = Settings.GemsWebhookEnabled})
-
     WebhookSec:Cheat("Checkbox","Enable Snipe Webhook [Banner & Shop]", function(bool)
         Settings.snipeWebhookEnabled = bool
         saveSettings()
     end,{enabled = Settings.snipeWebhookEnabled})
-
     WebhookSec:Cheat("Button", "Test Webhook", function()
         print(Settings.WebhookUrl)
-        webhookBTP()
+        webhook()
     end)
 end
-
 function Webhooksec2()
-
-    WebhookSec:Cheat("Button", "Test Baby&Shop Webhook", function()
+    WebhookSec:Cheat("Button", "Test Gems Webhook", function()
         print(Settings.WebhookUrl)
-        GemWebhook()
-        SnipeShopNew()
+        GemsWebhook()
     end)
 end
+--[[ Mark ]]--
 
 -----------------------------------------------
 ------------------Sell Portal------------------
@@ -3916,6 +3814,7 @@ if game.PlaceId == 8304191830 then
     unitconfig()
     LowCPUModeT()
     LAGGYconfig()
+    reFarmconfig()
     credits()
     AutoSummon()
     SnipeMerchant()
@@ -3937,6 +3836,7 @@ else
     unitconfig()
     LowCPUModeT()
     LAGGYconfig()
+    reFarmconfig()
     credits()
     SnipeMerchant()
     Webhooksec()
@@ -4594,21 +4494,7 @@ function autoabilityfunc()
                                 end
                             end
 
-                            if v._stats.id.Value == "stain_evolved" then
-                                if v._stats.state.Value == "attack" then
-                                    wait(1)
-                                    game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
-                                    warn("Use Skill stain")
-                                end
-                            end
-
-                            if v._stats.id.Value == "ainz_evolved" then
-                                if v._stats.state.Value == "attack" then
-                                    wait(5)
-                                    game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
-                                    warn("Use Skill Ainz")
-                                end
-                            end                     
+                            
 
                         end
                     end
@@ -4628,78 +4514,81 @@ end
 -- End  Auto Abilities Function
 
     -- Start of Auto Global Cooldown Abilities Function
-    getgenv().autoGCDabilityerr = false
-    function autoabilityGCDfunc()
-        local player = game.Players.LocalPlayer.Name
-        if Settings.AutoGCDAbilities then
-            repeat task.wait() until Workspace:WaitForChild("_UNITS")
-            local success, errGCD = pcall(function()
-                for i, v in ipairs(Workspace["_UNITS"]:GetChildren()) do
-                    if v:FindFirstChild("_stats") then
+getgenv().autoGCDabilityerr = false
+function autoabilityGCDfunc()
+    local player = game.Players.LocalPlayer.Name
+    if Settings.AutoGCDAbilities then
+        repeat task.wait() until Workspace:WaitForChild("_UNITS")
+        local success, errGCD = pcall(function()
+            for i, v in ipairs(Workspace["_UNITS"]:GetChildren()) do
+                if v:FindFirstChild("_stats") then
+                    
+                    -- Look for Threat then execute Puchi Skill
+                    if v._stats:FindFirstChild("threat") then
+                        if v._stats.threat.Value > 0 then
+                            UsePuchiSkill()
+                            UseErenSkill()
+                        end
                         
-                        -- Look for Threat then execute Puchi Skill
-                        if v._stats:FindFirstChild("threat") then
-                            if v._stats.threat.Value > 0 then
-                                UsePuchiSkill()
-                                UseErenSkill()
-                            end
-                            
-                        -- Search Player Units
-                        elseif v._stats:FindFirstChild("player") then
-                            if tostring(v._stats.player.Value) == player then
+                    -- Search Player Units
+    				elseif v._stats:FindFirstChild("player") then
+    					if tostring(v._stats.player.Value) == player then
     
-    
-                                if v._stats.id.Value ~= "pucci_heaven" then
-                                    if v._stats.state.Value ~= "attack" then
-                                        if v._stats.active_attack.Value ~= "nil" then
-                                            game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
-                                    end
+                            --[[ Execute Skill if Not Wendy, Erwin, Gojo and Puchi    
+                            if v._stats.id.Value ~= "pucci_heaven" or v._stats.id.Value ~= "erwin" or v._stats.id.Value ~= "wendy" 
+                            or v._stats.id.Value ~= "leafa" or v._stats.id.Value ~= "erwin:shiny" or v._stats.id.Value ~= "erwin_school" 
+                            or v._stats.id.Value ~= "erwin_halloween" or v._stats.id.Value ~= "eren_final" then
+                               -- if v._stats.state.Value ~= "attack" then
+                                    if v._stats.active_attack.Value ~= "nil" then
+                                        game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
                                 end
+                            end]]
+
+                            if v._stats.id.Value ~= "pucci_heaven" then
+                                --if v._stats.state.Value == "attack" then
+                                    if v._stats.active_attack.Value ~= "nil" then
+                                        game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
+                                --end
                             end
-    
-                            if v._stats.id.Value ~= "erwin" then
-                                    if v._stats.state.Value ~= "attack" then
-                                        if v._stats.active_attack.Value ~= "nil" then
-                                            game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
-                                    end
-                                end
+                        end
+
+                        if v._stats.id.Value ~= "erwin" then
+                                --if v._stats.state.Value == "attack" then
+                                    if v._stats.active_attack.Value ~= "nil" then
+                                        game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
+                                --end
                             end
-    
-                            if v._stats.id.Value ~= "wendy" then
-                                    if v._stats.state.Value ~= "attack" then
-                                        if v._stats.active_attack.Value ~= "nil" then
-                                            game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
-                                    end
-                                end
+                        end
+
+                        if v._stats.id.Value ~= "wendy" then
+                                --if v._stats.state.Value == "attack" then
+                                    if v._stats.active_attack.Value ~= "nil" then
+                                        game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
+                                --end
                             end
-    
-                            if v._stats.id.Value ~= "leafa" then
-                                    if v._stats.state.Value ~= "attack" then
-                                        if v._stats.active_attack.Value ~= "nil" then
-                                            game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
-                                    end
-                                end
+                        end
+
+                        if v._stats.id.Value ~= "leafa" then
+                                --if v._stats.state.Value == "attack" then
+                                    if v._stats.active_attack.Value ~= "nil" then
+                                        game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
+                                --end
                             end
-    
-                            if v._stats.id.Value ~= "eren_final" then
-                                    if v._stats.state.Value ~= "attack" then
-                                        if v._stats.active_attack.Value ~= "nil" then
-                                            game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
-                                    end
-                                end
+                        end
+
+                        if v._stats.id.Value ~= "eren_final" then
+                                --if v._stats.state.Value == "attack" then
+                                    if v._stats.active_attack.Value ~= "nil" then
+                                        game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
+                                --end
                             end
-    
-                            if v._stats.id.Value == "homura_evolved" then
-                                if v._stats.state.Value ~= "attack" then
-                                    game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
-                                end
-                            end
-                            
-                            end
+                        end
+                        
                         end
                     end
                 end
-            end)
+            end
+        end)
         
         if errGCD then
             warn("Can't use Ability")
@@ -5037,12 +4926,11 @@ coroutine.resume(coroutine.create(function()
         if game.PlaceId ~= 8304191830 then
             local _wave = game:GetService("Workspace"):WaitForChild("_wave_num")
             if Settings.autoQuit and not Settings.AutoSell and tonumber(Settings.AutoSellWave) <= _wave.Value then
-                pcall(function() webhookBTP() end)
+                pcall(function() webhook() end)
                 print("send Webhook")
                 task.wait(2.1)
                 print("Returning to lobby...")
                 task.wait(2.1)
-                --game:GetService("TeleportService"):Teleport(8304191830, game.Players.LocalPlayer)
                 Teleport()
             end
             if Settings.AutoSell and not Settings.autoQuit and tonumber(Settings.AutoSellWave) <= _wave.Value then
@@ -5231,10 +5119,32 @@ coroutine.resume(coroutine.create(function()
         local GameFinished = game:GetService("Workspace"):WaitForChild("_DATA"):WaitForChild("GameFinished")
         GameFinished:GetPropertyChangedSignal("Value"):Connect(function()
             print("Changed", GameFinished.Value == true)
+            if not Settings.GemtoFarm then
+				Settings.GemtoFarm = 0
+				saveSettings()
+			end
+			if not Settings.GemFramed then
+				Settings.GemFramed = 0
+				saveSettings()
+			end
+
             if GameFinished.Value == true then
                 repeat task.wait() until  game:GetService("Players").LocalPlayer.PlayerGui.ResultsUI.Enabled == true
-                pcall(function() webhookBTP() end)
-                warn("Wait next or leave")
+                
+                ResultHolder = plr.PlayerGui:FindFirstChild("ResultsUI"):FindFirstChild("Holder")
+				gems = ResultHolder:FindFirstChild("LevelRewards"):FindFirstChild("ScrollingFrame"):FindFirstChild("GemReward"):FindFirstChild("Main"):FindFirstChild("Amount").Text
+				if gems == "+99999" then gems = "+0" end
+				GetGems = gems:split("+")[2]
+				print(gems)
+				print("You got : " .. GetGems)
+				Settings.GemFramed = Settings.GemFramed + tonumber(GetGems)
+				print("game end :" .. Settings.GemFramed)
+				saveSettings()
+				print("Changed", GameFinished.Value == true)
+				task.wait(1.1)
+
+                pcall(function() webhook() end)
+                print("Wait next or leave")
                 task.wait(1.5)
 
             cata = Settings.WorldCategory; level = Settings.SelectedLevel;
@@ -5251,56 +5161,28 @@ coroutine.resume(coroutine.create(function()
                 }
                 game:GetService("ReplicatedStorage").endpoints.client_to_server.set_game_finished_vote:InvokeServer(unpack(args))
                 warn("Pick Portal Replay...") 
-            end
-
-            if Settings.AutoReplay then
+            elseif Settings.AutoReplay then
                 local a={[1]="replay"} game:GetService("ReplicatedStorage").endpoints.client_to_server.set_game_finished_vote:InvokeServer(unpack(a))
                 local a={[1]="replay"} game:GetService("ReplicatedStorage").endpoints.client_to_server.set_game_finished_vote:InvokeServer(unpack(a))
-                warn("Replay...")
-            end
-
-            if Settings.AutoNext then
+                    print("Replay...")  
+            elseif Settings.AutoNext then
                 local a={[1]="next_story"} game:GetService("ReplicatedStorage").endpoints.client_to_server.set_game_finished_vote:InvokeServer(unpack(a))
-                local a={[1]="NextLevel"} game:GetService("ReplicatedStorage").endpoints.client_to_server.set_game_finished_vote:InvokeServer(unpack(a))
-                warn("Check 1...")
-                wait(5)
                 local a={[1]="next_story"} game:GetService("ReplicatedStorage").endpoints.client_to_server.set_game_finished_vote:InvokeServer(unpack(a))
-                local a={[1]="NextLevel"} game:GetService("ReplicatedStorage").endpoints.client_to_server.set_game_finished_vote:InvokeServer(unpack(a))
-                warn("Check 2...")
-                wait(4)
-                local a={[1]="next_story"} game:GetService("ReplicatedStorage").endpoints.client_to_server.set_game_finished_vote:InvokeServer(unpack(a))
-                local a={[1]="NextLevel"} game:GetService("ReplicatedStorage").endpoints.client_to_server.set_game_finished_vote:InvokeServer(unpack(a))
-                warn("Check 3...")
-                wait(3)
-                local a={[1]="next_story"} game:GetService("ReplicatedStorage").endpoints.client_to_server.set_game_finished_vote:InvokeServer(unpack(a))
-                local a={[1]="NextLevel"} game:GetService("ReplicatedStorage").endpoints.client_to_server.set_game_finished_vote:InvokeServer(unpack(a))
-                warn("Check 4...")
-                wait(2)
-                local a={[1]="next_story"} game:GetService("ReplicatedStorage").endpoints.client_to_server.set_game_finished_vote:InvokeServer(unpack(a))
-                local a={[1]="NextLevel"} game:GetService("ReplicatedStorage").endpoints.client_to_server.set_game_finished_vote:InvokeServer(unpack(a))
-                warn("Check 5...")
-                wait(1)
-                local a={[1]="next_story"} game:GetService("ReplicatedStorage").endpoints.client_to_server.set_game_finished_vote:InvokeServer(unpack(a))
-                local a={[1]="NextLevel"} game:GetService("ReplicatedStorage").endpoints.client_to_server.set_game_finished_vote:InvokeServer(unpack(a))
-                warn("Next Story...")
-            end
-
-            --elseif Settings.AutoContinue then
-            if Settings.AutoContinue then
+                    print("Next Story...")
+            elseif Settings.AutoContinue then
                 local a={[1]="NextRetry"} game:GetService("ReplicatedStorage").endpoints.client_to_server.request_start_infinite_tower_from_game:InvokeServer(unpack(a))
                 local a={[1]="NextRetry"} game:GetService("ReplicatedStorage").endpoints.client_to_server.request_start_infinite_tower_from_game:InvokeServer(unpack(a)) 
-                warn("Next Room infint Castle...")    
-            end
-
-            if Settings.AutoLeave and not Settings.AutoReplay and not Settings.AutoNext and not Settings.AutoContinue and not Settings.AutoPickPortal then
+                    print("Next Room infint Castle...")              
+            elseif Settings.AutoLeave and not Settings.AutoReplay and not Settings.AutoNext and not Settings.AutoContinue and not Settings.AutoPickPortal then
                    game:GetService("TeleportService"):Teleport(8304191830, game.Players.LocalPlayer)
-                    Teleport()
-                    warn("Returning to lobby...")
-                end
                 
+                    Teleport()
+                    print("Returning to lobby...")
+                end
             end
         end)
     end)
+
 
     while task.wait() do
         if getgenv().AutoSummon then
@@ -5770,9 +5652,6 @@ function PlaceUnitsTEST(map,name,_uuid,unit)
         if U1_upgW <= current_wave and U1_sellW >= current_wave then
             print("upgrading u1.."..U1_name)
             upgradeunit1(U1_name)
-            wait(0.5)
-            upgradeunit1(U1_name)
-            print("upgrading check u1.."..U1_name)
         end
     end
 --end
@@ -5794,9 +5673,6 @@ function PlaceUnitsTEST(map,name,_uuid,unit)
         if U2_upgW <= current_wave and U2_sellW >= current_wave then
             print("upgrading u2.."..U2_name)
             upgradeunit2(U2_name)
-            wait(0.5)
-            upgradeunit2(U2_name)
-            print("upgrading check u2.."..U2_name)
         end
     end
 --end
@@ -5818,9 +5694,6 @@ function PlaceUnitsTEST(map,name,_uuid,unit)
         if U3_upgW <= current_wave and U3_sellW >= current_wave then
             print("upgrading u3.."..U3_name)
             upgradeunit3(U3_name)
-            wait(0.5)
-            upgradeunit3(U3_name)
-            print("upgrading check u3.."..U3_name)
         end
     end
 --end
@@ -5842,9 +5715,6 @@ function PlaceUnitsTEST(map,name,_uuid,unit)
         if U4_upgW <= current_wave and U4_sellW >= current_wave then
             print("upgrading u4.."..U4_name)
             upgradeunit4(U4_name)
-            wait(0.5)
-            upgradeunit4(U4_name)
-            print("upgrading check u4.."..U4_name)
         end
     end
 --end
@@ -5866,9 +5736,6 @@ function PlaceUnitsTEST(map,name,_uuid,unit)
         if U5_upgW <= current_wave and U5_sellW >= current_wave then
             print("upgrading u5.."..U5_name)
             upgradeunit5(U5_name)
-            wait(0.5)
-            upgradeunit5(U5_name)
-            print("upgrading check u5.."..U5_name)
         end
     end
 --end
@@ -5890,15 +5757,103 @@ function PlaceUnitsTEST(map,name,_uuid,unit)
         if U6_upgW <= current_wave and U6_sellW >= current_wave then
             print("upgrading u6.."..U6_name)
             upgradeunit6(U6_name)
-            wait(0.5)
-            upgradeunit6(U6_name)
-            print("upgrading check u6.."..U6_name)
             end
         end
     end
 --end
 
-
+--test reset unit config
+function reunitcon()
+    print("reset unit config ?")
+    if Settings.U1_Wave then
+        Settings.U1_Wave = 1 end
+    if Settings.U2_Wave then
+        Settings.U2_Wave = 1 end
+    if Settings.U3_Wave then
+        Settings.U3_Wave = 1 end
+    if Settings.U4_Wave then
+        Settings.U4_Wave = 1 end
+    if Settings.U5_Wave then
+        Settings.U5_Wave = 1 end
+    if Settings.U6_Wave then
+        Settings.U6_Wave = 1 end
+    if Settings.U1_TotalAmmount then
+        Settings.U1_TotalAmmount = 6 end
+    if Settings.U2_TotalAmmount then
+        Settings.U2_TotalAmmount = 6 end
+    if Settings.U3_TotalAmmount then
+        Settings.U3_TotalAmmount = 6 end
+    if Settings.U4_TotalAmmount then
+        Settings.U4_TotalAmmount = 6 end
+    if Settings.U5_TotalAmmount then
+        Settings.U5_TotalAmmount = 6 end
+    if Settings.U6_TotalAmmount then
+        Settings.U6_TotalAmmount = 6 end
+    if Settings.U1_UpgWave then
+        Settings.U1_UpgWave = 1 end
+    if Settings.U2_UpgWave then
+        Settings.U2_UpgWave = 1 end
+    if Settings.U3_UpgWave then
+        Settings.U3_UpgWave = 1 end
+    if Settings.U4_UpgWave then
+        Settings.U4_UpgWave = 1 end
+    if Settings.U5_UpgWave then
+        Settings.U5_UpgWave = 1 end
+    if Settings.U6_UpgWave then
+        Settings.U6_UpgWave = 1 end
+    if Settings.U1_UpgCap then
+        Settings.U1_UpgCap = 99 end
+    if Settings.U2_UpgCap then
+        Settings.U2_UpgCap = 99 end
+    if Settings.U3_UpgCap then
+        Settings.U3_UpgCap = 99 end
+    if Settings.U4_UpgCap then
+        Settings.U4_UpgCap = 99 end
+    if Settings.U5_UpgCap then
+        Settings.U5_UpgCap = 99 end
+    if Settings.U6_UpgCap then
+        Settings.U6_UpgCap = 99 end
+    if Settings.U1_SellWave then
+        Settings.U1_SellWave = 99 end
+    if Settings.U2_SellWave then
+        Settings.U2_SellWave = 99 end
+    if Settings.U3_SellWave then
+        Settings.U3_SellWave = 99 end
+    if Settings.U4_SellWave then
+        Settings.U4_SellWave = 99 end
+    if Settings.U5_SellWave then
+        Settings.U5_SellWave = 99 end
+    if Settings.U6_SellWave then
+        Settings.U6_SellWave = 99 end
+    if Settings.U1_UpgPro then
+        Settings.U1_UpgPro = 1 end
+    if Settings.U2_UpgPro then
+        Settings.U2_UpgPro = 1 end
+    if Settings.U3_UpgPro then
+        Settings.U3_UpgPro = 1 end
+    if Settings.U4_UpgPro then
+        Settings.U4_UpgPro = 1 end
+    if Settings.U5_UpgPro then
+        Settings.U5_UpgPro = 1 end
+    if Settings.U6_UpgPro then
+        Settings.U6_UpgPro = 1 end
+    if Settings.U1_UnPlace then
+        Settings.U1_UnPlace = 1 end
+    if Settings.U2_UnPlace then
+        Settings.U2_UnPlace = 1 end
+    if Settings.U3_UnPlace then
+        Settings.U3_UnPlace = 1 end
+    if Settings.U4_UnPlace then
+        Settings.U4_UnPlace = 1 end
+    if Settings.U5_UnPlace then
+        Settings.U5_UnPlace = 1 end
+    if Settings.U6_UnPlace then
+        Settings.U6_UnPlace = 1 end
+  
+end
+if Settings.reunitc then
+    reunitcon()
+end
 --fix sell and place spam
 
 function PlaceUnits(map)
@@ -8864,26 +8819,17 @@ end
 
 -- Start of Check Connection
 function checkInterNet()
-    warn("Auto Reconnect Enable")
-    warn("Auto Anti-AFK Enable")
+    warn("Auto Reconnect Loaded")
     while task.wait(5) do
-        local vu = game:GetService("VirtualUser")
-        game:GetService("Players").LocalPlayer.Idled:connect(function()
-            vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-            wait(0.5)
-            vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-            wait(0.5)
-            vu:CaptureController()vu:ClickButton2(Vector2.new())
-        end)
         game.CoreGui.RobloxPromptGui.promptOverlay.ChildAdded:Connect(function(a)
             if a.Name == 'ErrorPrompt' then
-                task.wait(60)
+                task.wait(10)
                 warn("Trying to Reconnect")
                 TPReturner()
-                end
-            end)
-        end
+            end
+        end)
     end
+end
 -- End of Check Connection
 
 --placeany
@@ -8917,8 +8863,7 @@ function placeunittwin()
 --ReedemCode updatefix
 function Reedemcode()
     codes = {"TWOMILLION","subtomaokuma","CHALLENGEFIX","GINYUFIX","RELEASE","SubToKelvingts","SubToBlamspot","KingLuffy","TOADBOIGAMING","noclypso","FictioNTheFirst","GOLDENSHUTDOWN","GOLDEN"
-    ,"SINS2","subtosnowrbx","Cxrsed","subtomaokuma","VIGILANTE","HAPPYEASTER","ENTERTAINMENT","DRESSROSA","BILLION","MADOKA","AINCRAD","ANNIVERSARY","OVERLORD","SupperTierMagicSoon",
-    "NEWCODE0819"}
+    ,"SINS2","subtosnowrbx","Cxrsed","subtomaokuma","VIGILANTE","HAPPYEASTER","ENTERTAINMENT","DRESSROSA","BILLION","MADOKA","AINCRAD","ANNIVERSARY","OVERLORD","SupperTierMagicSoon"}
         for _, v in pairs(codes) do
         pcall(function() game:GetService("ReplicatedStorage").endpoints["client_to_server"]["redeem_code"]:InvokeServer(v)()    end) 
     end
