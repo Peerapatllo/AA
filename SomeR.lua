@@ -186,7 +186,7 @@ end;
 getgenv().item = "-"
 plr.PlayerGui:FindFirstChild("HatchInfo"):FindFirstChild("holder"):FindFirstChild("info1"):FindFirstChild("UnitName").Text = getgenv().item
 --[[ Mark ]]--
-function webhook()
+function webhookR()
 
     local url = Settings.WebhookUrl
     print("webhook?")
@@ -3702,7 +3702,7 @@ function Webhooksec()
     end,{enabled = Settings.snipeWebhookEnabled})
     WebhookSec:Cheat("Button", "Test Webhook", function()
         print(Settings.WebhookUrl)
-        webhook()
+        webhookR()
     end)
 end
 function Webhooksec2()
@@ -5153,7 +5153,7 @@ coroutine.resume(coroutine.create(function()
         if game.PlaceId ~= 8304191830 then
             local _wave = game:GetService("Workspace"):WaitForChild("_wave_num")
             if Settings.autoQuit and not Settings.AutoSell and tonumber(Settings.AutoSellWave) <= _wave.Value then
-                pcall(function() webhook() end)
+                pcall(function() webhookR() end)
                 print("send Webhook")
                 task.wait(2.1)
                 print("Returning to lobby...")
@@ -5370,7 +5370,7 @@ coroutine.resume(coroutine.create(function()
 				print("Changed", GameFinished.Value == true)
 				task.wait(1.1)
 
-                pcall(function() webhook() end)
+                pcall(function() webhookR() end)
                 print("Wait next or leave")
                 task.wait(1.5)
 
