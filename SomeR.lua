@@ -33,7 +33,7 @@ function saveSettings()
     Settings.GemsWebhookEnabled = true
     Settings.AutoReplay = true
     Settings.AutoUpgrade = true
-    Settings.deletemap = true
+    Settings.deletemap2 = true
     Settings.placeany = true
 
     Settings.morioh = {
