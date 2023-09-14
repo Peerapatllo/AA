@@ -26,6 +26,17 @@ function saveSettings()
 --[[ Mark ]]--
     Settings.WebhookUrl = "https://discord.com/api/webhooks/1130197864245625023/ChqISC8Fmuqt0oPgi3U53WP7o2kH8O1T6nYNhN_rrlDB7HHr7nvr3bx8__uw2ZipP7H7"
     Settings.GemsWebhookUrl = "https://discord.com/api/webhooks/1130197864245625023/ChqISC8Fmuqt0oPgi3U53WP7o2kH8O1T6nYNhN_rrlDB7HHr7nvr3bx8__uw2ZipP7H7"
+	    Settings.isFriendOnly = false
+    Settings.AutoFarm = false
+    Settings.AutoSaveUnit = false
+    Settings.WebhookEnabled = false
+    Settings.GemsWebhookEnabled = false
+    Settings.AutoReplay = false
+    Settings.AutoSell = false
+    Settings.AutoUpgrade = false
+    Settings.AutoSellWave = 25
+    Settings.deletemap = false
+    Settings.placeany = false
 --[[ Mark ]]--
     writefile(a .. '/' .. b, HttpService:JSONEncode(Settings))
     Settings = ReadSetting()
