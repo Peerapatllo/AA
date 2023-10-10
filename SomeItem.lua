@@ -190,7 +190,7 @@ local function checkitem(index)
     return "0"
 end
 --เปลี่ยนชื่อของที่ต้องการฟาร์ม
-Farmitem = checkitem("fate_grail")
+Farmitem = checkitem(Settings.Sitemfarm)
 
 if not Settings.ItemtoFarm then
 	Settings.ItemtoFarm = 0
@@ -322,7 +322,7 @@ function webhook()
 	lv = string.gsub(lv, "Level", "Level:")
 	timez = os.date("%X", os.time())--+7*60*60
     
-    fgem = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem: "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **Lesser Grail x250** <:Lesser_Grail:1161191244236595270>"
+    fgem = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem: "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **"..Settings.Sitemwebhook.."**"
     --fcastle = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **Infinite Castle** <a:castle:1130816340496760843>"
     --fbtp = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **BTP** <a:king:1130395244647690361>"
     --fse = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> SummerPearls "..summer_coin.." <:summerpearl:1134832081202053209> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **".. Farmitem .. " / " .. Settings.ItemtoFarm .."** <:summerpearl:1134832081202053209>"
@@ -693,6 +693,7 @@ Window.ChangeToggleKey(Enum.KeyCode.C)
 
 local Farmsetup = Window:Category("🧑🏻‍🌾 Custom Farm")
 local Units = Farmsetup:Sector("📰‍ Info")
+local UnitsX = Farmsetup:Sector("📰‍ Reload For Item")
 
 local Farm = Window:Category("🤖 Auto Farm")
 local SelectUnits = Farm:Sector("🧙‍ Select Units")
@@ -899,6 +900,17 @@ Units:Cheat("Textbox", "💵 จำนวนจ้างฟาร์ม", functi
     Settings.income = Value
     saveSettings()
 end, {placeholder = Settings.income})
+
+Units:Cheat("Dropdown", "Select Item Farm ",function(value)
+    Settings.Sitemfarm = value
+    saveSettings()
+end, { options = {"None","fate_grail","jojop4_coin"}, default =Settings.Sitemfarm})
+
+Units:Cheat("Dropdown", "Select Item Webhook ",function(value)
+    Settings.Sitemwebhook = value
+    saveSettings()
+end, { options = {"None","Lesser Grail x250 <:Lesser_Grail:1161191244236595270>","Killer coin x400 <:killercoin:1150303591534448671>"}, default =Settings.Sitemwebhook})
+
 Units:Cheat("Button", "🚪Leave To Lobby", function()
     warn("Return to Lobby")
     game:GetService("TeleportService"):Teleport(8304191830, game.Players.LocalPlayer)
@@ -908,6 +920,10 @@ end)
 Units:Cheat("Button", "🌐Finish Webhook", function()
     print(Settings.WebhookUrl)
     GemsWebhook()
+end)
+
+UnitsX:Cheat("Button", "Reload Script", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/SomeItem.lua"))()
 end)
 --[[ MARK ]]--
 
