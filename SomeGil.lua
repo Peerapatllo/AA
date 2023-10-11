@@ -191,7 +191,7 @@ end
 
 getgenv().item = "-"
 plr.PlayerGui:FindFirstChild("HatchInfo"):FindFirstChild("holder"):FindFirstChild("info1"):FindFirstChild("UnitName").Text = getgenv().item
-function webhook()
+function webhookX()
 
     local url = Settings.WebhookUrl
     print("webhook?")
@@ -1689,7 +1689,7 @@ local function UNITAOEAA()
                                                         Text = "Unit : " ..tostring(v._stats.id.Value) .. " | Kill : "  ..tostring(v._stats.kill_count.Value) .. " | already ",
                                                         Duration = 6.5
                                                     })
-                                                    pcall(function() webhook() end)
+                                                    pcall(function() webhookX() end)
                                                     print("send Webhook")
                                                     task.wait(2.1)
                                                     print("Returning to lobby...")
@@ -1724,7 +1724,7 @@ local function UNITAOEAA()
                                                         Text = "Unit : " ..tostring(v._stats.id.Value) .. " | Kill : "  ..tostring(v._stats.kill_count.Value) .. " | already ",
                                                         Duration = 6.5
                                                     })
-                                                    pcall(function() webhook() end)
+                                                    pcall(function() webhookX() end)
                                                     print("send Webhook")
                                                     task.wait(2.1)
                                                     print("Returning to lobby...")
@@ -1759,7 +1759,7 @@ local function UNITAOEAA()
                                                         Text = "Unit : " ..tostring(v._stats.id.Value) .. " | Kill : "  ..tostring(v._stats.kill_count.Value) .. " | already ",
                                                         Duration = 6.5
                                                     })
-                                                    pcall(function() webhook() end)
+                                                    pcall(function() webhookX() end)
                                                     print("send Webhook")
                                                     task.wait(2.1)
                                                     print("Returning to lobby...")
@@ -1794,7 +1794,7 @@ local function UNITAOEAA()
                                                         Text = "Unit : " ..tostring(v._stats.id.Value) .. " | Kill : "  ..tostring(v._stats.kill_count.Value) .. " | already ",
                                                         Duration = 6.5
                                                     })
-                                                    pcall(function() webhook() end)
+                                                    pcall(function() webhookX() end)
                                                     print("send Webhook")
                                                     task.wait(2.1)
                                                     print("Returning to lobby...")
@@ -1829,7 +1829,7 @@ local function UNITAOEAA()
                                                         Text = "Unit : " ..tostring(v._stats.id.Value) .. " | Kill : "  ..tostring(v._stats.kill_count.Value) .. " | already ",
                                                         Duration = 6.5
                                                     })
-                                                    pcall(function() webhook() end)
+                                                    pcall(function() webhookX() end)
                                                     print("send Webhook")
                                                     task.wait(2.1)
                                                     print("Returning to lobby...")
@@ -1864,7 +1864,7 @@ local function UNITAOEAA()
                                                         Text = "Unit : " ..tostring(v._stats.id.Value) .. " | Kill : "  ..tostring(v._stats.kill_count.Value) .. " | already ",
                                                         Duration = 6.5
                                                     })
-                                                    pcall(function() webhook() end)
+                                                    pcall(function() webhookX() end)
                                                     print("send Webhook")
                                                     task.wait(2.1)
                                                     print("Returning to lobby...")
@@ -3804,7 +3804,7 @@ function Webhooksec()
     end,{enabled = Settings.snipeWebhookEnabled})
     WebhookSec:Cheat("Button", "Test Webhook", function()
         print(Settings.WebhookUrl)
-        webhook()
+        webhookX()
     end)
 end
 function Webhooksec2()
@@ -5441,7 +5441,7 @@ coroutine.resume(coroutine.create(function()
         if game.PlaceId ~= 8304191830 then
             local _wave = game:GetService("Workspace"):WaitForChild("_wave_num")
             if Settings.autoQuit and not Settings.AutoSell and tonumber(Settings.AutoSellWave) <= _wave.Value then
-                pcall(function() webhook() end)
+                pcall(function() webhookX() end)
                 print("send Webhook")
                 task.wait(2.1)
                 print("Returning to lobby...")
@@ -5630,7 +5630,7 @@ coroutine.resume(coroutine.create(function()
             print("Changed", GameFinished.Value == true)
             if GameFinished.Value == true then
                 repeat task.wait() until  game:GetService("Players").LocalPlayer.PlayerGui.ResultsUI.Enabled == true
-                pcall(function() webhook() end)
+                pcall(function() webhookX() end)
                 warn("Wait next or leave")
                 task.wait(1.5)
 
