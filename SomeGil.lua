@@ -1,3 +1,4 @@
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/Lowcpu.lua"))()
 ---// Loading Section \\---
 repeat  task.wait() until game:IsLoaded()
 if game.PlaceId == 8304191830 then
@@ -50,21 +51,6 @@ function ReadSetting()
     end
 end
 Settings = ReadSetting()
-
---[[ Mark ]]--
-if not Settings.GemtoFarm then
-	Settings.GemtoFarm = 0
-	saveSettings()
-end
-if not Settings.GemFramed then
-	Settings.GemFramed = 0
-	saveSettings()
-end
-if not Settings.KiwwyKick then
-	Settings.KiwwyKick = false
-	saveSettings()
-end
---[[ Mark ]]--
 
     -- Start of Get Level Data of Map [Added by HOLYSHz]
     function GLD()
@@ -169,23 +155,39 @@ function comma_value(p1)
 	return value;
 end;
 ----------------endMap & ID Map
+
+--[[ Mark ]]--
 local function checkitemfruit(index)
     for i,v in pairs(get_inventory_items()) do
         if i == index then
-            return i.. " x"..v
+            return i.. " "..v
         end
     end
-    return i.." x0"
+    return i.." 0"
 end
 
 local function checkitem(index)
     for i,v in pairs(get_inventory_items()) do
         if i == index then
-            return "x"..v
+            return ""..v
         end
     end
-    return "x0"
+    return "0"
 end
+--เปลี่ยนชื่อของที่ต้องการฟาร์ม
+Farmitem = checkitem(portal_item__gilgamesh)
+
+if not Settings.ItemtoFarm then
+	Settings.ItemtoFarm = 0
+	saveSettings()
+end
+
+if not Settings.KiwwyKick then
+	Settings.KiwwyKick = false
+	saveSettings()
+end
+
+--[[ Mark ]]--
 
 getgenv().item = "-"
 plr.PlayerGui:FindFirstChild("HatchInfo"):FindFirstChild("holder"):FindFirstChild("info1"):FindFirstChild("UnitName").Text = getgenv().item
@@ -305,10 +307,10 @@ function webhook()
 	lv = string.gsub(lv, "Level", "Level:")
 	timez = os.date("%X", os.time())--+7*60*60
     
-    fgem = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem: "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> Portal: "..tostring(Count_Portal_list).." \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **Gilgamesh** <:Gil:1161572854349959179>"
+    fgem = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem: "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> Noble Portal: **"..checkitem("portal_item__fate").."** <:noble:1161611437404340234> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **Gilgamesh** <:Gil:1161572854349959179>"
     --fcastle = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **Infinite Castle** <a:castle:1130816340496760843>"
     --fbtp = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **BTP** <a:king:1130395244647690361>"
-    --fse = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> SummerPearls "..summer_coin.." <:summerpearl:1134832081202053209> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **".. Settings.GemFramed .. " / " .. Settings.GemtoFarm .."** <:summerpearl:1134832081202053209>"
+    --fse = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> SummerPearls "..summer_coin.." <:summerpearl:1134832081202053209> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **".. Farmitem .. " / " .. Settings.ItemtoFarm .."** <:summerpearl:1134832081202053209>"
     gamestats = "# <a:stockup:1123197731876393010> <:g1:1135449004927369216><:g2:1135449008240857189><:g3:1135449010287673374><:g4:1135449013898977390> <a:stockup:1123197731876393010> \n<a:Dot:1147531692916088892> Map: "..levelname.." - "..maplv.." ("..result..") <a:globe27:1123178565278629978> \n<a:Dot:1147531692916088892> Total Wave: "..tostring(waves[2]).." <a:qfcwaves:1123178559360479242> \n<a:Dot:1147531692916088892> Time: "..tostring(ttime[2]).." <a:alarmclock51:1123178554084048896> \n<a:Dot:1147531692916088892> Gem: "..gems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> XP: "..xp[1].." <a:exp:1123178548966989845>"
     ireward = "# <a:fight:1129761802100682862> <:i1:1135449015757045840><:i2:1135449019024408587><:i3:1135449022392442900><:i4:1135449024107909203> <a:fight:1129761802100682862> \n".. TextDropLabel ..""
 
@@ -381,7 +383,7 @@ function GemsWebhook()
                         ["thumbnail"] = {
                             ['url'] = thumbnails_avatar.data[1].imageUrl,
                         },
-                        ["description"] = "# <a:giveaway:1147545861463740477> <:s1:1135449027501105152><:s2:1135449031221456956><:s3:1135449034761437266><:s4:1135449036887961683><:s5:1135449040931278888> <a:giveaway:1147545861463740477> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem: "..ttgems.." (+".. Settings.GemFramed ..") <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **Gilgamesh** <:Gil:1161572854349959179> \n<a:Dot:1147531692916088892> จำนวน: **".. Settings.income .."** <a:coinx:1155791666943369216> \n<a:Dot:1147531692916088892> ให้เครดิตร้าน <#1055871056843374632> <a:plus1:1123223573050437744>" ,
+                        ["description"] = "# <a:giveaway:1147545861463740477> <:s1:1135449027501105152><:s2:1135449031221456956><:s3:1135449034761437266><:s4:1135449036887961683><:s5:1135449040931278888> <a:giveaway:1147545861463740477> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem: "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **Gilgamesh** <:Gil:1161572854349959179> \n<a:Dot:1147531692916088892> จำนวน: **".. Settings.income .."** <a:coinx:1155791666943369216> \n<a:Dot:1147531692916088892> ให้เครดิตร้าน <#1055871056843374632> <a:plus1:1123223573050437744>" ,
                         ["color"] = 10181046,
                         ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
                         ["image"] = {
@@ -671,11 +673,12 @@ local dir = "Anime_Adventures/"..game.Players.LocalPlayer.Name
 local Uilib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/TI"))()
 local exec = tostring(identifyexecutor())
 --updatefix
-local Window = Uilib.new(true, "                         "..namegame.." ( "..display .." ) 💎 Gem: " .. Settings.GemFramed .. " / " .. Settings.GemtoFarm .." 💎")
+local Window = Uilib.new(true, "                         "..namegame.." ( "..display .." ) 🛠️ Item: " .. Farmitem .. " / " .. Settings.ItemtoFarm .." 💎")
 Window.ChangeToggleKey(Enum.KeyCode.C)
 
 local Farmsetup = Window:Category("🧑🏻‍🌾 Custom Farm")
 local Units = Farmsetup:Sector("📰‍ Info")
+local UnitsX = Farmsetup:Sector("📰‍ Reload For Item")
 
 local Farm = Window:Category("🤖 Auto Farm")
 local SelectUnits = Farm:Sector("🧙‍ Select Units")
@@ -747,7 +750,7 @@ local UIUPDT = Home:Sector("⚙️ Challenge Config ⚙️")
 --[[ THE BEST ]]--
 
 local function CheckGemAll()
-	if tonumber(Settings.GemFramed) >= tonumber(Settings.GemtoFarm) and tonumber(Settings.GemtoFarm) ~= 0 then
+	if tonumber(Farmitem) >= tonumber(Settings.ItemtoFarm) and tonumber(Settings.ItemtoFarm) ~= 0 then
 		if not Settings.KiwwyKick then
             GemsWebhook()
             Settings.autostart = false
@@ -759,21 +762,21 @@ local function CheckGemAll()
             Teleport()
 		end
 		return " ✅"
-	elseif tonumber(Settings.GemtoFarm) == 0 then
+	elseif tonumber(Settings.ItemtoFarm) == 0 then
 		return " 🔃"
 	else
 		return " ❌"
 	end
 end
 
-Show_GemtoFarm = ShowCustomFarm:Cheat("Label", "เพชรที่ต้องการฟาร์ม : " .. Settings.GemtoFarm)
-Show_GemFarmed = ShowCustomFarm:Cheat("Label", "เพชรที่ฟาร์มไปแล้ว : " .. Settings.GemFramed)
-Show_GemAll = ShowCustomFarm:Cheat("Label", "เพชรที่ต้องฟาร์มทั้งหมด : " .. Settings.GemFramed .. " / " .. Settings.GemtoFarm .. CheckGemAll())
+Show_ItemtoFarm = ShowCustomFarm:Cheat("Label", "เพชรที่ต้องการฟาร์ม : " .. Settings.ItemtoFarm)
+Show_GemFarmed = ShowCustomFarm:Cheat("Label", "เพชรที่ฟาร์มไปแล้ว : " .. Farmitem)
+Show_GemAll = ShowCustomFarm:Cheat("Label", "เพชรที่ต้องฟาร์มทั้งหมด : " .. Farmitem .. " / " .. Settings.ItemtoFarm .. CheckGemAll())
 ShowCustomFarm:Cheat("Label", "")
 Show_ErrorCode = ShowCustomFarm:Cheat("Label", "Error : None")
 local function ChangeErrorCode(text) Show_ErrorCode.label.Text = "Error : " .. text end
 
-local function changetextgemall() Show_GemAll.label.Text = "เพชรที่ต้องฟาร์มทั้งหมด : " .. Settings.GemFramed .. " / " .. Settings.GemtoFarm .. CheckGemAll() end
+local function changetextgemall() Show_GemAll.label.Text = "เพชรที่ต้องฟาร์มทั้งหมด : " .. Farmitem .. " / " .. Settings.ItemtoFarm .. CheckGemAll() end
 local EditCustomFarm = CustomFarm:Sector("😡 Custom Data")
 EditCustomFarm:Cheat("Textbox", "Webhook Url", function(Value)
 	Settings.WebhookUrl = Value
@@ -781,8 +784,8 @@ EditCustomFarm:Cheat("Textbox", "Webhook Url", function(Value)
 end, { placeholder = Settings.WebhookUrl })
 EditCustomFarm:Cheat("Textbox", "เพชรที่ต้องการฟาร์ม", function(Value)
 	if type(tonumber(Value)) == "number" then
-		Show_GemtoFarm.label.Text = "เพชรที่ต้องการฟาร์ม : " .. Value
-		Settings.GemtoFarm = Value
+		Show_ItemtoFarm.label.Text = "เพชรที่ต้องการฟาร์ม : " .. Value
+		Settings.ItemtoFarm = Value
 		saveSettings()
 		changetextgemall()
 	else
@@ -792,14 +795,14 @@ EditCustomFarm:Cheat("Textbox", "เพชรที่ต้องการฟ�
 			ChangeErrorCode("None")
 		end)
 	end
-end, { placeholder = Settings.GemtoFarm })
+end, { placeholder = Settings.ItemtoFarm })
 EditCustomFarm:Cheat("Textbox", "ฟาร์มไปแล้ว", function(Value)
 	if type(tonumber(Value)) == "number" then
 		Show_GemFarmed.label.Text = "เพชรที่ฟาร์มไปแล้ว : " .. Value
-		Settings.GemFramed = Value
+		Farmitem = Value
 		saveSettings()
 		changetextgemall()
-		Show_GemAll.label.Text = "เพชรที่ต้องฟาร์มทั้งหมด : " .. Settings.GemFramed .. " / " .. Settings.GemtoFarm .. CheckGemAll()
+		Show_GemAll.label.Text = "เพชรที่ต้องฟาร์มทั้งหมด : " .. Farmitem .. " / " .. Settings.ItemtoFarm .. CheckGemAll()
 	else
 		spawn(function()
 			ChangeErrorCode("กรุณาใส่ตัวเลขเท่านั้น (2)")
@@ -807,7 +810,7 @@ EditCustomFarm:Cheat("Textbox", "ฟาร์มไปแล้ว", function(Va
 			ChangeErrorCode("None")
 		end)
 	end
-end, { placeholder = Settings.GemFramed })
+end, { placeholder = Farmitem })
 
 ShowCustomFarm:Cheat("Label", "")
 show_kicksetting = EditCustomFarm:Cheat("Label", "Kick Setting : " .. tostring(Settings.KiwwyKick))
@@ -818,9 +821,9 @@ end)
 
 spawn(function()
 	while wait(3) do
-		if Show_GemAll then Show_GemAll.label.Text = "เพชรที่ต้องฟาร์มทั้งหมด : " .. Settings.GemFramed .. " / " .. Settings.GemtoFarm .. CheckGemAll() end
-		if Show_GemtoFarm then Show_GemtoFarm.label.Text = "เพชรที่ต้องการฟาร์ม : " .. Settings.GemtoFarm end
-		if Show_GemFarmed then Show_GemFarmed.label.Text = "เพชรที่ฟาร์มไปแล้ว : " .. Settings.GemFramed end
+		if Show_GemAll then Show_GemAll.label.Text = "เพชรที่ต้องฟาร์มทั้งหมด : " .. Farmitem .. " / " .. Settings.ItemtoFarm .. CheckGemAll() end
+		if Show_ItemtoFarm then Show_ItemtoFarm.label.Text = "เพชรที่ต้องการฟาร์ม : " .. Settings.ItemtoFarm end
+		if Show_GemFarmed then Show_GemFarmed.label.Text = "เพชรที่ฟาร์มไปแล้ว : " .. Farmitem end
 		if show_kicksetting then show_kicksetting.label.Text = "Kick Setting : " .. tostring(Settings.KiwwyKick) end
 	end
 end)
@@ -841,7 +844,7 @@ RunService.RenderStepped:Connect(function()
         FrameTimer = tick();
         FrameCounter = 0;
     end;
-Library:SetWatermark(("🧑🏻 "..namegame.." ( "..display .." ) 🧑🏻\n⏲️: "..math.floor(Workspace.DistributedGameTime).."|🌊: "..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.."|💎: " ..Settings.GemFramed.. " / " ..Settings.GemtoFarm.. ""))
+Library:SetWatermark(("🧑🏻 "..namegame.." ( "..display .." ) 🧑🏻\n⏲️: "..math.floor(Workspace.DistributedGameTime).."|🌊: "..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.."|🛠️Item: " ..Farmitem.. " / " ..Settings.ItemtoFarm.. ""))
 end);
 
 Units:Cheat("Button", "🧙 Select Units", function() --Selects Currently Equipped Units!
@@ -865,8 +868,8 @@ end,{enabled = Settings.autostart })
 
 Units:Cheat("Textbox", "💎 เพชรที่ต้องการฟาร์ม", function(Value)
     if type(tonumber(Value)) == "number" then
-        Show_GemtoFarm.label.Text = "เพชรที่ต้องการฟาร์ม : " .. Value
-        Settings.GemtoFarm = Value
+        Show_ItemtoFarm.label.Text = "เพชรที่ต้องการฟาร์ม : " .. Value
+        Settings.ItemtoFarm = Value
         saveSettings()
         changetextgemall()
     else
@@ -876,12 +879,13 @@ Units:Cheat("Textbox", "💎 เพชรที่ต้องการฟาร
             ChangeErrorCode("None")
         end)
     end
-end, { placeholder = Settings.GemtoFarm })
+end, { placeholder = Settings.ItemtoFarm })
 Units:Cheat("Textbox", "💵 จำนวนจ้างฟาร์ม", function(Value)
     Value = tonumber(Value)
     Settings.income = Value
     saveSettings()
 end, {placeholder = Settings.income})
+
 Units:Cheat("Button", "🚪Leave To Lobby", function()
     warn("Return to Lobby")
     game:GetService("TeleportService"):Teleport(8304191830, game.Players.LocalPlayer)
@@ -891,6 +895,10 @@ end)
 Units:Cheat("Button", "🌐Finish Webhook", function()
     print(Settings.WebhookUrl)
     GemsWebhook()
+end)
+
+UnitsX:Cheat("Button", "Reload Script", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/SomeGil.lua"))()
 end)
 --[[ MARK ]]--
 
@@ -5620,32 +5628,10 @@ coroutine.resume(coroutine.create(function()
         local GameFinished = game:GetService("Workspace"):WaitForChild("_DATA"):WaitForChild("GameFinished")
         GameFinished:GetPropertyChangedSignal("Value"):Connect(function()
             print("Changed", GameFinished.Value == true)
-            if not Settings.GemtoFarm then
-				Settings.GemtoFarm = 0
-				saveSettings()
-			end
-			if not Settings.GemFramed then
-				Settings.GemFramed = 0
-				saveSettings()
-			end
-
             if GameFinished.Value == true then
                 repeat task.wait() until  game:GetService("Players").LocalPlayer.PlayerGui.ResultsUI.Enabled == true
-                
-                ResultHolder = plr.PlayerGui:FindFirstChild("ResultsUI"):FindFirstChild("Holder")
-				gems = ResultHolder:FindFirstChild("LevelRewards"):FindFirstChild("ScrollingFrame"):FindFirstChild("GemReward"):FindFirstChild("Main"):FindFirstChild("Amount").Text
-				if gems == "+99999" then gems = "+0" end
-				GetGems = gems:split("+")[2]
-				print(gems)
-				print("You got : " .. GetGems)
-				Settings.GemFramed = Settings.GemFramed + tonumber(GetGems)
-				print("game end :" .. Settings.GemFramed)
-				saveSettings()
-				print("Changed", GameFinished.Value == true)
-				task.wait(1.1)
-
                 pcall(function() webhook() end)
-                print("Wait next or leave")
+                warn("Wait next or leave")
                 task.wait(1.5)
 
             cata = Settings.WorldCategory; level = Settings.SelectedLevel;
