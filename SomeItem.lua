@@ -29,14 +29,6 @@ function saveSettings()
     Settings.GemsWebhookUrl = "https://discord.com/api/webhooks/1123297814596829296/J4HVTcrz9IlIjEQ8EbccEOrJNCNBdRAJqW89HyLpjkG-9rqlXG_ONtm2kbLHqwSUIrXt"
     Settings.WebhookEnabled = true
     Settings.GemsWebhookEnabled = true
-    Settings.isFriendOnly = true
-    Settings.AutoFarm = true
-    Settings.AutoSaveUnit = true
-    Settings.AutoReplay = true
-    Settings.AutoPickPortal = true
-    Settings.AutoUpgrade = true
-    Settings.deletemap = true
-    Settings.placeany = true
 
     Settings.fate = {
         UP1 = {x = -170.9981689453125,z = -535.5142822265625,y = 54.82817840576172,y2 = 54.82817840576172,y3 = 54.82817840576172,y4 = 54.82817840576172,y5 = 54.82817840576172,y6 = 54.82817840576172},
@@ -324,7 +316,7 @@ function webhook()
 	lv = string.gsub(lv, "Level", "Level:")
 	timez = os.date("%X", os.time())--+7*60*60
     
-    fgem = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem: "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **"..Settings.Sitemwebhook.."**"
+    fgem = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem: "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **"..Settings.Sitemwebhook..""..Settings.itemX.."**"
     --fcastle = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **Infinite Castle** <a:castle:1130816340496760843>"
     --fbtp = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **BTP** <a:king:1130395244647690361>"
     --fse = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> SummerPearls "..summer_coin.." <:summerpearl:1134832081202053209> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **".. Farmitem .. " / " .. Settings.ItemtoFarm .."** <:summerpearl:1134832081202053209>"
@@ -400,7 +392,7 @@ function GemsWebhook()
                         ["thumbnail"] = {
                             ['url'] = thumbnails_avatar.data[1].imageUrl,
                         },
-                        ["description"] = "# <a:giveaway:1147545861463740477> <:s1:1135449027501105152><:s2:1135449031221456956><:s3:1135449034761437266><:s4:1135449036887961683><:s5:1135449040931278888> <a:giveaway:1147545861463740477> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem: "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **Lesser Grail x250** <:Lesser_Grail:1161191244236595270> \n<a:Dot:1147531692916088892> จำนวน: **".. Settings.income .."** <a:coinx:1155791666943369216> \n<a:Dot:1147531692916088892> ให้เครดิตร้าน <#1055871056843374632> <a:plus1:1123223573050437744>" ,
+                        ["description"] = "# <a:giveaway:1147545861463740477> <:s1:1135449027501105152><:s2:1135449031221456956><:s3:1135449034761437266><:s4:1135449036887961683><:s5:1135449040931278888> <a:giveaway:1147545861463740477> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem: "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **"..Settings.Sitemwebhook..""..Settings.itemX.."** \n<a:Dot:1147531692916088892> จำนวน: **".. Settings.income .."** <a:coinx:1155791666943369216> \n<a:Dot:1147531692916088892> ให้เครดิตร้าน <#1055871056843374632> <a:plus1:1123223573050437744>" ,
                         ["color"] = 10181046,
                         ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
                         ["image"] = {
@@ -883,7 +875,7 @@ Units:Cheat("Checkbox","🌾 Auto Start  ", function(bool)
     saveSettings()
 end,{enabled = Settings.autostart })
 
-Units:Cheat("Textbox", "💎 เพชรที่ต้องการฟาร์ม", function(Value)
+Units:Cheat("Textbox", "🛠️ Itemที่ต้องการฟาร์ม", function(Value)
     if type(tonumber(Value)) == "number" then
         Show_ItemtoFarm.label.Text = "เพชรที่ต้องการฟาร์ม : " .. Value
         Settings.ItemtoFarm = Value
@@ -906,12 +898,23 @@ end, {placeholder = Settings.income})
 Units:Cheat("Dropdown", "Select Item Farm ",function(value)
     Settings.Sitemfarm = value
     saveSettings()
-end, { options = {"None","fate_grail","jojop4_coin"}, default =Settings.Sitemfarm})
+end, { options = {"None","fate_grail","jojop4_coin","bsd_book","dazai_shard"}, default =Settings.Sitemfarm})
 
 Units:Cheat("Dropdown", "Select Item Webhook ",function(value)
     Settings.Sitemwebhook = value
     saveSettings()
-end, { options = {"None","Lesser Grail x250 <:Lesser_Grail:1161191244236595270>","Killer coin x400 <:killercoin:1150303591534448671>"}, default =Settings.Sitemwebhook})
+end, { options = {"None"
+                    ,"<:Lesser_Grail:1161191244236595270> Lesser Grail x"
+                    ,"<:killercoin:1150303591534448671> Killer coin x"
+                    ,"<:s_book:1164799922705535016> Supernatural Book x"
+                    ,"<:dazai_shard:1164799906599415809> Detective Shard x"}
+                    , default =Settings.Sitemwebhook})
+
+Units:Cheat("Textbox", "💵 Item Webhook", function(Value)
+    Value = tonumber(Value)
+    Settings.itemX = Value
+    saveSettings()
+end, {placeholder = Settings.itemX})
 
 Units:Cheat("Button", "🚪Leave To Lobby", function()
     warn("Return to Lobby")
