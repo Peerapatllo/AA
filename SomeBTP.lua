@@ -399,7 +399,7 @@ function webhook()
 
 end
 
-function GemsWebhook()
+function GemWebhook()
     if Settings.GemsWebhookEnabled then
 	local url = Settings.GemsWebhookUrl
     print("webhook baby?")
@@ -926,7 +926,7 @@ end)
 
 Units:Cheat("Button", "🌐Finish Webhook", function()
     print(Settings.WebhookUrl)
-    GemsWebhook()
+    GemWebhook()
 end)
 --[[ MARK ]]--
 
