@@ -847,7 +847,7 @@ end)
 local namegame = game:GetService("Players").LocalPlayer.Name
 local display = game:GetService("Players").LocalPlayer.DisplayName
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/DistributionError/LinoriaLib/main/Library.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/Library.lua"))()
 local FrameTimer = tick();
 local FrameCounter = 0;
 local FPS = 60;
