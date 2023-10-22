@@ -2,9 +2,9 @@
 --loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/Lowcpu.lua"))()
 repeat  task.wait() until game:IsLoaded()
 if game.PlaceId == 8304191830 then
-	warn("Wait 60s")
+	warn("Wait 40s")
     wait(40)
-    warn("Success 60s")
+    warn("Success 40s")
     repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
     repeat task.wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("collection"):FindFirstChild("grid"):FindFirstChild("List"):FindFirstChild("Outer"):FindFirstChild("UnitFrames")
 	repeat task.wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("BattlePass"):FindFirstChild("Main"):FindFirstChild("Level"):FindFirstChild("V")
@@ -3217,7 +3217,7 @@ local function LowCPUModeT()
     for i = 1,60 do
         table.insert(FPS_CAP,i)
     end
-    Settings.FPSCAPNum = Settings.FPSCAPNum or 5
+    Settings.FPSCAPNum = Settings.FPSCAPNum or 7
     LowCPU2:Cheat("Dropdown", "🎚️ Select FPS Cap ",function(value)
         warn("Change to : "..value)
         Settings.FPSCAPNum = value
@@ -3238,7 +3238,7 @@ local function LowCPUModeT()
                 game:GetService("RunService"):Set3dRenderingEnabled(false)
                 isrbxactive(true)
             else
-                setfpscap(5)
+                setfpscap(7)
                 game:GetService("RunService"):Set3dRenderingEnabled(true)
                 isrbxactive(false)
             end
@@ -5656,8 +5656,10 @@ coroutine.resume(coroutine.create(function()
         local GameFinished = game:GetService("Workspace"):WaitForChild("_DATA"):WaitForChild("GameFinished")
         GameFinished:GetPropertyChangedSignal("Value"):Connect(function()
             print("Changed", GameFinished.Value == true)
-                pcall(function() webhook() end)
-                print("Wait next or leave")
+            if GameFinished.Value == true then
+                repeat task.wait() until  game:GetService("Players").LocalPlayer.PlayerGui.ResultsUI.Enabled == true
+                pcall(function() webhookX() end)
+                warn("Wait next or leave")
                 task.wait(1.5)
 
             cata = Settings.WorldCategory; level = Settings.SelectedLevel;
