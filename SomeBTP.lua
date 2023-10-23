@@ -3,7 +3,7 @@
 repeat  task.wait() until game:IsLoaded()
 if game.PlaceId == 8304191830 then
 	warn("Wait 40s")
-    wait(40)
+    wait(60)
     warn("Success 40s")
     repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
     repeat task.wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("collection"):FindFirstChild("grid"):FindFirstChild("List"):FindFirstChild("Outer"):FindFirstChild("UnitFrames")
