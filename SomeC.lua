@@ -1,5 +1,5 @@
 ---// Loading Section \\---
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/Lowcpu.lua"))()
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/Lowcpu.lua"))()
 repeat  task.wait() until game:IsLoaded()
 if game.PlaceId == 8304191830 then
     repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
@@ -3189,7 +3189,7 @@ local function LowCPUModeT()
     for i = 1,60 do
         table.insert(FPS_CAP,i)
     end
-    Settings.FPSCAPNum = Settings.FPSCAPNum or 7
+    Settings.FPSCAPNum = Settings.FPSCAPNum or 70
     LowCPU2:Cheat("Dropdown", "🎚️ Select FPS Cap ",function(value)
         warn("Change to : "..value)
         Settings.FPSCAPNum = value
@@ -3210,7 +3210,7 @@ local function LowCPUModeT()
                 game:GetService("RunService"):Set3dRenderingEnabled(false)
                 isrbxactive(true)
             else
-                setfpscap(7)
+                setfpscap(70)
                 game:GetService("RunService"):Set3dRenderingEnabled(true)
                 isrbxactive(false)
             end
