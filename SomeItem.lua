@@ -838,26 +838,6 @@ spawn(function()
 end)
 --[[ THE BEST ]]--
 --[[ MARK ]]--
---[[
-local namegame = game:GetService("Players").LocalPlayer.Name
-local display = game:GetService("Players").LocalPlayer.DisplayName
-
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/Library.lua"))()
-local FrameTimer = tick();
-local FrameCounter = 0;
-local FPS = 60;
-
-RunService.RenderStepped:Connect(function()
-    FrameCounter = FrameCounter + 1;
-    if tick() - FrameTimer >= 1 then
-        FPS = FrameCounter;
-        FrameTimer = tick();
-        FrameCounter = 0;
-    end;
-Library:SetWatermark(("🧑🏻 "..namegame.." ( "..display .." ) 🧑🏻\n⏲️: "..math.floor(Workspace.DistributedGameTime).."|🌊: "..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.."|🛠️Item: " ..Farmitem.. " / " ..Settings.ItemtoFarm.. ""))
-end);
-]]--
-
 Units:Cheat("Button", "🧙 Select Units", function() --Selects Currently Equipped Units!
     Settings.SelectedUnits = {
         U1 = "nil",
