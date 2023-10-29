@@ -834,6 +834,7 @@ spawn(function()
 end)
 --[[ THE BEST ]]--
 --[[ MARK ]]--
+--[[
 local namegame = game:GetService("Players").LocalPlayer.Name
 local display = game:GetService("Players").LocalPlayer.DisplayName
 
@@ -849,8 +850,9 @@ RunService.RenderStepped:Connect(function()
         FrameTimer = tick();
         FrameCounter = 0;
     end;
-    Library:SetWatermark(("🧑🏻 "..namegame.." ( "..display .." ) 🧑🏻\n⏲️: "..math.floor(Workspace.DistributedGameTime).."|🌊: "..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.."|🏯: " ..Settings.GemFramed.. " / " ..Settings.GemtoFarm.. ""))
+Library:SetWatermark(("🧑🏻 "..namegame.." ( "..display .." ) 🧑🏻\n⏲️: "..math.floor(Workspace.DistributedGameTime).."|🌊: "..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.."|💎: " ..Settings.GemFramed.. " / " ..Settings.GemtoFarm.. ""))
 end);
+]]--
 
 Units:Cheat("Button", "🧙 Select Units", function() --Selects Currently Equipped Units!
     Settings.SelectedUnits = {
