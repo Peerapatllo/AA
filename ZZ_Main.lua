@@ -297,7 +297,7 @@ function webhook()
 	ttime = ctime:split(": ")
 
     summer_reward = game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.IngameRewards.ResourceRewardTotal.Holder.Main.Amount.Text
-    summer_coin = tostring(game.Players.LocalPlayer._stats._resourceSummerPearls.Value)
+    --summer_coin = tostring(game.Players.LocalPlayer._stats._resourceSummerPearls.Value)
     candy_coin = tostring(game.Players.LocalPlayer._stats._resourceCandies.Value)
 
     --BTP lv.
