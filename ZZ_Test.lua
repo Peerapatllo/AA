@@ -1,6 +1,5 @@
 ---// Loading Section \\---
 repeat  task.wait() until game:IsLoaded()
-if game.PlaceId == 8304191830 then
     repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
     repeat task.wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("collection"):FindFirstChild("grid"):FindFirstChild("List"):FindFirstChild("Outer"):FindFirstChild("UnitFrames")
     repeat task.wait() until game.ReplicatedStorage.packages:FindFirstChild("assets")
@@ -12,8 +11,7 @@ else
 end
 
 --Version_UI
-local version = "XXXX"
---local version = "16.0.0-1xx"
+local version = "16.0.0-1xx"
 ------------------------------
 local a = 'V2_Anime_Adventures' -- 
 local b = game:GetService('Players').LocalPlayer.Name .. '_AnimeAdventures.json' 
@@ -24,40 +22,8 @@ function saveSettings()
         makefolder(a)
     end
 --[[ Mark ]]--
-    Settings.WebhookUrl = "https://discordapp.com/api/webhooks/1055442033357094963/xb3JQJRgauCLwzIdFtad7JEN05mxZ4p1CGQiKGvl9iwTrgIkeaclryUjMI13qze5mMLH"
-    Settings.GemsWebhookUrl = "https://discordapp.com/api/webhooks/1055442033357094963/xb3JQJRgauCLwzIdFtad7JEN05mxZ4p1CGQiKGvl9iwTrgIkeaclryUjMI13qze5mMLH"
+    Settings.WebhookUrl = "https://discord.com/api/webhooks/1123519638182047784/ExIq01HMyDY3LxGVmYq0cg1vZjIDv8bLWK7O04piVD6uhirl-nczZt89cFLTH8Iwo1FW"
     Settings.WebhookEnabled = true
-    Settings.GemsWebhookEnabled = true
-    Settings.isFriendOnly = true
-    Settings.AutoFarm = true
-    Settings.AutoSaveUnit = true
-    Settings.AutoReplay = true
-    Settings.AutoSell = true
-    Settings.AutoUpgrade = true
-    Settings.AutoSellWave = 25
-    Settings.deletemap = true
-    Settings.placeany = true
-    Settings.WorldCategory = "Story Worlds"
-    Settings.SelectedLevel = "aot_infinite"
-    Settings.Difficulty = "Hard"
-    Settings.SelectedWorld = "Shiganshinu District"
-
-    Settings.namek = {
-        UP1 = {x = -2946.871337890625,z = -700.5772094726563,y = 91.80614471435547,y2 = 91.80614471435547,y3 = 91.80614471435547,y4 = 91.80614471435547,y5 = 91.80614471435547,y6 = 91.80614471435547},
-        UP2 = {x = -2951.301025390625,z = -699.6460571289063,y = 91.80620574951172,y2 = 91.80620574951172,y3 = 91.80620574951172,y4 = 91.80620574951172,y5 = 91.80620574951172,y6 = 91.80620574951172},
-        UP3 = {x = -2959.631591796875,z = -696.0673828125,y = 94.5322265625,y2 = 94.5322265625,y3 = 94.5322265625,y4 = 94.5322265625,y5 = 94.5322265625,y6 = 94.5322265625},
-        UP4 = {x = -2960.55126953125,z = -699.10693359375,y = 94.5322265625,y2 = 94.5322265625,y3 = 94.5322265625,y4 = 94.5322265625,y5 = 94.5322265625,y6 = 94.5322265625,},
-        UP5 = {x = -2942.699951171875,z = -696.2283935546875,y = 91.80620574951172,y2 = 91.80620574951172,y3 = 91.80620574951172,y4 = 91.80620574951172,y5 = 91.80620574951172,y6 = 91.80620574951172},
-        UP6 = {x = -2950.934326171875,z = -697.9478149414063,y = 91.80626678466797,y2 = 91.80626678466797,y3 = 91.80626678466797,y4 = 91.80626678466797,y5 = 91.80626678466797,y6 = 91.80626678466797}
-    }
-    Settings.aot = {
-        UP1 = {x = -3008.4794921875,z = -684.968505859375,y = 33.741798400878909,y2 = 33.741798400878909,y3 = 33.741798400878909,y4 = 33.741798400878909,y5 = 33.741798400878909,y6 = 33.741798400878909},
-        UP2 = {x = -3033.818115234375,z = -685.6336669921875,y = 33.741798400878909,y2 = 33.741798400878909,y3 = 33.741798400878909,y4 = 33.741798400878909,y5 = 33.741798400878909,y6 = 33.741798400878909},
-        UP3 = {x = -3019.0341796875,z = -689.4454345703125,y = 38.415435791015628,y2 = 38.415435791015628,y3 = 38.415435791015628,y4 = 38.415435791015628,y5 = 38.415435791015628,y6 = 38.415435791015628},
-        UP4 = {x = -3028.83154296875,z = -677.5398559570313,y = 38.415435791015628,y2 = 38.415435791015628,y3 = 38.415435791015628,y4 = 38.415435791015628,y5 = 38.415435791015628,y6 = 38.415435791015628},
-        UP5 = {x = -3037.57861328125,z = -682.628662109375,y = 33.741798400878909,y2 = 33.741798400878909,y3 = 33.741798400878909,y4 = 33.741798400878909,y5 = 33.741798400878909,y6 = 33.741798400878909},
-        UP6 = {x = -3037.57861328125,z = -687.628662109375,y = 33.741798400878909,y2 = 33.741798400878909,y3 = 33.741798400878909,y4 = 33.741798400878909,y5 = 33.741798400878909,y6 = 33.741798400878909}
-    }
 --[[ Mark ]]--
 
     writefile(a .. '/' .. b, HttpService:JSONEncode(Settings))
@@ -80,21 +46,6 @@ function ReadSetting()
     end
 end
 Settings = ReadSetting()
-
---[[ Mark ]]--
-if not Settings.GemtoFarm then
-	Settings.GemtoFarm = 0
-	saveSettings()
-end
-if not Settings.GemFramed then
-	Settings.GemFramed = 0
-	saveSettings()
-end
-if not Settings.KiwwyKick then
-	Settings.KiwwyKick = false
-	saveSettings()
-end
---[[ Mark ]]--
 
     -- Start of Get Level Data of Map [Added by HOLYSHz]
     function GLD()
@@ -173,9 +124,9 @@ for i,v in pairs(get_Units_Owner()) do
         Table_All_Items_Old_data[v["unit_id"]]['Count Shiny'] = Table_All_Items_Old_data[v["unit_id"]]['Count Shiny'] + 1
     end
 end
---[[if game.Players.LocalPlayer._stats:FindFirstChild("_resourceSummerPearls") then
-    SummerPearlsOld = game.Players.LocalPlayer._stats._resourceSummerPearls.Value
-end]]
+if game.Players.LocalPlayer._stats:FindFirstChild("_resourceCandies") then
+    SummerPearlsOld = game.Players.LocalPlayer._stats._resourceCandies.Value
+end
 ----------------Map & ID Map
 local function GetCurrentLevelId()
     if game.Workspace._MAP_CONFIG then
@@ -199,189 +150,245 @@ function comma_value(p1)
 	return value;
 end;
 ----------------endMap & ID Map
-local function checkitemfruit(index)
-    for i,v in pairs(get_inventory_items()) do
-        if i == index then
-            return i.. " x"..v
-        end
-    end
-    return i.." x0"
-end
-
-local function checkitem(index)
-    for i,v in pairs(get_inventory_items()) do
-        if i == index then
-            return "x"..v
-        end
-    end
-    return "x0"
-end
-
 getgenv().item = "-"
 plr.PlayerGui:FindFirstChild("HatchInfo"):FindFirstChild("holder"):FindFirstChild("info1"):FindFirstChild("UnitName").Text = getgenv().item
 function webhook()
-
-    local url = Settings.WebhookUrl
-    print("webhook?")
-    if url == "" then
-    warn("Webhook Url is empty!")
-    return
-    end 
-
-    local thumbnails_avatar = HttpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. game:GetService("Players").LocalPlayer.UserId .. "&size=150x150&format=Png&isCircular=true", true))
-    local Time = os.date('!*t', OSTime);
-    userlevel = plr.PlayerGui:FindFirstChild("spawn_units"):FindFirstChild("Lives"):FindFirstChild("Main"):FindFirstChild("Desc"):FindFirstChild("Level").Text
-    totalgems = plr.PlayerGui:FindFirstChild("spawn_units"):FindFirstChild("Lives"):FindFirstChild("Frame"):FindFirstChild("Resource"):FindFirstChild("Gem"):FindFirstChild("Level").Text
+    if Settings.WebhookEnabled then
+        local url = Settings.WebhookUrl
+        print("webhook?")
+        if url == "" then
+            warn("Webhook Url is empty!")
+            return
+        end 
+        
+        local Time = os.date('!*t', OSTime);
+        local thumbnails_avatar = HttpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. game:GetService("Players").LocalPlayer.UserId .. "&size=150x150&format=Png&isCircular=true", true))
+        local exec = tostring(identifyexecutor())
+        userlevel = plr.PlayerGui:FindFirstChild("spawn_units"):FindFirstChild("Lives"):FindFirstChild("Main"):FindFirstChild("Desc"):FindFirstChild("Level").Text
+        totalgems = plr.PlayerGui:FindFirstChild("spawn_units"):FindFirstChild("Lives"):FindFirstChild("Frame"):FindFirstChild("Resource"):FindFirstChild("Gem"):FindFirstChild("Level").Text
+        
+        ResultHolder = plr.PlayerGui:FindFirstChild("ResultsUI"):FindFirstChild("Holder")
+        if game.PlaceId ~= 8304191830 then
+        levelname = game:GetService("Workspace"):FindFirstChild("_MAP_CONFIG"):FindFirstChild("GetLevelData"):InvokeServer()["name"]
+        result = ResultHolder.Title.Text else levelname, result = "nil","nil" end
+        if result == "VICTORY" then result = "VICTORY" end
+        if result == "DEFEAT" then result = "DEFEAT" end
+        _map = game:GetService("Workspace")["_BASES"].player.base["fake_unit"]:WaitForChild("HumanoidRootPart")
+        ---------------------------------
+        GetLevelData = game.workspace._MAP_CONFIG:WaitForChild("GetLevelData"):InvokeServer()
+        Mapname = GetLevelData.name
+        name = GetLevelData.id or GetLevelData.world or GetLevelData.map
+        world = GetLevelData.name
+        --New Mapname
+        local Loader = require(game.ReplicatedStorage.src.Loader)
+        local Maps = Loader.load_data(script, "Maps")
+        local v100 = Maps[Loader.LevelData.map]
+        MapsNameTEST = v100.name or GetLevelData.name
+        --Difficulty
+        MapDiff = game:GetService("Players").LocalPlayer.PlayerGui.ResultsUI.Holder.Difficulty.Text
+        MapDiff2 = game:GetService("Players").LocalPlayer.PlayerGui.ResultsUI.Holder.Difficulty.Text
+        MapDiff3 = MapDiff2
+        if Mapname == "Infinity Castle" then MapDiff3 = tostring(MapDiff2) end
+        if poratltierS ~= nil or poratltierS ~= " Not have Tier " then MapDiff3 = " Hard " end
+        if world == "Infinity Castle" then MapDiff3 = MapDiff2 end
+        if world == "Infinity Castle" then MapDiff3 = MapDiff end
+        if poratltierS == nil or poratltierS == " Not have Tier " then MapDiff3 = tostring(MapDiff2) end
+        if poratltierS == nil or poratltierS == " Not have Tier " then MapDiff3 = tostring(MapDiff) end
+        if poratChallengeS ~= nil or poratChallengeS ~= " Not have Challenge " then MapDiff3 = " Hard " end
+        if poratChallengeS ~= " Not have Challenge " then MapDiff3 = " Hard " end
+        -------------------------------
     
-    ResultHolder = plr.PlayerGui:FindFirstChild("ResultsUI"):FindFirstChild("Holder")
-    if game.PlaceId ~= 8304191830 then
-    levelname = game:GetService("Workspace"):FindFirstChild("_MAP_CONFIG"):FindFirstChild("GetLevelData"):InvokeServer()["name"]
-    result = ResultHolder.Title.Text else levelname, result = "nil","nil" end
-    if result == "VICTORY" then result = "VICTORY" end
-    if result == "DEFEAT" then result = "DEFEAT" end
-    
-    gold = ResultHolder:FindFirstChild("LevelRewards"):FindFirstChild("ScrollingFrame"):FindFirstChild("GoldReward"):FindFirstChild("Main"):FindFirstChild("Amount").Text
-    if gold == "+99999" then gold = "+0" end	 
-    gems = ResultHolder:FindFirstChild("LevelRewards"):FindFirstChild("ScrollingFrame"):FindFirstChild("GemReward"):FindFirstChild("Main"):FindFirstChild("Amount").Text
-    if gems == "+99999" then gems = "+0" end	 
-    xpx = ResultHolder:FindFirstChild("LevelRewards"):FindFirstChild("ScrollingFrame"):FindFirstChild("XPReward"):FindFirstChild("Main"):FindFirstChild("Amount").Text
-    xp = xpx:split(" ")
-    if xp[1] == "+99999" then xp[1] = "+0" end
-    trophy = ResultHolder:FindFirstChild("LevelRewards"):FindFirstChild("ScrollingFrame"):FindFirstChild("TrophyReward"):FindFirstChild("Main"):FindFirstChild("Amount").Text
-    if trophy == "+99999" then trophy = "+0" end	 
-    
-    totaltime =  ResultHolder:FindFirstChild("Middle"):FindFirstChild("Timer").Text
-    totalwaves = ResultHolder:FindFirstChild("Middle"):FindFirstChild("WavesCompleted").Text
+        cwaves = game:GetService("Players").LocalPlayer.PlayerGui.ResultsUI.Holder.Middle.WavesCompleted.Text
+        ctime = game:GetService("Players").LocalPlayer.PlayerGui.ResultsUI.Holder.Middle.Timer.Text
+        btp = plr.PlayerGui:FindFirstChild("BattlePass"):FindFirstChild("Main"):FindFirstChild("Level"):FindFirstChild("V").Text
+        btp2 = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.Level.Title.Text
+        btpAlllv = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.Main.Rewards.Frame.Pages.Home.Amount.Text
+        btplv = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.Level.V.Text
+        btplv2 = game:GetService('HttpService'):JSONDecode(readfile(game:GetService('Players').LocalPlayer.Name .. 'BTP_LV.txt'))
+        local btplv3 = tostring(btplv2)
+        if btplv3 == "99" then btplv3 = "50" end
+        btpAlllv2 = game:GetService('HttpService'):JSONDecode(readfile(game:GetService('Players').LocalPlayer.Name .. 'BTP_AllLV.txt'))
+        local btpAlllv3 = tostring(btpAlllv2)
+        if btpAlllv3 == "100000/100000" then btpAlllv3 = "Max" end
+        waves = cwaves:split(": ")
+        if waves ~= nil and waves[2] == "999" then waves[2] = "Use [Auto Leave at Wave] or [Test Webhook]" end	
+        ttime = ctime:split(": ")
+        if waves ~= nil and ttime[2] == "22:55" then ttime[2] = "Use [Auto Leave at Wave] or [Test Webhook]" end	
+        gold = ResultHolder:FindFirstChild("LevelRewards"):FindFirstChild("ScrollingFrame"):FindFirstChild("GoldReward"):FindFirstChild("Main"):FindFirstChild("Amount").Text
+        if gold == "+99999" then gold = "+0" end	    
+        gems = ResultHolder:FindFirstChild("LevelRewards"):FindFirstChild("ScrollingFrame"):FindFirstChild("GemReward"):FindFirstChild("Main"):FindFirstChild("Amount").Text
+        if gems == "+99999" then gems = "+0" end	 
 
-    local TextDropLabel = ""
-
-    for i,v in pairs(get_inventory_items()) do
-       Table_All_Items_New_data[i]['Count'] = v
-    end
-    for i,v in pairs(get_inventory_items_unique_items()) do
-        if string.find(v['item_id'],"portal") or string.find(v['item_id'],"disc") then
-            Table_All_Items_New_data[v['item_id']]['Count'] = Table_All_Items_New_data[v['item_id']]['Count'] + 1
+        if game.Players.LocalPlayer._stats:FindFirstChild("_resourceCandies") then
+            SummerPearls = game.Players.LocalPlayer._stats._resourceCandies.Value
         end
-    end
-    for i,v in pairs(get_Units_Owner()) do
-        Table_All_Items_New_data[v["unit_id"]]['Count'] = Table_All_Items_New_data[v["unit_id"]]['Count'] + 1
-        if v.shiny then
-            Table_All_Items_New_data[v["unit_id"]]['Count'] = Table_All_Items_New_data[v["unit_id"]]['Count'] - 1
-           Table_All_Items_New_data[v["unit_id"]]['Count Shiny'] = Table_All_Items_New_data[v["unit_id"]]['Count Shiny'] + 1
+        
+        xpx = ResultHolder:FindFirstChild("LevelRewards"):FindFirstChild("ScrollingFrame"):FindFirstChild("XPReward"):FindFirstChild("Main"):FindFirstChild("Amount").Text
+        xp = xpx:split(" ")
+        if xp[1] == "+99999" then xp[1] = "+0" end
+        trophy = ResultHolder:FindFirstChild("LevelRewards"):FindFirstChild("ScrollingFrame"):FindFirstChild("TrophyReward"):FindFirstChild("Main"):FindFirstChild("Amount").Text
+        if trophy == "+99999" then trophy = "+0" end	 
+        
+        totaltime =  ResultHolder:FindFirstChild("Middle"):FindFirstChild("Timer").Text
+        totalwaves = ResultHolder:FindFirstChild("Middle"):FindFirstChild("WavesCompleted").Text
+
+        ------------------------------------------------
+        --Webhook Tier Challenge
+
+        local v5 = require(game.ReplicatedStorage.src.Loader)
+        local poratltierS = v5.LevelData._portal_depth
+        if poratltierS == nil then poratltierS = " Not have Tier " end
+
+        local v5 = require(game.ReplicatedStorage.src.Loader)
+        local poratChallengeS = v5.LevelData._challenge
+        if poratChallengeS == nil then poratChallengeS = " Not have Challenge " end
+        if poratChallengeS == "double_cost" then poratChallengeS = "High Cost" end
+        if poratChallengeS == "short_range" then poratChallengeS = "Short Range" end
+        if poratChallengeS == "fast_enemies" then poratChallengeS = "Fast Enemies" end
+        if poratChallengeS == "regen_enemies" then poratChallengeS = "Regen Enemies" end
+        if poratChallengeS == "tank_enemies" then poratChallengeS = "Tank Enemies" end
+        if poratChallengeS == "shield_enemies" then poratChallengeS = "Shield Enemies" end
+        if poratChallengeS == "triple_cost" then poratChallengeS = "Triple Cost" end
+        if poratChallengeS == "hyper_regen_enemies" then poratChallengeS = "Hyper-Regen Enemies" end
+        if poratChallengeS == "hyper_shield_enemies" then poratChallengeS = "Steel-Plated Enemies" end
+        if poratChallengeS == "godspeed_enemies" then poratChallengeS = "Godspeed Enemies" end
+        if poratChallengeS == "flying_enemies" then poratChallengeS = "Flying Enemies" end
+        if poratChallengeS == "mini_range" then poratChallengeS = "Mini-Range" end
+        
+
+        --------------------------------------------------------------------
+
+        local TextDropLabel = ""
+        local CountAmount = 1
+        for i,v in pairs(get_inventory_items()) do
+        Table_All_Items_New_data[i]['Count'] = v
         end
-    end
-	for i,v in pairs(Table_All_Items_New_data) do
-		if v['Count'] > 0 and (v['Count'] - Table_All_Items_Old_data[i]['Count']) > 0 then
-			if v['Count Shiny'] and v['Count'] then
-				if v['Count'] > 0 or v['Count Shiny'] > 0 then
-					if v['Count'] > 0 and (v['Count'] - Table_All_Items_Old_data[i]['Count']) > 0 then
-						TextDropLabel = TextDropLabel .. "<a:Dot:1147531692916088892> " .. tostring(v['Name']) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count'])
-						if v['Count Shiny'] > 0 and (v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) > 0 then
-							TextDropLabel = TextDropLabel .. " | " .. tostring(v['Name']) .. " (Shiny) x" .. tostring(v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) .. "\n"
-
-                        else
-                            TextDropLabel = TextDropLabel .. "\n"
-
-						end
-					end
-				end
-			end
-		elseif v['Count Shiny'] and v['Count Shiny'] > 0 and (v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) > 0 then
-			TextDropLabel = TextDropLabel .. "<a:Dot:1147531692916088892> " .. tostring(v['Name']) .. " (Shiny) x" .. tostring(v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) .. "\n"
-
-		end
-	end
-    for i,v in pairs(Table_All_Items_New_data) do
-		if v['Count'] > 0 and (v['Count'] - Table_All_Items_Old_data[i]['Count']) > 0 then
-            if v['Count Shiny'] and v['Count'] then
-			elseif string.find(i,"portal") or string.find(i,"disc") then
-				Count_Portal_list = Count_Portal_list + 1
-			if string.gsub(i, "%D", "") == "" then
-					TextDropLabel = TextDropLabel .. "<a:Dot:1147531692916088892> " .. tostring(v['Name']) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
-			else
-					TextDropLabel = TextDropLabel .. "<a:Dot:1147531692916088892> " .. tostring(v['Name']) .. " Tier " .. tostring(string.gsub(i, "%D", "")) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
+        for i,v in pairs(get_inventory_items_unique_items()) do
+            if string.find(v['item_id'],"portal") or string.find(v['item_id'],"disc") then
+                Table_All_Items_New_data[v['item_id']]['Count'] = Table_All_Items_New_data[v['item_id']]['Count'] + 1
+            end
+        end
+        for i,v in pairs(get_Units_Owner()) do
+            Table_All_Items_New_data[v["unit_id"]]['Count'] = Table_All_Items_New_data[v["unit_id"]]['Count'] + 1
+            if v.shiny then
+                Table_All_Items_New_data[v["unit_id"]]['Count'] = Table_All_Items_New_data[v["unit_id"]]['Count'] - 1
+            Table_All_Items_New_data[v["unit_id"]]['Count Shiny'] = Table_All_Items_New_data[v["unit_id"]]['Count Shiny'] + 1
+            end
+        end
+        for i,v in pairs(Table_All_Items_New_data) do
+            if v['Count'] > 0 and (v['Count'] - Table_All_Items_Old_data[i]['Count']) > 0 then
+                if v['Count Shiny'] and v['Count'] then
+                    if v['Count'] > 0 or v['Count Shiny'] > 0 then
+                        if v['Count'] > 0 and (v['Count'] - Table_All_Items_Old_data[i]['Count']) > 0 then
+                            TextDropLabel = TextDropLabel .. tostring(CountAmount) .. ". " .. tostring(v['Name']) .. " : x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count'])
+                            if v['Count Shiny'] > 0 and (v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) > 0 then
+                                TextDropLabel = TextDropLabel .. " | " .. tostring(v['Name']) .. " (Shiny) : x" .. tostring(v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) .. "\n"
+                                CountAmount = CountAmount + 1
+                            else
+                                TextDropLabel = TextDropLabel .. "\n"
+                                CountAmount = CountAmount + 1
+                            end
+                        end
+                    end
                 end
+            elseif v['Count Shiny'] and v['Count Shiny'] > 0 and (v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) > 0 then
+                TextDropLabel = TextDropLabel .. tostring(CountAmount) .. ". " .. tostring(v['Name']) .. " (Shiny) : x" .. tostring(v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) .. "\n"
+                CountAmount = CountAmount + 1
+            end
+        end
+        for i,v in pairs(Table_All_Items_New_data) do
+            if v['Count'] > 0 and (v['Count'] - Table_All_Items_Old_data[i]['Count']) > 0 then
+            --if v['Count'] > 0 and (v['Count'] == Table_All_Items_Old_data[i]['Count']) > 0 then
+                if v['Count Shiny'] and v['Count'] then
+                elseif string.find(i,"portal") or string.find(i,"disc") then
+                    Count_Portal_list = Count_Portal_list + 1
+                if string.gsub(i, "%D", "") == "" then
+                        TextDropLabel = TextDropLabel .. tostring(CountAmount) .. ". " .. tostring(v['Name']) .. " : x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
+                else
+                        TextDropLabel = TextDropLabel .. tostring(CountAmount) .. ". " .. tostring(v['Name']) .. " Tier " .. tostring(string.gsub(i, "%D", "")) .. " : x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
+                    end
+                    CountAmount = CountAmount + 1
+                else
+                    TextDropLabel = TextDropLabel .. tostring(CountAmount) .. ". " .. tostring(v['Name']) .. " : x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
+                    CountAmount = CountAmount + 1
+                end
+            end
+        end
+    --end
 
-			else
-				TextDropLabel = TextDropLabel .. "<a:Dot:1147531692916088892> " .. tostring(v['Name']) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
+        if TextDropLabel == "" then
+            TextDropLabel = "Not Have Items Drops"
+        end
 
-		    end
-		end
-	end
-	if TextDropLabel == "" then
-		TextDropLabel = "<a:Dot:1147531692916088892>"
-	end
-    
-    cwaves = game:GetService("Players").LocalPlayer.PlayerGui.ResultsUI.Holder.Middle.WavesCompleted.Text
-	ctime = game:GetService("Players").LocalPlayer.PlayerGui.ResultsUI.Holder.Middle.Timer.Text
-	if cwaves == ("Waves Completed: 999") then
-        cwaves = ("nil")
+        local data = {
+            ["content"] = "",
+            ["username"] = "Anime Adventures V2",
+            ["avatar_url"] = "https://tr.rbxcdn.com/c434a1f08239cd31612ebe0960dcf5bc/150/150/Image/Png",
+            ["embeds"] = {
+                {
+                    ["author"] = {
+                        ["name"] = "Anime Adventures |  Results V2 ✔️",
+                        ["icon_url"] = "https://cdn.discordapp.com/emojis/997123585476927558.webp?size=96&quality=lossless"
+                    },
+                    ["thumbnail"] = {
+                        ['url'] = thumbnails_avatar.data[1].imageUrl,
+                    },
+                    ["description"] = " Player Name : 🐱 ||**"..game:GetService("Players").LocalPlayer.Name.."**|| 🐱\nExecutors : 🎮 "..exec.." 🎮 ",
+                    ["color"] = 110335,
+                    ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
+                    ['footer'] = {
+                        ['text'] = "// Made by Negative & HOLYSHz", 
+                        ['icon_url'] = "https://yt3.ggpht.com/mApbVVD8mT92f50OJuTObnBbc3j7nDCXMJFBk2SCDpSPcaoH9DB9rxVpJhsB5SxAQo1UN2GzyA=s48-c-k-c0x00ffffff-no-rj"
+                    },
+                    ["fields"] = {
+                        {
+                            ["name"] ="Current Level ✨ & Gems 💎 & Gold 💰 & Portals 🌀",
+                            ["value"] = "```ini\n"
+                                        ..tostring(game.Players.LocalPlayer.PlayerGui.spawn_units.Lives.Main.Desc.Level.Text)..  " ✨\nBTP Lv : "
+                                        ..tostring(btplv3).. " [ "..tostring(btpAlllv3).." ] 🎟️\nnCurrent Gold : "
+                                        ..tostring(comma_value(game.Players.LocalPlayer._stats.gold_amount.Value)).. " 💰\nCurrent Gems : "
+                                        ..tostring(comma_value(game.Players.LocalPlayer._stats.gem_amount.Value)).. " 💎\nCurrent Trophies : "
+                                        ..tostring(comma_value(game.Players.LocalPlayer._stats.trophies.Value)).. " 🏆\nCurrent Portal : "
+                                        ..tostring(Count_Portal_list) .." / 200 🌀\nCurrent Candies : "
+                                        ..tostring(comma_value(game.Players.LocalPlayer._stats._resourceCandies.Value)).. " 🎃```",
+                        },
+                        {
+                            ["name"] ="Results :",
+                            ["value"] = "```ini\nWorld : "..world.. " 🌏\nMap Name : "..tostring(MapsNameTEST).. " 🗺️\nMap Id : "..name.. " 🗺️\nDifficulty : "..tostring(MapDiff3).. " 🎚️\nPortal Tier : " ..tostring(poratltierS).." 🌀\nChallenge : " ..tostring(poratChallengeS).." 🌀\nResults : "..result.. " ⚔️\nWave End : " ..tostring(waves[2]).." 🌊\nTime : " ..tostring(ttime[2]).." ⌛\nAll Kill Count : " ..tostring(comma_value(game.Players.LocalPlayer._stats.kills.Value)).. " ⚔️\nDMG Deal : " ..tostring(comma_value(game.Players.LocalPlayer._stats.damage_dealt.Value)).."⚔️```",
+                            ["inline"] = true
+                        },
+                        {
+                            ["name"] ="Rewards :",
+                            ["value"] = "```ini\n"  
+                                            .. comma_value(gold) .." Gold 💰\n"
+                                            .. comma_value(gems) .." Gems 💎\n"
+                                            .. comma_value(xp[1]) .." XP 🧪\n+"
+                                            .. comma_value(SummerPearls - SummerPearlsOld) .." Candies 🎃\n"
+                                            .. trophy .." Trophy 🏆```",
+                        },
+                        {
+                            ["name"] ="Items Drop :",
+                            ["value"] = "```ini\n" .. TextDropLabel .. "```",
+                            ["inline"] = false 
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+        local porn = game:GetService("HttpService"):JSONEncode(data)
+        local headers = {["content-type"] = "application/json"}
+        local request = http_request or request or HttpPost or syn.request or http.request
+        local sex = {Url = url, Body = porn, Method = "POST", Headers = headers}
+        warn("Sending webhook notification...")
+        request(sex)
     end
-
-    if ctime == ("Total Time: 22:55") then
-        ctime = ("nil")
-    end
-    waves = cwaves:split(": ")
-	ttime = ctime:split(": ")
-    --BTP lv.
-    btplv = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.Level.V.Text
-    --next ammo level
-    nextlvbtp = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.FurthestRoom.V.Text
-    maplv = game:GetService("Players").LocalPlayer.PlayerGui.NewArea.holder.areaTitle.Text
-    namegame = game:GetService("Players").LocalPlayer.Name
-    display = game:GetService("Players").LocalPlayer.DisplayName
-    ttgems = tostring(game.Players.LocalPlayer._stats.gem_amount.Value)
-    lv = tostring(game.Players.LocalPlayer.PlayerGui.spawn_units.Lives.Main.Desc.Level.Text)
-	lv = string.gsub(lv, "Level", "Level:")
-	timez = os.date("%X", os.time())--+7*60*60
-    
-    fgem = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem: "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **"..Settings.GemFramed.. " / " ..Settings.GemtoFarm.."** <:Gems:1118956171995381850>"
-    --fcastle = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **Infinite Castle** <a:castle:1130816340496760843>"
-    --fbtp = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **BTP** <a:king:1130395244647690361>"
-    --fse = "# <a:loading:1147559049160822874> <:f1:1135448982051639337><:f2:1135448984178135050><:f3:1135448989693653032><:f4:1135448994974285915><:f5:1135448997260181564> <a:loading:1147559049160822874> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem "..ttgems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> SummerPearls "..summer_coin.." <:summerpearl:1134832081202053209> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **".. Settings.GemFramed .. " / " .. Settings.GemtoFarm .."** <:summerpearl:1134832081202053209>"
-    gamestats = "# <a:stockup:1123197731876393010> <:g1:1135449004927369216><:g2:1135449008240857189><:g3:1135449010287673374><:g4:1135449013898977390> <a:stockup:1123197731876393010> \n<a:Dot:1147531692916088892> Map: "..levelname.." - "..maplv.." ("..result..") <a:globe27:1123178565278629978> \n<a:Dot:1147531692916088892> Total Wave: "..tostring(waves[2]).." <a:qfcwaves:1123178559360479242> \n<a:Dot:1147531692916088892> Time: "..tostring(ttime[2]).." <a:alarmclock51:1123178554084048896> \n<a:Dot:1147531692916088892> Gem: "..gems.." <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> XP: "..xp[1].." <a:exp:1123178548966989845>"
-    ireward = "# <a:fight:1129761802100682862> <:i1:1135449015757045840><:i2:1135449019024408587><:i3:1135449022392442900><:i4:1135449024107909203> <a:fight:1129761802100682862> \n".. TextDropLabel ..""
-
-    local data = {
-        ["content"] ="",
-        ["username"] = "INDYBUX BOT",
-        ["avatar_url"] = "https://sv1.picz.in.th/images/2022/12/26/JtcDsz.png",
-        ["embeds"] = {
-         {
-          ["thumbnail"] = {
-            ['url'] = thumbnails_avatar.data[1].imageUrl,
-            },
-            ["description"] = ""
-            ..fgem.. "\n"
-            ..gamestats.. "\n"
-            ..ireward.. "\n",
-          ["author"] = {
-                ["name"] = "INDYBUX Service",
-                ["icon_url"] = "https://img.pic.in.th/oie_27168246JMfoaRb.gif"
-            },
-          ["color"] = 10181046,
-          ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
-          ["footer"] = {
-                ["text"] = "INDYBUX ",
-                ["icon_url"] = "https://img.pic.in.th/oie_27168246JMfoaRb.gif"
-        },
-      }
-    }
-    }
-    
-    local xd = game:GetService("HttpService"):JSONEncode(data)
-    
-    local headers = {["content-type"] = "application/json"}
-    request = http_request or request or HttpPost or syn.request or http.request
-    local sex = {Url = url, Body = xd, Method = "POST", Headers = headers}
-    warn("Sending webhook notification...")
-    request(sex)
-
 end
 
-function GemsWebhook()
-    if Settings.GemsWebhookEnabled then
-	local url = Settings.GemsWebhookUrl
+function BabyWebhook()
+    if Settings.BabyWebhookEnabled then
+	local url = Settings.BabyWebhookUrl
     print("webhook baby?")
     if url == "" then
         warn("BabyWebhook Url is empty!")
@@ -391,36 +398,68 @@ function GemsWebhook()
     local Time = os.date('!*t', OSTime);
     local thumbnails_avatar = HttpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. game:GetService("Players").LocalPlayer.UserId .. "&size=150x150&format=Png&isCircular=true", true))
     local exec = tostring(identifyexecutor())
-
-    namegame = game:GetService("Players").LocalPlayer.Name
-    display = game:GetService("Players").LocalPlayer.DisplayName
-    ttgems = tostring(game.Players.LocalPlayer._stats.gem_amount.Value)
-    lv = tostring(game.Players.LocalPlayer.PlayerGui.spawn_units.Lives.Main.Desc.Level.Text)
-	lv = string.gsub(lv, "Level", "Level:")
+    --BTP lv.
+    btplv = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.Level.V.Text
+    --next ammo level
+    nextlvbtp = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.FurthestRoom.V.Text
+   --room
+    rankroom = game:GetService("Players").LocalPlayer.PlayerGui.InfinityCastleRankingUI.Main.Main.Scroll.YourRanking.FurthestRoom.V.V.Text
+    if rankroom == "10" then rankroom = "Inf Castle Load Not Yet" end
+    --Rank title 
+    ranktitle = game:GetService("Players").LocalPlayer.PlayerGui.InfinityCastleRankingUI.Main.Main.Scroll.YourRanking.RankTitle.V.V.Text
+    if ranktitle == "Grandmaster" then ranktitle = "Inf Castle Load Not Yet" end
+    --rank %
+    rankper = game:GetService("Players").LocalPlayer.PlayerGui.InfinityCastleRankingUI.Main.Main.Scroll.YourRanking.Ranking.V.V.Text
+    if rankper == "10%" then rankper = "Inf Castle Load Not Yet" end
+    --Current Rank
+    crt = game:GetService("Players").LocalPlayer.PlayerGui.TournamentRankingUI.Leaderboard.Ranking.Wrapper.CurrentRank.Ranking.V.Text
+    if crt == "10%" then crt = "Tournament Load Not Yet" end
+    --Current Prize%
+    cpp = game:GetService("Players").LocalPlayer.PlayerGui.TournamentRankingUI.Leaderboard.Ranking.Wrapper.CurrentPrize.V.Text
+    if cpp == "10%" then cpp = "Tournament Load Not Yet" end
+    --Current Prize
+    cp = game:GetService("Players").LocalPlayer.PlayerGui.TournamentRankingUI.Leaderboard.Ranking.Wrapper.CurrentPrize.Prize.Text
+    if cp == "0% ~ 49.99%" then cp = "Tournament Load Not Yet" end
+    --Current Place#
+    cpr = game:GetService("Players").LocalPlayer.PlayerGui.TournamentRankingUI.Leaderboard.Main.Wrapper.Container.YourRow.Place.Text
+    if cpr == "#123456" then cpr = "Tournament Load Not Yet" end
+    --Dmg or kill 
+    cdk = game:GetService("Players").LocalPlayer.PlayerGui.TournamentRankingUI.Leaderboard.Main.Wrapper.Container.YourRow.Amount.Text
+    if cdk == "123456789000000" then cdk = "Tournament Load Not Yet" end
+    --Bracket
+    cubk = game:GetService("Players").LocalPlayer.PlayerGui.TournamentRankingUI.LevelSelect.InfoFrame.ScoreInfo.Bracket.V.Text
+    if cubk == "N" then cubk = "Tournament Load Not Yet" end
 
 		local data = {
             ["content"] = "",
-                ["username"] = "INDYBUX BOT",
-                ["avatar_url"] = "https://sv1.picz.in.th/images/2022/12/26/JtcDsz.png",
+                ["username"] = "Anime Adventures V2",
+                ["avatar_url"] = "https://tr.rbxcdn.com/5c9e29b3953ec061286e76f08f1718b3/150/150/Image/Png",
                 ["embeds"] = {
                     {
                         ["author"] = {
-                            ["name"] = "INDYBUX Service",
-                            ["icon_url"] = "https://img.pic.in.th/oie_27168246JMfoaRb.gif"
+                            ["name"] = " Current BTP & Inf Castle & Tournament Results ✔️",
+                            ["icon_url"] = "https://cdn.discordapp.com/emojis/997123585476927558.webp?size=96&quality=lossless"
                         },
                         ["thumbnail"] = {
                             ['url'] = thumbnails_avatar.data[1].imageUrl,
                         },
-                        ["description"] = "# <a:giveaway:1147545861463740477> <:s1:1135449027501105152><:s2:1135449031221456956><:s3:1135449034761437266><:s4:1135449036887961683><:s5:1135449040931278888> <a:giveaway:1147545861463740477> \n<a:d4:1113801645931896912> **Name: **||"..game:GetService("Players").LocalPlayer.Name.." ("..game:GetService("Players").LocalPlayer.DisplayName..")".."|| <a:d5:1113801649014718545> \n<a:Dot:1147531692916088892> "..lv.." <a:mee6lvlup:1123179161054355527> \n<a:Dot:1147531692916088892> Gem: "..ttgems.." (+".. Settings.GemFramed ..") <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> สถานะฟาร์ม: **"..Settings.GemtoFarm.."** <:Gems:1118956171995381850> \n<a:Dot:1147531692916088892> จำนวน: **".. Settings.income .."** <a:coinx:1155791666943369216> \n<a:Dot:1147531692916088892> ให้เครดิตร้าน <#1055871056843374632> <a:plus1:1123223573050437744>" ,
-                        ["color"] = 10181046,
+                        ["description"] = " Player Name : 🐱 ||**"..game:GetService("Players").LocalPlayer.Name.."**|| 🐱",
+                        ["color"] = 110335,
                         ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
-                        ["image"] = {
-                            ["url"] = "https://img.pic.in.th/-2.gif",
-                        },
-                        ["footer"] = {
-                              ["text"] = "INDYBUX ",
-                              ["icon_url"] = "https://img.pic.in.th/oie_27168246JMfoaRb.gif"
-                      },
+                        ["fields"] = {
+                            {
+                                ["name"] ="Current Battle Pass Results 🔋 ",
+                                ["value"] = "```ini\nCurrent BTP Lv. : "..btplv.."  🔋\nNEED TO NEXT : "..nextlvbtp.. "  🔋```",
+                            },
+                            {
+                                ["name"] ="Current Tournament Results 🏆",
+                                ["value"] = "```ini\nYour Bracket: : "..cubk.."  🏆\nCurrent Rank : ["..cpr.." - "..crt.."]  🏆\nDMG or Kill : "..cdk.. "  🏆\nCurrent Prize : "..cpp.. "  🏆\nReward Prize : "  ..cp..  "  🏆```",
+                            },
+                            {
+                                ["name"] ="Current Infinity Castle Results  🚪",
+                                ["value"] = "```ini\nCurrent Room : "..rankroom.."  🚪\nCurrent Rank : "..ranktitle.. "  📊\nCurrent Percent : "  ..rankper..  "  🏅```",
+                            }
+                        }
                     }
                 }
             }
@@ -435,7 +474,6 @@ function GemsWebhook()
             request(sex)
         end
 end
---[[ Mark ]]--
 
 function SnipeShopNew()
         if Settings.snipeWebhookEnabled then
@@ -690,22 +728,23 @@ function ShopSniperWebhook()
 --[[if game.Players.LocalPlayer.PlayerGui:FindFirstChild("FinityUI") then
     game.Players.LocalPlayer.PlayerGui["FinityUI"]:Destroy()
 end]]
---[[ Mark ]]--
+
 if game.CoreGui:FindFirstChild("FinityUI") then
     game.CoreGui["FinityUI"]:Destroy()
 end
-local namegame = game:GetService("Players").LocalPlayer.Name
-local display = game:GetService("Players").LocalPlayer.DisplayName
 
 local dir = "Anime_Adventures/"..game.Players.LocalPlayer.Name
-local Uilib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/TI"))()
+local Uilib = loadstring(game:HttpGet("https://raw.githubusercontent.com/ArponAG/Scripts/main/finitylibTEST"))()
+--local Uilib = loadstring(game:HttpGet("https://raw.githubusercontent.com/ArponAG/Scripts/main/finitylib"))()
 local exec = tostring(identifyexecutor())
---updatefix
-local Window = Uilib.new(true, "                         "..namegame.." ( "..display .." ) 💎 Gem: " .. Settings.GemFramed .. " / " .. Settings.GemtoFarm .." 💎")
+local Window = Uilib.new(true, "[Arpon_V2] Anime Adventures "..version.." - "..exec)
 Window.ChangeToggleKey(Enum.KeyCode.C)
 
-local Farmsetup = Window:Category("🧑🏻‍🌾 Custom Farm")
-local Units = Farmsetup:Sector("📰‍ Info")
+local Home = Window:Category("🏠 Home")
+local Developers = Home:Sector("Anime Adventures")
+local asdasd = Home:Sector(" ")
+local UIUPDT = Home:Sector("⚙️ Challenge Config ⚙️")
+
 
 local Farm = Window:Category("🤖 Auto Farm")
 local SelectUnits = Farm:Sector("🧙‍ Select Units")
@@ -714,9 +753,13 @@ local UnitPosition = Farm:Sector("🧙 Select Unit Position")
 local castleconfig = Farm:Sector("🏯 Infinity Castle 🏯")
 local AutoFarmConfig = Farm:Sector("⚙️ Auto Farm Config")
 local ChallengeConfig = Farm:Sector("⌛ Challenge Config")
+local bkackhole1 = Farm:Sector(" ")
+local bkackhole2 = Farm:Sector(" ")
+local bkackhole3 = Farm:Sector(" ")
+local bkackhole4 = Farm:Sector(" ")
+local bkackhole5 = Farm:Sector(" ")
+local bkackhole6 = Farm:Sector(" ")
 
-local CustomFarm = Window:Category("💀 Custom Farm")
-local ShowCustomFarm = CustomFarm:Sector("😨 Show Data")
 
 local UC = Window:Category("🧙 Unit Config")
 local NDY = UC:Sector("Beta Unit Config ")
@@ -731,15 +774,15 @@ local Unit5 = UC:Sector("Unit 5")
 local Unit6 = UC:Sector("Unit 6")
 
 --- Unit AOE
-local UA = Window:Category("⚔️ INF Range")
+local UA = Window:Category("⚔️ INF & KILL")
 
 Unit = {}
 for i = 1, 6 do
-    Unit["AOE"..i] = UA:Sector("Select Unit " .. i .. " INF Range")
+    Unit["AOE"..i] = UA:Sector("Select Unit " .. i .. " Kill or INF Range")
 end
 
 local UnitAOE = UA:Sector("INF Range Config ")
-local UnitAOE1 = UA:Sector("Check Unit ")
+local UnitAOE1 = UA:Sector("Kill Or TakeDown & Check Unit")
 --- End of Unit AOE
 
 local LG = Window:Category("🛠️ Misc [BETA]")
@@ -754,7 +797,7 @@ local OtherSec3 = LG:Sector("🐱 Hide Name Player 🐱")
 local DelMapConfig = LG:Sector("")
 local DelMapConfig2 = LG:Sector("⚙️ Other Config ⚙️")
 local DelMapConfig3 = LG:Sector("")
-local reFarmConfig = LG:Sector("🤖 Reset Farm Config 🤖")
+
 
 local ETC = Window:Category("🌐 Discord & Shop")
 local AutoSummonSec = ETC:Sector("💸 Auto Summon Units 💸")
@@ -763,166 +806,14 @@ local WebhookSec = ETC:Sector("🌐 Discord Webhook 🌐")
 local OtherSec2 = ETC:Sector("")
 
 local Summer = Window:Category("🦸🏽 Event & Skin ")
-local SummerItem = Summer:Sector("💸 Auto Buy Summer Item 💸")
-local SellPortals = Summer:Sector("🌀 Sell Portals 🌀")
+local SummerItem = Summer:Sector("🕵️‍♂️ Item BSD Event 🕵️‍♂️")
+local SummerItem2 = Summer:Sector("🎃 Item Halloween Event 🎃")
+local SummerItem0 = Summer:Sector("")
+local SellPortals = Summer:Sector("🌀 Sell Challenge Portals 🌀")
 local SummerSkin = Summer:Sector("💸 Auto Sell Events Skin 💸")
 local SummerSkin0 = Summer:Sector("")
 local SummerEgg = Summer:Sector("🥚 Auto Open Events Egg 🥚")
 
-local Home = Window:Category("🏠 Home")
-local Developers = Home:Sector("Anime Adventures")
-local asdasd = Home:Sector(" ")
-local UIUPDT = Home:Sector("⚙️ Challenge Config ⚙️")
-
---[[ THE BEST ]]--
-
-local function CheckGemAll()
-	if tonumber(Settings.GemFramed) >= tonumber(Settings.GemtoFarm) and tonumber(Settings.GemtoFarm) ~= 0 then
-		if not Settings.KiwwyKick then
-            GemsWebhook()
-            Settings.autostart = false
-			Settings.KiwwyKick = true
-			saveSettings()
-			game.Players.LocalPlayer:Kick("Farm Success | INDY BUX")
-            delfile("V2_Anime_Adventures/" .. game.Players.LocalPlayer.Name .. "_AnimeAdventures.json")
-            game:GetService("TeleportService"):Teleport(8304191830, game.Players.LocalPlayer)
-            Teleport()
-		end
-		return " ✅"
-	elseif tonumber(Settings.GemtoFarm) == 0 then
-		return " 🔃"
-	else
-		return " ❌"
-	end
-end
-
-Show_GemtoFarm = ShowCustomFarm:Cheat("Label", "เพชรที่ต้องการฟาร์ม : " .. Settings.GemtoFarm)
-Show_GemFarmed = ShowCustomFarm:Cheat("Label", "เพชรที่ฟาร์มไปแล้ว : " .. Settings.GemFramed)
-Show_GemAll = ShowCustomFarm:Cheat("Label", "เพชรที่ต้องฟาร์มทั้งหมด : " .. Settings.GemFramed .. " / " .. Settings.GemtoFarm .. CheckGemAll())
-ShowCustomFarm:Cheat("Label", "")
-Show_ErrorCode = ShowCustomFarm:Cheat("Label", "Error : None")
-local function ChangeErrorCode(text) Show_ErrorCode.label.Text = "Error : " .. text end
-
-local function changetextgemall() Show_GemAll.label.Text = "เพชรที่ต้องฟาร์มทั้งหมด : " .. Settings.GemFramed .. " / " .. Settings.GemtoFarm .. CheckGemAll() end
-local EditCustomFarm = CustomFarm:Sector("😡 Custom Data")
-EditCustomFarm:Cheat("Textbox", "Webhook Url", function(Value)
-	Settings.WebhookUrl = Value
-	saveSettings()
-end, { placeholder = Settings.WebhookUrl })
-EditCustomFarm:Cheat("Textbox", "เพชรที่ต้องการฟาร์ม", function(Value)
-	if type(tonumber(Value)) == "number" then
-		Show_GemtoFarm.label.Text = "เพชรที่ต้องการฟาร์ม : " .. Value
-		Settings.GemtoFarm = Value
-		saveSettings()
-		changetextgemall()
-	else
-		spawn(function()
-			ChangeErrorCode("กรุณาใส่ตัวเลขเท่านั้น (1)")
-			wait(1)
-			ChangeErrorCode("None")
-		end)
-	end
-end, { placeholder = Settings.GemtoFarm })
-EditCustomFarm:Cheat("Textbox", "ฟาร์มไปแล้ว", function(Value)
-	if type(tonumber(Value)) == "number" then
-		Show_GemFarmed.label.Text = "เพชรที่ฟาร์มไปแล้ว : " .. Value
-		Settings.GemFramed = Value
-		saveSettings()
-		changetextgemall()
-		Show_GemAll.label.Text = "เพชรที่ต้องฟาร์มทั้งหมด : " .. Settings.GemFramed .. " / " .. Settings.GemtoFarm .. CheckGemAll()
-	else
-		spawn(function()
-			ChangeErrorCode("กรุณาใส่ตัวเลขเท่านั้น (2)")
-			wait(1)
-			ChangeErrorCode("None")
-		end)
-	end
-end, { placeholder = Settings.GemFramed })
-
-ShowCustomFarm:Cheat("Label", "")
-show_kicksetting = EditCustomFarm:Cheat("Label", "Kick Setting : " .. tostring(Settings.KiwwyKick))
-EditCustomFarm:Cheat("Button", "🤔 Reset Kick Settings", function() --Selects Currently Equipped Units!
-	Settings.KiwwyKick = false
-	saveSettings()
-end)
-
-spawn(function()
-	while wait(3) do
-		if Show_GemAll then Show_GemAll.label.Text = "เพชรที่ต้องฟาร์มทั้งหมด : " .. Settings.GemFramed .. " / " .. Settings.GemtoFarm .. CheckGemAll() end
-		if Show_GemtoFarm then Show_GemtoFarm.label.Text = "เพชรที่ต้องการฟาร์ม : " .. Settings.GemtoFarm end
-		if Show_GemFarmed then Show_GemFarmed.label.Text = "เพชรที่ฟาร์มไปแล้ว : " .. Settings.GemFramed end
-		if show_kicksetting then show_kicksetting.label.Text = "Kick Setting : " .. tostring(Settings.KiwwyKick) end
-	end
-end)
---[[ THE BEST ]]--
---[[ MARK ]]--
-local namegame = game:GetService("Players").LocalPlayer.Name
-local display = game:GetService("Players").LocalPlayer.DisplayName
-
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/Library.lua"))()
-local FrameTimer = tick();
-local FrameCounter = 0;
-local FPS = 60;
-
-RunService.RenderStepped:Connect(function()
-    FrameCounter = FrameCounter + 1;
-    if tick() - FrameTimer >= 1 then
-        FPS = FrameCounter;
-        FrameTimer = tick();
-        FrameCounter = 0;
-    end;
-Library:SetWatermark(("🧑🏻 "..namegame.." ( "..display .." ) 🧑🏻\n⏲️: "..math.floor(Workspace.DistributedGameTime).."|🌊: "..game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.WaveNumber.Text.."|💎: " ..Settings.GemFramed.. " / " ..Settings.GemtoFarm.. ""))
-end);
-
-Units:Cheat("Button", "🧙 Select Units", function() --Selects Currently Equipped Units!
-    Settings.SelectedUnits = {
-        U1 = "nil",
-        U2 = "nil",
-        U3 = "nil",
-        U4 = "nil",
-        U5 = "nil",
-        U6 = "nil"
-    }
-    saveSettings()
-    GetUnits()
-end)
-
-Units:Cheat("Checkbox","🌾 Auto Start  ", function(bool)
-    print(bool)
-    Settings.autostart = bool
-    saveSettings()
-end,{enabled = Settings.autostart })
-
-Units:Cheat("Textbox", "💎 เพชรที่ต้องการฟาร์ม", function(Value)
-    if type(tonumber(Value)) == "number" then
-        Show_GemtoFarm.label.Text = "เพชรที่ต้องการฟาร์ม : " .. Value
-        Settings.GemtoFarm = Value
-        saveSettings()
-        changetextgemall()
-    else
-        spawn(function()
-            ChangeErrorCode("กรุณาใส่ตัวเลขเท่านั้น (1)")
-            wait(1)
-            ChangeErrorCode("None")
-        end)
-    end
-end, { placeholder = Settings.GemtoFarm })
-Units:Cheat("Textbox", "💵 จำนวนจ้างฟาร์ม", function(Value)
-    Value = tonumber(Value)
-    Settings.income = Value
-    saveSettings()
-end, {placeholder = Settings.income})
-Units:Cheat("Button", "🚪Leave To Lobby", function()
-    warn("Return to Lobby")
-    game:GetService("TeleportService"):Teleport(8304191830, game.Players.LocalPlayer)
-	Teleport()
-end)
-
-Units:Cheat("Button", "🌐Finish Webhook", function()
-    print(Settings.WebhookUrl)
-    GemsWebhook()
-end)
---[[ MARK ]]--
 
 ----------------------------------------------
 ---------------- Units Selection -------------
@@ -1199,11 +1090,11 @@ local function WorldSec()
         elseif Settings.WorldCategory == "Raid Worlds" then
             storylist = Data_Raid_Name
         elseif Settings.WorldCategory == "Portals" then
-            storylist = {"Alien Portals","Zeldris Portals","Demon Portals","Dressrosa Portals","The Eclipse","FATE Portals"}
+            storylist = {"Alien Portals","Zeldris Portals","Demon Portals","Dressrosa Portals","The Eclipse","FATE Portals","BSD Portals"}
         elseif Settings.WorldCategory == "Dungeon" then
-            storylist = {"Cursed Womb","Crused Parade","Anniversary Island"}    
+            storylist = {"Cursed Womb","Crused Parade","Halloween Event"}    
         elseif Settings.WorldCategory == "Secret Portals" then
-            storylist = {"Dressrosa Secret Portals","The Eclipse Secret","FATE Secret"} 
+            storylist = {"Dressrosa Secret Portals","The Eclipse Secret","FATE Secret","BSD Secret"} 
         end
     --updatefix
         for i = 1, #storylist do
@@ -1262,13 +1153,15 @@ local function WorldSec()
             levellist = {"portal_summer"}
         elseif level == "FATE Portals" then
             levellist = {"portal_item__fate"}
+        elseif level == "BSD Portals" then 
+            levellist = {"portal_item__bsd"} 
         ---///Dungeon\\\---    
         elseif level == "Cursed Womb" then
             levellist = {"jjk_finger"}    
         elseif level == "Crused Parade" then
             levellist = {"jjk_raid"}     
-        elseif level == "Anniversary Island" then
-            levellist = {"namek_anniversary"}  
+        elseif level == "Halloween Event" then
+            levellist = {"namek_halloween"}  
             --///Secret Portals\\\---   
         elseif level == "Dressrosa Secret Portals" then
             levellist = {"portal_item__doflamingo"}
@@ -1278,6 +1171,8 @@ local function WorldSec()
             levellist = {"portal_poseidon"}
         elseif level == "FATE Secret" then
             levellist = {"portal_item__gilgamesh"}
+        elseif level == "BSD Secret" then
+            levellist = {"portal_item__dazai"}
 
         --///Story Mode\\\---
         elseif Settings.WorldCategory == "Story Worlds" and level == Settings.SelectedWorld then
@@ -1396,21 +1291,24 @@ local function WorldSec()
         warn("Change to : "..value)
         Settings.SelectedPortalsName1 = value
         saveSettings()
-    end, { options = {"None","Planet Namak","Shiganshinu District","Ant Kingdom","Cursed Academy","Puppet Island","Alien Spaceship","Fabled Kingdom"}, default =Settings.SelectedPortalsName1})
+    end, { options = {"None","Planet Namak","Shiganshinu District","Snowy Town","Hidden Sand Village","Marine's Ford","Ghoul City","Hollow World","Ant Kingdom","Magic Town",
+    "Cursed Academy","Clover Kingdom","Cape Canaveral","Alien Spaceship","Fabled Kingdom","Hero City","Puppet Island","Virtual Dungeon","Windhym","Undead Tomb"}, default =Settings.SelectedPortalsName1})
 
     Settings.SelectedPortalsName2 = Settings.SelectedPortalsName2 or "None"
     local selectlevel = SelectWorld:Cheat("Dropdown", "🌀 Din't Use Map ",function(value)
         warn("Change to : "..value)
         Settings.SelectedPortalsName2 = value
         saveSettings()
-    end, { options = {"None","Planet Namak","Shiganshinu District","Ant Kingdom","Cursed Academy","Puppet Island","Alien Spaceship","Fabled Kingdom"}, default =Settings.SelectedPortalsName2})
+    end, { options = {"None","Planet Namak","Shiganshinu District","Snowy Town","Hidden Sand Village","Marine's Ford","Ghoul City","Hollow World","Ant Kingdom","Magic Town",
+    "Cursed Academy","Clover Kingdom","Cape Canaveral","Alien Spaceship","Fabled Kingdom","Hero City","Puppet Island","Virtual Dungeon","Windhym","Undead Tomb"}, default =Settings.SelectedPortalsName2})
 
     Settings.SelectedPortalsName3 = Settings.SelectedPortalsName3 or "None"
     local selectlevel = SelectWorld:Cheat("Dropdown", "🌀 Din't Use Map ",function(value)
         warn("Change to : "..value)
         Settings.SelectedPortalsName3 = value
         saveSettings()
-    end, { options = {"None","Planet Namak","Shiganshinu District","Ant Kingdom","Cursed Academy","Puppet Island","Alien Spaceship","Fabled Kingdom"}, default =Settings.SelectedPortalsName3})
+    end, { options = {"None","Planet Namak","Shiganshinu District","Snowy Town","Hidden Sand Village","Marine's Ford","Ghoul City","Hollow World","Ant Kingdom","Magic Town",
+    "Cursed Academy","Clover Kingdom","Cape Canaveral","Alien Spaceship","Fabled Kingdom","Hero City","Puppet Island","Virtual Dungeon","Windhym","Undead Tomb"}, default =Settings.SelectedPortalsName3})
 
 
     SelectWorld:Cheat("Checkbox","👬 Friends Only", function(bool)
@@ -2631,6 +2529,37 @@ function saveposTEST(UnitPos, a,a2,a3,a4,a5,a6)
         if world == "hage_night" then world = "hage" end
         if Mapname == "Infinity Castle" then world = world2 end
 
+
+        --halloween_event
+        if world == "namek_halloween" and world2 == "csm_city" or world2 == "csm_halloween" then world = "csm_city" end
+        if world == "namek_halloween" and world2 == "karakura" or world2 == "karakura_halloween" then world = "karakura" end
+        if world2 == "namek_halloween" then world = "namek" end
+        if world2 == "aot_halloween" then world = "aot" end
+        if world2 == "demonslayer_halloween" then world = "demonslayer" end
+        if world2 == "naruto_halloween" then world = "naruto_desert" end
+        if world2 == "marineford_halloween" then world = "marineford" end
+        if world2 == "tokyoghoul_halloween" then world = "tokyo_ghoul" end
+        if world2 == "hueco_halloween" then world = "hueco" end
+        if world2 == "hxhant_halloween" then world = "hxhant" end
+        if world2 == "magnolia_halloween" then world = "magnolia" end
+        if world2 == "jjk_halloween" then world = "jjk" end
+        if world2 == "hage_elf_halloween" then world = "hage" end
+        if world2 == "jojo_halloween" then world = "space_center" end
+        if world2 == "opm_halloween" then world = "boros_ship" end
+        if world2 == "7ds_halloween" then world = "7ds_map" end
+        if world2 == "mha_halloween" then world = "mha_city" end
+        if world2 == "dressrosa_halloween" then world = "dressrosa" end
+        if world2 == "sao_halloween" then world = "sao" end
+        if world2 == "berserk_halloween" then world = "berserk" end
+        if world2 == "overlord_halloween" then world = "overlord_tomb" end
+        if world2 == "morioh_halloween" then world = "morioh" end
+        if world2 == "west_city_halloween" then world = "west_city_frieza" end
+        if world2 == "uchiha_hideout_halloween" then world = "uchiha_hideout_final" end
+        if world2 == "uchiha_halloween" then world = "uchiha_hideout_final" end
+        if world2 == "entertainment_halloween" then world = "entertainment_district" end
+        if world2 == "entertainment_district_halloween" then world = "entertainment_district" end
+
+
         updatepos(world, UnitPos, a,a2,a3,a4,a5,a6)
 
     end
@@ -3211,7 +3140,7 @@ local function LowCPUModeT()
     for i = 1,60 do
         table.insert(FPS_CAP,i)
     end
-    Settings.FPSCAPNum = Settings.FPSCAPNum or 5
+    Settings.FPSCAPNum = Settings.FPSCAPNum or 15
     LowCPU2:Cheat("Dropdown", "🎚️ Select FPS Cap ",function(value)
         warn("Change to : "..value)
         Settings.FPSCAPNum = value
@@ -3232,7 +3161,7 @@ local function LowCPUModeT()
                 game:GetService("RunService"):Set3dRenderingEnabled(false)
                 isrbxactive(true)
             else
-                setfpscap(5)
+                setfpscap(240)
                 game:GetService("RunService"):Set3dRenderingEnabled(true)
                 isrbxactive(false)
             end
@@ -3450,7 +3379,7 @@ end
 function AutoSummon()
     local aaselectbanner = AutoSummonSec:Cheat("Dropdown", "🧙 Select Banner 🧙",function(value)
         getgenv().SelectedBanner = value
-    end, { options = {"Special", "Standard"}})
+    end, { options = {"Special", "Standard", "BSD"}})
 
     local aaselectbanner = AutoSummonSec:Cheat("Dropdown", "💸 Select Method 💸",function(value)
         getgenv().SelectedMethod = value
@@ -3518,6 +3447,7 @@ function snipefunc(item)
     end
 end
 function SnipeMerchant()
+
     AutoSnipeMerchantSec:Cheat("Dropdown", "Select Star Fruit ",function(value)
         Settings.ASM_SelectedFruit = value
         saveSettings()
@@ -3538,30 +3468,29 @@ function SnipeMerchant()
     end,{enabled = Settings.AutoSnipeMerchant })
 
     -----------------------------------------------------------------------------
-    --AutoBuySummer
+    --AutoBuySummer AutoBuyEvent
 
-    SummerItem:Cheat("Dropdown", "Select Item Summer",function(pornname)
+    --BSD
+    SummerItem:Cheat("Dropdown", "Select Item BSD Event",function(pornname)
         getgenv().portalnameC = pornname
         saveSettings()
-    end, { options = {"summer_portal_item_contract","capsule_summer"}, default = getgenv().portalnameC})
+    end, { options = {"bsd_portal_item_contract","bsd_book"}, default = getgenv().portalnameC})
 
     SummerItem:Cheat("Dropdown", "Select Total Item",function(value)
         Settings.SummerNum = value
         saveSettings()
     end, { options = {"1","10","100"}, default = getgenv().SummerNum})
 
-    SummerItem:Cheat("Button","Buy Item [One Time]", function(bool)
+    SummerItem:Cheat("Button","Buy Item BSD [One Time]", function(bool)
         local args = {
-            [1] = getgenv().portalnameC,
-            [2] = "event",
-            [3] = "event_shop",
-            [4] = Settings.SummerNum
+            [1] = getgenv().ItemEventNameC,
+            [2] = Settings.SummerNum
         }
-        game:GetService("ReplicatedStorage").endpoints.client_to_server.buy_item_generic:InvokeServer(unpack(args))
-        warn("Buy Summer Portal !!!")
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.buy_bsd_shop_item:InvokeServer(unpack(args))
+        warn("Buy Event Items !!!")
     end)
-
-    SummerItem:Cheat("Checkbox","Auto Buy Item [Many time]", function(bool)
+    
+    SummerItem:Cheat("Checkbox","Auto Buy Item BSD [Many time]", function(bool)
         print(bool)
         Settings.AutoBuySummer = bool
         saveSettings()
@@ -3571,10 +3500,51 @@ function SnipeMerchant()
         while task.wait() do
             if Settings.AutoBuySummer then
                 local args = {
-                    [1] = getgenv().portalnameC,
+                    [1] = getgenv().ItemEventNameC,
+                    [2] = Settings.SummerNum
+                }
+                game:GetService("ReplicatedStorage").endpoints.client_to_server.buy_bsd_shop_item:InvokeServer(unpack(args))
+            end
+        end
+    end)
+
+    --Halloween
+
+    SummerItem2:Cheat("Dropdown", "Select Item Halloween",function(pornname2)
+        getgenv().ItemEventNameC2 = pornname2
+        saveSettings()
+    end, { options = {"capsule_halloween2"}, default = getgenv().ItemEventNameC2})
+
+    SummerItem2:Cheat("Dropdown", "Select Total Item",function(value)
+        Settings.SummerNum2 = value
+        saveSettings()
+    end, { options = {"1","10","100"}, default = getgenv().SummerNum2})
+
+    SummerItem2:Cheat("Button","Buy Item Halloween [One Time]", function(bool)
+        local args = {
+            [1] = getgenv().ItemEventNameC2,
+            [2] = "event",
+            [3] = "event_shop",
+            [4] = Settings.SummerNum2
+        }
+        game:GetService("ReplicatedStorage").endpoints.client_to_server.buy_item_generic:InvokeServer(unpack(args))
+        warn("Buy Halloween Item !!!")
+    end)
+
+    SummerItem2:Cheat("Checkbox","Auto Buy Item Halloween [Many time]", function(bool)
+        print(bool)
+        Settings.AutoBuySummer2 = bool
+        saveSettings()
+    end,{enabled = Settings.AutoBuySummer2})
+
+    task.spawn(function()
+        while task.wait() do
+            if Settings.AutoBuySummer2 then
+                local args = {
+                    [1] = getgenv().ItemEventNameC2,
                     [2] = "event",
                     [3] = "event_shop",
-                    [4] = Settings.SummerNum
+                    [4] = Settings.SummerNum2
                 }
                 game:GetService("ReplicatedStorage").endpoints.client_to_server.buy_item_generic:InvokeServer(unpack(args))
             end
@@ -3583,13 +3553,11 @@ function SnipeMerchant()
 
     ----------------------------------------------------------------
     --Auto Open Egg
--- Script generated by SimpleSpy - credits to exx#9394
-
-Settings.SelecteStars = Settings.SelecteStars or "capsule_summer"
+Settings.SelecteStars = Settings.SelecteStars or "capsule_halloween2"
 SummerEgg:Cheat("Dropdown", "Select Capsule Star",function(value)
     Settings.SelecteStars = value
     saveSettings()
-end, { options = {"capsule_summer","capsule_anniversary"}, default = getgenv().SelecteStars})
+end, { options = {"capsule_halloween2","capsule_summer","capsule_anniversary"}, default = getgenv().SelecteStars})
 
 SummerEgg:Cheat("Checkbox","Auto Open Summer Egg [1 ea]", function(bool)
     print(bool)
@@ -3668,10 +3636,10 @@ task.spawn(function()
                     end 
                 end
 
-                CountPortal_list = 0
+                Count_Portal_list = 0
                 for i,v in pairs(get_inventory_items_unique_items()) do
                     if string.find(v['item_id'],"portal") or string.find(v['item_id'],"disc") then
-                        CountPortal_list = CountPortal_list + 1
+                        Count_Portal_list = Count_Portal_list + 1
                     end
                 end
         
@@ -3682,7 +3650,7 @@ task.spawn(function()
                 local data = {
                     ["content"] = "",
                     ["username"] = "Anime Adventures V2",
-                    ["avatar_url"] = "https://tr.rbxcdn.com/af7bc8c82d3f237d122560ff1ee5cecc/150/150/Image/Png",
+                    ["avatar_url"] = "https://tr.rbxcdn.com/c434a1f08239cd31612ebe0960dcf5bc/150/150/Image/Png",
                     ["embeds"] = {
                         {
                             ["author"] = {
@@ -3707,7 +3675,7 @@ task.spawn(function()
                                                 ..tostring(comma_value(game.Players.LocalPlayer._stats.gold_amount.Value)).. " 💰\nCurrent Gems : "
                                                 ..tostring(comma_value(game.Players.LocalPlayer._stats.gem_amount.Value)).. " 💎\nCurrent Trophies : "
                                                 ..tostring(comma_value(game.Players.LocalPlayer._stats.trophies.Value)).. " 🏆\nCurrent Portal : "
-                                                ..tostring(CountPortal_list) .." / 200 🌀 ```",
+                                                ..tostring(Count_Portal_list) .." / 200 🌀 ```",
                                 },
                                 {
                                     ["name"] ="Skins Drop :",
@@ -3735,7 +3703,7 @@ end)
     ----------------------------------------------------------------sellskin
     --Auto Sell Summer Skin
 
-    Settings.SelectedSellSeason = Settings.SelectedSellSeason or "Summer"
+    Settings.SelectedSellSeason = Settings.SelectedSellSeason or "Halloween"
     SummerSkin:Cheat("Dropdown","🎚️ Select Season", function(bool)
         print(bool)
         Settings.SelectedSellSeason = bool
@@ -3796,46 +3764,51 @@ end
 ----------------------------------------------
 -------------- Discord Webhook ---------------
 ----------------------------------------------
---[[ Mark ]]--
 function Webhooksec()
-    
     WebhookSec:Cheat("Textbox", "Webhook Url", function(Value)
         Settings.WebhookUrl = Value
         saveSettings()
     end, {placeholder = Settings.WebhookUrl})
     
-    WebhookSec:Cheat("Textbox", "Gems Webhook Url", function(Value)
-        Settings.GemsWebhookUrl = Value
+    WebhookSec:Cheat("Textbox", "Baby Webhook Url", function(Value)
+        Settings.BabyWebhookUrl = Value
         saveSettings()
-    end, {placeholder = Settings.GemsWebhookUrl})
+    end, {placeholder = Settings.BabyWebhookUrl})
+
     WebhookSec:Cheat("Textbox", "Snipe Webhook Url", function(Value)
         Settings.SnipeWebhookUrl = Value
         saveSettings()
     end, {placeholder = Settings.SnipeWebhookUrl})
+
     WebhookSec:Cheat("Checkbox","Enable Webhook", function(bool)
         Settings.WebhookEnabled = bool
         saveSettings()
     end,{enabled = Settings.WebhookEnabled})
-    WebhookSec:Cheat("Checkbox","Enable Gems Webhook", function(bool)
-        Settings.GemsWebhookEnabled = bool
+
+    WebhookSec:Cheat("Checkbox","Enable Baby Webhook [BTP,Castle,Tour]", function(bool)
+        Settings.BabyWebhookEnabled = bool
         saveSettings()
-    end,{enabled = Settings.GemsWebhookEnabled})
+    end,{enabled = Settings.BabyWebhookEnabled})
+
     WebhookSec:Cheat("Checkbox","Enable Snipe Webhook [Banner & Shop]", function(bool)
         Settings.snipeWebhookEnabled = bool
         saveSettings()
     end,{enabled = Settings.snipeWebhookEnabled})
+
     WebhookSec:Cheat("Button", "Test Webhook", function()
         print(Settings.WebhookUrl)
         webhook()
     end)
 end
+
 function Webhooksec2()
-    WebhookSec:Cheat("Button", "Test Gems Webhook", function()
+
+    WebhookSec:Cheat("Button", "Test Baby&Shop Webhook", function()
         print(Settings.WebhookUrl)
-        GemsWebhook()
+        BabyWebhook()
+        SnipeShopNew()
     end)
 end
---[[ Mark ]]--
 
 -----------------------------------------------
 ------------------Sell Portal------------------
@@ -3847,7 +3820,9 @@ function Sellportals()
         warn("Change to : "..value)
         Settings.SelectedSellPortals = value
         saveSettings()
-    end, { options = {"portal_boros_g","april_portal_item","portal_zeldris","portal_item__dressrosa","portal_item__eclipse","portal_summer","portal_item__fate"}, default =Settings.SelectedSellPortals})
+    end, { options = {"portal_boros_g","april_portal_item","portal_zeldris","portal_item__dressrosa","portal_item__eclipse","portal_summer","portal_item__fate",
+    "portal_item__bsd"}, default =Settings.SelectedSellPortals})
+
 --fixportal
 
     Tier_sell = {}
@@ -4164,6 +4139,25 @@ local function startChallenge()
 end
 ----------------------------------
 --test fixportal
+function getBSDPortals()
+    local portals = {}
+    for _, item in pairs(get_inventory_items_unique_items()) do
+        if item["item_id"] == "portal_item__bsd" then
+            table.insert(portals, item)
+        end
+    end
+    return portals
+end
+function getBSDSPortals()
+    local portals = {}
+    for _, item in pairs(get_inventory_items_unique_items()) do
+        if item["item_id"] == "portal_item__dazai" then
+            table.insert(portals, item)
+        end
+    end
+    return portals
+end
+
 function getBorosPortals()
     local portals = {}
     for _, item in pairs(get_inventory_items_unique_items()) do
@@ -4356,6 +4350,11 @@ function GetPlayerPortalUse(level)
         PortalPlayer = GetPlayerPortal()
 
     --Secret Portals
+    elseif level == "portal_item__dazai" then
+        PortalName = "BSD Secret Portal farming"
+        PortalUUID = GetPortals("portal_item__dazai")[1]["uuid"]
+        PortalPlayer = GetPlayerPortal()
+
     elseif level == "portal_item__doflamingo" then
         PortalName = "Dofamingo Secret Portals farming"
         PortalUUID = GetPortals("portal_item__doflamingo")[1]["uuid"]
@@ -4383,7 +4382,6 @@ function GetPlayerPortalUse(level)
             Settings.SelectedTier = i
         local PortalEvent = GetPortals("portal_summer")
         for i,v in pairs(PortalEvent) do
-
             --SettingPortalsName1
             if Settings.SelectedPortalsName1 == "Planet Namak" then
                 Settings.SelectedPortalsName1 = "namek_infinite" end 
@@ -4448,8 +4446,155 @@ function GetPlayerPortalUse(level)
         end
     end
 end
+--end_Event_Summer
 
 
+    --BSD_Event
+    elseif level == "portal_item__bsd" then
+        for i = tonumber(Settings.SelectedTier1) ,tonumber(Settings.SelectedTier2) do
+            Settings.SelectedTier = i
+        local PortalEvent = GetPortals("portal_item__bsd")
+        for i,v in pairs(PortalEvent) do
+            --SettingPortalsName1
+            if Settings.SelectedPortalsName1 == "Planet Namak" then
+                Settings.SelectedPortalsName1 = "namek_infinite" end 
+            if Settings.SelectedPortalsName1 == "Shiganshinu District" then
+                Settings.SelectedPortalsName1 = "aot_infinite" end 
+            if Settings.SelectedPortalsName1 == "Snowy Town" then
+                Settings.SelectedPortalsName1 = "demonslayer_infinite" end
+            if Settings.SelectedPortalsName1 == "Hidden Sand Village" then
+                Settings.SelectedPortalsName1 = "naruto_infinite" end
+            if Settings.SelectedPortalsName1 == "Marine's Ford" then
+                Settings.SelectedPortalsName1 = "marineford_infinite" end
+            if Settings.SelectedPortalsName1 == "Ghoul City" then
+                Settings.SelectedPortalsName1 = "tokyoghoul_infinite" end
+            if Settings.SelectedPortalsName1 == "Hollow World" then
+                Settings.SelectedPortalsName1 = "hueco_infinite" end
+            if Settings.SelectedPortalsName1 == "Ant Kingdom" then
+                Settings.SelectedPortalsName1 = "hxhant_infinite" end 
+            if Settings.SelectedPortalsName1 == "Magic Town" then
+                Settings.SelectedPortalsName1 = "magnolia_infinite" end
+            if Settings.SelectedPortalsName1 == "Cursed Academy" then
+                Settings.SelectedPortalsName1 = "jjk_infinite" end 
+            if Settings.SelectedPortalsName1 == "Clover Kingdom" then
+                Settings.SelectedPortalsName1 = "clover_infinite" end
+            if Settings.SelectedPortalsName1 == "Cape Canaveral" then
+                Settings.SelectedPortalsName1 = "jojo_infinite" end
+            if Settings.SelectedPortalsName1 == "Alien Spaceship" then
+                Settings.SelectedPortalsName1 = "opm_infinite" end 
+            if Settings.SelectedPortalsName1 == "Fabled Kingdom" then
+                Settings.SelectedPortalsName1 = "7ds_infinite" end
+            if Settings.SelectedPortalsName1 == "Hero City" then
+                Settings.SelectedPortalsName1 = "mha_infinite" end
+            if Settings.SelectedPortalsName1 == "Puppet Island" then
+                Settings.SelectedPortalsName1 = "dressrosa_infinite" end
+            if Settings.SelectedPortalsName1 == "Virtual Dungeon" then
+                Settings.SelectedPortalsName1 = "sao_infinite" end 
+            if Settings.SelectedPortalsName1 == "Windhym" then
+                Settings.SelectedPortalsName1 = "berserk_infinite" end
+            if Settings.SelectedPortalsName1 == "Undead Tomb" then
+                Settings.SelectedPortalsName1 = "overlord_infinite" end
+            --SettingPortalsName2
+            if Settings.SelectedPortalsName2 == "Planet Namak" then
+                Settings.SelectedPortalsName2 = "namek_infinite" end 
+            if Settings.SelectedPortalsName2 == "Shiganshinu District" then
+                Settings.SelectedPortalsName2 = "aot_infinite" end 
+            if Settings.SelectedPortalsName2 == "Snowy Town" then
+                Settings.SelectedPortalsName2 = "demonslayer_infinite" end
+            if Settings.SelectedPortalsName2 == "Hidden Sand Village" then
+                Settings.SelectedPortalsName2 = "naruto_infinite" end
+            if Settings.SelectedPortalsName2 == "Marine's Ford" then
+                Settings.SelectedPortalsName2 = "marineford_infinite" end
+            if Settings.SelectedPortalsName2 == "Ghoul City" then
+                Settings.SelectedPortalsName2 = "tokyoghoul_infinite" end
+            if Settings.SelectedPortalsName2 == "Hollow World" then
+                Settings.SelectedPortalsName2 = "hueco_infinite" end
+            if Settings.SelectedPortalsName2 == "Ant Kingdom" then
+                Settings.SelectedPortalsName2 = "hxhant_infinite" end 
+            if Settings.SelectedPortalsName2 == "Magic Town" then
+                Settings.SelectedPortalsName2 = "magnolia_infinite" end
+            if Settings.SelectedPortalsName2 == "Cursed Academy" then
+                Settings.SelectedPortalsName2 = "jjk_infinite" end 
+            if Settings.SelectedPortalsName2 == "Clover Kingdom" then
+                Settings.SelectedPortalsName2 = "clover_infinite" end
+            if Settings.SelectedPortalsName2 == "Cape Canaveral" then
+                Settings.SelectedPortalsName2 = "jojo_infinite" end
+            if Settings.SelectedPortalsName2 == "Alien Spaceship" then
+                Settings.SelectedPortalsName2 = "opm_infinite" end 
+            if Settings.SelectedPortalsName2 == "Fabled Kingdom" then
+                Settings.SelectedPortalsName2 = "7ds_infinite" end
+            if Settings.SelectedPortalsName2 == "Hero City" then
+                Settings.SelectedPortalsName2 = "mha_infinite" end
+            if Settings.SelectedPortalsName2 == "Puppet Island" then
+                Settings.SelectedPortalsName2 = "dressrosa_infinite" end
+            if Settings.SelectedPortalsName2 == "Virtual Dungeon" then
+                Settings.SelectedPortalsName2 = "sao_infinite" end 
+            if Settings.SelectedPortalsName2 == "Windhym" then
+                Settings.SelectedPortalsName2 = "berserk_infinite" end
+            if Settings.SelectedPortalsName2 == "Undead Tomb" then
+                Settings.SelectedPortalsName2 = "overlord_infinite" end 
+            --SettingPortalsName3
+            if Settings.SelectedPortalsName3 == "Planet Namak" then
+                Settings.SelectedPortalsName3 = "namek_infinite" end 
+            if Settings.SelectedPortalsName3 == "Shiganshinu District" then
+                Settings.SelectedPortalsName3 = "aot_infinite" end 
+            if Settings.SelectedPortalsName3 == "Snowy Town" then
+                Settings.SelectedPortalsName3 = "demonslayer_infinite" end
+            if Settings.SelectedPortalsName3 == "Hidden Sand Village" then
+                Settings.SelectedPortalsName3 = "naruto_infinite" end
+            if Settings.SelectedPortalsName3 == "Marine's Ford" then
+                Settings.SelectedPortalsName3 = "marineford_infinite" end
+            if Settings.SelectedPortalsName3 == "Ghoul City" then
+                Settings.SelectedPortalsName3 = "tokyoghoul_infinite" end
+            if Settings.SelectedPortalsName3 == "Hollow World" then
+                Settings.SelectedPortalsName3 = "hueco_infinite" end
+            if Settings.SelectedPortalsName3 == "Ant Kingdom" then
+                Settings.SelectedPortalsName3 = "hxhant_infinite" end 
+            if Settings.SelectedPortalsName3 == "Magic Town" then
+                Settings.SelectedPortalsName3 = "magnolia_infinite" end
+            if Settings.SelectedPortalsName3 == "Cursed Academy" then
+                Settings.SelectedPortalsName3 = "jjk_infinite" end 
+            if Settings.SelectedPortalsName3 == "Clover Kingdom" then
+                Settings.SelectedPortalsName3 = "clover_infinite" end
+            if Settings.SelectedPortalsName3 == "Cape Canaveral" then
+                Settings.SelectedPortalsName3 = "jojo_infinite" end
+            if Settings.SelectedPortalsName3 == "Alien Spaceship" then
+                Settings.SelectedPortalsName3 = "opm_infinite" end 
+            if Settings.SelectedPortalsName3 == "Fabled Kingdom" then
+                Settings.SelectedPortalsName3 = "7ds_infinite" end
+            if Settings.SelectedPortalsName3 == "Hero City" then
+                Settings.SelectedPortalsName3 = "mha_infinite" end
+            if Settings.SelectedPortalsName3 == "Puppet Island" then
+                Settings.SelectedPortalsName3 = "dressrosa_infinite" end
+            if Settings.SelectedPortalsName3 == "Virtual Dungeon" then
+                Settings.SelectedPortalsName3 = "sao_infinite" end 
+            if Settings.SelectedPortalsName3 == "Windhym" then
+                Settings.SelectedPortalsName3 = "berserk_infinite" end
+            if Settings.SelectedPortalsName3 == "Undead Tomb" then
+                Settings.SelectedPortalsName3 = "overlord_infinite" end
+
+            if v["_unique_item_data"]["_unique_portal_data"]["level_id"] ~= Settings.SelectedPortalsName1
+            and v["_unique_item_data"]["_unique_portal_data"]["level_id"] ~= Settings.SelectedPortalsName2
+            and v["_unique_item_data"]["_unique_portal_data"]["level_id"] ~= Settings.SelectedPortalsName3 then
+            if v["_unique_item_data"]["_unique_portal_data"]["portal_depth"] == Settings.SelectedTier then
+            if v["_unique_item_data"]["_unique_portal_data"]["challenge"] ~= Settings.SelectedChallenge 
+            and v["_unique_item_data"]["_unique_portal_data"]["challenge"] ~= Settings.SelectedChallenge2
+            and v["_unique_item_data"]["_unique_portal_data"]["challenge"] ~= Settings.SelectedChallenge3 then
+
+                PortalEventUse = v
+                PortalName = "BSD farming"
+                PortalUUID = PortalEventUse["uuid"]
+                PortalPlayer = GetPlayerPortal()
+                break
+                end
+            end
+        end
+    end
+end
+--end_Event_BSD
+
+
+--
 end
     return {PortalName,PortalUUID,PortalPlayer}
 end
@@ -4702,9 +4847,9 @@ local function startfarming()
                 end
                     --Events Annivesary
         elseif cata == "Dungeon" then
-            if level == "namek_anniversary" then
-                getgenv().door = "_lobbytemplate_event323"
-                local string_1 = "_lobbytemplate_event323";
+            if level == "namek_halloween" then
+                getgenv().door = "_lobbytemplate_event321"
+                local string_1 = "_lobbytemplate_event321";
                 local table_1 = {
                     ["selected_key"] = "key_jjk_map"
                 };
@@ -5650,32 +5795,10 @@ coroutine.resume(coroutine.create(function()
         local GameFinished = game:GetService("Workspace"):WaitForChild("_DATA"):WaitForChild("GameFinished")
         GameFinished:GetPropertyChangedSignal("Value"):Connect(function()
             print("Changed", GameFinished.Value == true)
-            if not Settings.GemtoFarm then
-				Settings.GemtoFarm = 0
-				saveSettings()
-			end
-			if not Settings.GemFramed then
-				Settings.GemFramed = 0
-				saveSettings()
-			end
-
             if GameFinished.Value == true then
                 repeat task.wait() until  game:GetService("Players").LocalPlayer.PlayerGui.ResultsUI.Enabled == true
-                
-                ResultHolder = plr.PlayerGui:FindFirstChild("ResultsUI"):FindFirstChild("Holder")
-				gems = ResultHolder:FindFirstChild("LevelRewards"):FindFirstChild("ScrollingFrame"):FindFirstChild("GemReward"):FindFirstChild("Main"):FindFirstChild("Amount").Text
-				if gems == "+99999" then gems = "+0" end
-				GetGems = gems:split("+")[2]
-				print(gems)
-				print("You got : " .. GetGems)
-				Settings.GemFramed = Settings.GemFramed + tonumber(GetGems)
-				print("game end :" .. Settings.GemFramed)
-				saveSettings()
-				print("Changed", GameFinished.Value == true)
-				task.wait(1.1)
-
                 pcall(function() webhook() end)
-                print("Wait next or leave")
+                warn("Wait next or leave")
                 task.wait(1.5)
 
             cata = Settings.WorldCategory; level = Settings.SelectedLevel;
@@ -5748,6 +5871,8 @@ coroutine.resume(coroutine.create(function()
                 SummonUnits("EventClover", getgenv().SelectedMethod)
             elseif getgenv().SelectedBanner == "Standard" and getgenv().SelectedMethod ~= nil then
                 SummonUnits("Standard", getgenv().SelectedMethod)
+            elseif getgenv().SelectedBanner == "BSD" and getgenv().SelectedMethod ~= nil then
+                SummonUnits("BSD", getgenv().SelectedMethod)
             end
         end
         if Settings.AutoSnipeMerchant then
@@ -5813,6 +5938,36 @@ function PlacePos(map,name,_uuid,unit)
         if map == "west_city" then map = "west_city_frieza" end
         if map == "uchiha_hideout" then map = "uchiha_hideout_final" end
         if map == "hage_night" then map = "hage" end
+
+        --halloween_event
+        if map == "namek_halloween" and map2 == "csm_city" or map2 == "csm_halloween" then map = "csm_city" end
+        if map == "namek_halloween" and map2 == "karakura" or map2 == "karakura_halloween" then map = "karakura" end
+        if map2 == "namek_halloween" then map = "namek" end
+        if map2 == "aot_halloween" then map = "aot" end
+        if map2 == "demonslayer_halloween" then map = "demonslayer" end
+        if map2 == "naruto_halloween" then map = "naruto_desert" end
+        if map2 == "marineford_halloween" then map = "marineford" end
+        if map2 == "tokyoghoul_halloween" then map = "tokyo_ghoul" end
+        if map2 == "hueco_halloween" then map = "hueco" end
+        if map2 == "hxhant_halloween" then map = "hxhant" end
+        if map2 == "magnolia_halloween" then map = "magnolia" end
+        if map2 == "jjk_halloween" then map = "jjk" end
+        if map2 == "hage_elf_halloween" then map = "hage" end
+        if map2 == "jojo_halloween" then map = "space_center" end
+        if map2 == "opm_halloween" then map = "boros_ship" end
+        if map2 == "7ds_halloween" then map = "7ds_map" end
+        if map2 == "mha_halloween" then map = "mha_city" end
+        if map2 == "dressrosa_halloween" then map = "dressrosa" end
+        if map2 == "sao_halloween" then map = "sao" end
+        if map2 == "berserk_halloween" then map = "berserk" end
+        if map2 == "overlord_halloween" then map = "overlord_tomb" end
+        if map2 == "morioh_halloween" then map = "morioh" end
+        if map2 == "west_city_halloween" then map = "west_city_frieza" end
+        if map2 == "uchiha_hideout_halloween" then map = "uchiha_hideout_final" end
+        if map2 == "uchiha_halloween" then map = "uchiha_hideout_final" end
+        if map2 == "entertainment_halloween" then map = "entertainment_district" end
+        if map2 == "entertainment_district_halloween" then map = "entertainment_district" end
+
         if Mapname == "Infinity Castle" then map = map2 end
         local pos = Settings[map][unit]
 
@@ -6246,6 +6401,36 @@ function PlaceUnitsTEST(map,name,_uuid,unit)
     if map == "west_city" then map = "west_city_frieza" end
     if map == "uchiha_hideout" then map = "uchiha_hideout_final" end
     if map == "hage_night" then map = "hage" end
+
+    --halloween_event
+    if map == "namek_halloween" and map2 == "csm_city" or map2 == "csm_halloween" then map = "csm_city" end
+    if map == "namek_halloween" and map2 == "karakura" or map2 == "karakura_halloween" then map = "karakura" end
+    if map2 == "namek_halloween" then map = "namek" end
+    if map2 == "aot_halloween" then map = "aot" end
+    if map2 == "demonslayer_halloween" then map = "demonslayer" end
+    if map2 == "naruto_halloween" then map = "naruto_desert" end
+    if map2 == "marineford_halloween" then map = "marineford" end
+    if map2 == "tokyoghoul_halloween" then map = "tokyo_ghoul" end
+    if map2 == "hueco_halloween" then map = "hueco" end
+    if map2 == "hxhant_halloween" then map = "hxhant" end
+    if map2 == "magnolia_halloween" then map = "magnolia" end
+    if map2 == "jjk_halloween" then map = "jjk" end
+    if map2 == "hage_elf_halloween" then map = "hage" end
+    if map2 == "jojo_halloween" then map = "space_center" end
+    if map2 == "opm_halloween" then map = "boros_ship" end
+    if map2 == "7ds_halloween" then map = "7ds_map" end
+    if map2 == "mha_halloween" then map = "mha_city" end
+    if map2 == "dressrosa_halloween" then map = "dressrosa" end
+    if map2 == "sao_halloween" then map = "sao" end
+    if map2 == "berserk_halloween" then map = "berserk" end
+    if map2 == "overlord_halloween" then map = "overlord_tomb" end
+    if map2 == "morioh_halloween" then map = "morioh" end
+    if map2 == "west_city_halloween" then map = "west_city_frieza" end
+    if map2 == "uchiha_hideout_halloween" then map = "uchiha_hideout_final" end
+    if map2 == "uchiha_halloween" then map = "uchiha_hideout_final" end
+    if map2 == "entertainment_halloween" then map = "entertainment_district" end
+    if map2 == "entertainment_district_halloween" then map = "entertainment_district" end
+
     if Mapname == "Infinity Castle" then map = map2 end
 
 current_wave = game:GetService("Workspace")["_wave_num"].Value
@@ -6430,6 +6615,36 @@ function PlaceUnits(map)
                     if map == "west_city" then map = "west_city_frieza" end
                     if map == "uchiha_hideout" then map = "uchiha_hideout_final" end
                     if map == "hage_night" then map = "hage" end
+
+                    --halloween_event
+                    if map == "namek_halloween" and map2 == "csm_city" or map2 == "csm_halloween" then map = "csm_city" end
+                    if map == "namek_halloween" and map2 == "karakura" or map2 == "karakura_halloween" then map = "karakura" end
+                    if map2 == "namek_halloween" then map = "namek" end
+                    if map2 == "aot_halloween" then map = "aot" end
+                    if map2 == "demonslayer_halloween" then map = "demonslayer" end
+                    if map2 == "naruto_halloween" then map = "naruto_desert" end
+                    if map2 == "marineford_halloween" then map = "marineford" end
+                    if map2 == "tokyoghoul_halloween" then map = "tokyo_ghoul" end
+                    if map2 == "hueco_halloween" then map = "hueco" end
+                    if map2 == "hxhant_halloween" then map = "hxhant" end
+                    if map2 == "magnolia_halloween" then map = "magnolia" end
+                    if map2 == "jjk_halloween" then map = "jjk" end
+                    if map2 == "hage_elf_halloween" then map = "hage" end
+                    if map2 == "jojo_halloween" then map = "space_center" end
+                    if map2 == "opm_halloween" then map = "boros_ship" end
+                    if map2 == "7ds_halloween" then map = "7ds_map" end
+                    if map2 == "mha_halloween" then map = "mha_city" end
+                    if map2 == "dressrosa_halloween" then map = "dressrosa" end
+                    if map2 == "sao_halloween" then map = "sao" end
+                    if map2 == "berserk_halloween" then map = "berserk" end
+                    if map2 == "overlord_halloween" then map = "overlord_tomb" end
+                    if map2 == "morioh_halloween" then map = "morioh" end
+                    if map2 == "west_city_halloween" then map = "west_city_frieza" end
+                    if map2 == "uchiha_hideout_halloween" then map = "uchiha_hideout_final" end
+                    if map2 == "uchiha_halloween" then map = "uchiha_hideout_final" end
+                    if map2 == "entertainment_halloween" then map = "entertainment_district" end
+                    if map2 == "entertainment_district_halloween" then map = "entertainment_district" end
+
                     if Mapname == "Infinity Castle" then map = map2 end
                     local unitinfo_ = unitinfo:split(" #")
                     local pos = Settings[map]["UP" .. i]
@@ -6551,6 +6766,36 @@ coroutine.resume(coroutine.create(function()
                 if map == "west_city" then map = "west_city_frieza" end
                 if map == "uchiha_hideout" then map = "uchiha_hideout_final" end
                 if map == "hage_night" then map = "hage" end
+
+                --halloween_event
+                if map == "namek_halloween" and map2 == "csm_city" or map2 == "csm_halloween" then map = "csm_city" end
+                if map == "namek_halloween" and map2 == "karakura" or map2 == "karakura_halloween" then map = "karakura" end
+                if map2 == "namek_halloween" then map = "namek" end
+                if map2 == "aot_halloween" then map = "aot" end
+                if map2 == "demonslayer_halloween" then map = "demonslayer" end
+                if map2 == "naruto_halloween" then map = "naruto_desert" end
+                if map2 == "marineford_halloween" then map = "marineford" end
+                if map2 == "tokyoghoul_halloween" then map = "tokyo_ghoul" end
+                if map2 == "hueco_halloween" then map = "hueco" end
+                if map2 == "hxhant_halloween" then map = "hxhant" end
+                if map2 == "magnolia_halloween" then map = "magnolia" end
+                if map2 == "jjk_halloween" then map = "jjk" end
+                if map2 == "hage_elf_halloween" then map = "hage" end
+                if map2 == "jojo_halloween" then map = "space_center" end
+                if map2 == "opm_halloween" then map = "boros_ship" end
+                if map2 == "7ds_halloween" then map = "7ds_map" end
+                if map2 == "mha_halloween" then map = "mha_city" end
+                if map2 == "dressrosa_halloween" then map = "dressrosa" end
+                if map2 == "sao_halloween" then map = "sao" end
+                if map2 == "berserk_halloween" then map = "berserk" end
+                if map2 == "overlord_halloween" then map = "overlord_tomb" end
+                if map2 == "morioh_halloween" then map = "morioh" end
+                if map2 == "west_city_halloween" then map = "west_city_frieza" end
+                if map2 == "uchiha_hideout_halloween" then map = "uchiha_hideout_final" end
+                if map2 == "uchiha_halloween" then map = "uchiha_hideout_final" end
+                if map2 == "entertainment_halloween" then map = "entertainment_district" end
+                if map2 == "entertainment_district_halloween" then map = "entertainment_district" end
+
                 if Mapname == "Infinity Castle" then map = map2 end
 
                 PlaceUnitsTEST(map)
@@ -6590,6 +6835,36 @@ coroutine.resume(coroutine.create(function()
                 if map == "west_city" then map = "west_city_frieza" end
                 if map == "uchiha_hideout" then map = "uchiha_hideout_final" end
                 if map == "hage_night" then map = "hage" end
+
+                --halloween_event
+                if map == "namek_halloween" and map2 == "csm_city" or map2 == "csm_halloween" then map = "csm_city" end
+                if map == "namek_halloween" and map2 == "karakura" or map2 == "karakura_halloween" then map = "karakura" end
+                if map2 == "namek_halloween" then map = "namek" end
+                if map2 == "aot_halloween" then map = "aot" end
+                if map2 == "demonslayer_halloween" then map = "demonslayer" end
+                if map2 == "naruto_halloween" then map = "naruto_desert" end
+                if map2 == "marineford_halloween" then map = "marineford" end
+                if map2 == "tokyoghoul_halloween" then map = "tokyo_ghoul" end
+                if map2 == "hueco_halloween" then map = "hueco" end
+                if map2 == "hxhant_halloween" then map = "hxhant" end
+                if map2 == "magnolia_halloween" then map = "magnolia" end
+                if map2 == "jjk_halloween" then map = "jjk" end
+                if map2 == "hage_elf_halloween" then map = "hage" end
+                if map2 == "jojo_halloween" then map = "space_center" end
+                if map2 == "opm_halloween" then map = "boros_ship" end
+                if map2 == "7ds_halloween" then map = "7ds_map" end
+                if map2 == "mha_halloween" then map = "mha_city" end
+                if map2 == "dressrosa_halloween" then map = "dressrosa" end
+                if map2 == "sao_halloween" then map = "sao" end
+                if map2 == "berserk_halloween" then map = "berserk" end
+                if map2 == "overlord_halloween" then map = "overlord_tomb" end
+                if map2 == "morioh_halloween" then map = "morioh" end
+                if map2 == "west_city_halloween" then map = "west_city_frieza" end
+                if map2 == "uchiha_hideout_halloween" then map = "uchiha_hideout_final" end
+                if map2 == "uchiha_halloween" then map = "uchiha_hideout_final" end
+                if map2 == "entertainment_halloween" then map = "entertainment_district" end
+                if map2 == "entertainment_district_halloween" then map = "entertainment_district" end
+
                 if Mapname == "Infinity Castle" then map = map2 end
 
                 PlaceUnits(map)
@@ -7105,7 +7380,7 @@ function placeunittwin()
 function Reedemcode()
     codes = {"TWOMILLION","subtomaokuma","CHALLENGEFIX","GINYUFIX","RELEASE","SubToKelvingts","SubToBlamspot","KingLuffy","TOADBOIGAMING","noclypso","FictioNTheFirst","GOLDENSHUTDOWN","GOLDEN"
     ,"SINS2","subtosnowrbx","Cxrsed","subtomaokuma","VIGILANTE","HAPPYEASTER","ENTERTAINMENT","DRESSROSA","BILLION","MADOKA","AINCRAD","ANNIVERSARY","OVERLORD","SupperTierMagicSoon",
-    "NEWCODE0819","MORIOH","REASON2FIGHT","HOLYGRAIL"}
+    "NEWCODE0819","MORIOH","REASON2FIGHT","HOLYGRAIL","STRAYDOGS","HALLOWEENUPDSOON","HAPPYHALLOWEEN"}
         for _, v in pairs(codes) do
         pcall(function() game:GetService("ReplicatedStorage").endpoints["client_to_server"]["redeem_code"]:InvokeServer(v)()    end) 
     end
