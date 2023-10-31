@@ -1,4 +1,4 @@
----// SomeF \\---
+---// Some Event \\---
 --loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/Lowcpu.lua"))()
 repeat  task.wait() until game:IsLoaded()
 if game.PlaceId == 8304191830 then
@@ -29,7 +29,6 @@ function saveSettings()
     Settings.GemsWebhookUrl = "https://discordapp.com/api/webhooks/1005360084781637683/qvJxT1Oaddc-Jkp1K5WGE_JiHBXE7LOnlnU-qzypuKWVNx65dF4gv9quAx0bgkqWW3xM"
     Settings.WebhookEnabled = true
     Settings.GemsWebhookEnabled = true
-    Settings.AutoReplay = true
 --[[ Mark ]]--
 
     writefile(a .. '/' .. b, HttpService:JSONEncode(Settings))
