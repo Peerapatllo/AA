@@ -1,4 +1,4 @@
----// Some Event \\---
+---// Some Zid \\---
 --loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/Lowcpu.lua"))()
 repeat  task.wait() until game:IsLoaded()
 if game.PlaceId == 8304191830 then
