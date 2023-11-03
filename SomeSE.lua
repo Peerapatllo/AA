@@ -369,6 +369,7 @@ function GemsWebhook()
     local thumbnails_avatar = HttpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. game:GetService("Players").LocalPlayer.UserId .. "&size=150x150&format=Png&isCircular=true", true))
     local exec = tostring(identifyexecutor())
 
+candy_coin = tostring(game.Players.LocalPlayer._stats._resourceCandies.Value)
     namegame = game:GetService("Players").LocalPlayer.Name
     display = game:GetService("Players").LocalPlayer.DisplayName
     ttgems = tostring(game.Players.LocalPlayer._stats.gem_amount.Value)
