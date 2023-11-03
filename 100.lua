@@ -24,21 +24,11 @@ function saveSettings()
         makefolder(a)
     end
 
-    Settings.WebhookUrl = "https://discord.com/api/webhooks/1135231458022281277/MTLqipelSII-o4TkoiNxUr5tspNvR6bwxFj5eMXmXPbTGRlk9RMa6C_PV0E2kI_w8DbL"
-    Settings.GemsWebhookUrl = "https://discord.com/api/webhooks/1123297814596829296/J4HVTcrz9IlIjEQ8EbccEOrJNCNBdRAJqW89HyLpjkG-9rqlXG_ONtm2kbLHqwSUIrXt"
+    Settings.WebhookUrl = "https://discordapp.com/api/webhooks/1055442033357094963/xb3JQJRgauCLwzIdFtad7JEN05mxZ4p1CGQiKGvl9iwTrgIkeaclryUjMI13qze5mMLH"
+    Settings.GemsWebhookUrl = "https://discordapp.com/api/webhooks/1055442033357094963/xb3JQJRgauCLwzIdFtad7JEN05mxZ4p1CGQiKGvl9iwTrgIkeaclryUjMI13qze5mMLH"
     Settings.WebhookEnabled = true
     Settings.GemsWebhookEnabled = true
-    --Settings.isFriendOnly = true
-    --Settings.AutoSaveUnit = true
-    --Settings.AutoFarm = true
-    --Settings.AutoPickPortal = true
-    --Settings.AutoAbilities = true
-    --Settings.placeany = true
-    --Settings.WorldCategory = "Portals"
-    --Settings.SelectedLevel = "portal_summer"
-    --Settings.Difficulty = "Default"
-    --Settings.SelectedWorld = "Summer Events"
-    --Settings.SelectedTier = 1
+Settings.AutoReplay = true
 
     writefile(a .. '/' .. b, HttpService:JSONEncode(Settings))
     Settings = ReadSetting()
