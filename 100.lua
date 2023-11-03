@@ -376,9 +376,6 @@ function GemsWebhook()
     local thumbnails_avatar = HttpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. game:GetService("Players").LocalPlayer.UserId .. "&size=150x150&format=Png&isCircular=true", true))
     local exec = tostring(identifyexecutor())
 
-    WavesHB = plr.PlayerGui:FindFirstChild("Waves"):FindFirstChild("HealthBar")
-    summer_reward = WavesHB:FindFirstChild("IngameRewards"):FindFirstChild("ResourceRewardTotal"):FindFirstChild("Holder"):FindFirstChild("Main"):FindFirstChild("Amount").Text
-    --summer_reward = game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.IngameRewards.ResourceRewardTotal.Holder.Main.Amount.Text
     candy_coin = tostring(game.Players.LocalPlayer._stats._resourceCandies.Value)
     namegame = game:GetService("Players").LocalPlayer.Name
     display = game:GetService("Players").LocalPlayer.DisplayName
@@ -768,6 +765,9 @@ local function CheckGemAll()
 	if tonumber(Settings.GemFramed) >= tonumber(Settings.GemtoFarm) and tonumber(Settings.GemtoFarm) ~= 0 then
 		if not Settings.KiwwyKick then
             GemsWebhook()
+            Settings.autostart = false
+			Settings.KiwwyKick = true
+			saveSettings()
 			game.Players.LocalPlayer:Kick("Farm Success | INDY BUX")
             delfile("V2_Anime_Adventures/" .. game.Players.LocalPlayer.Name .. "_AnimeAdventures.json")
             game:GetService("TeleportService"):Teleport(8304191830, game.Players.LocalPlayer)
