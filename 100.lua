@@ -376,6 +376,10 @@ function GemsWebhook()
     local thumbnails_avatar = HttpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. game:GetService("Players").LocalPlayer.UserId .. "&size=150x150&format=Png&isCircular=true", true))
     local exec = tostring(identifyexecutor())
 
+    WavesHB = plr.PlayerGui:FindFirstChild("Waves"):FindFirstChild("HealthBar")
+    summer_reward = WavesHB:FindFirstChild("IngameRewards"):FindFirstChild("ResourceRewardTotal"):FindFirstChild("Holder"):FindFirstChild("Main"):FindFirstChild("Amount").Text
+    --summer_reward = game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.IngameRewards.ResourceRewardTotal.Holder.Main.Amount.Text
+    candy_coin = tostring(game.Players.LocalPlayer._stats._resourceCandies.Value)
     namegame = game:GetService("Players").LocalPlayer.Name
     display = game:GetService("Players").LocalPlayer.DisplayName
     ttgems = tostring(game.Players.LocalPlayer._stats.gem_amount.Value)
