@@ -300,8 +300,10 @@ function webhook()
     --BTP lv.
     btplv = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.Level.V.Text
     --next ammo level
-
-    summer_reward = game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.IngameRewards.ResourceRewardTotal.Holder.Main.Amount.Text
+    
+    WavesHB = plr.PlayerGui:FindFirstChild("Waves"):FindFirstChild("HealthBar")
+    summer_reward = WavesHB:FindFirstChild("IngameRewards"):FindFirstChild("ResourceRewardTotal"):FindFirstChild("Holder"):FindFirstChild("Main"):FindFirstChild("Amount").Text
+    --summer_reward = game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.IngameRewards.ResourceRewardTotal.Holder.Main.Amount.Text
     candy_coin = tostring(game.Players.LocalPlayer._stats._resourceCandies.Value)
 
     --BTP lv.
@@ -5645,8 +5647,8 @@ coroutine.resume(coroutine.create(function()
             if GameFinished.Value == true then
                 repeat task.wait() until  game:GetService("Players").LocalPlayer.PlayerGui.ResultsUI.Enabled == true
                 
-                ResultHolder = plr.PlayerGui:FindFirstChild("ResultsUI"):FindFirstChild("Holder")
-				gems = game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.IngameRewards.ResourceRewardTotal.Holder.Main.Amount.Text
+                WavesHB = plr.PlayerGui:FindFirstChild("Waves"):FindFirstChild("HealthBar")
+				gems = WavesHB:FindFirstChild("IngameRewards"):FindFirstChild("ResourceRewardTotal"):FindFirstChild("Holder"):FindFirstChild("Main"):FindFirstChild("Amount").Text
 				if gems == "+500" then gems = "+0" end
 				GetGems = gems:split("+")[2]
 				print(gems)
