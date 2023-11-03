@@ -1,4 +1,4 @@
---updatefix
+--updatefix1
 local version = "v2.0.0b31"
 --loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/Lowcpu.lua"))()
 ---// Loading Section \\---
