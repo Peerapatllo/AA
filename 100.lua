@@ -1,4 +1,4 @@
----// Candy \\---
+---// Loading Section \\---
 --loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/Lowcpu.lua"))()
 repeat  task.wait() until game:IsLoaded()
 if game.PlaceId == 8304191830 then
@@ -300,7 +300,7 @@ function webhook()
     --BTP lv.
     btplv = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.Level.V.Text
     --next ammo level
-    
+
     WavesHB = plr.PlayerGui:FindFirstChild("Waves"):FindFirstChild("HealthBar")
     summer_reward = WavesHB:FindFirstChild("IngameRewards"):FindFirstChild("ResourceRewardTotal"):FindFirstChild("Holder"):FindFirstChild("Main"):FindFirstChild("Amount").Text
     --summer_reward = game:GetService("Players").LocalPlayer.PlayerGui.Waves.HealthBar.IngameRewards.ResourceRewardTotal.Holder.Main.Amount.Text
@@ -764,9 +764,6 @@ local function CheckGemAll()
 	if tonumber(Settings.GemFramed) >= tonumber(Settings.GemtoFarm) and tonumber(Settings.GemtoFarm) ~= 0 then
 		if not Settings.KiwwyKick then
             GemsWebhook()
-            Settings.autostart = false
-			Settings.KiwwyKick = true
-			saveSettings()
 			game.Players.LocalPlayer:Kick("Farm Success | INDY BUX")
             delfile("V2_Anime_Adventures/" .. game.Players.LocalPlayer.Name .. "_AnimeAdventures.json")
             game:GetService("TeleportService"):Teleport(8304191830, game.Players.LocalPlayer)
