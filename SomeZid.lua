@@ -1,5 +1,16 @@
 ---// Some Zid \\---
 --loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/Lowcpu.lua"))()
+if game.PlaceId == 8304191830 then
+    repeat wait() until game:IsLoaded()
+local player = game.Players.LocalPlayer 
+local newPosition = Vector3.new(-123.30557250976562, 195.6235809326172, -527.5999755859375)
+
+local newCFrame = CFrame.new(newPosition)
+
+wait(2)
+player.Character:SetPrimaryPartCFrame(newCFrame)
+end
+
 repeat  task.wait() until game:IsLoaded()
 if game.PlaceId == 8304191830 then
     repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
