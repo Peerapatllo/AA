@@ -1,7 +1,11 @@
 ---// Some Zid \\---
 --loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/Lowcpu.lua"))()
+repeat  task.wait() until game:IsLoaded()
 if game.PlaceId == 8304191830 then
-    repeat wait() until game:IsLoaded()
+    repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
+    repeat task.wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("collection"):FindFirstChild("grid"):FindFirstChild("List"):FindFirstChild("Outer"):FindFirstChild("UnitFrames")
+    repeat task.wait() until game.ReplicatedStorage.packages:FindFirstChild("assets")
+    repeat task.wait() until game.ReplicatedStorage.packages:FindFirstChild("StarterGui")
 local player = game.Players.LocalPlayer 
 local newPosition = Vector3.new(-123.30557250976562, 195.6235809326172, -527.5999755859375)
 
@@ -10,13 +14,6 @@ local newCFrame = CFrame.new(newPosition)
 wait(2)
 player.Character:SetPrimaryPartCFrame(newCFrame)
 end
-
-repeat  task.wait() until game:IsLoaded()
-if game.PlaceId == 8304191830 then
-    repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
-    repeat task.wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("collection"):FindFirstChild("grid"):FindFirstChild("List"):FindFirstChild("Outer"):FindFirstChild("UnitFrames")
-    repeat task.wait() until game.ReplicatedStorage.packages:FindFirstChild("assets")
-    repeat task.wait() until game.ReplicatedStorage.packages:FindFirstChild("StarterGui")
 else
     repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
     game:GetService("ReplicatedStorage").endpoints.client_to_server.vote_start:InvokeServer()
