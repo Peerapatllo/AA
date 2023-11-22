@@ -5,14 +5,14 @@ if game.PlaceId == 8304191830 then
         StarterGui:SetCore("SendNotification", {
             Title = "HOLY HUB",
             Text = "Welcome to HOLY HUB !!!",
-            Duration = 3
+            Duration = 6.5
         })
     wait(0.1)
     local StarterGui = game:GetService("StarterGui")
         StarterGui:SetCore("SendNotification", {
             Title = "HOLY Notify",
             Text = "Wait Game is Loaded 10(s)...!!!",
-            Duration = 3
+            Duration = 10
         })
     wait(0.1)
     repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
@@ -183,7 +183,7 @@ function webhook()
         end 
         
         local Time = os.date('!*t', OSTime);
-        local thumbnails_avatar = HttpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. game:GetService("Players").LocalPlayer.UserId .. "&size=150x150&format=Png&isCircular=true", true))
+        --local thumbnails_avatar = HttpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. game:GetService("Players").LocalPlayer.UserId .. "&size=150x150&format=Png&isCircular=true", true))
         local exec = tostring(identifyexecutor())
         userlevel = plr.PlayerGui:FindFirstChild("spawn_units"):FindFirstChild("Lives"):FindFirstChild("Main"):FindFirstChild("Desc"):FindFirstChild("Level").Text
         totalgems = plr.PlayerGui:FindFirstChild("spawn_units"):FindFirstChild("Lives"):FindFirstChild("Frame"):FindFirstChild("Resource"):FindFirstChild("Gem"):FindFirstChild("Level").Text
@@ -301,7 +301,7 @@ function webhook()
                 if v['Count Shiny'] and v['Count'] then
                     if v['Count'] > 0 or v['Count Shiny'] > 0 then
                         if v['Count'] > 0 and (v['Count'] - Table_All_Items_Old_data[i]['Count']) > 0 then
-                            TextDropLabel = TextDropLabel .. tostring(CountAmount) .. ". " .. tostring(v['Name']) .. " : x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count'])
+                            TextDropLabel = TextDropLabel .. tostring(CountAmount) .. ". " .. tostring(v['Name']) .. " : x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. " [Total : " .. tostring(v['Count']) .. "]"
                             if v['Count Shiny'] > 0 and (v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) > 0 then
                                 TextDropLabel = TextDropLabel .. " | " .. tostring(v['Name']) .. " (Shiny) : x" .. tostring(v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) .. "\n"
                                 CountAmount = CountAmount + 1
@@ -324,13 +324,13 @@ function webhook()
                 elseif string.find(i,"portal") or string.find(i,"disc") then
                     Count_Portal_list = Count_Portal_list + 1
                 if string.gsub(i, "%D", "") == "" then
-                        TextDropLabel = TextDropLabel .. tostring(CountAmount) .. ". " .. tostring(v['Name']) .. " : x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
+                        TextDropLabel = TextDropLabel .. tostring(CountAmount) .. ". " .. tostring(v['Name']) .. " : x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. " [Total : " .. tostring(v['Count']) .. "]\n"
                 else
                         TextDropLabel = TextDropLabel .. tostring(CountAmount) .. ". " .. tostring(v['Name']) .. " Tier " .. tostring(string.gsub(i, "%D", "")) .. " : x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
                     end
                     CountAmount = CountAmount + 1
                 else
-                    TextDropLabel = TextDropLabel .. tostring(CountAmount) .. ". " .. tostring(v['Name']) .. " : x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
+                    TextDropLabel = TextDropLabel .. tostring(CountAmount) .. ". " .. tostring(v['Name']) .. " : x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. " [Total : " .. tostring(v['Count']) .. "]\n"
                     CountAmount = CountAmount + 1
                 end
             end
@@ -344,16 +344,16 @@ function webhook()
         local data = {
             ["content"] = "",
             ["username"] = "Anime Adventures V2",
-            ["avatar_url"] = "https://tr.rbxcdn.com/c434a1f08239cd31612ebe0960dcf5bc/150/150/Image/Png",
+            ["avatar_url"] = "https://tr.rbxcdn.com/b9d6508b4bd3628bdeb6ba9825afef91/150/150/Image/Png",
             ["embeds"] = {
                 {
                     ["author"] = {
                         ["name"] = "Anime Adventures |  Results V2 ✔️",
                         ["icon_url"] = "https://cdn.discordapp.com/emojis/997123585476927558.webp?size=96&quality=lossless"
                     },
-                    ["thumbnail"] = {
+                    --[[["thumbnail"] = {
                         ['url'] = thumbnails_avatar.data[1].imageUrl,
-                    },
+                    },]]
                     ["description"] = " Player Name : 🐱 ||**"..game:GetService("Players").LocalPlayer.Name.."**|| 🐱\nExecutors : 🎮 "..exec.." 🎮 ",
                     ["color"] = 110335,
                     ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
@@ -365,8 +365,8 @@ function webhook()
                         {
                             ["name"] ="Current Level ✨ & Gems 💎 & Gold 💰 & Portals 🌀",
                             ["value"] = "```ini\n"
-                                        ..tostring(game.Players.LocalPlayer.PlayerGui.spawn_units.Lives.Main.Desc.Level.Text)..  " ✨\nBTP Lv : "
-                                        ..tostring(btplv3).. " [ "..tostring(btpAlllv3).." ] 🎟️\nnCurrent Gold : "
+                                        ..tostring(game.Players.LocalPlayer.PlayerGui.spawn_units.Lives.Main.Desc.Level.Text).. " ✨\nBTP Lv : "
+                                        ..tostring(btplv3).. " [ "..tostring(btpAlllv3).." ] 🎟️\nCurrent Gold : "
                                         ..tostring(comma_value(game.Players.LocalPlayer._stats.gold_amount.Value)).. " 💰\nCurrent Gems : "
                                         ..tostring(comma_value(game.Players.LocalPlayer._stats.gem_amount.Value)).. " 💎\nCurrent Trophies : "
                                         ..tostring(comma_value(game.Players.LocalPlayer._stats.trophies.Value)).. " 🏆\nCurrent Portal : "
@@ -417,7 +417,7 @@ function BabyWebhook()
     end 
 		
     local Time = os.date('!*t', OSTime);
-    local thumbnails_avatar = HttpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. game:GetService("Players").LocalPlayer.UserId .. "&size=150x150&format=Png&isCircular=true", true))
+    --local thumbnails_avatar = HttpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. game:GetService("Players").LocalPlayer.UserId .. "&size=150x150&format=Png&isCircular=true", true))
     local exec = tostring(identifyexecutor())
     --BTP lv.
     btplv = game:GetService("Players").LocalPlayer.PlayerGui.BattlePass.Main.Level.V.Text
@@ -461,9 +461,9 @@ function BabyWebhook()
                             ["name"] = " Current BTP & Inf Castle & Tournament Results ✔️",
                             ["icon_url"] = "https://cdn.discordapp.com/emojis/997123585476927558.webp?size=96&quality=lossless"
                         },
-                        ["thumbnail"] = {
+                        --[[["thumbnail"] = {
                             ['url'] = thumbnails_avatar.data[1].imageUrl,
-                        },
+                        },]]
                         ["description"] = " Player Name : 🐱 ||**"..game:GetService("Players").LocalPlayer.Name.."**|| 🐱",
                         ["color"] = 110335,
                         ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
@@ -517,7 +517,7 @@ function SpecialSummonSniperWebhook()
 		
         local Time = os.date('!*t', OSTime);
 
-	    local thumbnails_avatar = HttpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. game:GetService("Players").LocalPlayer.UserId .. "&size=150x150&format=Png&isCircular=true", true))
+	    --local thumbnails_avatar = HttpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. game:GetService("Players").LocalPlayer.UserId .. "&size=150x150&format=Png&isCircular=true", true))
 
         local exec = tostring(identifyexecutor())
 
@@ -544,9 +544,9 @@ function SpecialSummonSniperWebhook()
                             ["name"] = " Special Banner ",
                             ["icon_url"] = "https://cdn.discordapp.com/emojis/997123585476927558.webp?size=96&quality=lossless"
                         },
-                        ["thumbnail"] = {
+                        --[[["thumbnail"] = {
                             ['url'] = thumbnails_avatar.data[1].imageUrl,
-                        },
+                        },]]
                         ["description"] = " Player Name : 🐱 ||**"..game:GetService("Players").LocalPlayer.Name.."**|| 🐱",
                         ["color"] = 110335,
                         ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
@@ -594,7 +594,7 @@ function StandardSummonSniperWebhook()
 		
         local Time = os.date('!*t', OSTime);
 
-	    local thumbnails_avatar = HttpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. game:GetService("Players").LocalPlayer.UserId .. "&size=150x150&format=Png&isCircular=true", true))
+	    --local thumbnails_avatar = HttpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. game:GetService("Players").LocalPlayer.UserId .. "&size=150x150&format=Png&isCircular=true", true))
 
         local exec = tostring(identifyexecutor())
 
@@ -626,9 +626,9 @@ function StandardSummonSniperWebhook()
                             ["name"] = " Standard Banner ",
                             ["icon_url"] = "https://cdn.discordapp.com/emojis/997123585476927558.webp?size=96&quality=lossless"
                         },
-                        ["thumbnail"] = {
+                        --[[["thumbnail"] = {
                             ['url'] = thumbnails_avatar.data[1].imageUrl,
-                        },
+                        },]]
                         ["description"] = " Player Name : 🐱 ||**"..game:GetService("Players").LocalPlayer.Name.."**|| 🐱",
                         ["color"] = 110335,
                         ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
@@ -673,7 +673,7 @@ function ShopSniperWebhook()
 
         local Time = os.date('!*t', OSTime);
 
-	    local thumbnails_avatar = HttpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. game:GetService("Players").LocalPlayer.UserId .. "&size=150x150&format=Png&isCircular=true", true))
+	    --local thumbnails_avatar = HttpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. game:GetService("Players").LocalPlayer.UserId .. "&size=150x150&format=Png&isCircular=true", true))
 
         local exec = tostring(identifyexecutor())
 
@@ -692,9 +692,9 @@ function ShopSniperWebhook()
                             ["name"] = " Bulma's Shop ",
                             ["icon_url"] = "https://cdn.discordapp.com/emojis/997123585476927558.webp?size=96&quality=lossless"
                         },
-                        ["thumbnail"] = {
+                        --[[["thumbnail"] = {
                             ['url'] = thumbnails_avatar.data[1].imageUrl,
-                        },
+                        },]]
                         ["description"] = " Player Name : 🐱 ||**"..game:GetService("Players").LocalPlayer.Name.."**|| 🐱",
                         ["color"] = 110335,
                         ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
@@ -759,7 +759,7 @@ local Uilib = loadstring(game:HttpGet("https://raw.githubusercontent.com/ArponAG
 --local Uilib = loadstring(game:HttpGet("https://raw.githubusercontent.com/ArponAG/Scripts/main/finitylib"))()
 local exec = tostring(identifyexecutor())
 local Window = Uilib.new(true, "[Arpon_V2] Anime Adventures "..version.." - "..exec)
-Window.ChangeToggleKey(Enum.KeyCode.C)
+Window.ChangeToggleKey(Enum.KeyCode.P)
 
 local Home = Window:Category("🏠 Home")
 local Developers = Home:Sector("Anime Adventures")
@@ -1115,7 +1115,7 @@ local function WorldSec()
         elseif Settings.WorldCategory == "Dungeon" then
             storylist = {"Cursed Womb","Crused Parade","Halloween Event"}    
         elseif Settings.WorldCategory == "Secret Portals" then
-            storylist = {"Dressrosa Secret Portals","The Eclipse Secret","FATE Secret","BSD Secret"} 
+            storylist = {"Dressrosa Secret Portals","The Eclipse Secret","FATE Secret","BSD Secret","Pain Secret"} 
         end
     --updatefix
         for i = 1, #storylist do
@@ -1194,6 +1194,8 @@ local function WorldSec()
             levellist = {"portal_item__gilgamesh"}
         elseif level == "BSD Secret" then
             levellist = {"portal_item__dazai"}
+        elseif level == "Pain Secret" then
+            levellist = {"portal_item__pain"}
 
         --///Story Mode\\\---
         elseif Settings.WorldCategory == "Story Worlds" and level == Settings.SelectedWorld then
@@ -3175,6 +3177,12 @@ local function LowCPUModeT()
         saveSettings()
     end,{enabled = Settings.lowCpuMode})
     
+    LowCPU2:Cheat("Checkbox","Mobile Low CPU [TEST] ", function(bool)
+        print(bool)
+        Settings.lowCpuModeM = bool
+        saveSettings()
+    end,{enabled = Settings.lowCpuModeM})
+    
     task.spawn(function()
         while task.wait() do
             if IS_ROBLOX_ACTIVE ~= true and Settings.lowCpuMode then
@@ -3185,6 +3193,11 @@ local function LowCPUModeT()
                 setfpscap(240)
                 game:GetService("RunService"):Set3dRenderingEnabled(true)
                 isrbxactive(false)
+            if IS_ROBLOX_ACTIVE ~= true and Settings.lowCpuModeM then
+                    game:GetService("RunService"):Set3dRenderingEnabled(false)
+            else
+                    game:GetService("RunService"):Set3dRenderingEnabled(true)
+                end
             end
         end
     end)
@@ -3664,23 +3677,23 @@ task.spawn(function()
                     end
                 end
         
-                local thumbnails_avatar = HttpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. game:GetService("Players").LocalPlayer.UserId .. "&size=150x150&format=Png&isCircular=true", true))
+                --local thumbnails_avatar = HttpService:JSONDecode(game:HttpGet("https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=" .. game:GetService("Players").LocalPlayer.UserId .. "&size=150x150&format=Png&isCircular=true", true))
                 local Time = os.date('!*t', OSTime);
                 local exec = tostring(identifyexecutor())
 
                 local data = {
                     ["content"] = "",
                     ["username"] = "Anime Adventures V2",
-                    ["avatar_url"] = "https://tr.rbxcdn.com/c434a1f08239cd31612ebe0960dcf5bc/150/150/Image/Png",
+                    ["avatar_url"] = "https://tr.rbxcdn.com/b9d6508b4bd3628bdeb6ba9825afef91/150/150/Image/Png",
                     ["embeds"] = {
                         {
                             ["author"] = {
                                 ["name"] = "Anime Adventures | Skin ✔️",
                                 ["icon_url"] = "https://cdn.discordapp.com/emojis/997123585476927558.webp?size=96&quality=lossless"
                             },
-                            ["thumbnail"] = {
+                            --[[["thumbnail"] = {
                                 ['url'] = thumbnails_avatar.data[1].imageUrl,
-                            },
+                            },]]
                             ["description"] = " Player Name : 🐱 ||**"..game:GetService("Players").LocalPlayer.Name.."**|| 🐱\nExecutors : 🎮 "..exec.." 🎮 ",
                             ["color"] = 110335,
                             ["timestamp"] = string.format('%d-%d-%dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec),
@@ -4160,6 +4173,15 @@ local function startChallenge()
 end
 ----------------------------------
 --test fixportal
+function getPainPortals()
+    local portals = {}
+    for _, item in pairs(get_inventory_items_unique_items()) do
+        if item["item_id"] == "portal_item__pain" then
+            table.insert(portals, item)
+        end
+    end
+    return portals
+end
 function getBSDPortals()
     local portals = {}
     for _, item in pairs(get_inventory_items_unique_items()) do
@@ -4394,6 +4416,11 @@ function GetPlayerPortalUse(level)
     elseif level == "portal_item__gilgamesh" then
         PortalName = "FATE Secret Portal farming"
         PortalUUID = GetPortals("portal_item__gilgamesh")[1]["uuid"]
+        PortalPlayer = GetPlayerPortal()
+
+    elseif level == "portal_item__pain" then
+        PortalName = "Pain Secret Portal farming"
+        PortalUUID = GetPortals("portal_item__pain")[1]["uuid"]
         PortalPlayer = GetPlayerPortal()
     ------------------------------
     -- [[ Portal Event Portal ]] --
@@ -5670,7 +5697,7 @@ coroutine.resume(coroutine.create(function()
         end
 
         
-        if Settings.AutoUpgrade and not Settings.unitconfig then
+        if Settings.AutoUpgrade then
             if game.PlaceId ~= 8304191830 then
                 pcall(function()
                     autoupgradefunc()
@@ -5683,6 +5710,18 @@ coroutine.resume(coroutine.create(function()
             end
         end
 
+        if not Settings.unitconfig and Settings.AutoUpgrade then
+            if game.PlaceId ~= 8304191830 then
+                pcall(function()
+                    autoupgradefunc()
+                end)
+            end
+            if  getgenv().autoupgradeerr == true then
+                task.wait()
+                autoupgradefunc()
+                getgenv().autoupgradeerr = false
+            end
+        end
         if Settings.unitconfig and not Settings.AutoUpgrade then
             if game.PlaceId ~= 8304191830 then
                 pcall(function()
@@ -7401,7 +7440,7 @@ function placeunittwin()
 function Reedemcode()
     codes = {"TWOMILLION","subtomaokuma","CHALLENGEFIX","GINYUFIX","RELEASE","SubToKelvingts","SubToBlamspot","KingLuffy","TOADBOIGAMING","noclypso","FictioNTheFirst","GOLDENSHUTDOWN","GOLDEN"
     ,"SINS2","subtosnowrbx","Cxrsed","subtomaokuma","VIGILANTE","HAPPYEASTER","ENTERTAINMENT","DRESSROSA","BILLION","MADOKA","AINCRAD","ANNIVERSARY","OVERLORD","SupperTierMagicSoon",
-    "NEWCODE0819","MORIOH","REASON2FIGHT","HOLYGRAIL","STRAYDOGS","HALLOWEENUPDSOON","HAPPYHALLOWEEN"}
+    "NEWCODE0819","MORIOH","REASON2FIGHT","HOLYGRAIL","STRAYDOGS","HALLOWEENUPDSOON","HAPPYHALLOWEEN","SIXPATHSUPD","AMEGAKURE"}
         for _, v in pairs(codes) do
         pcall(function() game:GetService("ReplicatedStorage").endpoints["client_to_server"]["redeem_code"]:InvokeServer(v)()    end) 
     end
