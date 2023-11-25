@@ -759,7 +759,7 @@ local Uilib = loadstring(game:HttpGet("https://raw.githubusercontent.com/ArponAG
 --local Uilib = loadstring(game:HttpGet("https://raw.githubusercontent.com/ArponAG/Scripts/main/finitylib"))()
 local exec = tostring(identifyexecutor())
 local Window = Uilib.new(true, "[Arpon_V2] Anime Adventures "..version.." - "..exec)
-Window.ChangeToggleKey(Enum.KeyCode.P)
+Window.ChangeToggleKey(Enum.KeyCode.C)
 
 local Home = Window:Category("🏠 Home")
 local Developers = Home:Sector("Anime Adventures")
