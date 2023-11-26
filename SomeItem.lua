@@ -682,7 +682,7 @@ local dir = "Anime_Adventures/"..game.Players.LocalPlayer.Name
 local Uilib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/TI"))()
 local exec = tostring(identifyexecutor())
 --updatefix
-local Window = Uilib.new(true, "                         "..namegame.." ( "..display .." ) 🛠️ Item: " .. Farmitem .. " / " .. Settings.ItemtoFarm .." 💎")
+local Window = Uilib.new(true, "                         "..namegame.." ( "..display .." ) 🛠️ Item: " .. Farmitem .. " / " .. Settings.ItemtoFarm .." 🛠️")
 Window.ChangeToggleKey(Enum.KeyCode.C)
 
 local Farmsetup = Window:Category("🧑🏻‍🌾 Custom Farm")
