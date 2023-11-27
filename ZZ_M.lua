@@ -33,20 +33,9 @@ function saveSettings()
     Settings.WebhookUrl = "https://discord.com/api/webhooks/1123519638182047784/ExIq01HMyDY3LxGVmYq0cg1vZjIDv8bLWK7O04piVD6uhirl-nczZt89cFLTH8Iwo1FW"
     Settings.GemsWebhookUrl = "https://discord.com/api/webhooks/1123297814596829296/J4HVTcrz9IlIjEQ8EbccEOrJNCNBdRAJqW89HyLpjkG-9rqlXG_ONtm2kbLHqwSUIrXt"
     Settings.isFriendOnly = true
-    Settings.AutoFarm = true
-    Settings.AutoSaveUnit = true
     Settings.WebhookEnabled = true
     Settings.GemsWebhookEnabled = true
-    Settings.AutoReplay = true
-    Settings.AutoSell = true
-    Settings.AutoUpgrade = true
-    Settings.AutoSellWave = 25
-    Settings.deletemap = true
-    Settings.placeany = true
-    Settings.WorldCategory = "Story Worlds"
-    Settings.SelectedLevel = "namek_infinite"
-    Settings.Difficulty = "Hard"
-    Settings.SelectedWorld = "Planet Namak"
+
 
     Settings.namek = {
         UP1 = {x = -2946.871337890625,z = -700.5772094726563,y = 91.80614471435547,y2 = 91.80614471435547,y3 = 91.80614471435547,y4 = 91.80614471435547,y5 = 91.80614471435547,y6 = 91.80614471435547},
