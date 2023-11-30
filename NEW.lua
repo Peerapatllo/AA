@@ -1811,7 +1811,7 @@ end
 
 SelectTiers.MouseButton1Click:Connect(function()
 	local items = {}
-	for number = 1, 15 do
+	for number = 0, 15 do
 		table.insert(items, number)
 	end
 
