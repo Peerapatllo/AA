@@ -105,7 +105,7 @@ local DefaultFiles = {
 
 }
 
-local PortalsList = {'Alien Portal', 'Summer Portal', 'Eclipse Portal', 'Puppet Portal', "Demon Leader's Portal"}
+local PortalsList = {"Port Agency Portal", 'Alien Portal', 'Summer Portal', 'Eclipse Portal', 'Puppet Portal', "Demon Leader's Portal", "Noble Portal"}
 local DifficultiesName = {
 	double_cost = 'High Cost',
 	fast_enemies = 'Fast Enemies',
