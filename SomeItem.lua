@@ -30,14 +30,6 @@ function saveSettings()
     Settings.WebhookEnabled = true
     Settings.GemsWebhookEnabled = true
 
-    Settings.fate = {
-        UP1 = {x = -170.9981689453125,z = -535.5142822265625,y = 54.82817840576172,y2 = 54.82817840576172,y3 = 54.82817840576172,y4 = 54.82817840576172,y5 = 54.82817840576172,y6 = 54.82817840576172},
-        UP2 = {x = -158.01300048828126,z = -531.1731567382813,y = 58.579307556152347,y2 = 58.579307556152347,y3 = 58.579307556152347,y4 = 58.579307556152347,y5 = 58.579307556152347,y6 = 58.579307556152347},
-        UP3 = {x = -152.55191040039063,z = -517.1358032226563,y = 54.82825469970703,y2 = 54.82825469970703,y3 = 54.82825469970703,y4 = 54.82825469970703,y5 = 54.82825469970703,y6 = 54.82825469970703},
-        UP4 = {x = -144.97398376464845,z = -520.5796508789063,y = 58.579307556152347,y2 = 58.579307556152347,y3 = 58.579307556152347,y4 = 58.579307556152347,y5 = 58.579307556152347,y6 = 58.579307556152347,},
-        UP5 = {x = -184.5430145263672,z = -554.2020874023438,y = 54.89613723754883,y2 = 54.89613723754883,y3 = 54.89613723754883,y4 = 54.89613723754883,y5 = 54.89613723754883,y6 = 54.89613723754883},
-        UP6 = {x = -184.55494689941407,z = -547.6727294921875,y = 54.89613723754883,y2 = 54.89613723754883,y3 = 54.89613723754883,y4 = 54.89613723754883,y5 = 54.89613723754883,y6 = 54.89613723754883}
-    }
 --[[ Mark ]]--
 
     writefile(a .. '/' .. b, HttpService:JSONEncode(Settings))
@@ -880,14 +872,14 @@ end, {placeholder = Settings.income})
 Units:Cheat("Dropdown", "Select Item Farm ",function(value)
     Settings.Sitemfarm = value
     saveSettings()
-end, { options = {"None","fate_grail","jojop4_coin","bsd_book","dazai_shard"}, default =Settings.Sitemfarm})
+end, { options = {"None","fate_grail","majin_symbol","bsd_book","dazai_shard"}, default =Settings.Sitemfarm})
 
 Units:Cheat("Dropdown", "Select Item Webhook ",function(value)
     Settings.Sitemwebhook = value
     saveSettings()
 end, { options = {"None"
                     ,"<:Lesser_Grail:1161191244236595270> Lesser Grail x"
-                    ,"<:killercoin:1150303591534448671> Killer coin x"
+                    ,"<:marjin:1183298420832731227> Majin Mark x"
                     ,"<:s_book:1164799922705535016> Supernatural Book x"
                     ,"<:dazai_shard:1164799906599415809> Detective Shard x"}
                     , default =Settings.Sitemwebhook})
