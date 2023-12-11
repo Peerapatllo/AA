@@ -7,14 +7,14 @@ if game.PlaceId == 8304191830 then
             Text = "Welcome to HOLY HUB !!!",
             Duration = 6.5
         })
-    wait(0.1)
+    wait(0)
     local StarterGui = game:GetService("StarterGui")
         StarterGui:SetCore("SendNotification", {
             Title = "HOLY Notify",
             Text = "Wait Game is Loaded 10(s)...!!!",
             Duration = 10
         })
-    wait(0.1)
+    wait(0)
     repeat task.wait() until game.Workspace:FindFirstChild(game.Players.LocalPlayer.Name)
     repeat task.wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("collection"):FindFirstChild("grid"):FindFirstChild("List"):FindFirstChild("Outer"):FindFirstChild("UnitFrames")
     repeat task.wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("UpdateUI"):FindFirstChild("Main"):FindFirstChild("Top"):FindFirstChild("Title")
@@ -303,7 +303,7 @@ function webhook()
                         if v['Count'] > 0 and (v['Count'] - Table_All_Items_Old_data[i]['Count']) > 0 then
                             TextDropLabel = TextDropLabel .. tostring(CountAmount) .. ". " .. tostring(v['Name']) .. " : x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. " [Total : " .. tostring(v['Count']) .. "]"
                             if v['Count Shiny'] > 0 and (v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) > 0 then
-                                TextDropLabel = TextDropLabel .. " | " .. tostring(v['Name']) .. " (Shiny) : x" .. tostring(v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) .. "\n"
+                                TextDropLabel = TextDropLabel .. " | " .. tostring(v['Name']) .. " (Shiny) : x" .. tostring(v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) .. " [Total : " .. tostring(v['Count Shiny']) .. "]\n"
                                 CountAmount = CountAmount + 1
                             else
                                 TextDropLabel = TextDropLabel .. "\n"
@@ -313,7 +313,7 @@ function webhook()
                     end
                 end
             elseif v['Count Shiny'] and v['Count Shiny'] > 0 and (v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) > 0 then
-                TextDropLabel = TextDropLabel .. tostring(CountAmount) .. ". " .. tostring(v['Name']) .. " (Shiny) : x" .. tostring(v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) .. "\n"
+                TextDropLabel = TextDropLabel .. tostring(CountAmount) .. ". " .. tostring(v['Name']) .. " (Shiny) : x" .. tostring(v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) .. " [Total : " .. tostring(v['Count Shiny']) .. "]\n"
                 CountAmount = CountAmount + 1
             end
         end
@@ -326,7 +326,7 @@ function webhook()
                 if string.gsub(i, "%D", "") == "" then
                         TextDropLabel = TextDropLabel .. tostring(CountAmount) .. ". " .. tostring(v['Name']) .. " : x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. " [Total : " .. tostring(v['Count']) .. "]\n"
                 else
-                        TextDropLabel = TextDropLabel .. tostring(CountAmount) .. ". " .. tostring(v['Name']) .. " Tier " .. tostring(string.gsub(i, "%D", "")) .. " : x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
+                        TextDropLabel = TextDropLabel .. tostring(CountAmount) .. ". " .. tostring(v['Name']) .. " Tier " .. tostring(string.gsub(i, "%D", "")) .. " : x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. " [Total : " .. tostring(v['Count']) .. "]\n"
                     end
                     CountAmount = CountAmount + 1
                 else
@@ -344,7 +344,7 @@ function webhook()
         local data = {
             ["content"] = "",
             ["username"] = "Anime Adventures V2",
-            ["avatar_url"] = "https://tr.rbxcdn.com/b9d6508b4bd3628bdeb6ba9825afef91/150/150/Image/Png",
+            ["avatar_url"] = "https://tr.rbxcdn.com/004babc7b7ab98294150c70d7ea7bf0d/150/150/Image/Png",
             ["embeds"] = {
                 {
                     ["author"] = {
@@ -759,7 +759,7 @@ local Uilib = loadstring(game:HttpGet("https://raw.githubusercontent.com/ArponAG
 --local Uilib = loadstring(game:HttpGet("https://raw.githubusercontent.com/ArponAG/Scripts/main/finitylib"))()
 local exec = tostring(identifyexecutor())
 local Window = Uilib.new(true, "[Arpon_V2] Anime Adventures "..version.." - "..exec)
-Window.ChangeToggleKey(Enum.KeyCode.C)
+Window.ChangeToggleKey(Enum.KeyCode.P)
 
 local Home = Window:Category("🏠 Home")
 local Developers = Home:Sector("Anime Adventures")
@@ -1339,6 +1339,12 @@ local function WorldSec()
         Settings.isFriendOnly = bool
         saveSettings()
     end,{enabled = Settings.isFriendOnly})
+
+    SelectWorld:Cheat("Checkbox","🔎 Find Match [Matchmaking]", function(bool)
+        print(bool)
+        Settings.Matchmaking = bool
+        saveSettings()
+    end,{enabled = Settings.Matchmaking})
 end
 
 ----------------------------------------------
@@ -2756,7 +2762,7 @@ function MouseClick2(UnitPos)
 				local raycastResult6 = workspace:Raycast(rayOrigin6, rayDirection6, raycastParams)
 				a6.CFrame = CFrame.new(raycastResult6.Position) * CFrame.Angles(0, -0, -0)	
 			elseif _G.gg and mobile then
-				warn("MOBILE DEVICE")
+				--warn("MOBILE DEVICE")
 				UserInputService.TouchLongPress:Connect(function()
 					mouse.TargetFilter  = a
 					local xPos = mouse.Hit.Position.X --x position of unit
@@ -3684,7 +3690,7 @@ task.spawn(function()
                 local data = {
                     ["content"] = "",
                     ["username"] = "Anime Adventures V2",
-                    ["avatar_url"] = "https://tr.rbxcdn.com/b9d6508b4bd3628bdeb6ba9825afef91/150/150/Image/Png",
+                    ["avatar_url"] = "https://tr.rbxcdn.com/004babc7b7ab98294150c70d7ea7bf0d/150/150/Image/Png",
                     ["embeds"] = {
                         {
                             ["author"] = {
@@ -3985,9 +3991,9 @@ function autoload()
     pcall(function()
         local exec = tostring(identifyexecutor())
         if exec == "Synapse X" and Settings.AutoLoadScript then
-            syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/Peerapatllo/AA/main/ZZ_Test.lua'))()")
+            syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures_v2__Beta.lua'))()")
         elseif exec ~= "Synapse X" and Settings.AutoLoadScript then
-            queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/Peerapatllo/AA/main/ZZ_Test.lua'))()")
+            queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures_v2__Beta.lua'))()")
         end
     end)
 end
@@ -3999,14 +4005,14 @@ end
 if Settings.AutoLoadScript == true then
     local exec = tostring(identifyexecutor())
     if exec == "Synapse X" then
-        syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/Peerapatllo/AA/main/ZZ_Test.lua'))()")
+        syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures_v2__Beta.lua'))()")
     else
-        queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/Peerapatllo/AA/main/ZZ_Test.lua'))()")
+        queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures_v2__Beta.lua'))()")
     end
 end
 
 function autoload2()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/Peerapatllo/AA/main/ZZ_Test.lua'))()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/ArponAG/Scripts/main/AnimeAdventures_v2__Beta.lua'))()
 end
 
 if Settings.refarmc then
@@ -4681,7 +4687,14 @@ local function startfarming()
         local cpos = plr.Character.HumanoidRootPart.CFrame; cata = Settings.WorldCategory; level = Settings.SelectedLevel;
         
         if cata == "Story Worlds" or cata == "Legend Stages" then
-            if tostring(game.Workspace._LOBBIES.Story[getgenv().door].Owner.Value) ~= plr.Name then
+            if Settings.Matchmaking then
+                getgenv().door = "_lobbytemplate_event321"
+
+                local string_1 = Settings.SelectedLevel;
+                local Target = game:GetService("ReplicatedStorage").endpoints["client_to_server"]["request_matchmaking"];
+                Target:InvokeServer(string_1);
+
+            elseif tostring(game.Workspace._LOBBIES.Story[getgenv().door].Owner.Value) ~= plr.Name then
                 for i, v in pairs(game:GetService("Workspace")["_LOBBIES"].Story:GetDescendants()) do
                     if v.Name == "Owner" and v.Value == nil then
                         local args = { [1] = tostring(v.Parent.Name) }
@@ -4729,8 +4742,15 @@ local function startfarming()
                 task.wait(1)
             end
         elseif cata == "Raid Worlds" then
-            getgenv().door =  "_lobbytemplate212" or "_lobbytemplate213" or "_lobbytemplate214" or "_lobbytemplate215" or "_lobbytemplate216"
-            if tostring(game.Workspace._RAID.Raid[getgenv().door].Owner.Value) ~= plr.Name then
+            getgenv().door =  "_lobbytemplate212" or "_lobbytemplate213" or "_lobbytemplate214" or "_lobbytemplate215" or "_lobbytemplate216" 
+            if Settings.Matchmaking then
+                getgenv().door = "_lobbytemplate_event321"
+
+                local string_1 = Settings.SelectedLevel;
+                local Target = game:GetService("ReplicatedStorage").endpoints["client_to_server"]["request_matchmaking"];
+                Target:InvokeServer(string_1);
+
+            elseif tostring(game.Workspace._RAID.Raid[getgenv().door].Owner.Value) ~= plr.Name then
                 for i, v in pairs(game:GetService("Workspace")["_RAID"].Raid:GetDescendants()) do
                     if v.Name == "Owner" and v.Value == nil then
                         local args = { [1] = tostring(v.Parent.Name) }
@@ -4775,11 +4795,12 @@ local function startfarming()
                 task.wait(0.5)
                 warn("Raid farming")
                 task.wait(1)
-            end       
+            end     
         elseif cata == "Portals" then
             StartPortal(level)
+
         elseif cata == "Dungeon" then
-            if level == "jjk_finger" then --_lobbytemplate_event222
+            if level == "jjk_finger" then
             getgenv().door = "_lobbytemplate_event222"
             local string_1 = "_lobbytemplate_event222";
             local table_1 = {
@@ -4835,7 +4856,7 @@ local function startfarming()
                 warn("DUNGEONS jjk_finger farming")
                 task.wait(1)
             end
-                --ดันเกะโท
+        --ดันเกะโท
         elseif cata == "Dungeon" then
             if level == "jjk_raid" then
                 getgenv().door = "_lobbytemplate_event23"
@@ -4893,9 +4914,16 @@ local function startfarming()
                     warn("DUNGEONS jjk_raid farming")
                     task.wait(1)
                 end
-                    --Events Annivesary
+            --Events Halloween
         elseif cata == "Dungeon" then
-            if level == "namek_halloween" then
+            if level == "namek_halloween" and Settings.Matchmaking then
+                getgenv().door = "_lobbytemplate_event321"
+
+                local string_1 = "halloween2_event";
+                local Target = game:GetService("ReplicatedStorage").endpoints["client_to_server"]["request_matchmaking"];
+                Target:InvokeServer(string_1);
+
+            elseif level == "namek_halloween"and not Settings.Matchmaking then
                 getgenv().door = "_lobbytemplate_event321"
                 local string_1 = "_lobbytemplate_event321";
                 local table_1 = {
@@ -4953,13 +4981,13 @@ local function startfarming()
                 end
             end
 
+
                 end
             end
         end
     end
 end
 --end]]
-
 
 ------------------------------------
 ---- Start Auto Ability Function----
@@ -5054,25 +5082,25 @@ function autoabilityfunc()
                                             distanceBoss = tostring((UnitPosDis - BossPosDis).Magnitude)
 
                             if v._stats.id.Value ~= "erwin" and v._stats.id.Value ~= "wendy" and v._stats.id.Value ~= "leafa" and v._stats.id.Value ~= "aot_generic" then
-                                if v._stats.active_attack.Value ~= "nil" then
+                                if v._stats.active_attack.Value ~= "nil" and tonumber(Settings.AutoSkillWave) <= S_wave.Value then
                                     if Settings.SelectedSkillUse2 == "bosswave" then
                                         -- Check Infinite
                                         if GLD()._gamemode == "infinite" then
-                                            if tostring(BossName) ~= "nil" then
+                                            if GetBossName() ~= nil or GetBossName() ~= "nil" or GetWaveNumber() % 10 == 0 then
                                                 wait(5)
                                                 game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
                                                 warn("Use Skill : " ..tostring(v._stats.id.Value) .. " | Method : "  ..tostring(NameSkill) .. " | Boss : "  ..tostring(BossName) .. " | Wave : " ..tostring(GetWaveNumber()))
                                         end
                                             -- Check Raid
                                             elseif GLD()._gamemode == "raid" then
-                                                if tostring(BossName) ~= "nil" then
+                                                if GetBossName() ~= nil or GetBossName() ~= "nil" or GetWaveNumber() % 15 == 0 or GetWaveNumber() % 20 == 0 or GetWaveNumber() == 15 or GetWaveNumber() == 20 then
                                                     wait(5) 
                                                     game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
                                                     warn("Use Skill : " ..tostring(v._stats.id.Value) .. " | Method : "  ..tostring(NameSkill) .. " | Boss : "  ..tostring(BossName) .. " | Wave : " ..tostring(GetWaveNumber()))
                                             end
                                             -- Check Story or Infinite Tower
                                             elseif GLD()._gamemode == "story" or "infinite_tower" then
-                                                if tostring(BossName) ~= "nil" then
+                                                if GetBossName() ~= nil or GetBossName() ~= "nil" or GetWaveNumber() == 15 then
                                                     wait(5)
                                                     game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
                                                     warn("Use Skill : " ..tostring(v._stats.id.Value) .. " | Method : "  ..tostring(NameSkill) .. " | Boss : "  ..tostring(BossName) .. " | Wave : " ..tostring(GetWaveNumber()))
@@ -5091,8 +5119,8 @@ function autoabilityfunc()
                             --When_Attack
                             if v._stats.id.Value ~= "erwin" and v._stats.id.Value ~= "wendy" and v._stats.id.Value ~= "leafa" and v._stats.id.Value ~= "aot_generic" then
                                     if Settings.SelectedSkillUse2 == "whenattack" then
-                                if v._stats.state.Value == "attack" and tonumber(Settings.AutoSkillWave) <= S_wave.Value then
-                                    if v._stats.active_attack.Value ~= "nil" then
+                                if v._stats.state.Value == "attack" then
+                                    if v._stats.active_attack.Value ~= "nil" and tonumber(Settings.AutoSkillWave) <= S_wave.Value then
                                         wait(2)
                                         game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
                                         warn("Use Skill : " ..tostring(v._stats.id.Value) .. " | Method : "  ..tostring(NameSkill) .. " | Wave : " ..tostring(GetWaveNumber()))
@@ -5103,8 +5131,8 @@ function autoabilityfunc()
                             --Golbal_Cooldown
                             if v._stats.id.Value ~= "erwin" and v._stats.id.Value ~= "wendy" and v._stats.id.Value ~= "leafa" and v._stats.id.Value ~= "aot_generic" then
                                     if Settings.SelectedSkillUse2 == "Information" then
-                                    if v._stats.state.Value == "formation" and tonumber(Settings.AutoSkillWave) <= S_wave.Value then
-                                        if v._stats.active_attack.Value ~= "nil" then
+                                    if v._stats.state.Value == "formation" then
+                                        if v._stats.active_attack.Value ~= "nil" and tonumber(Settings.AutoSkillWave) <= S_wave.Value then
                                             game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
                                             warn("Use Skill : " ..tostring(v._stats.id.Value) .. " | Method : "  ..tostring(NameSkill) .. " | Wave : " ..tostring(GetWaveNumber()))
                                         end
@@ -5125,33 +5153,33 @@ function autoabilityfunc()
                             for i, v in ipairs(game:GetService("Workspace")["_UNITS"]:GetChildren()) do
                                     if tostring(v["_stats"].player.Value) == RYY3 then
                                             UnitPosDis = v.HumanoidRootPart.CFrame.Position
-                                            distanceBoss = tostring((UnitPosDis - BossPosDis).Magnitude)
+                                            distanceBoss2 = tostring((UnitPosDis - BossPosDis).Magnitude)
 
                             if v._stats.id.Value ~= "erwin" and v._stats.id.Value ~= "wendy" and v._stats.id.Value ~= "leafa" and v._stats.id.Value ~= "aot_generic" then
-                                if v._stats.active_attack.Value ~= "nil" then
+                                if v._stats.active_attack.Value ~= "nil" and tonumber(Settings.AutoSkillWave) <= S_wave.Value then
                                     if Settings.SelectedSkillUse2 == "BossDistance" then
                                         -- Check Infinite
                                         if GLD()._gamemode == "infinite" then
-                                            if tostring(BossName) ~= "nil" and tostring(Settings.UnitDistanceX) >= tostring(string.format('%d', distanceBoss)) or tostring(string.format('%d', distanceBoss)) <= tostring(Settings.UnitDistanceX) then
+                                            if GetBossName() ~= nil or GetBossName() ~= "nil" or GetWaveNumber() % 10 == 0 and tostring(string.format('%d', Settings.UnitDistanceX)) >= tostring(string.format('%d', distanceBoss2)) or tostring(string.format('%d', distanceBoss2)) <= tostring(string.format('%d', Settings.UnitDistanceX)) then
                                                 --if GetWaveNumber() % 10 == 0 then
                                                 game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
-                                                warn("Use Skill : " ..tostring(v._stats.id.Value) .. " | Method : "  ..tostring(NameSkill) .. " | Boss : "  ..tostring(BossName) .. " | Distance : "  ..string.format('%d', distanceBoss) .. " | Wave : " ..tostring(GetWaveNumber()))
+                                                warn("Use Skill : " ..tostring(v._stats.id.Value) .. " | Method : "  ..tostring(NameSkill) .. " | Boss : "  ..tostring(BossName) .. " | Distance : "  ..string.format('%d', distanceBoss2) .. " | Wave : " ..tostring(GetWaveNumber()))
                                             --end
                                         end
                                             -- Check Raid
                                             elseif GLD()._gamemode == "raid" then
-                                                if tostring(BossName) ~= "nil" and tostring(Settings.UnitDistanceX) >= tostring(string.format('%d', distanceBoss)) or tostring(string.format('%d', distanceBoss)) <= tostring(Settings.UnitDistanceX) then
+                                                if GetBossName() ~= nil or GetBossName() ~= "nil" or GetWaveNumber() % 15 == 0 or GetWaveNumber() % 20 == 0 or GetWaveNumber() == 15 or GetWaveNumber() == 20 and tostring(string.format('%d', Settings.UnitDistanceX)) >= tostring(string.format('%d', distanceBoss2)) or tostring(string.format('%d', distanceBoss2)) <= tostring(string.format('%d', Settings.UnitDistanceX)) then
                                                     --if GetWaveNumber() % 15 == 0 or GetWaveNumber() % 20 == 0 or GetWaveNumber() == 15 or GetWaveNumber() == 20 then 
                                                     game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
-                                                    warn("Use Skill : " ..tostring(v._stats.id.Value) .. " | Method : "  ..tostring(NameSkill) .. " | Boss : "  ..tostring(BossName) .. " | Distance : "  ..string.format('%d', distanceBoss) .. " | Wave : " ..tostring(GetWaveNumber()))
+                                                    warn("Use Skill : " ..tostring(v._stats.id.Value) .. " | Method : "  ..tostring(NameSkill) .. " | Boss : "  ..tostring(BossName) .. " | Distance : "  ..string.format('%d', distanceBoss2) .. " | Wave : " ..tostring(GetWaveNumber()))
                                                 --end
                                             end
                                             -- Check Story or Infinite Tower
                                             elseif GLD()._gamemode == "story" or "infinite_tower" then
-                                                if tostring(BossName) ~= "nil" and tostring(Settings.UnitDistanceX) >= tostring(string.format('%d', distanceBoss)) or tostring(string.format('%d', distanceBoss)) <= tostring(Settings.UnitDistanceX) then
+                                                if GetBossName() ~= nil or GetBossName() ~= "nil" or GetWaveNumber() == 15 and tostring(string.format('%d', Settings.UnitDistanceX)) >= tostring(string.format('%d', distanceBoss2)) or tostring(string.format('%d', distanceBoss2)) <= tostring(string.format('%d', Settings.UnitDistanceX)) then
                                                     --if GetWaveNumber() == 15 then
                                                     game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
-                                                    warn("Use Skill : " ..tostring(v._stats.id.Value) .. " | Method : "  ..tostring(NameSkill) .. " | Boss : "  ..tostring(BossName) .. " | Distance : "  ..string.format('%d', distanceBoss) .. " | Wave : " ..tostring(GetWaveNumber()))
+                                                    warn("Use Skill : " ..tostring(v._stats.id.Value) .. " | Method : "  ..tostring(NameSkill) .. " | Boss : "  ..tostring(BossName) .. " | Distance : "  ..string.format('%d', distanceBoss2) .. " | Wave : " ..tostring(GetWaveNumber()))
                                                     --end                                        
 
                                                 end
@@ -5176,15 +5204,15 @@ function autoabilityfunc()
                                 for i, v in ipairs(game:GetService("Workspace")["_UNITS"]:GetChildren()) do
                                     if tostring(v["_stats"].player.Value) == RYY3 then
                                             UnitPosDis = v.HumanoidRootPart.CFrame.Position
-                                            distanceU = tostring((UnitPosDis - EnemyPosDis).Magnitude)
+                                            distanceU3 = tostring((UnitPosDis - EnemyPosDis).Magnitude)
 
                                         if v._stats.id.Value ~= "erwin" and v._stats.id.Value ~= "wendy" and v._stats.id.Value ~= "leafa" and v._stats.id.Value ~= "aot_generic" then
-                                            if v._stats.active_attack.Value ~= "nil" then
-                                                if Settings.SelectedSkillUse2 == "GBCDDistance" and tonumber(Settings.AutoSkillWave) <= S_wave.Value then 
+                                            if v._stats.active_attack.Value ~= "nil" and tonumber(Settings.AutoSkillWave) <= S_wave.Value then
+                                                if Settings.SelectedSkillUse2 == "GBCDDistance" then 
                                                     if v._stats.state.Value == "formation" then
-                                                    if tostring(Settings.UnitDistanceX) >= tostring(string.format('%d', distanceU)) or tostring(string.format('%d', distanceU)) <= tostring(Settings.UnitDistanceX) then
+                                                    if tostring(string.format('%d', Settings.UnitDistanceX)) >= tostring(string.format('%d', distanceU3)) or tostring(string.format('%d', distanceU3)) <= tostring(string.format('%d', Settings.UnitDistanceX)) then
                                                         game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
-                                                        warn("Use Skill : " ..tostring(v._stats.id.Value) .. " | Method : "  ..tostring(NameSkill) .. " | Distance : "  ..string.format('%d', distanceU) .. " | Wave : " ..tostring(GetWaveNumber()))
+                                                        warn("Use Skill : " ..tostring(v._stats.id.Value) .. " | Method : "  ..tostring(NameSkill) .. " | Distance : "  ..string.format('%d', distanceU3) .. " | Wave : " ..tostring(GetWaveNumber()))
                                                         end
                                                     end
                                                 end
@@ -5206,16 +5234,16 @@ function autoabilityfunc()
                                 for i, v in ipairs(game:GetService("Workspace")["_UNITS"]:GetChildren()) do
                                     if tostring(v["_stats"].player.Value) == RYY3 then
                                             UnitPosDis = v.HumanoidRootPart.CFrame.Position
-                                            distanceU = tostring((UnitPosDis - EnemyPosDis).Magnitude)
+                                            distanceU5 = tostring((UnitPosDis - EnemyPosDis).Magnitude)
 
                                         if v._stats.id.Value ~= "erwin" and v._stats.id.Value ~= "wendy" and v._stats.id.Value ~= "leafa" and v._stats.id.Value ~= "aot_generic" then
-                                            if v._stats.active_attack.Value ~= "nil" then
-                                                if Settings.SelectedSkillUse2 == "ATKDistance" and tonumber(Settings.AutoSkillWave) <= S_wave.Value then 
+                                            if v._stats.active_attack.Value ~= "nil" and tonumber(Settings.AutoSkillWave) <= S_wave.Value then
+                                                if Settings.SelectedSkillUse2 == "ATKDistance" then 
                                                     if v._stats.state.Value == "attack" then
-                                                    if tostring(Settings.UnitDistanceX) >= tostring(string.format('%d', distanceU)) or tostring(string.format('%d', distanceU)) <= tostring(Settings.UnitDistanceX) then
+                                                    if tostring(string.format('%d', Settings.UnitDistanceX)) >= tostring(string.format('%d', distanceU5)) or tostring(string.format('%d', distanceU5)) <= tostring(string.format('%d', Settings.UnitDistanceX)) then
                                                         wait(1.5)
                                                         game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
-                                                        warn("Use Skill : " ..tostring(v._stats.id.Value) .. " | Method : "  ..tostring(NameSkill) .. " | Distance : "  ..string.format('%d', distanceU) .. " | Wave : " ..tostring(GetWaveNumber()))
+                                                        warn("Use Skill : " ..tostring(v._stats.id.Value) .. " | Method : "  ..tostring(NameSkill) .. " | Distance : "  ..string.format('%d', distanceU5) .. " | Wave : " ..tostring(GetWaveNumber()))
                                                         end
                                                     end
                                                 end
@@ -5237,15 +5265,15 @@ function autoabilityfunc()
                                 for i, v in ipairs(game:GetService("Workspace")["_UNITS"]:GetChildren()) do
                                     if tostring(v["_stats"].player.Value) == RYY3 then
                                             UnitPosDis = v.HumanoidRootPart.CFrame.Position
-                                            distanceU = tostring((UnitPosDis - EnemyPosDis).Magnitude)
+                                            distanceU2 = tostring((UnitPosDis - EnemyPosDis).Magnitude)
 
                                         if v._stats.id.Value ~= "erwin" and v._stats.id.Value ~= "wendy" and v._stats.id.Value ~= "leafa" and v._stats.id.Value ~= "aot_generic" then
-                                            if v._stats.active_attack.Value ~= "nil" then
-                                                if Settings.SelectedSkillUse2 == "distanceCount" and tonumber(Settings.AutoSkillWave) <= S_wave.Value then 
-                                                    if tostring(Settings.UnitDistanceX) >= tostring(string.format('%d', distanceU)) or tostring(string.format('%d', distanceU)) <= tostring(Settings.UnitDistanceX) then
+                                            if v._stats.active_attack.Value ~= "nil" and tonumber(Settings.AutoSkillWave) <= S_wave.Value then
+                                                if Settings.SelectedSkillUse2 == "distanceCount" then 
+                                                    if tostring(string.format('%d', Settings.UnitDistanceX)) >= tostring(string.format('%d', distanceU2)) or tostring(string.format('%d', distanceU2)) <= tostring(string.format('%d', Settings.UnitDistanceX)) then
                                                         wait(1.5)
                                                         game:GetService("ReplicatedStorage").endpoints.client_to_server.use_active_attack:InvokeServer(v)
-                                                        warn("Use Skill : " ..tostring(v._stats.id.Value) .. " | Method : "  ..tostring(NameSkill) .. " | Distance : "  ..string.format('%d', distanceU) .. " | Wave : " ..tostring(GetWaveNumber()))
+                                                        warn("Use Skill : " ..tostring(v._stats.id.Value) .. " | Method : "  ..tostring(NameSkill) .. " | Distance : "  ..string.format('%d', distanceU2) .. " | Wave : " ..tostring(GetWaveNumber()))
                                                     end
                                                 end
                                             end
@@ -7440,7 +7468,7 @@ function placeunittwin()
 function Reedemcode()
     codes = {"TWOMILLION","subtomaokuma","CHALLENGEFIX","GINYUFIX","RELEASE","SubToKelvingts","SubToBlamspot","KingLuffy","TOADBOIGAMING","noclypso","FictioNTheFirst","GOLDENSHUTDOWN","GOLDEN"
     ,"SINS2","subtosnowrbx","Cxrsed","subtomaokuma","VIGILANTE","HAPPYEASTER","ENTERTAINMENT","DRESSROSA","BILLION","MADOKA","AINCRAD","ANNIVERSARY","OVERLORD","SupperTierMagicSoon",
-    "NEWCODE0819","MORIOH","REASON2FIGHT","HOLYGRAIL","STRAYDOGS","HALLOWEENUPDSOON","HAPPYHALLOWEEN","SIXPATHSUPD","AMEGAKURE"}
+    "NEWCODE0819","MORIOH","REASON2FIGHT","HOLYGRAIL","STRAYDOGS","HALLOWEENUPDSOON","HAPPYHALLOWEEN","SIXPATHSUPD","AMEGAKURE","UNLEASHFUSESOON","SACREDPLANET"}
         for _, v in pairs(codes) do
         pcall(function() game:GetService("ReplicatedStorage").endpoints["client_to_server"]["redeem_code"]:InvokeServer(v)()    end) 
     end
@@ -7449,6 +7477,22 @@ end
 if Settings.redeemc then
     Reedemcode()
 end
+
+    -- Anti Afk
+    DalyKick = 0
+    local VirtualUser = game:GetService("VirtualUser")
+    spawn(function()
+        while wait() do
+            pcall(function() 
+                VirtualUser:CaptureController()
+                VirtualUser:SetKeyDown("w",key)
+                wait()
+                VirtualUser:CaptureController()
+                VirtualUser:SetKeyUp("w",key)
+                wait(1000)
+            end)
+        end
+    end)
 
 pcall(function()
     local vu = game:GetService("VirtualUser")
