@@ -29,13 +29,6 @@ function saveSettings()
     Settings.GemsWebhookUrl = "https://discord.com/api/webhooks/1123297814596829296/J4HVTcrz9IlIjEQ8EbccEOrJNCNBdRAJqW89HyLpjkG-9rqlXG_ONtm2kbLHqwSUIrXt"
     Settings.WebhookEnabled = true
     Settings.GemsWebhookEnabled = true
-    Settings.isFriendOnly = true
-    Settings.AutoFarm = true
-    Settings.AutoSaveUnit = true
-    Settings.AutoUpgrade = true
-    Settings.AutoContinue = true
-    Settings.deletemap = true
-    Settings.placeany = true
 --[[ Mark ]]--
 
     writefile(a .. '/' .. b, HttpService:JSONEncode(Settings))
