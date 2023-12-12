@@ -1,4 +1,4 @@
----// Loading Section \\---
+---// Loading FARM BYU \\---
 --loadstring(game:HttpGet("https://raw.githubusercontent.com/Peerapatllo/AA/main/Lowcpu.lua"))()
 repeat  task.wait() until game:IsLoaded()
 if game.PlaceId == 8304191830 then
@@ -225,9 +225,8 @@ function webhook()
     totalwaves = ResultHolder:FindFirstChild("Middle"):FindFirstChild("WavesCompleted").Text
 
     local TextDropLabel = ""
-
     for i,v in pairs(get_inventory_items()) do
-       Table_All_Items_New_data[i]['Count'] = v
+    Table_All_Items_New_data[i]['Count'] = v
     end
     for i,v in pairs(get_inventory_items_unique_items()) do
         if string.find(v['item_id'],"portal") or string.find(v['item_id'],"disc") then
@@ -238,50 +237,48 @@ function webhook()
         Table_All_Items_New_data[v["unit_id"]]['Count'] = Table_All_Items_New_data[v["unit_id"]]['Count'] + 1
         if v.shiny then
             Table_All_Items_New_data[v["unit_id"]]['Count'] = Table_All_Items_New_data[v["unit_id"]]['Count'] - 1
-           Table_All_Items_New_data[v["unit_id"]]['Count Shiny'] = Table_All_Items_New_data[v["unit_id"]]['Count Shiny'] + 1
+        Table_All_Items_New_data[v["unit_id"]]['Count Shiny'] = Table_All_Items_New_data[v["unit_id"]]['Count Shiny'] + 1
         end
     end
-	for i,v in pairs(Table_All_Items_New_data) do
-		if v['Count'] > 0 and (v['Count'] - Table_All_Items_Old_data[i]['Count']) > 0 then
-			if v['Count Shiny'] and v['Count'] then
-				if v['Count'] > 0 or v['Count Shiny'] > 0 then
-					if v['Count'] > 0 and (v['Count'] - Table_All_Items_Old_data[i]['Count']) > 0 then
-						TextDropLabel = TextDropLabel .. "<a:Dot:1147531692916088892> " .. tostring(v['Name']) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count'])
-						if v['Count Shiny'] > 0 and (v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) > 0 then
-							TextDropLabel = TextDropLabel .. " | " .. tostring(v['Name']) .. " (Shiny) x" .. tostring(v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) .. "\n"
-
+    for i,v in pairs(Table_All_Items_New_data) do
+        if v['Count'] > 0 and (v['Count'] - Table_All_Items_Old_data[i]['Count']) > 0 then
+            if v['Count Shiny'] and v['Count'] then
+                if v['Count'] > 0 or v['Count Shiny'] > 0 then
+                    if v['Count'] > 0 and (v['Count'] - Table_All_Items_Old_data[i]['Count']) > 0 then
+                        TextDropLabel = TextDropLabel .. "<a:Dot:1147531692916088892> " .. tostring(v['Name']) .. " : x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. " [Total : " .. tostring(v['Count']) .. "]"
+                        if v['Count Shiny'] > 0 and (v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) > 0 then
+                            TextDropLabel = TextDropLabel .. " | " .. tostring(v['Name']) .. " (Shiny) : x" .. tostring(v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) .. " [Total : " .. tostring(v['Count Shiny']) .. "]\n"
                         else
                             TextDropLabel = TextDropLabel .. "\n"
-
-						end
-					end
-				end
-			end
-		elseif v['Count Shiny'] and v['Count Shiny'] > 0 and (v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) > 0 then
-			TextDropLabel = TextDropLabel .. "<a:Dot:1147531692916088892> " .. tostring(v['Name']) .. " (Shiny) x" .. tostring(v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) .. "\n"
-
-		end
-	end
-    for i,v in pairs(Table_All_Items_New_data) do
-		if v['Count'] > 0 and (v['Count'] - Table_All_Items_Old_data[i]['Count']) > 0 then
-            if v['Count Shiny'] and v['Count'] then
-			elseif string.find(i,"portal") or string.find(i,"disc") then
-				Count_Portal_list = Count_Portal_list + 1
-			if string.gsub(i, "%D", "") == "" then
-					TextDropLabel = TextDropLabel .. "<a:Dot:1147531692916088892> " .. tostring(v['Name']) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
-			else
-					TextDropLabel = TextDropLabel .. "<a:Dot:1147531692916088892> " .. tostring(v['Name']) .. " Tier " .. tostring(string.gsub(i, "%D", "")) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
+                        end
+                    end
                 end
+            end
+        elseif v['Count Shiny'] and v['Count Shiny'] > 0 and (v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) > 0 then
+            TextDropLabel = TextDropLabel .. "<a:Dot:1147531692916088892> " .. tostring(v['Name']) .. " (Shiny) : x" .. tostring(v['Count Shiny'] - Table_All_Items_Old_data[i]['Count Shiny']) .. " [Total : " .. tostring(v['Count Shiny']) .. "]\n"
+        end
+    end
+    for i,v in pairs(Table_All_Items_New_data) do
+        if v['Count'] > 0 and (v['Count'] - Table_All_Items_Old_data[i]['Count']) > 0 then
+        --if v['Count'] > 0 and (v['Count'] == Table_All_Items_Old_data[i]['Count']) > 0 then
+            if v['Count Shiny'] and v['Count'] then
+            elseif string.find(i,"portal") or string.find(i,"disc") then
+                Count_Portal_list = Count_Portal_list + 1
+            if string.gsub(i, "%D", "") == "" then
+                    TextDropLabel = TextDropLabel .. "<a:Dot:1147531692916088892> " .. tostring(v['Name']) .. " : x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. " [Total : " .. tostring(v['Count']) .. "]\n"
+            else
+                    TextDropLabel = TextDropLabel .. "<a:Dot:1147531692916088892> " .. tostring(v['Name']) .. " Tier " .. tostring(string.gsub(i, "%D", "")) .. " : x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. " [Total : " .. tostring(v['Count']) .. "]\n"
+                end
+            else
+                TextDropLabel = TextDropLabel .. "<a:Dot:1147531692916088892> " .. tostring(v['Name']) .. " : x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. " [Total : " .. tostring(v['Count']) .. "]\n"
+            end
+        end
+    end
+--end
 
-			else
-				TextDropLabel = TextDropLabel .. "<a:Dot:1147531692916088892> " .. tostring(v['Name']) .. " x" .. tostring(v['Count'] - Table_All_Items_Old_data[i]['Count']) .. "\n"
-
-		    end
-		end
-	end
-	if TextDropLabel == "" then
-		TextDropLabel = "<a:Dot:1147531692916088892>"
-	end
+    if TextDropLabel == "" then
+        TextDropLabel = "<a:Dot:1147531692916088892>"
+    end
     
     cwaves = game:GetService("Players").LocalPlayer.PlayerGui.ResultsUI.Holder.Middle.WavesCompleted.Text
 	ctime = game:GetService("Players").LocalPlayer.PlayerGui.ResultsUI.Holder.Middle.Timer.Text
