@@ -73,3 +73,9 @@ w.DescendantAdded:Connect(function(v)
         v[v.ClassName.."Template"]=0
     end
 end)
+if game.PlaceId == 13775256536 then
+    print("TEST")
+else
+    local RunService = game:GetService("RunService")
+    RunService:Set3dRenderingEnabled(true)
+end
